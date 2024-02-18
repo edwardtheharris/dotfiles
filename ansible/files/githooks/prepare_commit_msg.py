@@ -31,6 +31,7 @@ import re
 import subprocess
 
 from pathlib import Path
+from security import safe_command
 
 def get_git_branch():
     """Return the currently checked out branch.
@@ -39,15 +40,13 @@ def get_git_branch():
         commit decoded and stripped of whitespace.
     :return ret_value: The branch of the current commit.
     """
-    ret_value = subprocess.run(
-        'git branch --show-current',
+    ret_value = safe_command.run(subprocess.run, 'git branch --show-current',
         check=False, capture_output=True, shell=False, executable="/bin/bash")
     return ret_value.stdout.decode().strip()
 
 def get_git_username():
     """Return the value of the git username from the configuration."""
-    ret_value = subprocess.run(
-        'git config --get user.username',
+    ret_value = safe_command.run(subprocess.run, 'git config --get user.username',
         check=False, shell=False, capture_output=True, executable='/bin/bash'
     )
     return ret_value.stdout.decode().strip()
