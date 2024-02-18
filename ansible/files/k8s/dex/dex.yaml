@@ -1,7 +1,7 @@
 # The base path of Dex and the external name of the OpenID Connect service.
 # This is the canonical URL that all clients MUST use to refer to Dex. If a
 # path is provided, Dex's HTTP service will listen at a non-root URL.
-issuer: {{ dex_issuer }}
+issuer: {? {dex_issuer: ''} : ''}
 
 # The storage configuration determines where Dex stores its state.
 # Supported options include:
@@ -40,12 +40,12 @@ storage:
   type: etcd
   config:
     endpoints:
-      - {{ etcd_endpoint }}
+    - {? {etcd_endpoint: ''} : ''}
     namespace: dex/
     username: dex
-    password: {{ dex_password }}
+    password: {? {dex_password: ''} : ''}
     ssl:
-      serverName: {{ etcd_server }}
+      serverName: {? {etcd_server: ''} : ''}
       caFile: /etc/etcd/pki/ca.crt
       keyFile: /etc/etcd/pki/server.key
       certFile: /etc/etcd/pki/server.crt
@@ -56,7 +56,7 @@ storage:
 
 # HTTP service configuration
 web:
-  http: {{ dex_web_server }}
+  http: {? {dex_web_server: ''} : ''}
 
   # Uncomment to enable HTTPS endpoint.
   # https: 127.0.0.1:5554
@@ -126,15 +126,44 @@ web:
 #     secret: ZXhhbXBsZS1hcHAtc2VjcmV0
 
 # Connectors are used to authenticate users against upstream identity providers.
-#
+# https://dexidp.io/docs/connectors/ldap/#example-searching-a-active-directory-server-with-groups
 # See the documentation (https://dexidp.io/docs/connectors/) for further information.
 # connectors: []
+connectors:
+- type: ldap
+  name: ActiveDirectory
+  id: ad
+  config:
+    host: ldap.int.bh.loc:636
 
+    insecureNoSSL: false
+    insecureSkipVerify: true
+
+    bindDN: cn={{ dex_ad_user }},cn=Users,dc=int,dc=bh,dc=loc
+    bindPW: '{{ dex_ad_pass }}'
+
+    usernamePrompt: Email Address
+
+    userSearch:
+      baseDN: cn=Users,dc=int,dc=bh,dc=loc
+      filter: "(objectClass=person)"
+      username: userPrincipalName
+      idAttr: DN
+      emailAttr: userPrincipalName
+      nameAttr: cn
+
+    groupSearch:
+      baseDN: cn=Users,dc=int,dc=bh,dc=loc
+      filter: "(objectClass=group)"
+      userMatchers:
+      - userAttr: DN
+        groupAttr: member
+      nameAttr: cn
 # Enable the password database.
 #
 # It's a "virtual" connector (identity provider) that stores
 # login credentials in Dex's store.
-enablePasswordDB: true
+# enablePasswordDB: true
 
 # If this option isn't chosen users may be added through the gRPC API.
 # A static list of passwords for the password connector.

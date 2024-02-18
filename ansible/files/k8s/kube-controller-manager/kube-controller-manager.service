@@ -1,0 +1,14 @@
+[Unit]
+Description=Kubernetes Controller Manager
+Requires=network.target
+After=network.target etcd.service dex.service kube-apiserver.service
+
+[Service]
+ExecStart=/usr/bin/kube-controller-manager --master='https://kubernetes.default.svc:6443'
+WorkingDirectory=/usr/share/kubernetes
+User=root
+Group=kube
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
