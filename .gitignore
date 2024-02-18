@@ -1,0 +1,7 @@
+ansible-navigator.log
+Google Drive File Stream
+jenkins-cli.jar
+_build
+*cache*
+.vscode
+*secret*

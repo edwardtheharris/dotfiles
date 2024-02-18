@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ansible = "*"
+myst-parser = {extras = ["linkify"], version = "*"}
+paramiko = "*"
+pipenv = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-copybutton = "*"
+sphinx-git = "*"
+sphinx-last-updated-by-git = "*"
+sphinx-press-theme = "*"
+sphinxcontrib-autoyaml = "*"
+sphinxcontrib-programoutput = "*"
+
+[dev-packages]
+ansible-lint = "*"
+ipython = "*"
+
+[pipenv]
+allow_prereleases = true

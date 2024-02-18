@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Bash completion script for kube-apiserver v1.29.1
+
+_kube_apiserver_completion() {
+    # shellcheck disable=SC2034
+    local cur prev words cword
+    _init_completion || return
+
+    # The basic command-line options for kube-apiserver v1.29.1
+    # Replace or extend the opts variable based on `kube-apiserver --help`
+    local opts="--advertise-address --allow-privileged --anonymous-auth
+    --api-audiences --authorization-mode --bind-address --cert-dir
+    --client-ca-file --enable-aggregator-routing --enable-bootstrap-token-auth
+    --etcd-servers --insecure-bind-address --insecure-port --kubelet-https
+    --runtime-config --secure-port --service-cluster-ip-range
+    --service-node-port-range --token-auth-file"
+
+    if [[ ${cur} == -* ]]; then
+        # shellcheck disable=SC2207,SC2086
+        COMPREPLY=( $( compgen -W "${opts}" -- ${cur} ) )
+        return 0
+    fi
+}
+
+complete -F _kube_apiserver_completion kube-apiserver
