@@ -1,0 +1,60 @@
+---
+- name: Install and configure kube-apiserver
+  hosts: kcp
+  remote_user: duchess
+  vars:
+    etcd_servers: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37623431303066393537303132666461396666633965306561333238323066396530633931643939
+          3431306363636234376430363934666333333239326664650a306230323363666366383461353833
+          63636434623337663436316631613961656232396261316233376132383630613862306234616566
+          6663353561353362390a316163376337306234313364383634333637343365373831343730643462
+          63623764613033356434356262313235623563326532383662643638636461303231
+    sa_issuer: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          65363863663033613833383533333832623031303236326433393966633466343366303439393539
+          6431323365353864313434356237373463353934326464380a633037633565373337363130333265
+          63373762643862666536636363373736666363306330393532623038393336663831316530303632
+          3066373265643932360a666132356432643330323839333864393665333465316365336166623161
+          33396538666562353866613133633337613032356231306630393563623232343238383464313139
+          6130623663663130616566373664633833633830663336353961
+  tasks:
+    - name: Install kube-apiserver
+      ansible.builtin.command:
+        cmd: 'yay -Syuu kube-apiserver --noconfirm'
+        creates: /usr/bin/kube-apiserver
+    - name: Ensure kube group
+      ansible.builtin.group:
+        name: kube
+        state: present
+      become: true
+    - name: Template kapi.sh
+      ansible.builtin.template:
+        src: kapi.sh
+        dest: /usr/sbin/kapi.sh
+        owner: root
+        group: kube
+        mode: 'u+rwx,g+rwx'
+      become: true
+    - name: Make working directory
+      ansible.builtin.file:
+        state: directory
+        owner: root
+        group: kube
+        dest: /usr/share/kubernetes
+        mode: 'u+rwx,g+rwx'
+      become: true
+    - name: Template systemd service
+      ansible.builtin.template:
+        src: kube-apiserver.service
+        dest: /usr/lib/systemd/system/kube-apiserver.service
+        owner: root
+        group: kube
+        mode: 'u+rw,g+rw'
+      become: true
+    - name: Start and enable kube-apiserver
+      ansible.builtin.service:
+        name: kube-apiserver
+        state: started
+        enabled: true
+      become: true

@@ -1,0 +1,142 @@
+digraph ad {
+    label="AD Services"
+    fontname=monospace
+    fontsize="48pt"
+    edge [
+        penwidth="10pt"
+    ]
+    node [
+        color=lightblue
+        fontsize="36pt"
+        margin="1pt"
+        shape=rectangle
+        style=filled
+    ]
+
+    subgraph cluster_ad {
+        label="AD DC hosts";
+        node [
+            color=navy
+            fontcolor=white
+            fontsize="48pt"
+            margin="0.5pt"
+        ]
+        dc01_bh_int_loc [
+            label=<<table border="0px">
+                <tr><td colspand="4">Domain Controller 1</td></tr>
+                <tr><td>service</td><td>network</td><td>host</td><td>broadcast</td></tr>
+                <tr><td>ns</td><td>172.16.0.8/29</td><td>172.16.0.9/32</td><td>172.16.0.15/32</tr>
+            </table>>
+        ];
+        subgraph cluster_ad01 {
+            label="AD DC 1"
+            node [
+                color=darkslategray
+            ]
+            kdc01 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>kerberos</td><td>kdc01</td><td>172.16.0.10/32</td></tr>
+                </table>>
+                shape=house
+            ]
+            kw01 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>ns</td><td>kw01</td><td>172.16.0.11/32</td></tr>
+                </table>>
+                shape=rectangle
+            ]
+            ldap01 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>dns</td><td>ldap01</td><td>172.16.0.12/32</td></tr>
+                </table>>
+                shape=triangle
+            ]
+            ns01 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>dns</td><td>ns01</td><td>172.16.0.13/32</td></tr>
+                </table>>
+                shape=rectangle
+            ]
+        }
+        dc02_bh_int_loc [
+            label=<<table border="0px">
+                <tr><td colspand="4">Domain Controller 2</td></tr>
+                <tr><td>service</td><td>cidr</td><td>ip</td><td>broadcast</td></tr>
+                <tr><td>dc02</td><td>172.16.0.16/29</td><td>172.16.0.17/32</td><td>172.16.0.23/32</td></tr>
+            </table>>
+        ];
+        subgraph cluster_ad02 {
+            label="AD DC 2"
+            node [
+                color=darkslategray
+            ]
+            kdc02 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>kerberos</td><td>kdc02</td><td>172.16.0.18/32</td></tr>
+                </table>>
+                shape=house
+            ]
+            kw02 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>kubernetes worker</td><td>kw02</td><td>172.16.0.19/32</td></tr>
+                </table>>
+                shape=parallellogram
+            ]
+            ldap02 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>ldap</td><td>ldap02</td><td>172.16.0.20/32</td></tr>
+                </table>>
+                shape=triangle
+            ]
+            ns02 [
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>dns</td><td>ns02</td><td>172.16.0.21/32</td></tr>
+                </table>>
+                shape=rectangle
+            ];
+        }
+        dc01_bh_int_loc -> dc02_bh_int_loc;
+        dc02_bh_int_loc -> dc01_bh_int_loc;
+        subgraph cluster_dm01 {
+            label="AD DM 1"
+            dm01 [
+                color=cornflowerblue
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>dns</td><td>dc02</td><td>172.16.0.34/32</td></tr>
+                </table>>
+                shape=square
+            ]
+        }
+        subgraph cluster_dm02 {
+            label="AD DM 02"
+            dm02 [
+                color=cornflowerblue
+                label=<<table border="0px">
+                    <tr><td>service</td><td>host</td><td>ip</td></tr>
+                    <tr><td>dns</td><td>dc02</td><td>172.16.0.34/32</td></tr>
+                </table>>
+                shape=square
+            ]
+        }
+
+    }
+    dc01_bh_int_loc -> dc01 [ltail="cluster_ad01"];
+    dc01 -> kdc01;
+    dc01 -> ldap01;
+    dc01 -> dm01 [lhead="cluster_ad01"];
+    dc01 -> dm02 [lhead="cluster_ad01"];
+    dc02_bh_int_loc -> dc02 [ltail="cluster_ad02"];
+    dc02 -> kdc02;
+    dc02 -> ldap02;
+    dc02 -> dm01 [lhead="cluster_ad02"];
+    dc02 -> dm02 [lhead="cluster_ad02"];
+}
