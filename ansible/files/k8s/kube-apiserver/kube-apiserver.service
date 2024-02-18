@@ -1,0 +1,14 @@
+[Unit]
+Description=Kubernetes API server
+Requires=network.target
+After=network.target etcd.service dex.service
+
+[Service]
+ExecStart=/usr/bin/kube-apiserver --bind-address 0.0.0.0 --enable-bootstrap-token-auth --service-cluster-ip-range 10.0.0.0/12 --authorization-mode RBAC --etcd-cafile='/etc/etcd/pki/ca.crt' --etcd-certfile='/etc/etcd/pki/server.crt' --etcd-keyfile='/etc/etcd/pki/server.key' --etcd-servers '{{ etcd_servers }}' --service-account-issuer '{{ sa_issuer }}' --service-account-signing-key-file=/etc/dex/ca-key.pem --service-account-key-file=/etc/dex/key.pem
+WorkingDirectory=/usr/share/kubernetes
+User=root
+Group=kube
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

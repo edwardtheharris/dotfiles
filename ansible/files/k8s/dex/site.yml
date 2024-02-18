@@ -1,0 +1,42 @@
+- name: Install dex
+  hosts: kcp
+  remote_user: duchess
+  tasks:
+    - name: Install dex
+      ansible.builtin.shell:
+        cmd: 'yay -Syyu dex-idp --noconfirm'
+        creates: /usr/bin/dex
+    - name: Copy dex config
+      ansible.builtin.template:
+        dest: /etc/dex.yaml
+        group: dex
+        mode: 'u+rw,g+rw,o-rwx'
+        owner: root
+        src: dex.yaml
+      become: true
+- name: Update Active Directory
+  hosts: dc
+  remote_user: duchess
+  tasks:
+    - name: Configure DNS A
+      ansible.builtin.shell:
+        cmd: >-
+          samba-tool dns add {{ smb_dns_server }} {{ smb_dns_fzone }} dex A {{ dex_ip_addr }} -A ~/.ansible/secret-auth > ~/.ansible/smb-zones/dex.int.bh.loc.zone
+        creates: ~/.ansible/smb-zones/dex.int.bh.loc.zone
+      tags:
+        - dex_dns
+    - name: Configure DNS PTR 24
+      ansible.builtin.shell:
+        cmd: >-
+          samba-tool dns add {{ smb_dns_server }} {{ smb_dns_rzone_24 }} {{ dex_name_24 }} PTR dex.{{ smb_dns_fzone }} -A ~/.ansible/secret-auth > ~/.ansible/smb-zones/1.168.192.in-addr.arpa.zone
+        creates: ~/.ansible/smb-zones/1.168.192.in-addr.arpa.zone
+      tags:
+        - dex_dns
+    - name: Configure DNS PTR 16
+      ansible.builtin.shell:
+        cmd: >-
+          samba-tool dns add {{ smb_dns_server }} {{ smb_dns_rzone_16 }} {{ dex_name_16 }} PTR dex.{{ smb_dns_fzone }} -A ~/.ansible/secret-auth > ~/.ansible/smb-zones/168.192.in-addr.arpa.zone
+        creates: ~/.ansible/smb-zones/168.192.in-addr.arpa.zone
+      tags:
+        - dex_dns
+# code filetype=ansible
