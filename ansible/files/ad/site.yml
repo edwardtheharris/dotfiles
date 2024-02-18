@@ -9,12 +9,21 @@
         state: present
       become: true
       loop:
+        - avahi
         - krb5
         - ntp
         - python-dnspython
         - python-markdown
         - openresolv
         - samba
+    - name: Copy samba-tool completion file
+      ansible.builtin.copy:
+        src: samba/conf/samba-tool.completion
+        dest: /usr/share/bash-completion/completions/samba-tool
+        group: root
+        owner: root
+        mode: 'u+rw,g+r,o+r'
+      become: true
     - name: Copy the ntp.conf file
       ansible.builtin.copy:
         src: samba/ntp.conf
@@ -60,5 +69,5 @@
       ansible.builtin.user:
         name: duchess
         append: true
-        groups: sambashare
+        groups: sambashare,adm,log,systemd-journal,avahi,systemd-journal-remote
       become: true
