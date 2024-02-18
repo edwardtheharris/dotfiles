@@ -1,0 +1,45 @@
+---
+- name: Install and configure etcd
+  hosts: kcp
+  remote_user: duchess
+  tasks:
+    - name: Install etcd
+      ansible.builtin.shell:
+        cmd: 'yay -Syuu etcd etcdadm --noconfirm'
+        creates: /etc/bin/etcd
+    - name: Template init script
+      ansible.builtin.template:
+        src: etcd-init.j2
+        dest: /usr/sbin/etcd-init.sh
+        owner: root
+        group: etcd
+        mode: 'u+rwx,g+rwx'
+      become: true
+      vars:
+        etcd_name: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          35326239643035303530363563343836633137386463363337653339333961616663353238363932
+          3237343933353661633665643762313666656261623531630a616539633330396137656366373233
+          61333738313361383737383764353261333565643439656130656637393962366362386433363964
+          6165343835313835390a386539363738613239653833333062366337343238613037313034343661
+          6266
+        extra_sans: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          35613161376438336330613130343530396461663130363039366435323166656535393337393637
+          6232646163646163336134343861376639633137393163350a623265663963643037303833333338
+          63656533663639626564346436663165633961663334643832336635663163393230643839643338
+          3130666131666237390a373133373730623763306636646333666437343635363663343265386264
+          36316539353666343937303137386265343132623430343564336262356466316236303961616561
+          37613239316233663732633232343832386562333633373938323232313562646162353135336230
+          353936313236326166636131323232653030
+    - name: Initialize etcd
+      ansible.builtin.shell:
+        cmd: '/usr/sbin/etc-init.sh'
+        creates: '/etc/etcd/pki/ca.crt'
+      become: true
+    - name: Start and enable etcd
+      ansible.builtin.service:
+        name: etcd
+        state: started
+        enabled: true
+      become: true

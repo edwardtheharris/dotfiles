@@ -1,0 +1,25 @@
+- name: Install yay package manager
+  hosts: gw
+  remote_user: duchess
+  tasks:
+    - name: Install base-devel
+      community.general.pacman:
+        upgrade: true
+        update_cache: true
+      become: true
+    - name: Install base-devel
+      community.general.pacman:
+        name: base-devel
+        update_cache: true
+      become: true
+    - name: Clone the Yay repository
+      ansible.builtin.git:
+        accept_hostkey: true
+        clone: true
+        dest: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
+        repo: https://aur.archlinux.org/yay-bin.git # noqa: latest
+    - name: Install the Yay package
+      ansible.builtin.command:
+        chdir: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
+        cmd: makepkg -si
+        creates: /usr/bin/yay

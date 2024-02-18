@@ -1,0 +1,214 @@
+digraph bh {
+    compound=true
+    fontcolor="#fff"
+    fontname=monospace
+    fontsize="96pt"
+    label="bh.loc"
+    rankdir="TB"
+    ranksep="4.0"
+    node [
+        fontname=monospace
+        fontsize="72pt"
+        fixedsize=false
+        imagescale=true
+        margin="1pt"
+    ];
+    edge [
+        dir=both
+        fontname=monospace
+        fontsize="36pt"
+        penwidth="8pt"
+    ];
+
+    subgraph cluster_gw {
+        label="ext.bh.loc";
+
+        ext_gw [
+            color="#ff0000"
+            label=<<table border="0px">
+            <tr><td>gw</td><td>net</td></tr>
+            <tr><td>192.168.1.1/32</td><td>ext</td></tr>
+            </table>>
+            shape=diamond
+            style=filled
+        ];
+
+        subgraph cluster_gw_ints {
+            label="int.bh.loc"
+            edge [fontsize="36pt"];
+            node [
+                margin="0.1pt"
+                shape=circle
+                style=filled
+            ]
+            gw [
+                color="#9696ff"
+                label=<<table border="1px" bgcolor="#969696">
+                <tr><td><b>gateway</b></td></tr></table>>
+            ];
+            gw_ext [
+                color="#9900ff"
+                label=<<table border="1px" bgcolor="#969696">
+                <tr><td>ip</td><td>net</td></tr>
+                <tr><td>192.168.1.20/32</td><td>ext</td></tr>
+                </table>>
+            ];
+            gw_int [
+                color="#0096ff"
+                label=<<table border="1px" bgcolor="#969696">
+                <tr><td>ip</td><td>net</td><td>subnet</td></tr>
+                <tr><td>172.16.0.1/24</td><td>int</td><td>172.16.0.0/24</td></tr>
+                </table>>
+            ];
+            gw_wifi [
+                color="#000"
+                label=<<table border="1px" bgcolor="#969696">
+                <tr><td>wifi</td></tr>
+                <tr><td>disabled</td></tr>
+                </table>>
+            ];
+            gw -> gw_ext;
+            gw -> gw_int;
+            gw -> gw_wifi;
+        }
+        ext_gw -> gw_ext [minlen="1pt"];
+
+        subgraph cluster_ad {
+            fillcolor="#999999"
+            label="Active Directory Cluster"
+            labelloc=t
+            style="filled"
+            node [
+                color=lightblue
+                style=filled
+            ];
+            subgraph cluster_dcs {
+                label="Domain Controllers"
+                node [
+                    color=darkblue
+                    fontcolor=white
+                    fontsize="72pt"
+                    margin="0.1"
+                    shape=circle
+                ]
+                dc1 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Domain Controller 1</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>dc1.int.bh.loc</td><td>172.16.0.10</td></tr>
+                        </table>>
+                ];
+                dc2 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Domain Controller 2</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>dc2.int.bh.loc</td><td>172.16.0.20</td></tr>
+                        </table>>
+                ];
+            }
+            dc1 -> dc2;
+            subgraph cluster_dms {
+                label="Domain Members"
+                edge [
+                    penwidth="10pt"
+                ]
+                node [
+                    margin="1pt"
+                    shape=square
+                ]
+                dm1 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Domain Member 1</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>dm1.int.bh.loc</td><td>172.16.0.15</td></tr>
+                        </table>>
+                ];
+                dm2 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Domain Member 2</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>dm2.int.bh.loc</td><td>172.16.0.25</td></tr>
+                        </table>>
+                ];
+            }
+        }
+
+        gw_int -> dc1 [lhead="cluster_ad"];
+        gw_int -> dc1;
+        gw_int -> dc2;
+        gw_int -> dm1;
+        gw_int -> dm2;
+        dc1 -> dm1;
+        dc1 -> dm2;
+        dc2 -> dm1;
+        dc2 -> dm2;
+
+        subgraph cluster_k8s {
+            concentrate=true
+            label="Kubernetes Cluster"
+            labelloc=t
+            style="filled"
+            fillcolor="#999999"
+            node [
+                color=blue
+                fontcolor=white
+                style=filled
+                shape=parallelogram
+            ];
+            subgraph cluster_cp {
+                label="Control Planes"
+                rank="min"
+                kcp1 [
+                    label=<<table border="0px">
+                        <tr><td>Control Plane 1</td></tr>
+                        <tr><td>hostname</td><td></td></tr>
+                        <tr><td>kcp1.int.bh.loc</td><td>172.16.0.30</td></tr>
+                        </table>>
+                ];
+                kcp2 [
+                    label=<<table border="0px">
+                        <tr><td>Control Plane 2</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>kcp2.int.bh.loc</td><td>172.16.0.40</td></tr>
+                        </table>>
+                ];
+            }
+            subgraph cluster_wk {
+                label="Worker Nodes"
+                node[
+                    color=skyblue
+                    fontsize="72pt"
+                    margin="1pt"
+                    style=filled
+                    shape=rectangle
+                ]
+                kw1 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Worker Node 1</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>kw1.int.bh.loc</td><td>172.16.0.35</td></tr>
+                        </table>>
+                ];
+                kw2 [
+                    label=<<table border="0px">
+                        <tr><td colspan="2">Worker Node 2</td></tr>
+                        <tr><td>hostname</td><td>ip</td></tr>
+                        <tr><td>kw2.int.bh.loc</td><td>172.16.0.45</td></tr>
+                        </table>>
+                ];
+            }
+        }
+
+        gw_int -> kw2 [lhead="cluster_k8s"];
+        gw_int -> kcp1;
+        gw_int -> kcp2;
+        gw_int -> kw1;
+        gw_int -> kw2;
+        kcp1 -> kw1;
+        kcp2 -> kw1;
+        kcp1 -> kw2;
+        kcp2 -> kw2;
+
+
+    }
+}

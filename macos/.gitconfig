@@ -1,0 +1,14 @@
+[user]
+	name = Xander Harris
+	username = edwardtheharris
+	email = xandertheharris@gmail.com
+	signingkey = BF259C7B7F846848
+[merge]
+	ff = yes
+	commit = no
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[pull]
+	ff = only

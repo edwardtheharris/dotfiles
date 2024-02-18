@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="markdownlint-cli2-formatter-junit" time="0" tests="15" failures="15" errors="0" skipped="0">
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 15, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 17, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 19, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 21, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 23, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 25, Column 1, Context: "https://github.com/akinomyoga/..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 27, Column 1, Context: "https://man.archlinux.org/man/..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 29, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 31, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 33, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 35, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 37, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 39, Column 1, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-from-usb.md" name="MD012/no-multiple-blanks" time="0">
+      <failure message="Multiple consecutive blank lines"><![CDATA[Line 41, Expected: 1; Actual: 2]]></failure>
+    </testcase>
+    <testcase classname="ansible/files/arch/install-to-usb.md" name="MD034/no-bare-urls" time="0">
+      <failure message="Bare URL used"><![CDATA[Line 32, Column 3, Context: "https://wiki.archlinux.org/tit..."]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
