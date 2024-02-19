@@ -1,24 +1,47 @@
 #!/bin/bash
 
-# Bash completion script for kube-apiserver v1.29.1
+# Bash completion script for kube-apiserver v1.29
 
 _kube_apiserver_completion() {
     # shellcheck disable=SC2034
-    local cur prev words cword
-    _init_completion || return
+    local cur prev words cword opts
+    _init_completion -n = || return
 
-    # The basic command-line options for kube-apiserver v1.29.1
-    # Replace or extend the opts variable based on `kube-apiserver --help`
-    local opts="--advertise-address --allow-privileged --anonymous-auth
-    --api-audiences --authorization-mode --bind-address --cert-dir
-    --client-ca-file --enable-aggregator-routing --enable-bootstrap-token-auth
-    --etcd-servers --insecure-bind-address --insecure-port --kubelet-https
-    --runtime-config --secure-port --service-cluster-ip-range
-    --service-node-port-range --token-auth-file"
+    # Define a list of kube-apiserver command-line options
+    # This is a simplified subset; review kube-apiserver --help for a full list
+    opts="
+        --advertise-address
+        --allow-privileged
+        --anonymous-auth
+        --api-audiences
+        --authorization-mode
+        --bind-address
+        --cert-dir
+        --client-ca-file
+        --enable-aggregator-routing
+        --enable-bootstrap-token-auth
+        --etcd-servers
+        --insecure-bind-address
+        --insecure-port
+        --kubelet-https
+        --runtime-config
+        --secure-port
+        --service-cluster-ip-range
+        --service-node-port-range
+        --token-auth-file
+        --allow-privileged
+        --audit-log-path
+        --authentication-token-webhook-config-file
+        --authorization-policy-file
+        --enable-admission-plugins
+        --disable-admission-plugins
+        --admission-control-config-file
+        --feature-gates
+    "
 
-    if [[ ${cur} == -* ]]; then
-        # shellcheck disable=SC2207,SC2086
-        COMPREPLY=( $( compgen -W "${opts}" -- ${cur} ) )
+    if [[ "${cur}" == -* ]]; then
+        # shellcheck disable=SC2207
+        COMPREPLY=( $(compgen -W "${opts}" -- "${cur}") )
         return 0
     fi
 }
