@@ -36,6 +36,8 @@ Because it's there.
 
 ```{toctree}
 etcd/index
+dex/index
+kube-apiserver/index
 ```
 
 ## Process

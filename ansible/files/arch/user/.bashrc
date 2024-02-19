@@ -20,7 +20,7 @@ export PATH
 
 if [ ! -f /usr/bin/yay ]; then
   cd || true
-  git clone https://aur.archlinux.org/yay.git Documents/src/aur.archlinux.org/yay
+  git clone https://aur.archlinux.org/yay.git Documents/src/aur.archlinux.org/yay 
   cd Documents/src/aur.archlinux.org/yay || true
   makepkg -si --noconfirm
 fi
