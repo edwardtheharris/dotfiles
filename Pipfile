@@ -4,25 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pipenv = "*"
 ansible = "*"
-paramiko = "*"
-sphinxcontrib-programoutput = "*"
-sphinx-press-theme = "*"
 myst-parser = {extras = ["linkify"], version = "*"}
-sphinxcontrib-autoyaml = "*"
-sphinx-last-updated-by-git = "*"
-sphinx-git = "*"
+paramiko = "*"
+pipenv = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
 sphinx-copybutton = "*"
-ansible-lint = "*"
+sphinx-git = "*"
+sphinx-last-updated-by-git = "*"
+sphinx-press-theme = "*"
+sphinxcontrib-autoyaml = "*"
+sphinxcontrib-programoutput = "*"
 
 [dev-packages]
 ansible-lint = "*"
-sphinx = "*"
-sphinx-autobuild = "*"
-sphinx-press-theme = "*"
-myst-parser = {extras = ["linkify"], version = "*"}
-sphinxcontrib-programoutput = "*"
 ipython = "*"
 
 [pipenv]
