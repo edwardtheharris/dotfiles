@@ -20,6 +20,8 @@ sphinxcontrib-programoutput = "*"
 [dev-packages]
 ansible-lint = "*"
 ipython = "*"
+pytest = "*"
+pytest-sphinx = "*"
 
 [pipenv]
 allow_prereleases = true

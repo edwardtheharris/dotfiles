@@ -14,7 +14,10 @@ title: >
 :glob:
 
 ansible/index
-tasks
+cicd
+license
+readme
+security
 ```
 
 ## Indices and tables
