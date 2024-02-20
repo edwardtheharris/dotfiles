@@ -14,7 +14,6 @@ title: >
 :glob:
 
 ansible/index
-tasks
 cicd
 license
 readme
