@@ -5,3 +5,5 @@ _build
 *cache*
 .vscode
 *secret*
+.venv/
+_build/
