@@ -41,14 +41,14 @@ def get_git_branch():
     """
     ret_value = subprocess.run(
         'git branch --show-current',
-        check=False, capture_output=True, shell=True, executable="/bin/bash")
+        check=False, capture_output=True, shell=False, executable="/bin/bash")
     return ret_value.stdout.decode().strip()
 
 def get_git_username():
     """Return the value of the git username from the configuration."""
     ret_value = subprocess.run(
         'git config --get user.username',
-        check=False, shell=True, capture_output=True, executable='/bin/bash'
+        check=False, shell=False, capture_output=True, executable='/bin/bash'
     )
     return ret_value.stdout.decode().strip()
 
