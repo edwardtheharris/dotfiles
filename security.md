@@ -10,6 +10,20 @@ title: Security Policy
 Find and use all of the automated security checks that are relevant and
 available to an open source repository.
 
+### Bandit
+
+Not much Python in here, but it's worth scanning anyway.
+
+```{autoyaml} .github/workflows/bandit.yml
+```
+
+### Scorecard
+
+FOSS is great when you're broke.
+
+```{autoyaml} .github/workflows/scorecard.yml
+```
+
 ## Reporting a Vulnerability
 
 No one should be using the code in this repository for anything, but if you
