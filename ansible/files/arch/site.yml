@@ -37,6 +37,7 @@
         - .profile
         - .vimrc
         - .wakatime.cfg
+      become: true
     - name: Copy the root dotfiles
       ansible.builtin.copy:
         src: "./root/{{ item }}"
@@ -51,3 +52,4 @@
         - .profile
         - .vimrc
         - .wakatime.cfg
+      become: true
