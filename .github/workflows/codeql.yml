@@ -14,7 +14,7 @@
 # supported CodeQL languages.
 # ```
 #
-# ```{literalinclude} ../.github/workflows/codeql.yml
+# ```{literalinclude} ./.github/workflows/codeql.yml
 # :caption: .github/workflows/codeql.yml#name
 # :language: yaml
 # :start-at: "name: CodeQL\n"
@@ -34,7 +34,7 @@ on:
 # ---
 # Define the jobs that run in the CodeQL workflow.
 #
-# ```{literalinclude} ../.github/workflows/codeql.yml
+# ```{literalinclude} ./.github/workflows/codeql.yml
 # :caption: .github/workflows/codeql.yml#jobs
 # :language: yaml
 # :start-at: "jobs:\n"
