@@ -2,7 +2,7 @@
   hosts: gw
   remote_user: duchess
   tasks:
-    - name: Install base-devel
+    - name: Update packages
       community.general.pacman:
         upgrade: true
         update_cache: true

@@ -1,5 +1,8 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " set the runtime path to include Vundle and initialize
 call plug#begin()
@@ -30,12 +33,10 @@ Plug 'vim-scripts/LanguageTool'
 Plug 'wakatime/vim-wakatime'
 Plug 'yasuhiroki/github-actions-yaml.vim'
 call plug#end()
-filetype plugin on
 
 " coc plugins, for reference
 " fannheyward/coc-markdownlint
 " gianarb/coc-grammarly
-
 
 syntax on
 set ts=2 sts=2 sw=2 et modeline number
@@ -65,6 +66,6 @@ au BufNewFile,BufRead *.service set sts=2 sw=2 ts=2 ft=systemd
 au BufNewFile,BufRead Jenkinsfile setf groovy
 au BufNewFile,BufRead accounts,journal,register,*.journal,*.ldg,*.ledger setf ledger | comp ledger
 au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
-au BufNewFile,BufRead openssl.cnf setf dosini
+au BufNewFile,BufRead openssl.cnf set ft=dosini
 au BufNewFile,BufRead *.zone setf bindzone
 au BufNewFile,BufRead named.conf setf named
