@@ -21,6 +21,8 @@
 # :end-before: "###\n"
 # ```
 name: CodeQL
+permissions:
+  contents: read
 on:
   push:
     branches: [ "main" ]
