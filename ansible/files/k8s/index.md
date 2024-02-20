@@ -38,6 +38,7 @@ Because it's there.
 etcd/index
 dex/index
 kube-apiserver/index
+kube-controller-manager/index
 ```
 
 ## Process
