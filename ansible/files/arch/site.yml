@@ -1,8 +1,8 @@
 - name: Install yay package manager
-  hosts: gw
+  hosts: all
   remote_user: duchess
   tasks:
-    - name: Install base-devel
+    - name: Update packages
       community.general.pacman:
         upgrade: true
         update_cache: true
@@ -23,3 +23,33 @@
         chdir: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
         cmd: makepkg -si
         creates: /usr/bin/yay
+    - name: Copy the user dotfiles
+      ansible.builtin.copy:
+        src: "./user/{{ item }}"
+        dest: "/home/duchess/{{ item }}"
+        owner: duchess
+        group: users
+        mode: 'u+rw'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .profile
+        - .vimrc
+        - .wakatime.cfg
+      become: true
+    - name: Copy the root dotfiles
+      ansible.builtin.copy:
+        src: "./root/{{ item }}"
+        dest: "/root/{{ item }}"
+        owner: root
+        group: root
+        mode: 'u+rw'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .profile
+        - .vimrc
+        - .wakatime.cfg
+      become: true
