@@ -29,11 +29,6 @@ FOSS is great when you're broke.
 ```{autoyaml} .github/workflows/ossar.yml
 ```
 
-### PYSA
-
-```{autoyaml} .github/workflows/pysa.yml
-```
-
 ## Reporting a Vulnerability
 
 No one should be using the code in this repository for anything, but if you
