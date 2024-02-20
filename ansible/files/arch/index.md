@@ -423,5 +423,23 @@ genfstab -U /mnt >> /mnt/etc/fstab
 - [cli](https://wiki.archlinux.org/title/Bash#Command_line)
 - [shell](https://wiki.archlinux.org/title/Command-line_shell)
 - [General Recommendations](https://wiki.archlinux.org/title/General_recommendations#Tab-completion_enhancements)
-- [UEFI](https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#UEFI_further_reading)
+- [UEFI](https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#UEFI_further_reading)s
 - [Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
+
+### Automate {file}`.vimrc` installs
+
+```{note}
+The source of this code is
+[this](https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
+bit of the very thorough VIM Plug documentation.
+```
+
+```{code-block} vim
+:caption: .vimrc
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+```
