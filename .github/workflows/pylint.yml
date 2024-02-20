@@ -1,0 +1,50 @@
+###
+# ```{rubric} PyLint
+# ```
+# ---
+# For most Python projects PyLint is sufficient for ensuring legible code of
+# decent quality.
+#
+# ```{literalinclude} ./.github/workflows/pylint.yml
+# :caption: .github/workflows/pylint.yml#name
+# :language: yaml
+# :start-at: "name: PyLint\n"
+# :end-before: "###\n"
+# ```
+name: PyLint
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+###
+# ```{rubric} PyLint Jobs
+# ```
+# ---
+# Define the jobs that run in the PyLint workflow. Might like to add some
+# reporting to the PR on the results from these at some point.
+#
+# ```{literalinclude} ./.github/workflows/pylint.yml
+# :caption: .github/workflows/pylint.yml#jobs
+# :language: yaml
+# :start-at: "jobs:\n"
+# ```
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+    steps:
+    - uses: actions/checkout@main
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@main
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+    - name: Analysing the code with pylint
+      run: |
+        pylint $(git ls-files '*.py')
