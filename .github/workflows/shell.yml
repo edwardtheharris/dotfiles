@@ -12,6 +12,8 @@
 # :end-before: "###\n"
 # ```
 name: ShellCheck
+permissions:
+  contents: read
 on:
   push:
     branches:
