@@ -24,6 +24,11 @@ FOSS is great when you're broke.
 ```{autoyaml} .github/workflows/scorecard.yml
 ```
 
+### OSSAR
+
+```{autoyaml} .github/workflows/ossar.yml
+```
+
 ## Reporting a Vulnerability
 
 No one should be using the code in this repository for anything, but if you
