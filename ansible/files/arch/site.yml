@@ -1,5 +1,5 @@
 - name: Install yay package manager
-  hosts: gw
+  hosts: all
   remote_user: duchess
   tasks:
     - name: Update packages
@@ -34,5 +34,20 @@
         - .bash_profile
         - .bashrc
         - .gitconfig
+        - .profile
+        - .vimrc
+        - .wakatime.cfg
+    - name: Copy the root dotfiles
+      ansible.builtin.copy:
+        src: "./root/{{ item }}"
+        dest: "/root/{{ item }}"
+        owner: root
+        group: root
+        mode: 'u+rw'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .profile
         - .vimrc
         - .wakatime.cfg
