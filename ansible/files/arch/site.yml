@@ -23,3 +23,16 @@
         chdir: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
         cmd: makepkg -si
         creates: /usr/bin/yay
+    - name: Copy the user dotfiles
+      ansible.builtin.copy:
+        src: "./user/{{ item }}"
+        dest: "/home/duchess/{{ item }}"
+        owner: duchess
+        group: users
+        mode: 'u+rw'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .vimrc
+        - .wakatime.cfg
