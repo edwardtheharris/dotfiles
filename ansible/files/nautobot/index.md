@@ -36,6 +36,21 @@ we can use it to install the required version of PostgreSQL 13.
 yay -Syu --noconfirm postgresql13 postgresql13-docs postgresql13-lib
 ```
 
+#### Initialize the data directory
+
+If your data directory is empty, you'll need to initialize.
+
+```{code-block} shell
+sudo -u postgres -c "initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'"
+```
+
+#### Start and Enable PostgreSQL
+
+```{code-block} shell
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
 ### Redis 6
 
 This is also a little behind the latest version, so we'll need to go

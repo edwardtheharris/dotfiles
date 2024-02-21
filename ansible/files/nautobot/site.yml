@@ -10,6 +10,7 @@
         - postgresql13-docs
         - postgresql13-lib
         - postgresql13
+        - python-psycopg2
     - name: Ensure user groups
       ansible.builtin.user:
         name: "{{ item }}"
@@ -39,6 +40,20 @@
         state: restarted
         enabled: true
       become: true
+    - name: Add a user for nautobot
+      community.postgresql.postgresql_user:
+        name: nautobot
+        state: present
+        password: "{{ pgsql_password }}"
+      become: true
+      become_user: postgres
+    - name: Add a database for nautobot
+      community.postgresql.postgresql_db:
+        name: nautobot
+        login_user: postgres
+        state: present
+      become: true
+      become_user: postgres
 - name: Install and start Redis
   hosts: np
   remote_user: duchess
