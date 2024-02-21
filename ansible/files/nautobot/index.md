@@ -36,5 +36,14 @@ we can use it to install the required version of PostgreSQL 13.
 yay -Syu --noconfirm postgresql13 postgresql13-docs postgresql13-lib
 ```
 
+### Redis 6
+
+This is also a little behind the latest version, so we'll need to go
+to the [AUR](https://aur.archlinux.org/packages/redis6) for the package.
+
+```{code-block} shell
+yay -Syu --noconfirm redis6
+```
+
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
 ```

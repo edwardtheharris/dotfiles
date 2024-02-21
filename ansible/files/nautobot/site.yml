@@ -1,4 +1,4 @@
-- name: Install nautobot and requirements
+- name: Install and start PostgreSQL
   hosts: np
   remote_user: duchess
   tasks:
@@ -7,13 +7,56 @@
         cmd: "yay -Syyu {{ item }} --noconfirm"
         creates: /usr/bin/psql
       loop:
-        - postgresql13
         - postgresql13-docs
         - postgresql13-lib
+        - postgresql13
     - name: Ensure user groups
       ansible.builtin.user:
         name: "{{ item }}"
         groups: postgres
+        append: true
+      become: true
+      loop:
+        - root
+        - duchess
+    - name: Verify permissions
+      ansible.builtin.file:
+        path: /var/lib/postgres
+        state: directory
+        recurse: true
+        owner: postgres
+        group: postgres
+      become: true
+    - name: Initialize data directory
+      ansible.builtin.command:
+        cmd: >-
+          su - postgres -c "initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'"
+        creates: /var/lib/postgres/data/postgresql.conf
+      become: true
+    - name: Start and enable Postgres
+      ansible.builtin.service:
+        name: postgresql
+        state: restarted
+        enabled: true
+      become: true
+- name: Install and start Redis
+  hosts: np
+  remote_user: duchess
+  tasks:
+    - name: Install Redis 6
+      ansible.builtin.command:
+        cmd: "yay -Syyu --noconfirm redis6"
+        creates: /usr/lib/systemd/system/redis6.service
+    - name: Start and enable Redis
+      ansible.builtin.service:
+        name: redis6
+        state: restarted
+        enabled: true
+      become: true
+    - name: Ensure user groups
+      ansible.builtin.user:
+        name: "{{ item }}"
+        groups: redis
         append: true
       become: true
       loop:
