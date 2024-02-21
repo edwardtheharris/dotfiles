@@ -7,10 +7,19 @@
         upgrade: true
         update_cache: true
       become: true
-    - name: Install base-devel
+    - name: Install packages
       community.general.pacman:
-        name: base-devel
+        name: "{{ item }}"
         update_cache: true
+      become: true
+      loop:
+        - base-devel
+        - netdata
+    - name: Enable and start netdata
+      ansible.builtin.service:
+        name: netdata
+        state: restarted
+        enabled: true
       become: true
     - name: Clone the Yay repository
       ansible.builtin.git:
@@ -53,3 +62,4 @@
         - .vimrc
         - .wakatime.cfg
       become: true
+
