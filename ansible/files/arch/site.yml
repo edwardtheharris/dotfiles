@@ -16,11 +16,11 @@
       ansible.builtin.git:
         accept_hostkey: true
         clone: true
-        dest: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
-        repo: https://aur.archlinux.org/yay-bin.git # noqa: latest
+        dest: /home/duchess/Documents/src/aur.archlinux.org/yay
+        repo: https://aur.archlinux.org/yay.git # noqa: latest
     - name: Install the Yay package
       ansible.builtin.command:
-        chdir: /home/duchess/Documents/src/aur.archlinux.org/yay-bin
+        chdir: /home/duchess/Documents/src/aur.archlinux.org/yay
         cmd: makepkg -si
         creates: /usr/bin/yay
     - name: Copy the user dotfiles

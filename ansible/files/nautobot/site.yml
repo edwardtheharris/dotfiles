@@ -1,0 +1,21 @@
+- name: Install nautobot and requirements
+  hosts: np
+  remote_user: duchess
+  tasks:
+    - name: Ensure user groups
+      ansible.builtin.user:
+        name: "{{ item }}"
+        groups: network
+        append: true
+      become: true
+      loop:
+        - root
+        - duchess
+    - name: Install PostgreSQL 13
+      ansible.builtin.command:
+        cmd: "yay -Syyu {{ item }} --noconfirm"
+        creates: /usr/bin/psql
+      loop:
+        - postgresql13
+        - postgresql13-docs
+        - postgresql13-lib
