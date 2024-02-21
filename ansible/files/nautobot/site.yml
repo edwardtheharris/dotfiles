@@ -52,8 +52,11 @@
         name: nautobot
         login_user: postgres
         state: present
+        owner: nautobot
       become: true
       become_user: postgres
+      tags:
+        - db
 - name: Install and start Redis
   hosts: np
   remote_user: duchess
@@ -62,12 +65,31 @@
       ansible.builtin.command:
         cmd: "yay -Syyu --noconfirm redis6"
         creates: /usr/lib/systemd/system/redis6.service
+    - name: Link files
+      ansible.builtin.file:
+        src: "/usr/bin/{{ item.src }}"
+        dest: "/usr/bin/{{ item.dest }}"
+        state: link
+      become: true
+      loop:
+        - src: "redis{6}-benchmark"
+          dest: "redis6-benchmark"
+        - src: "redis{6}-cli"
+          dest: "redis6-cli"
+        - src: "redis{6}-server"
+          dest: "redis6-server"
+        - src: "redis{6}-server"
+          dest: "redis-server"
+      tags:
+        - redis
     - name: Start and enable Redis
       ansible.builtin.service:
         name: redis6
         state: restarted
         enabled: true
       become: true
+      tags:
+        - redis
     - name: Ensure user groups
       ansible.builtin.user:
         name: "{{ item }}"
