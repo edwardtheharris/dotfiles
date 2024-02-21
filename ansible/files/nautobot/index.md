@@ -33,7 +33,7 @@ Since we've installed [yay](https://aur.archlinux.org/packages/yay) already
 we can use it to install the required version of PostgreSQL 13.
 
 ```{code-block} shell
-yay -Syu --noconfirm postgresql13 postgresql13-docs postgresql13-lib
+yay -Syu --noconfirm postgresql13 postgresql13-docs postgresql13-lib python python-pip python-psycopg2
 ```
 
 #### Initialize the data directory
@@ -58,6 +58,17 @@ to the [AUR](https://aur.archlinux.org/packages/redis6) for the package.
 
 ```{code-block} shell
 yay -Syu --noconfirm redis6
+```
+
+#### Link odd files
+
+Not sure why the files are named this way, but some links will fix them.
+
+```{code-block} shell
+ln -sfv /usr/bin/redis\{6\}-benchmark /usr/bin/redis6-benchmark
+ln -sfv /usr/bin/redis\{6\}-cli /usr/bin/redis6-cli
+ln -sfv /usr/bin/redis\{6\}-server /usr/bin/redis6-server
+ln -sfv /usr/bin/redis\{6\}-server /usr/bin/redis-server
 ```
 
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
