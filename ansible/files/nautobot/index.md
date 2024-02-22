@@ -103,5 +103,12 @@ Now we need to make sure the root is owned by the `nautobot` user.
 sudo chown -Rv nautobot:nautobot /opt/nautobot
 ```
 
+### Init the server
+
+```{code-block} shell
+sudo -u nautobot nautobot-server init
+sudo -u nautobot cp /opt/nautobot/.nautobot/nautobot_config.py /opt/nautobot/nautobot_config.py
+```
+
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
 ```
