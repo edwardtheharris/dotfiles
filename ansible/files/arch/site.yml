@@ -66,3 +66,11 @@
         - .vimrc
         - .wakatime.cfg
       become: true
+    - name: Copy wifi backend config
+      ansible.builtin.copy:
+        src: "./conf/wifi_backend.conf"
+        dest: "/etc/NetworkManager/conf.d/wifi_backend.conf"
+        owner: root
+        group: network
+        mode: 'u+rw,g+rw'
+      become: true
