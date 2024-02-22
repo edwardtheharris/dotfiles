@@ -102,7 +102,7 @@
 - name: Install nautobot
   hosts: np
   remote_user: duchess
-  tags: nb
+  # tags: nb
   tasks:
     - name: Update git config
       community.general.git_config:
@@ -170,8 +170,29 @@
         group: nautobot
         mode: 'u+rw,g+rw'
       become: true
-    - name: Init nautobot db
-      ansible.builtin.command:
-        cmd: nautobot-server migrate
+    - name: Copy service files
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: "/usr/lib/systemd/system/{{ item }}"
+        owner: root
+        group: nautobot
+        mode: 'u+rw,g+r'
       become: true
-      become_user: nautobot
+      loop:
+        - nautobot.service
+        - nautobot-worker.service
+        - nautobot-scheduler.service
+      tags:
+        - service
+    - name: Start and enable services
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: restarted
+        enabled: true
+      become: true
+      loop:
+        - nautobot
+        - nautobot-worker
+        - nautobot-scheduler
+      tags:
+        - service
