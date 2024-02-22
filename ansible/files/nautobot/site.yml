@@ -99,3 +99,79 @@
       loop:
         - root
         - duchess
+- name: Install nautobot
+  hosts: np
+  remote_user: duchess
+  tags: nb
+  tasks:
+    - name: Update git config
+      community.general.git_config:
+        scope: system
+        add_mode: add
+        name: safe.directory
+        value: /opt/nautobot
+        state: present
+      become: true
+    - name: Clone nautobot repository
+      ansible.builtin.git:
+        repo: https://github.com/nautobot/nautobot.git
+        dest: /opt/nautobot
+        version: v2.1.5
+      become: true
+    - name: Add group
+      ansible.builtin.group:
+        name: nautobot
+        state: present
+      become: true
+    - name: Add user
+      ansible.builtin.user:
+        name: nautobot
+        group: nautobot
+        home: /opt/nautobot
+        shell: /bin/bash
+        system: true
+      become: true
+    - name: Copy nautobot profile setup
+      ansible.builtin.copy:
+        src: nautobot.sh
+        dest: /etc/profile.d/nautobot.sh
+        mode: 'u+rw,g+r,o+r'
+        owner: root
+        group: root
+      become: true
+    - name: Add a Python virtual environment
+      ansible.builtin.command:
+        cmd: /usr/bin/python3 -m venv /opt/nautobot
+        creates: /opt/nautobot/bin
+      become: true
+    - name: Fix nautobot root ownership
+      ansible.builtin.file:
+        path: /opt/nautobot
+        state: directory
+        owner: nautobot
+        group: nautobot
+        recurse: true
+      become: true
+    - name: Update venv
+      ansible.builtin.pip:
+        name: "{{ item }}"
+        virtualenv: /opt/nautobot
+        state: present
+      become: true
+      become_user: nautobot
+      loop:
+        - wheel
+        - nautobot
+    - name: Update server config
+      ansible.builtin.template:
+        src: nautobot_config.py
+        dest: /opt/nautobot/nautobot_config.py
+        owner: nautobot
+        group: nautobot
+        mode: 'u+rw,g+rw'
+      become: true
+    - name: Init nautobot db
+      ansible.builtin.command:
+        cmd: nautobot-server migrate
+      become: true
+      become_user: nautobot

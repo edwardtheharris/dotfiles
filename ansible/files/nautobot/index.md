@@ -71,5 +71,37 @@ ln -sfv /usr/bin/redis\{6\}-server /usr/bin/redis6-server
 ln -sfv /usr/bin/redis\{6\}-server /usr/bin/redis-server
 ```
 
+#### Start and enable Redis
+
+```{code-block} shell
+sudo systemctl start redis6
+sudo systemctl enable redis6
+```
+
+## Install nautobot
+
+The first step is to clone the GitHub repository into the new `NAUTOBOT_ROOT`,
+for our installation it will be {file}`/opt/nautobot`.
+
+```{code-block} shell
+sudo git clone https://github.com/nautobot/nautobot.git /opt/nautobot
+```
+
+### User, group, ownership
+
+We'll need a user and group to own the directory, so let's create them.
+
+```{code-block} shell
+sudo groupadd nautobot
+sudo useradd -s /bin/bash -m -d /opt/nautobot -g nautobot nautobot
+echo "export NAUTOBOT_ROOT=/opt/nautobot" > /etc/profile.d/nautobot.sh
+```
+
+Now we need to make sure the root is owned by the `nautobot` user.
+
+```{code-block} shell
+sudo chown -Rv nautobot:nautobot /opt/nautobot
+```
+
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
 ```

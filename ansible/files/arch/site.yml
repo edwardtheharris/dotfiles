@@ -14,7 +14,9 @@
       become: true
       loop:
         - base-devel
+        - bash-completion
         - netdata
+        - ncurses
         - python
         - python-pip
     - name: Enable and start netdata
