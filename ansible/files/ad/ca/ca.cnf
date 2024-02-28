@@ -1,0 +1,12 @@
+[ v3_ca ]
+
+subjectAltName=@alt_names
+
+[ alt_names ]
+DNS.1 = nd.dc01.socal.rr.com
+DNS.2 = ca.dc01.socal.rr.com
+DNS.3 = ns1.socal.rr.com
+DNS.4 = glances.socal.rr.com
+DNS.5 = dc01.socal.rr.com
+IP.1 = 192.168.1.50
+IP.2 = 192.168.1.51

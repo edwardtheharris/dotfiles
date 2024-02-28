@@ -1,0 +1,37 @@
+---
+- name: Copy root files
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/root/{{ item }}"
+    group: root
+    force: true
+    mode: >
+      0700
+    owner: "root"
+  loop:
+    - '.bash_profile'
+    - '.bashrc'
+    - '.gitconfig'
+    - '.vimrc'
+  become: true
+- name: Template wakatime config
+  ansible.builtin.template:
+    src: .wakatime.cfg.j2
+    dest: /root/.wakatime.cfg
+    owner: root
+    group: root
+    mode: "ug+rw"
+  become: true
+- name: Ensure git exists
+  community.general.pacman:
+    name: git
+    state: present
+  become: true
+- name: Add groups
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - ansible
+    - git
+  become: true

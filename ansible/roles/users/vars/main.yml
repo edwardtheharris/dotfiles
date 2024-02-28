@@ -1,0 +1,15 @@
+---
+users_list:
+  - user: alf
+    homedir: /home/alf
+  - user: duchess
+    homedir: /home/duchess
+  - user: skipper
+    homedir: /home/skipper
+  - user: snafu
+    homedir: /home/snafu
+users_files:
+  - .bash_profile
+  - .bashrc
+  - .gitconfig
+  - .vimrc

@@ -8,7 +8,7 @@ ad/index
 arch/index
 githooks/index
 k8s/index
-gw/index
+nautobot/index
 ```
 
 ## 2024-01-27
