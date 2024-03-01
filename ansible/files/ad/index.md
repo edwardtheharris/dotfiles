@@ -15,6 +15,7 @@ bare-metal Kubernetes cluster for which the `AD` `DC`s will act as
 worker nodes.
 
 ```{toctree}
+ca/index
 samba/index
 ```
 
