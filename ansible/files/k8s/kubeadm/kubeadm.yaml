@@ -1,32 +1,37 @@
+---
 apiVersion: kubeadm.k8s.io/v1beta3
-kind: ClusterConfiguration
-kubernetesVersion: stable
-controlPlaneEndpoint: "kcp01.socal.rr.com:6443"
-etcd:
-  external:
-    endpoints:
-    - https://192.168.1.50:2379
-    # - https://ETCD_1_IP:2379
-    # - https://ETCD_2_IP:2379
-    caFile: /etc/ssl/certs/kcp01.int.crt
-    certFile: /etc/kubernetes/pki/kubernetes.default.svc.crt
-    keyFile: /etc/kubernetes/pki/kubernetes.default.svc.key
-  managed: false
+bootstrapTokens:
+- groups:
+  - system:bootstrappers:kubeadm:default-node-token
+    token: GezNRsWao3cRCdffVUraLFH7RXbBwUQV
+  ttl: 24h0m0s
+  usages:
+  - signing
+  - authentication
+kind: InitConfiguration
+localAPIEndpoint:
+  advertiseAddress: 192.168.1.50
+  bindPort: 6443
+nodeRegistration:
+  criSocket: unix:///var/run/containerd/containerd.sock
+  imagePullPolicy: IfNotPresent
+  name: kcp01.socal.rr.com
+  taints: null
+---
 apiServer:
-  timeoutForControlPlane: "4m0s"
-controllerManager:
-  extraArgs:
-    allocate-node-cidrs: "true"
-dns:
-  type: CoreDNS
-etcdLocalDataDir: /var/lib/etcd
-# etcdImage: "k8s.gcr.io/etcd:3.5.0-0"
-etcdService:
-  type: External
-imageRepository: "k8s.gcr.io"
-kubeProxy:
-  config:
-    bindAddress: 0.0.0.0
-kubernetesAPIServerCertSANs:
-- 192.168.1.50
-kubernetesSkipTLSVerify: true
+  timeoutForControlPlane: 4m0s
+apiVersion: kubeadm.k8s.io/v1beta3
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+controllerManager: {}
+dns: {}
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+imageRepository: registry.k8s.io
+kind: ClusterConfiguration
+kubernetesVersion: 1.29.0
+networking:
+  dnsDomain: cluster.local
+  serviceSubnet: 10.96.0.0/12
+scheduler: {}

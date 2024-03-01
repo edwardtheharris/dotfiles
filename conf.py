@@ -24,11 +24,13 @@ exclude_patterns = [
     '_build',
     'Thumbs.db',
     '.DS_Store',
-    '.venv/*'
+    '.venv/*',
+    '.tmp/*',
     ]
 extensions = [
     'myst_parser',
     'sphinx_copybutton',
+    'sphinx_design',
     'sphinx_last_updated_by_git',
     'sphinx_git',
     'sphinx.ext.autodoc',

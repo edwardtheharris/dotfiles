@@ -16,6 +16,7 @@ sphinx-last-updated-by-git = "*"
 sphinx-press-theme = "*"
 sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
+sphinx-design = "*"
 
 [dev-packages]
 ansible-lint = "*"
