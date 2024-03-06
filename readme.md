@@ -9,8 +9,9 @@ title: dotfiles readme
 ---
 
 [![GitHub Pages Deployment](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/pages.yml?branch=main&style=flat&logo=github&label=GitHub%20Pages)](https://edwardtheharris.github.io/dotfiles/)
-&nbsp; [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/shellcheck.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=ShellCheck)](https://github.com/edwardtheharris/dotfiles/actions/workflows/shellcheck.yml)
+&nbsp; [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/shell.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=ShellCheck)](https://github.com/edwardtheharris/dotfiles/actions/workflows/shell.yml)
 [![wakatime](https://wakatime.com/badge/github/edwardtheharris/dotfiles.svg)](https://wakatime.com/badge/github/edwardtheharris/dotfiles)
+[![Coverage Status](https://coveralls.io/repos/github/edwardtheharris/dotfiles/badge.svg)](https://coveralls.io/github/edwardtheharris/dotfiles)
 
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
