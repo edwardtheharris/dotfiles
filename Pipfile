@@ -18,10 +18,14 @@ sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
 
 [dev-packages]
-ansible-lint = "*"
 ipython = "*"
 pytest = "*"
 pytest-sphinx = "*"
+pylint = "*"
+pytest-pylint = "*"
+gitpython = "*"
+loguru = "*"
+pytest-cov = "*"
 
 [pipenv]
 allow_prereleases = true
