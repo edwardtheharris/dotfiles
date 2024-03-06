@@ -18,7 +18,6 @@ sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
 
 [dev-packages]
-ansible-lint = "*"
 ipython = "*"
 pytest = "*"
 pytest-sphinx = "*"
