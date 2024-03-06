@@ -25,6 +25,18 @@ jobs:
         pipenv requirements --dev > reqs
         pip3 install -r reqs
         pytest --cov
-
     - name: Coveralls
       uses: coverallsapp/github-action@v2
+      with:
+        parallel: true
+        flag-name: run-${{ matrix.python-version }}
+
+  finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close parallel build
+        uses: coverallsapp/github-action@v1
+        with:
+            parallel-finished: true
+            carryforward: "run-3.8,run-3.9,run-3.10,run-3.11,run-3.12"
