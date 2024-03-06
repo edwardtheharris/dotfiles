@@ -52,7 +52,7 @@ def get_git_username():
     )
     return ret_value.stdout.decode().strip()
 
-def parse_branch_name(branch:str) -> {}:
+def parse_branch_name(branch:str) -> dict:
     """Use regex to pull the issue number from the branch name."""
     ret_value = {}
     regex_match = re.match('^([0-9]*)(.*)', branch)
@@ -97,9 +97,8 @@ def write_message():
     """Write the prepared commit message."""
     commit_msg = prepare_message()
     msg_file = Path('.git/COMMIT_EDITMSG')
-    if msg_file.exists():
-        with msg_file.open('a', encoding='utf-8') as msg_fh:
-            msg_fh.write(commit_msg)
+    with msg_file.open('w', encoding='utf-8') as msg_fh:
+        msg_fh.write(commit_msg)
     return commit_msg
 
 if __name__ == '__main__':
