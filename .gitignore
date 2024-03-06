@@ -7,3 +7,4 @@ _build
 *secret*
 .venv/
 _build/
+.tmp/
