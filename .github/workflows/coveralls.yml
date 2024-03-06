@@ -26,6 +26,7 @@ jobs:
         pip3 install -U pip pipenv
         pipenv requirements --dev > reqs
         pip3 install -r reqs
+        pytest --cov
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2
