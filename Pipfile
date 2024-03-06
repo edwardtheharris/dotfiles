@@ -24,6 +24,9 @@ pytest = "*"
 pytest-sphinx = "*"
 pylint = "*"
 pytest-pylint = "*"
+gitpython = "*"
+loguru = "*"
+pytest-cov = "*"
 
 [pipenv]
 allow_prereleases = true
