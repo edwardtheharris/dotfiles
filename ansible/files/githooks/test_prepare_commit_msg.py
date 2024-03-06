@@ -1,7 +1,10 @@
 """Test module for the prepare commit msg file."""
-import os
+import re
 
-from unittest.mock import patch
+from pathlib import Path
+
+from git import Repo
+from loguru import logger
 
 from .prepare_commit_msg import (
     get_git_branch,
@@ -11,69 +14,66 @@ from .prepare_commit_msg import (
     write_message,
 )
 
-@patch('subprocess.run')
-def test_get_git_branch(mock_subprocess_run):
+def test_get_git_branch():
     """Verify returnable git branch.
 
     :param mock_subprocess_run: Mock results of a subprocess run.
     """
-    mock_subprocess_run.return_value.stdout.decode.return_value = 'feature-123'
-    assert get_git_branch() == 'feature-123'
-    mock_subprocess_run.assert_called_once_with(
-        'git branch --show-current',
-        check=False,
-        capture_output=True,
-        shell=False,
-        executable="/bin/bash"
-    )
+    logger.debug(__name__)
+    test_branch = Repo(Path('.')).active_branch.name
 
-@patch('subprocess.run')
-def test_get_git_username(mock_subprocess_run):
+    assert get_git_branch() == test_branch
+
+def test_get_git_username():
     """Verify that we can fetch the git username.
 
     :param mock_subprocess_run: Mock results of a subprocess run.
     """
-    mock_subprocess_run.return_value.stdout.decode.return_value = 'your_username'
-    assert get_git_username() == 'your_username'
-    mock_subprocess_run.assert_called_once_with(
-        'git config --get user.username',
-        check=False,
-        shell=False,
-        capture_output=True,
-        executable='/bin/bash'
-    )
+    logger.debug(__name__)
+    test_conf = Repo(Path('.')).config_reader()
+    test_user = test_conf.get_value('user', 'username')
+    assert get_git_username() == test_user
 
 def test_parse_branch_name():
     """Test feature branch parse."""
-    branch_name = '123-feature-branch'
+    logger.debug(__name__)
+    branch_name = Repo(Path('.')).active_branch.name
+    regex_match = re.match('^([0-9]*)(.*)', branch_name)
+    logger.info(regex_match)
     result = parse_branch_name(branch_name)
-    assert result == {'issue_number': '123', 'issue_message': 'feature branch'}
+    test_issue_number = regex_match.groups()[0]
+    test_issue_message = regex_match.groups()[1].replace('-',' ').lstrip()
+    test_ret_value = {
+        'issue_number': test_issue_number,
+        'issue_message': test_issue_message
+    }
+    assert result == test_ret_value
 
 def test_prepare_message_main_branch():
     """Handle a main branch."""
-    with patch('your_script_file.get_git_branch', return_value='main'), \
-         patch('your_script_file.get_git_username', return_value='your_username'), \
-         patch.dict(os.environ, {'GIT_AUTHOR_EMAIL': 'your_email', 'GIT_AUTHOR_NAME': 'your_name'}):
-        result = prepare_message()
-    assert 'Hey @your_username!' in result
-    assert 'Changelog: kitten killer' in result
+    logger.debug(__name__)
+    test_username = get_git_username()
+    test_res = prepare_message('main',
+                               {'issue_number': '1', 'issue_message': 'none' },
+                               test_username)
+    assert f'Hey @{test_username}!' in test_res
+    assert 'Changelog: kitten killer' in test_res
 
 def test_prepare_message_feature_branch():
     """Create message for a feature branch."""
-    with patch('your_script_file.get_git_branch', return_value='feature-123'), \
-         patch('your_script_file.get_git_username', return_value='your_username'), \
-         patch.dict(os.environ, {'GIT_AUTHOR_EMAIL': 'your_email', 'GIT_AUTHOR_NAME': 'your_name'}):
-        result = prepare_message()
+    logger.debug(__name__)
+    test_username = get_git_username()
+    test_branch = '123-feature-branch-test'
+    result = prepare_message(
+        test_branch, {'issue_message': 'feature branch test',
+                      'issue_number': '123'}, test_username)
     assert 'See #123' in result
-    assert '@your_username' in result
+    assert f'@{test_username}' in result
     assert 'Changelog: changed' in result
 
-@patch('builtins.open', create=True)
-def test_write_message(mock_open):
+def test_write_message():
     """Verify commit message file write."""
-    mock_file = mock_open.return_value.__enter__.return_value
-    mock_file.exists.return_value = True
-    write_message()
-    mock_file.write.assert_called_once_with(prepare_message())
-
-# Add more tests as needed
+    logger.debug(__name__)
+    commit_msg = write_message()
+    git_username = get_git_username()
+    assert git_username in commit_msg
