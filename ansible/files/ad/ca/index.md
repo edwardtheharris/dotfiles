@@ -118,3 +118,12 @@ From the primary DC, follow these steps to add the intermediate CA.
 
 If you have a secondary DC, follow the Intermediate CA steps there after
 you copy the Root CA files over.
+
+```{code-block} shell
+:caption: Create an Intermediate CA
+
+openssl req -new -key private/dc01.int.key -out csr/dc01.int.csr -config ca.cnf
+openssl x509 -req -in csr/dc01.int.csr -CA /etc/ssl/certs/ca.crt \
+    -CAkey /etc/ssl/private/ca.key -CAcreateserial -out certs/dc01.int.crt \
+    -days 36500 -extensions SAN -extfile san.cnf
+```
