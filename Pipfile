@@ -22,6 +22,8 @@ ansible-lint = "*"
 ipython = "*"
 pytest = "*"
 pytest-sphinx = "*"
+pylint = "*"
+pytest-pylint = "*"
 
 [pipenv]
 allow_prereleases = true
