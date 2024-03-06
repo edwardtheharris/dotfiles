@@ -1,0 +1,2 @@
+[bandit]
+exclude = tests,ansible/files/githooks/test_prepare_commit_msg.py
