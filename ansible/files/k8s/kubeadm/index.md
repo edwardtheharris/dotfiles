@@ -5,6 +5,8 @@ date: 2024-03-01
 title: Kubeadm Setup
 ---
 
+[kubeadm init issue](https://forum.linuxfoundation.org/discussion/862809/lab-3-1-kubeadm-init-error-creating-kube-proxy-service-account)
+
 ## First Control Plane
 
 ```{code-block} shell
