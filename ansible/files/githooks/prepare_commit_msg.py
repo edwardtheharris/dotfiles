@@ -26,12 +26,12 @@ pre-commit hook.
 The sample :file:`prepare-commit-msg` hook that comes with Git removes the help
 message found in the commented portion of the commit template.
 """
-import os
 import re
-import subprocess
 
 from pathlib import Path
-from security import safe_command
+
+from git import Repo
+from loguru import logger
 
 def get_git_branch():
     """Return the currently checked out branch.
@@ -40,24 +40,22 @@ def get_git_branch():
         commit decoded and stripped of whitespace.
     :return ret_value: The branch of the current commit.
     """
-    ret_value = safe_command.run(subprocess.run, 'git branch --show-current',
-        check=False, capture_output=True, shell=False, executable="/bin/bash")
-    return ret_value.stdout.decode().strip()
+    logger.info(__name__)
+    git_r = Repo(Path('.'))
+    return git_r.active_branch.name
 
 def get_git_username():
     """Return the value of the git username from the configuration."""
-    ret_value = safe_command.run(subprocess.run, 'git config --get user.username',
-        check=False, shell=False, capture_output=True, executable='/bin/bash'
-    )
-    return ret_value.stdout.decode().strip()
+    git_config = Repo(Path('.')).config_reader()
+    return git_config.get_value('user', 'username')
 
-def parse_branch_name(branch:str) -> {}:
+def parse_branch_name(branch:str) -> dict:
     """Use regex to pull the issue number from the branch name."""
     ret_value = {}
     regex_match = re.match('^([0-9]*)(.*)', branch)
     try:
         issue_number = regex_match.groups()[0]
-        issue_message = regex_match.groups()[1].replace('-',' ')
+        issue_message = regex_match.groups()[1].replace('-',' ').lstrip()
         ret_value.update({
             'issue_number': issue_number,
             'issue_message': issue_message
@@ -69,20 +67,18 @@ def parse_branch_name(branch:str) -> {}:
         }
     return ret_value
 
-def prepare_message():
+def prepare_message(branch_name:str, parsed_branch:dict, git_username: str):
     """Prepare a commit message."""
-    parsed_branch = 'main'
-    branch = get_git_branch()
-    parsed_branch = parse_branch_name(branch)
-    git_username = get_git_username()
-
-    if parsed_branch != 'main':
+    if branch_name != 'main':
         issue_msg = parsed_branch.get('issue_message')
         issue_num = parsed_branch.get('issue_number')
+        config_read = Repo(Path('.')).config_reader()
+        user_email = config_read.get_value('user', 'email')
+        user_name = config_read.get_value('user', 'name')
         ret_value = (f'{issue_msg}\n\nSee #{issue_num}\n\n'
                      f'@{git_username} - '
-                     f'{os.environ.get("GIT_AUTHOR_EMAIL")}\n\n'
-                     f'{os.environ.get("GIT_AUTHOR_NAME")}\n\n'
+                     f'{user_email}\n\n'
+                     f'{user_name}\n\n'
                      'Changelog: changed')
     else:
         ret_value = (f"Hey @{git_username}! - What do you think you're doing?"
@@ -94,7 +90,11 @@ def prepare_message():
 
 def write_message():
     """Write the prepared commit message."""
-    commit_msg = prepare_message()
+    logger.info(__name__)
+    branch = get_git_branch()
+    parsed_branch = parse_branch_name(branch)
+    git_username = get_git_username()
+    commit_msg = prepare_message(branch, parsed_branch, git_username)
     msg_file = Path('.git/COMMIT_EDITMSG')
     if msg_file.exists():
         with msg_file.open('a', encoding='utf-8') as msg_fh:
