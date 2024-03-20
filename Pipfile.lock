@@ -668,6 +668,15 @@
             "markers": "python_version >= '3.7'",
             "version": "==0.5.2"
         },
+        "sphinx-design": {
+            "hashes": [
+                "sha256:1af1267b4cea2eedd6724614f19dcc88fe2e15aff65d06b2f6252cee9c4f4c1e",
+                "sha256:e8e513acea6f92d15c6de3b34e954458f245b8e761b45b63950f65373352ab00"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==0.5.0"
+        },
         "sphinx-git": {
             "hashes": [
                 "sha256:6bf9d837de108c79fb7db585ebd590fd48f4d1f830b540420d0ca675f3b9f800"

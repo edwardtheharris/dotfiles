@@ -16,16 +16,17 @@ sphinx-last-updated-by-git = "*"
 sphinx-press-theme = "*"
 sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
+sphinx-design = "*"
 
 [dev-packages]
-ipython = "*"
-pytest = "*"
-pytest-sphinx = "*"
-pylint = "*"
-pytest-pylint = "*"
 gitpython = "*"
+ipython = "*"
 loguru = "*"
+pylint = "*"
+pytest = "*"
 pytest-cov = "*"
+pytest-pylint = "*"
+pytest-sphinx = "*"
 
 [pipenv]
 allow_prereleases = true

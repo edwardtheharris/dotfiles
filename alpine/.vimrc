@@ -1,55 +1,71 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
+Plug 'Absolight/vim-bind'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'b4b4r07/vim-hcl'
+Plug 'chr4/nginx.vim'
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'egberts/vim-syntax-bind-named'
+Plug 'fladson/vim-kitty'
+Plug 'itspriddle/vim-shellcheck'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'ledger/vim-ledger'
+Plug 'lepture/vim-jinja'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'nathangrigg/vim-beancount'
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug '~/Documents/src/github.com/bryant/neovim/runtime/syntax/samba.vim'
+Plug 'pearofducks/ansible-vim'
+Plug 'preservim/vim-markdown'
+Plug 'rhysd/committia.vim'
+Plug 'rottencandy/vimkubectl'
+Plug 'stephpy/vim-yaml'
+Plug 'vim-scripts/bash-support.vim'
+Plug 'vim-scripts/LanguageTool'
+Plug 'wakatime/vim-wakatime'
+Plug 'yasuhiroki/github-actions-yaml.vim'
+call plug#end()
 
-" let Vundle manage Vundle, required
-Plugin 'b4b4r07/vim-hcl'
-Plugin 'chr4/nginx.vim'
-Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
-Plugin 'egberts/vim-syntax-bind-named'
-Plugin 'itspriddle/vim-shellcheck'
-Plugin 'ledger/vim-ledger'
-Plugin 'lepture/vim-jinja'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
-Plugin 'nathangrigg/vim-beancount'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'rhysd/committia.vim'
-Plugin 'stephpy/vim-yaml'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/bash-support.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'yasuhiroki/github-actions-yaml.vim'
-" All of your Plugins must be added before the following line
-call vundle#end()
-filetype plugin on
+" coc plugins, for reference
+" fannheyward/coc-markdownlint
+" gianarb/coc-grammarly
 
 syntax on
-set ts=2 sts=2 sw=2 et modeline
+set ts=2 sts=2 sw=2 et modeline number
+set colorcolumn=80,120
+set nofoldenable
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
 
-let g:ansible_unindent_after_newline = 1
-let g:ansible_yamlKeyName = 'yamlKey'
-let g:ansible_name_highlight = 'd'
-let g:ansible_extra_keywords_highlight = 1
-let g:ansible_normal_keywords_highlight = 'Constant'
-let g:ansible_attribute_highlight = "ob"
-
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"" let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"
+"" let g:syntastic_python_checkers = ['bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'pylint', 'python']
+"let g:syntastic_aggregate_errors = 1
+"let g:syntastic_rst_checkers = ['sphinx']
+"let g:syntastic_yaml_checkers = ['yamllint']
 
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+au BufNewFile,BufRead *.yml set ft=yaml
 au BufNewFile,BufRead *.rst set sts=3 sw=3 ts=3 ft=rst
 au BufNewFile,BufRead *.service set sts=2 sw=2 ts=2 ft=systemd
 au BufNewFile,BufRead Jenkinsfile setf groovy
-au BufNewFile,BufRead *.bean,*.beancount setf beancount
-
 au BufNewFile,BufRead accounts,journal,register,*.journal,*.ldg,*.ledger setf ledger | comp ledger
-
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+au BufNewFile,BufRead openssl.cnf set ft=dosini
+au BufNewFile,BufRead *.zone setf bindzone
+au BufNewFile,BufRead named.conf setf named
