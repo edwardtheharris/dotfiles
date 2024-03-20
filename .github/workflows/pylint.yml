@@ -67,6 +67,9 @@ jobs:
       - run: |
           source ansible/files/githooks/venv/bin/activate
           git checkout -b test-branch
+          git config user.username edwardtheharris
+          git config user.email 'xandertheharris@gmail.com'
+          git config user.name 'Xander Harris'
           command -v pytest
           pytest --cov=ansible/files/githooks/ --cov-report=xml
       - uses: SonarSource/sonarcloud-github-action@master
