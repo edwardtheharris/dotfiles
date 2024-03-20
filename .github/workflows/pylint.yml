@@ -65,7 +65,9 @@ jobs:
           python3 -m venv ansible/files/githooks/venv
           ansible/files/githooks/venv/bin/pip3 install -r ansible/files/githooks/reqs
       - run: |
-          ansible/files/githooks/venv/bin/pytest --cov=ansible/files/githooks/prepare_commit_msg.py --cov-report=xml
+          source ansible/files/githooks/venv/bin/activate
+          command -v pytest
+          pytest --cov=ansible/files/githooks/ --cov-report=xml
       - uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
