@@ -24,7 +24,15 @@ jobs:
         pip3 install -U pip pipenv
         pipenv requirements --dev > reqs
         pip3 install -r reqs
-        pytest --cov
+        pytest --cov --
+    - name: Install tox and any other packages
+      run: pip install tox
+    - name: Run tox
+      run: tox -e py
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Coveralls
       uses: coverallsapp/github-action@v2
       with:
