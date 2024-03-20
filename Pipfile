@@ -26,6 +26,7 @@ pytest-pylint = "*"
 gitpython = "*"
 loguru = "*"
 pytest-cov = "*"
+tox = "*"
 
 [pipenv]
 allow_prereleases = true
