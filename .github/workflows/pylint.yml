@@ -66,6 +66,7 @@ jobs:
           ansible/files/githooks/venv/bin/pip3 install -r ansible/files/githooks/reqs
       - run: |
           source ansible/files/githooks/venv/bin/activate
+          git checkout -b test-branch
           command -v pytest
           pytest --cov=ansible/files/githooks/ --cov-report=xml
       - uses: SonarSource/sonarcloud-github-action@master
