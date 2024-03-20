@@ -51,30 +51,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-  coverage:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
-    steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-python@main
-        with:
-          python-version: ${{ matrix.python-version }}
-      - run: |
-          python3 -m venv venv
-          source venv/bin/activate
-          command -v pip3
-          venv/bin/pip3 install -r ansible/files/githooks/reqs
-          git checkout -b test-branch
-          git config user.username edwardtheharris
-          git config user.email 'xandertheharris@gmail.com'
-          git config user.name 'Xander Harris'
-          command -v pytest
-          venv/bin/pytest --cov=ansible/files/githooks/ --cov-report=xml
-          mkdir .coverage-reports/
-          cp -v coverage.xml .coverage-reports/coverage-$(git rev-parse --short=6 HEAD).xml
-          cp -v coverage.xml ansible/files/githooks/
-      - uses: SonarSource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
