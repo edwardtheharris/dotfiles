@@ -10,3 +10,4 @@ _build/
 .tmp/
 .coverage
 venv/
+coverage.xml
