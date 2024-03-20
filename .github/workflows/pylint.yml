@@ -71,7 +71,7 @@ jobs:
           git config user.email 'xandertheharris@gmail.com'
           git config user.name 'Xander Harris'
           command -v pytest
-          venvv/bin/pytest --cov=ansible/files/githooks/ --cov-report=xml
+          venv/bin/pytest --cov=ansible/files/githooks/ --cov-report=xml
           mkdir .coverage-reports/
           cp -v coverage.xml .coverage-reports/coverage-$(git rev-parse --short=6 HEAD).xml
           cp -v coverage.xml ansible/files/githooks/
