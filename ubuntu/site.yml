@@ -1,0 +1,19 @@
+---
+- name: Copy RC Files to AWS Remote
+  remote_user: ubuntu
+  hosts: gl
+  become: true
+  tasks:
+    - name: Copy root rc Files
+      ansible.builtin.copy:
+        src: "ubuntu/root/{{ item }}"
+        dest: "/root/{{ item }}"
+        owner: root
+        group: root
+        mode: 'u+rw,g+rw,o+r'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .vimrc
+        - .wakatime.cfg
