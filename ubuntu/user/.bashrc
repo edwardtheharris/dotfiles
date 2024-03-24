@@ -34,9 +34,11 @@ if [ ! -f /usr/bin/yay ] && [ -f /usr/bin/pacman ]; then
   fi
 fi
 
-if [ -f /usr/bin/apt ]; then
-  sudo apt-get -y update
-  sudo apt-get -y install curl git npm vim
+if [ ! -f /usr/bin/git ]; then
+  if [ -f /usr/bin/apt ]; then
+    sudo apt-get -y update
+    sudo apt-get -y install curl git npm vim
+  fi
 fi
 
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
