@@ -119,3 +119,9 @@ more difficult implementation I'd love to hear about it.
   - ldap02.int.bh.loc
   - lightweight directory access
 ```
+
+```{admonition} nerdctl
+This may be helpful, but you'll need to look at the related package
+page [here](https://aur.archlinux.org/packages/nerdctl-full-bin) to get
+it working.
+```
