@@ -27,6 +27,7 @@ gitpython = "*"
 loguru = "*"
 pytest-cov = "*"
 tox = "*"
+black = "*"
 
 [pipenv]
 allow_prereleases = true
