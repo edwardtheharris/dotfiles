@@ -11,3 +11,4 @@ _build/
 .coverage
 venv/
 coverage.xml
+markdownlint-cli2-junit.xml
