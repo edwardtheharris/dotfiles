@@ -25,6 +25,7 @@ jobs:
         pipenv requirements --dev > reqs
         pip3 install -r reqs
         pytest --cov --cov-report=xml --
+        sed -i -e "s/__version__/$(git rev-parse --short=8 HEAD)/"
     - name: Install tox and any other packages
       run: pip install tox
     - name: Run tox
