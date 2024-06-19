@@ -6,9 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
         matrix:
-          python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+          python-version: ["3.9", "3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@main
+      with:
+          fetch-depth: 0
     - name: Setup Python
       uses: actions/setup-python@main
       with:
@@ -24,7 +26,8 @@ jobs:
         pip3 install -U pip pipenv
         pipenv requirements --dev > reqs
         pip3 install -r reqs
-        pytest --cov --
+        pytest --cov --cov-report=xml --
+        sed -i -e "s/__version__/$(git rev-parse --short=8 HEAD)/" sonar-project.properties
     - name: Install tox and any other packages
       run: pip install tox
     - name: Run tox
@@ -43,4 +46,4 @@ jobs:
         uses: coverallsapp/github-action@v1
         with:
             parallel-finished: true
-            carryforward: "run-3.8,run-3.9,run-3.10,run-3.11,run-3.12"
+            carryforward: "run-3.9,run-3.10,run-3.11,run-3.12"
