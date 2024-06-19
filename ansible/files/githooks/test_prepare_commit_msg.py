@@ -83,6 +83,8 @@ def test_prepare_message_feature_branch():
 def test_write_message():
     """Verify commit message file write."""
     logger.debug(__name__)
-    commit_msg = write_message()
-    git_username = get_git_username()
+    with Path('.git/COMMIT_EDITMSG').open('w', encoding='utf-8') as c_fh:
+        c_fh.write('')
+        commit_msg = write_message()
+        git_username = get_git_username()
     assert git_username in commit_msg
