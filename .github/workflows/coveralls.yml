@@ -32,10 +32,6 @@ jobs:
       run: pip install tox
     - name: Run tox
       run: tox -e py
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Coveralls
       uses: coverallsapp/github-action@v2
       with:
