@@ -36,9 +36,6 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args:
-          -Dsonar.python.coverage.reportPaths=coverage.xml
     - name: Coveralls
       uses: coverallsapp/github-action@v2
       with:
