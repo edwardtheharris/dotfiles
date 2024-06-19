@@ -20,6 +20,7 @@ jobs:
         git config user.username edwardtheharris
         git config user.name 'Xander Harris'
         git config user.email 'xandertheharris@gmail.com'
+        git checkout -b 123-feature-branch-test
     - name: Install Dependencies
       run: |
         pip3 install -U pip pipenv
