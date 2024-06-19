@@ -24,7 +24,7 @@ jobs:
         pip3 install -U pip pipenv
         pipenv requirements --dev > reqs
         pip3 install -r reqs
-        pytest --cov --
+        pytest --cov --cov-report=xml --
     - name: Install tox and any other packages
       run: pip install tox
     - name: Run tox
