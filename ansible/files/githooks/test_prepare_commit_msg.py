@@ -42,7 +42,7 @@ def test_parse_branch_name():
     """Test feature branch parse."""
     logger.debug(__name__)
     branch_name = Repo(Path(".")).active_branch.name
-    regex_match = re.match("^([0-9]*)(.*)", branch_name)
+    regex_match = re.match(r'^(\d*)(.*)', branch_name)
     logger.info(regex_match)
     result = parse_branch_name(branch_name)
     test_issue_number = regex_match.groups()[0]
