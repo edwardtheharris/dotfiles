@@ -42,30 +42,27 @@ def get_git_branch():
     :return ret_value: The branch of the current commit.
     """
     logger.info(__name__)
-    git_r = Repo(Path('.'))
+    git_r = Repo(Path("."))
     return git_r.active_branch.name
 
 
 def get_git_username():
     """Return the value of the git username from the configuration."""
-    git_config = Repo(Path('.')).config_reader()
-    return git_config.get_value('user', 'username')
+    git_config = Repo(Path(".")).config_reader()
+    return git_config.get_value("user", "username")
 
 
 def parse_branch_name(branch: str) -> dict:
     """Use regex to pull the issue number from the branch name."""
     ret_value = {}
-    regex_match = re.match('^([0-9]*)(.*)', branch)
+    regex_match = re.match(r'^(\d*)(.*)', branch)
     try:
         issue_number = regex_match.groups()[0]
-        issue_message = regex_match.groups()[1].replace('-', ' ').lstrip()
-        ret_value.update({
-            'issue_number': issue_number,
-            'issue_message': issue_message
-        })
+        issue_message = regex_match.groups()[1].replace("-", " ").lstrip()
+        ret_value.update({"issue_number": issue_number, "issue_message": issue_message})
     except IndexError as index_error:
         ret_value = {
-            issue_number: '0',
+            issue_number: "0",
             issue_message: index_error,
         }
     return ret_value
@@ -73,23 +70,26 @@ def parse_branch_name(branch: str) -> dict:
 
 def prepare_message(branch_name: str, parsed_branch: dict, git_username: str):
     """Prepare a commit message."""
-    if branch_name != 'main':
-        issue_msg = parsed_branch.get('issue_message')
-        issue_num = parsed_branch.get('issue_number')
-        config_read = Repo(Path('.')).config_reader()
-        user_email = config_read.get_value('user', 'email')
-        user_name = config_read.get_value('user', 'name')
-        ret_value = (f'{issue_msg}\n\nSee #{issue_num}\n\n'
-                     f'@{git_username} - '
-                     f'{user_email}\n\n'
-                     f'{user_name}\n\n'
-                     'Changelog: changed')
+    if branch_name != "main":
+        issue_msg = parsed_branch.get("issue_message")
+        issue_num = parsed_branch.get("issue_number")
+        config_read = Repo(Path(".")).config_reader()
+        user_email = config_read.get_value("user", "email")
+        user_name = config_read.get_value("user", "name")
+        ret_value = (
+            f"{issue_msg}\n\nSee #{issue_num}\n\n"
+            f"User: @{git_username}\n"
+            f"Author: {user_name} <{user_email}> \n"
+            "Changelog: changed"
+        )
     else:
-        ret_value = (f"Hey @{git_username}! - What do you think you're doing?"
-                     '\n\nYou know better than to commit directly to main.'
-                     '\n\nFix it or GitHub will murder 1 kitten for every commit'
-                     'you attempt to make to main.'
-                     'Changelog: kitten killer')
+        ret_value = (
+            f"Hey @{git_username}! - What do you think you're doing?"
+            "\n\nYou know better than to commit directly to main."
+            "\n\nFix it or GitHub will murder 1 kitten for every commit"
+            "you attempt to make to main."
+            "Changelog: kitten killer"
+        )
     return ret_value
 
 
@@ -100,12 +100,12 @@ def write_message():
     parsed_branch = parse_branch_name(branch)
     git_username = get_git_username()
     commit_msg = prepare_message(branch, parsed_branch, git_username)
-    msg_file = Path('.git/COMMIT_EDITMSG')
+    msg_file = Path(".git/COMMIT_EDITMSG")
     if msg_file.exists():
-        with msg_file.open('a', encoding='utf-8') as msg_fh:
+        with msg_file.open("a", encoding="utf-8") as msg_fh:
             msg_fh.write(commit_msg)
     return commit_msg
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     write_message()
