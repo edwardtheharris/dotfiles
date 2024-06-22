@@ -20,10 +20,18 @@ sys.path.append(str(Path("ansible/files/githooks").resolve()))
 author = "Xander Harris"
 autoyaml_root = "."
 copyright = "2024, Xander Harris"
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", ".venv/*"]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    ".pytest_cache/*",
+    ".tox/*",
+    ".venv/*",
+]
 extensions = [
     "myst_parser",
     "sphinx_copybutton",
+    "sphinx_design",
     "sphinx_last_updated_by_git",
     "sphinx_git",
     "sphinx.ext.autodoc",

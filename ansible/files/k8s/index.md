@@ -39,6 +39,7 @@ etcd/index
 dex/index
 kube-apiserver/index
 kube-controller-manager/index
+kubeadm/index
 ```
 
 ## Process

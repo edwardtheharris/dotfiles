@@ -1,110 +1,28 @@
 ---
 - name: Copy root configs
-  hosts: kcp,dc
+  hosts: kcp,k8s
   remote_user: duchess
-  tasks:
-    - name: Copy root files
-      ansible.builtin.copy:
-        src: "arch/root/{{ item }}"
-        dest: "/root/{{ item }}"
-        group: root
-        force: true
-        mode: >
-          0700
-        owner: "root"
-      loop:
-        - '.bash_profile'
-        - '.bashrc'
-        - '.gitconfig'
-        - '.vimrc'
-        - '.wakatime.cfg'
-      become: true
+  roles:
+    - role: root
       tags:
         - root
-- name: Copy user configs
-  hosts: kcp,dc
+- name: Init One
+  hosts: kcp,k8s
   remote_user: duchess
-  tasks:
-    - name: Ensure git exists
-      community.general.pacman:
-        name: git
-        state: present
-      become: true
+  roles:
+    - role: users
       tags:
-        - duchess
-    - name: Make ansible group
-      ansible.builtin.group:
-        name: ansible
-        state: present
-      become: true
+        - users
+    - role: containerd
       tags:
-        - duchess
-    - name: Create git hooks dir
-      ansible.builtin.file:
-        group: git
-        owner: duchess
-        path: ~/.git/hooks/
-        recurse: true
-        state: directory
+        - containerd
       become: true
-      tags:
-        - duchess
-    - name: Copy user files
-      ansible.builtin.copy:
-        src: "arch/user/{{ item }}"
-        force: true
-        dest: "/home/duchess/{{ item }}"
-        group: ansible
-        mode: >
-          0600
-        owner: duchess
-      loop:
-        - '.bash_profile'
-        - '.bashrc'
-        - '.gitconfig'
-        - '.vimrc'
-        - '.wakatime.cfg'
-      become: true
-      tags:
-        - duchess
-- name: Init config for k8s
-  hosts: init
+- name: Init Control Planes
+  become: true
+  hosts: kcp02
   remote_user: duchess
-  tasks:
-    - name: Ping hosts
-      ansible.builtin.ping:
-        data: wat
-    - name: Update authorized keys files
-      ansible.posix.authorized_key:
-        user: duchess
-        key: "{{ lookup('file', '/Users/duchess/.ssh/id_rsa.pub') }}"
-        state: present
-- name: Config node users
-  hosts: k8s
-  remote_user: duchess
-  tasks:
-    - name: Make sure required users exist
-      ansible.builtin.user:
-        name: "{{ item.user }}"
-        state: present
-        shell: /bin/bash
-        home: "{{ item.homedir }}"
-        generate_ssh_key: true
-        ssh_key_type: rsa
-        ssh_key_bits: 4096
-      become: true
-      loop:
-        - { user: 'alf', homedir: '/home/alf' }
-        - { user: 'duchess', homedir: '/home/duchess' }
-        - { user: 'skipper', homedir: '/home/skipper' }
-        - { user: 'snafu', homedir: '/home/snafu' }
-    - name: Copy dotfiles for arch users
-      ansible.builtin.include_tasks: files.yml
-      loop:
-        - alf
-        - duchess
-        - skipper
-        - snafu
-      loop_control:
-        loop_var: users
+  roles:
+    - role: kcp
+      tags:
+        - kcp
 # code: language=ansible
