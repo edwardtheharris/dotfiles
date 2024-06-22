@@ -8,11 +8,9 @@
 [alias]
 	s = status
 	p = push
-	a = add .
+	a = add
 	c = commit
 [commit]
 	gpgsign = true
-[core]
-	hooksPath = /home/duchess/.git/hooks
 [pull]
 	ff = yes

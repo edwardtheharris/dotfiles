@@ -8,9 +8,5 @@
 [alias]
 	s = status
 	p = push
-[gpg]
-	format = ssh
-[gpg "ssh"]
-  program = "/opt/1Password/op-ssh-sign"
 [commit]
 	gpgsign = true

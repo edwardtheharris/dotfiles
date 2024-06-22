@@ -20,7 +20,6 @@ Plug 'ledger/vim-ledger'
 Plug 'lepture/vim-jinja'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'nathangrigg/vim-beancount'
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Documents/src/github.com/bryant/neovim/runtime/syntax/samba.vim'
 Plug 'pearofducks/ansible-vim'
@@ -37,6 +36,7 @@ call plug#end()
 " coc plugins, for reference
 " fannheyward/coc-markdownlint
 " gianarb/coc-grammarly
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 
 syntax on
 set ts=2 sts=2 sw=2 et modeline number
