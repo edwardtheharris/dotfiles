@@ -52,7 +52,9 @@ export LSCOLORS
 export PATH
 export PYTHONPATH
 
-alias 'gp'='git push'
-alias 'k'=kubectl
-alias 'h'=helm
+alias gp='git push'
+alias k='kubectl'
+alias h='helm'
 alias ip='ip -color=auto'
+alias ls='ls --color'
+
