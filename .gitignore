@@ -1,14 +1,15 @@
+_build
+_build/
+.coverage
+.gnupg
+.tmp/
+.venv/
+.vscode
+*cache*
+*secret*
 ansible-navigator.log
+coverage.xml
 Google Drive File Stream
 jenkins-cli.jar
-_build
-*cache*
-.vscode
-*secret*
-.venv/
-_build/
-.tmp/
-.coverage
-venv/
-coverage.xml
 markdownlint-cli2-junit.xml
+venv/

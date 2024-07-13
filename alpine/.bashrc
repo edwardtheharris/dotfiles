@@ -61,6 +61,10 @@ export PIPENV_VENV_IN_PROJECT
 export PYTHONPATH
 
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias grc='git rebase --continue'
-alias gc='git commit'
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias h='helm'
+alias ip='ip -color=auto'
+alias k='kubectl'
+alias ls='ls --color'
 alias vi='$(command -v vim)'
