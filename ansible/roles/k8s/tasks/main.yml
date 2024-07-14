@@ -3,6 +3,28 @@
   ansible.builtin.group:
     name: kube
     state: present
+- name: Create config directory
+  ansible.builtin.file:
+    state: directory
+    dest: "{{ item.dir }}/.kube"
+    group: kube
+    owner: "{{ item.name }}"
+    mode: ug+rwx
+  loop: "{{ users }}"
+- name: Fetch kube config
+  ansible.builtin.fetch:
+    src: "/etc/kubernetes/admin.conf"
+    dest: "roles/k8s/files/"
+    flat: true
+  delegate_to: kcp01.breeze-blocks.net
+- name: Copy kube config
+  ansible.builtin.copy:
+    src: "admin.conf"
+    dest: "{{ item.dir}}/.kube/config"
+    group: kube
+    owner: "{{ item.name }}"
+    mode: u+rw
+  loop: "{{ users }}"
 - name: Create kube user
   ansible.builtin.user:
     name: kube
@@ -32,24 +54,23 @@
     chdir: /etc/kubeadm
     cmd: kubeadm token create --description "{{ inventory_hostname }}" > join.token
     creates: /etc/kubeadm/join.token
-- name: Reset existing cluster
+- name: Load bootstrap token
   ansible.builtin.shell:
     chdir: /etc/kubeadm
     cmd: >-
-      kubeadm token generate > init.token && cat init.token
-    creates: /etc/kubeadm/init.token
+      cat /etc/kubeadm/join.token
   register: token_out
-- name: Template token init config
+- name: Template token join config
   ansible.builtin.template:
-    src: init.yaml
-    dest: /etc/kubeadm/init.yaml
+    src: join.yaml
+    dest: /etc/kubeadm/join.yaml
     owner: kube
     group: kube
     mode: ugo+rw
-- name: Init new cluster
+- name: Join existing cluster
   ansible.builtin.command:
     chdir: /etc/kubeadm
-    cmd: kubeadm init --config init.yaml
+    cmd: kubeadm join --config join.yaml
     creates: /etc/kubernetes/admin.conf
   register: init_result
 - name: Debug

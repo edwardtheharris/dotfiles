@@ -1,0 +1,6 @@
+---
+users:
+  - name: duchess
+    dir: /home/duchess
+  - name: root
+    dir: /root

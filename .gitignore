@@ -8,6 +8,7 @@ _build/
 *cache*
 *secret*
 ansible-navigator.log
+ansible/roles/k8s/files/admin.conf
 coverage.xml
 Google Drive File Stream
 jenkins-cli.jar
