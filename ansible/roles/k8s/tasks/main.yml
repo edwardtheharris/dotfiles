@@ -1,0 +1,104 @@
+---
+- name: Install k8s node
+  ansible.builtin.command:
+    cmd: >-
+      yay --noconfirm -Syu kubeadm kubectl kubelet
+    creates: /usr/bin/kubectl
+  become_user: duchess
+- name: Create kube group
+  ansible.builtin.group:
+    name: kube
+    state: present
+- name: Create config directory
+  ansible.builtin.file:
+    state: directory
+    dest: "{{ item.dir }}/.kube"
+    group: kube
+    owner: "{{ item.name }}"
+    mode: ug+rwx
+  loop: "{{ users }}"
+- name: Fetch kube config
+  ansible.builtin.fetch:
+    src: "/etc/kubernetes/admin.conf"
+    dest: "roles/k8s/files/"
+    flat: true
+  delegate_to: kcp01.breeze-blocks.net
+- name: Copy kube config
+  ansible.builtin.copy:
+    src: "admin.conf"
+    dest: "{{ item.dir}}/.kube/config"
+    group: kube
+    owner: "{{ item.name }}"
+    mode: u+rw
+  loop: "{{ users }}"
+- name: Create kube user
+  ansible.builtin.user:
+    name: kube
+    group: kube
+    state: present
+- name: Create kubeadm directory
+  ansible.builtin.file:
+    state: directory
+    recurse: true
+    dest: /etc/kubeadm
+    owner: kube
+    group: kube
+    mode: ug+rwx,o+rx
+- name: Create bootstrap token
+  ansible.builtin.command:
+    chdir: /etc/kubeadm
+    cmd: kubeadm token create --description "{{ inventory_hostname }}"
+  register: token
+- name: Template token join config
+  ansible.builtin.template:
+    src: join.yaml
+    dest: /etc/kubeadm/join.yaml
+    owner: kube
+    group: kube
+    mode: ugo+rw,ugo-x
+- name: Copy hosts info
+  ansible.builtin.copy:
+    src: hosts
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: ug+rw,o+r
+- name: Reset node status
+  ansible.builtin.command:
+    chdir: /etc/kubeadm
+    cmd: kubeadm reset -f
+- name: Delete reset node
+  ansible.builtin.command:
+    cmd: kubectl delete node "{{ inventory_hostname }}"
+- name: Join existing cluster
+  ansible.builtin.command:
+    chdir: /etc/kubeadm
+    cmd: kubeadm join --config join.yaml
+    creates: /etc/kubernetes/admin.conf
+  register: init_result
+- name: Debug
+  ansible.builtin.debug:
+    var: init_result
+- name: Fetch calico config
+  ansible.builtin.fetch:
+    src: /etc/cni/net.d/calico-kubeconfig
+    dest: roles/k8s/files/cni/net.d/
+    flat: true
+- name: Create CNI dir
+  ansible.builtin.file:
+    state: directory
+    dest: /etc/cni/net.d
+    owner: root
+    group: root
+    mode: ug+rwx
+- name: Copy CNI config
+  ansible.builtin.copy:
+    src: "cni/net.d/{{ item }}"
+    dest: "/etc/cni/net.d/{{ item }}"
+    owner: root
+    group: root
+    mode: ug+rw
+  loop:
+    - "10-calico-conflist"
+    - "calico-kubeconfig"
+  notify: 'Restart containerd'

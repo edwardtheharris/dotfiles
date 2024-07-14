@@ -17,6 +17,13 @@
       tags:
         - containerd
       become: true
+- name: Join Nodes
+  hosts: k8s05.breeze-blocks.net,k8s06.breeze-blocks.net
+  roles:
+    - role: k8s
+      tags:
+        - join
+      become: true
 - name: Init Control Planes
   become: true
   hosts: kcp02
