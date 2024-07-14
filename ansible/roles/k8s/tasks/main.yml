@@ -82,7 +82,7 @@
 - name: Fetch calico config
   ansible.builtin.fetch:
     src: /etc/cni/net.d/calico-kubeconfig
-    dest: files/cni/net.d/
+    dest: roles/k8s/files/cni/net.d/
     flat: true
 - name: Create CNI dir
   ansible.builtin.file:
