@@ -1,4 +1,12 @@
 ---
+- name: Add groups just in case
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  become: true
+  loop:
+    - ansible
+    - git
 - name: Make sure required users exist
   ansible.builtin.user:
     generate_ssh_key: true
