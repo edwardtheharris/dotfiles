@@ -1,4 +1,10 @@
 ---
+- name: Install k8s node
+  ansible.builtin.command:
+    cmd: >-
+      yay --noconfirm -Syu kubeadm kubectl kubelet
+    creates: /usr/bin/kubectl
+  become_user: duchess
 - name: Create kube group
   ansible.builtin.group:
     name: kube
@@ -38,13 +44,6 @@
     owner: kube
     group: kube
     mode: ug+rwx,o+rx
-- name: Copy reset config
-  ansible.builtin.copy:
-    src: reset.yaml
-    dest: /etc/kubeadm/reset.yaml
-    owner: kube
-    group: kube
-    mode: ugo+rw,ugo-x
 - name: Create bootstrap token
   ansible.builtin.command:
     chdir: /etc/kubeadm
@@ -67,7 +66,10 @@
 - name: Reset node status
   ansible.builtin.command:
     chdir: /etc/kubeadm
-    cmd: kubeadm reset --config reset.yaml
+    cmd: kubeadm reset -f
+- name: Delete reset node
+  ansible.builtin.command:
+    cmd: kubectl delete node "{{ inventory_hostname }}"
 - name: Join existing cluster
   ansible.builtin.command:
     chdir: /etc/kubeadm
@@ -77,6 +79,26 @@
 - name: Debug
   ansible.builtin.debug:
     var: init_result
+- name: Fetch calico config
+  ansible.builtin.fetch:
+    src: /etc/cni/net.d/calico-kubeconfig
+    dest: files/cni/net.d/
+    flat: true
 - name: Create CNI dir
   ansible.builtin.file:
     state: directory
+    dest: /etc/cni/net.d
+    owner: root
+    group: root
+    mode: ug+rwx
+- name: Copy CNI config
+  ansible.builtin.copy:
+    src: "cni/net.d/{{ item }}"
+    dest: "/etc/cni/net.d/{{ item }}"
+    owner: root
+    group: root
+    mode: ug+rw
+  loop:
+    - "10-calico-conflist"
+    - "calico-kubeconfig"
+  notify: 'Restart containerd'
