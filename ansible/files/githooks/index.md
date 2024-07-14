@@ -17,11 +17,3 @@ package.
    :noindex:
    :members:
 ```
-
-## test-prepare-commit-msg
-
-```{eval-rst}
-.. automodule:: test_prepare_commit_msg
-   :noindex:
-   :members:
-```
