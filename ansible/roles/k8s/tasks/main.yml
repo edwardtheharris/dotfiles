@@ -44,29 +44,30 @@
     dest: /etc/kubeadm/reset.yaml
     owner: kube
     group: kube
-    mode: ugo+rw
-- name: Drop init token
-  ansible.builtin.file:
-    dest: /etc/kubeadm/init.token
-    state: absent
+    mode: ugo+rw,ugo-x
 - name: Create bootstrap token
   ansible.builtin.command:
     chdir: /etc/kubeadm
-    cmd: kubeadm token create --description "{{ inventory_hostname }}" > join.token
-    creates: /etc/kubeadm/join.token
-- name: Load bootstrap token
-  ansible.builtin.shell:
-    chdir: /etc/kubeadm
-    cmd: >-
-      cat /etc/kubeadm/join.token
-  register: token_out
+    cmd: kubeadm token create --description "{{ inventory_hostname }}"
+  register: token
 - name: Template token join config
   ansible.builtin.template:
     src: join.yaml
     dest: /etc/kubeadm/join.yaml
     owner: kube
     group: kube
-    mode: ugo+rw
+    mode: ugo+rw,ugo-x
+- name: Copy hosts info
+  ansible.builtin.copy:
+    src: hosts
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: ug+rw,o+r
+- name: Reset node status
+  ansible.builtin.command:
+    chdir: /etc/kubeadm
+    cmd: kubeadm reset --config reset.yaml
 - name: Join existing cluster
   ansible.builtin.command:
     chdir: /etc/kubeadm
@@ -76,3 +77,6 @@
 - name: Debug
   ansible.builtin.debug:
     var: init_result
+- name: Create CNI dir
+  ansible.builtin.file:
+    state: directory

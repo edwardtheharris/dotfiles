@@ -1,4 +1,6 @@
 ---
+api_endpoint: >-
+  kcp01.breeze-blocks.net:6443
 users:
   - name: duchess
     dir: /home/duchess
