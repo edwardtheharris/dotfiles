@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# shellcheck disable=SC2148
 CLICOLOR=1
 # shellcheck disable=SC2016
 LESS='-R --use-color -Dd+r$Du+b$'
@@ -17,7 +16,6 @@ export LESS
 export LSCOLORS
 export PS1
 export PATH
-
 
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   if [ -f /usr/bin/pacman ]; then
@@ -46,7 +44,5 @@ fi
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias h='helm'
 alias ip='ip -color=auto'
-alias k='kubectl'
 alias ls='ls --color'
