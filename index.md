@@ -10,10 +10,18 @@ title: >
     Xander's Dot Files and Sundry Store
 ---
 
+## Documentation
+
 ```{toctree}
 :glob:
 
 ansible/index
+ubuntu/index
+```
+
+## Minutiae
+
+```{toctree}
 cicd
 license
 readme

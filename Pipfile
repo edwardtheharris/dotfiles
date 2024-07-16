@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 ansible = "*"
+loguru = "*"
 myst-parser = {extras = ["linkify"], version = "*"}
 paramiko = "*"
 pipenv = "*"
@@ -16,17 +17,20 @@ sphinx-last-updated-by-git = "*"
 sphinx-press-theme = "*"
 sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
-psycopg2 = "*"
+sphinx-design = "*"
 
 [dev-packages]
-ipython = "*"
-pytest = "*"
-pytest-sphinx = "*"
-pylint = "*"
-pytest-pylint = "*"
+black = "*"
 gitpython = "*"
+ipython = "*"
 loguru = "*"
+pylint = "*"
+pytest = "*"
 pytest-cov = "*"
+pytest-pylint = "*"
+pytest-sphinx = "*"
+tox = "*"
 
-[pipenv]
-allow_prereleases = true
+[ansible]
+ansible-lint = "*"
+ansible = "*"

@@ -1,0 +1,59 @@
+---
+- name: Add groups just in case
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  become: true
+  loop:
+    - ansible
+    - git
+- name: Make sure required users exist
+  ansible.builtin.user:
+    generate_ssh_key: true
+    group: users
+    groups: ansible,git,wheel
+    home: "{{ item.homedir }}"
+    name: "{{ item.user }}"
+    shell: /bin/bash
+    ssh_key_type: rsa
+    state: present
+    ssh_key_bits: 4096
+  become: true
+  loop: "{{ users_list }}"
+- name: Copy files to users
+  ansible.builtin.copy:
+    src: "{{ item[1] }}"
+    dest: "/home/{{ item[0].user }}/{{ item[1] }}"
+    owner: "{{ item[0].user }}"
+    mode: "u+rw,g+r,o+r"
+  loop: "{{ users_list | product(users_files) | list }}"
+  become: true
+  become_user: "{{ item[0].user }}"
+- name: Template wakatime config
+  ansible.builtin.template:
+    src: .wakatime.cfg.j2
+    dest: "/home/{{ item.user }}/.wakatime.cfg"
+    owner: "{{ item.user }}"
+    mode: "u+rw,go+r"
+  loop: "{{ users_list }}"
+  become: true
+  become_user: "{{ item.user }}"
+- name: Create git hooks dir
+  ansible.builtin.file:
+    group: git
+    owner: "{{ item.user }}"
+    path: "{{ item.homedir }}/.git/templates/"
+    recurse: true
+    state: directory
+  loop: "{{ users_list }}"
+  become: true
+  become_user: "{{ item.user }}"
+- name: Update authorized keys files
+  ansible.posix.authorized_key:
+    user: "{{ item.user }}"
+    key: "{{ lookup('file', 'id_rsa.pub') }}"
+    state: present
+  loop: "{{ users_list }}"
+  become: true
+  become_user: "{{ item.user }}"
+# code: language=ansible
