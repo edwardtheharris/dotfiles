@@ -7,6 +7,14 @@ date: 2024-01-22
 title: Bare-Metal Kubernetes for Masochists
 ---
 
+```{admonition} OpenSSL
+At some point, if we feel like it, it might be worth the time to set up
+a proper CA on the LAN.
+
+It sounds impossible, but you can, in fact, set up your own private
+[Let's Encrypt](https://arstechnica.com/information-technology/2024/03/banish-oem-self-signed-certs-forever-and-roll-your-own-private-letsencrypt/)
+```
+
 ## Goal
 
 This project is intended to discover as many errors, faults, and problems as
@@ -37,8 +45,6 @@ Because it's there.
 ```{toctree}
 etcd/index
 dex/index
-kube-apiserver/index
-kube-controller-manager/index
 ```
 
 ## Process
@@ -110,4 +116,10 @@ more difficult implementation I'd love to hear about it.
 * -
   - ldap02.int.bh.loc
   - lightweight directory access
+```
+
+```{admonition} nerdctl
+This may be helpful, but you'll need to look at the related package
+page [here](https://aur.archlinux.org/packages/nerdctl-full-bin) to get
+it working.
 ```

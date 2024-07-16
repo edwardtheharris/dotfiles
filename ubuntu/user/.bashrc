@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# shellcheck disable=SC2148
 CLICOLOR=1
 # shellcheck disable=SC2016
 LESS='-R --use-color -Dd+r$Du+b$'
@@ -18,15 +17,28 @@ export LSCOLORS
 export PS1
 export PATH
 
-if [ ! -f /usr/bin/yay ]; then
+if [ ! -f /usr/bin/yay ] && [ -f /usr/bin/pacman ]; then
   cd || true
-  git clone https://aur.archlinux.org/yay.git Documents/src/aur.archlinux.org/yay 
+  git clone https://aur.archlinux.org/yay.git Documents/src/aur.archlinux.org/yay
   cd Documents/src/aur.archlinux.org/yay || true
   makepkg -si --noconfirm
+
+  if [ ! -f /usr/bin/xsel ]; then
+    yay -Sy --noconfirm xsel
+  fi
+  if [ ! -f /usr/bin/node ]; then
+    yay -S npm
+  fi
+  if [ ! -f /usr/bin/xsel ]; then
+    yay -Sy --noconfirm xsel
+  fi
 fi
 
-if [ ! -f /usr/bin/node ]; then
-  yay -S npm
+if [ ! -f /usr/bin/git ]; then
+  if [ -f /usr/bin/apt ]; then
+    sudo apt-get -y update
+    sudo apt-get -y install curl git npm vim
+  fi
 fi
 
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
@@ -36,23 +48,6 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   vim +PlugInstall +qall
 fi
 
-if [ ! -f /usr/bin/xsel ]; then
-  yay -Sy --noconfirm xsel
-fi
-if [ ! -f /usr/bin/node ]; then
-  yay -S npm
-fi
-
-if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
-  git clone git@github.com:bryant/neovim.git "$HOME/Documents/src/github.com/bryant/neovim"
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  vim +PlugInstall +qall
-fi
-
-if [ ! -f /usr/bin/xsel ]; then
-  yay -Sy --noconfirm xsel
-fi
 
 if [ -f /usr/bin/xsel ]; then
   alias pbcopy='xsel --clipboard --input'

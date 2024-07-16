@@ -1,0 +1,12 @@
+[user]
+	email = xandertheharris@gmail.com
+	name = Xander Harris
+	username = edwardtheharris
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGdSJFMslx+Kg+QzW2BJlneg7gzR8CQ9FMeWJyb5Mo0e
+[init]
+	defaultBranch = main
+[alias]
+	s = status
+	p = push
+[commit]
+	gpgsign = true
