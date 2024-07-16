@@ -6,6 +6,7 @@
     - role: root
       tags:
         - root
+  become: true
 - name: Init One
   hosts: kcp,k8s
   remote_user: duchess

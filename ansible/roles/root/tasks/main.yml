@@ -27,6 +27,7 @@
   loop:
     - ansible
     - git
+    - iwd
     - networkmanager
 - name: Add groups
   ansible.builtin.group:
@@ -42,4 +43,3 @@
     owner: root
     group: root
     mode: ug+rw
-  notify: 'Restart NetworkManager'
