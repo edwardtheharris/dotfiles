@@ -13,7 +13,6 @@
     - '.bashrc'
     - '.gitconfig'
     - '.vimrc'
-  become: true
 - name: Template wakatime config
   ansible.builtin.template:
     src: .wakatime.cfg.j2
@@ -21,12 +20,15 @@
     owner: root
     group: root
     mode: "ug+rw"
-  become: true
-- name: Ensure git exists
+- name: Install some programs
   community.general.pacman:
-    name: git
+    name: "{{ item }}"
     state: present
-  become: true
+  loop:
+    - ansible
+    - git
+    - iwd
+    - networkmanager
 - name: Add groups
   ansible.builtin.group:
     name: "{{ item }}"
@@ -34,4 +36,10 @@
   loop:
     - ansible
     - git
-  become: true
+- name: Ensure uniform wifi backend
+  ansible.builtin.copy:
+    src: wifi_backend.conf
+    dest: /etc/NetworkManager/conf.d/wifi_backend.conf
+    owner: root
+    group: root
+    mode: ug+rw

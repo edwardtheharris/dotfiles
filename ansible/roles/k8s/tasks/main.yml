@@ -5,6 +5,7 @@
       yay --noconfirm -Syu kubeadm kubectl kubelet
     creates: /usr/bin/kubectl
   become_user: duchess
+  become: true
 - name: Create kube group
   ansible.builtin.group:
     name: kube
@@ -16,7 +17,7 @@
     group: kube
     owner: "{{ item.name }}"
     mode: ug+rwx
-  loop: "{{ users }}"
+  loop: "{{ k8s_users }}"
 - name: Fetch kube config
   ansible.builtin.fetch:
     src: "/etc/kubernetes/admin.conf"
@@ -26,11 +27,11 @@
 - name: Copy kube config
   ansible.builtin.copy:
     src: "admin.conf"
-    dest: "{{ item.dir}}/.kube/config"
+    dest: "{{ item.dir }}/.kube/config"
     group: kube
     owner: "{{ item.name }}"
     mode: u+rw
-  loop: "{{ users }}"
+  loop: "{{ k8s_users }}"
 - name: Create kube user
   ansible.builtin.user:
     name: kube
@@ -67,7 +68,8 @@
   ansible.builtin.command:
     chdir: /etc/kubeadm
     cmd: kubeadm reset -f
-- name: Delete reset node
+    removes: /etc/kubernetes/admin.conf
+- name: Delete reset node  # noqa
   ansible.builtin.command:
     cmd: kubectl delete node "{{ inventory_hostname }}"
 - name: Join existing cluster
