@@ -15,3 +15,13 @@
     owner: kube
     group: kube
     mode: ug+rwx
+- name: Upgrade packages
+  community.general.pacman:
+    state: present
+    update_cache: true
+    upgrade: true
+- name: Install LVM package
+  community.general.pacman:
+    name: lvm2
+    state: present
+    update_cache: true
