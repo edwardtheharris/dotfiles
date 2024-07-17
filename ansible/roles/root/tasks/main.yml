@@ -50,3 +50,15 @@
     name: 'glances[all]'
     state: present
     virtualenv: /root/.local
+- name: Copy updated service file
+  ansible.builtin.copy:
+    src: glances.service
+    dest: /usr/lib/systemd/system/glances.service
+    owner: root
+    group: root
+    mode: u+rw,go+r
+- name: Start glances web service
+  ansible.builtin.service:
+    name: glances
+    enabled: true
+    state: restarted
