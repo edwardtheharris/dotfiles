@@ -17,7 +17,7 @@
     group: kube
     owner: "{{ item.name }}"
     mode: ug+rwx
-  loop: "{{ users }}"
+  loop: "{{ k8s_users }}"
 - name: Fetch kube config
   ansible.builtin.fetch:
     src: "/etc/kubernetes/admin.conf"
@@ -31,7 +31,7 @@
     group: kube
     owner: "{{ item.name }}"
     mode: u+rw
-  loop: "{{ users }}"
+  loop: "{{ k8s_users }}"
 - name: Create kube user
   ansible.builtin.user:
     name: kube
@@ -49,7 +49,7 @@
   ansible.builtin.command:
     chdir: /etc/kubeadm
     cmd: kubeadm token create --description "{{ inventory_hostname }}"
-  register: token # noqa: [no-changed-when]
+  register: token
 - name: Template token join config
   ansible.builtin.template:
     src: join.yaml
