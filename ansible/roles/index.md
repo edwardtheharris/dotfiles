@@ -15,4 +15,17 @@ k8s/index
 kcp/index
 root/index
 users/index
+volumes/index
+```
+
+## Glossary
+
+```{glossary}
+NFS
+  Network File System, described in detail
+  [here](https://wiki.archlinux.org/title/NFS).
+
+LVM
+  Logical Volume Manager, described in detail
+  [here](https://wiki.archlinux.org/title/LVM).
 ```
