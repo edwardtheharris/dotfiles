@@ -26,7 +26,7 @@
 - name: Copy kube config
   ansible.builtin.copy:
     src: "admin.conf"
-    dest: "{{ item.dir}}/.kube/config"
+    dest: "{{ item.dir }}/.kube/config"
     group: kube
     owner: "{{ item.name }}"
     mode: u+rw
