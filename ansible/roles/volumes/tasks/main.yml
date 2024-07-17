@@ -1,0 +1,27 @@
+---
+- name: Create required group
+  ansible.builtin.group:
+    name: kube
+    state: present
+- name: Create required user
+  ansible.builtin.user:
+    name: kube
+    state: present
+    system: true
+- name: Add local provisioner directory
+  ansible.builtin.file:
+    dest: /mnt/disks
+    state: directory
+    owner: kube
+    group: kube
+    mode: ug+rwx
+- name: Upgrade packages
+  community.general.pacman:
+    state: present
+    update_cache: true
+    upgrade: true
+- name: Install LVM package
+  community.general.pacman:
+    name: lvm2
+    state: present
+    update_cache: true

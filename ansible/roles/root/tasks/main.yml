@@ -27,8 +27,10 @@
   loop:
     - ansible
     - git
+    - glances
     - iwd
     - networkmanager
+    - python-virtualenv
 - name: Add groups
   ansible.builtin.group:
     name: "{{ item }}"
@@ -43,3 +45,8 @@
     owner: root
     group: root
     mode: ug+rw
+- name: Add glances to root home dir
+  ansible.builtin.pip:
+    name: 'glances[all]'
+    state: present
+    virtualenv: /root/.local
