@@ -1,0 +1,42 @@
+---
+volumes_devices:
+  k8s01.breeze-blocks.net:
+    usb:
+      device: /dev/sdc
+      size: 58.6G
+  k8s02.breeze-blocks.net:
+    usb:
+      device: /dev/sdc
+      size: 58.6G
+  k8s03.breeze-blocks.net:
+    usb:
+      device: /dev/sdb
+      size: 58.6G
+  k8s04.breeze-blocks.net:
+    usb:
+      device: /dev/sdc
+      size: 58.6G
+  k8s05.breeze-blocks.net:
+    usb:
+      device: /dev/sda
+      size: 59.6G
+  k8s06.breeze-blocks.net:
+    usb:
+      device: /dev/sda
+      size: 59.6G
+  k8s07.breeze-blocks.net:
+    usb:
+      device: /dev/sdb
+      size: 58.6G
+  k8s08.breeze-blocks.net:
+    usb:
+      device: /dev/sdb
+      size: 58.6G
+  k8s09.breeze-blocks.net:
+    usb:
+      device: /dev/sdb
+      size: 58.6G
+  k8s10.breeze-blocks.net:
+    usb:
+      device: /dev/sdb
+      size: 58.6G
