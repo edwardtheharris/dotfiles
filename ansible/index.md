@@ -1,11 +1,14 @@
 ---
 abstract: Ansible configuration and usage.
-authors: Xander
+authors:
+  - name: Xander Harris
+    email: xandertheharris@gmail.com
 title: Ansible
 ---
 
 ```{toctree}
 files/index
+roles/root/index
 ```
 
 ## Playbooks
