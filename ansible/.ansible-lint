@@ -1,0 +1,6 @@
+exclude_paths:
+  - files/k8s/dex/
+
+skip_list:
+  - command-instead-of-shell
+  - no-changed-when
