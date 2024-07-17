@@ -3,7 +3,9 @@ import os
 # import sys
 
 # from nautobot.core.settings import *  # noqa F401,F403
+# pylint: disable=import-error,no-name-in-module
 from nautobot.core.settings import METRICS_ENABLED
+# pylint: disable=import-error,no-name-in-module
 from nautobot.core.settings_funcs import is_truthy, parse_redis_connection
 
 #########################
