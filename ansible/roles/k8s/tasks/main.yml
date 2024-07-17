@@ -5,6 +5,7 @@
       yay --noconfirm -Syu kubeadm kubectl kubelet
     creates: /usr/bin/kubectl
   become_user: duchess
+  become: true
 - name: Create kube group
   ansible.builtin.group:
     name: kube
@@ -48,7 +49,7 @@
   ansible.builtin.command:
     chdir: /etc/kubeadm
     cmd: kubeadm token create --description "{{ inventory_hostname }}"
-  register: token
+  register: token # noqa: [no-changed-when]
 - name: Template token join config
   ansible.builtin.template:
     src: join.yaml
@@ -67,7 +68,8 @@
   ansible.builtin.command:
     chdir: /etc/kubeadm
     cmd: kubeadm reset -f
-- name: Delete reset node
+    removes: /etc/kubernetes/admin.conf
+- name: Delete reset node  # noqa
   ansible.builtin.command:
     cmd: kubectl delete node "{{ inventory_hostname }}"
 - name: Join existing cluster
