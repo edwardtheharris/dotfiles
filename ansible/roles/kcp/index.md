@@ -7,3 +7,5 @@ title: Kubernetes Control Plane
 
 Presently only a single Control Plane cluster is supported, but support for
 high availability clusters will hopefully be available soon.
+
+[HA Clusters with Kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
