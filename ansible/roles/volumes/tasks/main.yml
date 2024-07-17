@@ -1,0 +1,8 @@
+---
+- name: Add local provisioner directory
+  ansible.builtin.file:
+    dest: /mnt/disks
+    state: directory
+    owner: kube
+    group: kube
+    mode: ug+rwx
