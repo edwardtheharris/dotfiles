@@ -34,3 +34,4 @@ tox = "*"
 [ansible]
 ansible-lint = "*"
 ansible = "*"
+molecule = "*"
