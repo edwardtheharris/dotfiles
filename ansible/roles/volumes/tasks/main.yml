@@ -54,6 +54,12 @@
   ansible.posix.mount:
     state: absent_from_fstab
     path: "{{ volumes_devices[inventory_hostname].local.partition }}"
+- name: Create lvm fs
+  community.general.filesystem:
+    dev: "{{ volumes_devices[inventory_hostname].local.partition }}"
+    force: true
+    fstype: lvm
+    state: present
 - name: Create USB LVM group
   community.general.lvg:
     vg: vg.usb
