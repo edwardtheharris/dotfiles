@@ -1,0 +1,15 @@
+---
+- name: Install logrotate
+  community.general.pacman:
+    name: logrotate
+    state: present
+- name: Copy logrotate.conf
+  ansible.builtin.copy:
+    src: logrotate.conf
+    dest: /etc/logrotate.conf
+    owner: root
+    group: root
+    mode: u+rw,go+r
+- name: Force rotate logs
+  ansible.builtin.shell:
+    cmd: logrotate -f /etc/logrotate.conf

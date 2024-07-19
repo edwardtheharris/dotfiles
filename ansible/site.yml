@@ -18,6 +18,10 @@
       tags:
         - containerd
       become: true
+    - role: logrotate
+      tags:
+        - logrotate
+      become: true
 - name: Join Nodes
   hosts: k8s
   roles:
