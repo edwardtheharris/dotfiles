@@ -1,0 +1,46 @@
+---
+- name: Install NFS package
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop:
+    - nfs-utils
+- name: Start NFS services
+  ansible.builtin.service:
+    name: "{{ item }}"
+    state: restarted
+    enabled: true
+  loop:
+    - nfs-idmapd
+    - nfs-mountd
+    - nfs-server
+    - nfsdcld
+- name: Create NFS LV
+  community.general.lvol:
+    vg: vg.usb
+    lv: nfs
+    size: 16G
+- name: Format nfs volume
+  community.general.filesystem:
+    fstype: btrfs
+    state: present
+    dev: /dev/vg.usb/nfs
+- name: Mount NFS for export from LV
+  ansible.posix.mount:
+    boot: true
+    fstype: btrfs
+    src: /dev/vg.usb/nfs
+    path: /mnt/disks/nfs
+    state: mounted
+- name: Copy exports
+  ansible.builtin.copy:
+    src: exports
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: ug+rw
+- name: Restart NFS
+  ansible.builtin.service:
+    name: nfs-server
+    state: restarted
