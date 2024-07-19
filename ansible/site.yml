@@ -33,6 +33,14 @@
       tags:
         - volumes
       become: true
+    - role: lvm
+      tags:
+        - lvm
+      become: true
+    - role: nfs
+      tags:
+        - nfs
+      become: true
 - name: Init Control Planes
   become: true
   hosts: kcp02
