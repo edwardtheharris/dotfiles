@@ -50,10 +50,20 @@
     number: 1
     part_end: 100%
     state: present
-- name: Create a LVM group
+- name: Unmount local
+  ansible.posix.mount:
+    state: absent_from_fstab
+    path: "{{ volumes_devices[inventory_hostname].local.partition }}"
+- name: Create USB LVM group
   community.general.lvg:
     vg: vg.usb
     pvs: "{{ volumes_devices[inventory_hostname].usb.device }}1"
+    state: present
+- name: Create local LVM group
+  community.general.lvg:
+    vg: vg.local
+    force: true
+    pvs: "{{ volumes_devices[inventory_hostname].local.partition }}"
     state: present
 - name: Create LV
   community.general.lvol:
