@@ -27,11 +27,11 @@
   ansible.builtin.file:
     dest: /etc/kubeadm/init.token
     state: absent
-- name: Reset existing cluster
-  ansible.builtin.command:
-    chdir: /etc/kubeadm
-    cmd: kubeadm reset --config reset.yaml --force
-    removes: /etc/kubernetes/admin.conf
+# - name: Reset existing cluster
+#   ansible.builtin.command:
+#     chdir: /etc/kubeadm
+#     cmd: kubeadm reset --config reset.yaml
+#     removes: /etc/kubernetes/admin.conf
 - name: Reset existing cluster
   ansible.builtin.shell:
     chdir: /etc/kubeadm
