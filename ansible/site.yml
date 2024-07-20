@@ -43,7 +43,7 @@
       become: true
 - name: Init Control Planes
   become: true
-  hosts: kcp02
+  hosts: kcp
   remote_user: duchess
   roles:
     - role: kcp
