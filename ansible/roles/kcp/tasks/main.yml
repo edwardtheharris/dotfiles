@@ -46,12 +46,12 @@
     owner: kube
     group: kube
     mode: ugo+rw
-- name: Init new cluster
-  ansible.builtin.command:
-    chdir: /etc/kubeadm
-    cmd: kubeadm init --config init.yaml
-    creates: /etc/kubernetes/admin.conf
-  register: init_result
-- name: Debug
-  ansible.builtin.debug:
-    var: init_result
+# - name: Init new cluster
+#   ansible.builtin.command:
+#     chdir: /etc/kubeadm
+#     cmd: kubeadm init --config init.yaml
+#     creates: /etc/kubernetes/admin.conf
+#   register: init_result
+# - name: Debug
+#   ansible.builtin.debug:
+#     var: init_result
