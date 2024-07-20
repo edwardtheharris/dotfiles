@@ -9,3 +9,5 @@ Presently only a single Control Plane cluster is supported, but support for
 high availability clusters will hopefully be available soon.
 
 [HA Clusters with Kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/)
+is helped with use of the tool
+[kube-vip](https://kube-vip.io/docs/installation/static/).
