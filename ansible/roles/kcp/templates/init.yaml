@@ -9,7 +9,7 @@ bootstrapTokens:
     - authentication
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: {{ kcp_aa }}
+  advertiseAddress: {{ ansible_host }}
   bindPort: 6443
 nodeRegistration:
   criSocket: unix:///var/run/containerd/containerd.sock
@@ -24,6 +24,7 @@ apiVersion: kubeadm.k8s.io/v1beta3
 certificatesDir: /etc/kubernetes/pki
 clusterName: breeze-blocks
 controllerManager: {}
+controlPlaneEndpoint: {{ kcp_aa }}
 dns: {}
 etcd:
   local:
