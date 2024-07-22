@@ -1,6 +1,6 @@
 ---
 - name: Copy root configs
-  hosts: kcp,k8s
+  hosts: localhost
   remote_user: duchess
   roles:
     - role: root
@@ -8,7 +8,7 @@
         - root
   become: true
 - name: Init One
-  hosts: kcp,k8s
+  hosts: local,k8s,kcp
   remote_user: duchess
   roles:
     - role: users
