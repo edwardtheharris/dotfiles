@@ -8,7 +8,7 @@
         - root
   become: true
 - name: Init One
-  hosts: localhost
+  hosts: local,k8s,kcp
   remote_user: duchess
   roles:
     - role: users
