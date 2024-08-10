@@ -7,8 +7,14 @@ title: Ansible
 ---
 
 ```{toctree}
+:caption: roles
+
 files/index
+roles/k8s/files/controller-manager/index
+roles/k8s/files/apiserver/index
 roles/root/index
+roles/k8s/index
+roles/index
 ```
 
 ## Playbooks
