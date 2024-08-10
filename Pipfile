@@ -12,12 +12,12 @@ pipenv = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-copybutton = "*"
+sphinx-design = "*"
 sphinx-git = "*"
 sphinx-last-updated-by-git = "*"
 sphinx-press-theme = "*"
 sphinxcontrib-autoyaml = "*"
 sphinxcontrib-programoutput = "*"
-sphinx-design = "*"
 
 [dev-packages]
 black = "*"
