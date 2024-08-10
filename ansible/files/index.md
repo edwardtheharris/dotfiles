@@ -5,7 +5,6 @@ title: Ansible Files
 
 ```{toctree}
 ad/index
-arch/index
 githooks/index
 k8s/index
 nautobot/index
