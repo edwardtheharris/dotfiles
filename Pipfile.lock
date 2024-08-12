@@ -1415,12 +1415,12 @@
         },
         "sphinx-last-updated-by-git": {
             "hashes": [
-                "sha256:9937f235911aaec566a652b26952b29f530abb86f98e0fb67843227301636457",
-                "sha256:edfd4970d9778123d3d0d9c5c9a9e3d700867a080539eb2bfe01e7078ca1dc78"
+                "sha256:6382c8285ac1f222483a58569b78c0371af5e55f7fbf9c01e5e8a72d6fdfa499",
+                "sha256:c145011f4609d841805b69a9300099fc02fed8f5bb9e5bcef77d97aea97b7761"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==0.3.7"
+            "version": "==0.3.8"
         },
         "sphinx-press-theme": {
             "hashes": [
