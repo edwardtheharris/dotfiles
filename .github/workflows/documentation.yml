@@ -6,12 +6,12 @@
 #
 # ```{literalinclude} /.github/workflows/pages.yml
 # :language: yaml
-# :start-at: "name: Test, Build, Deploy to GitHub Pages\n"
+# :start-at: "name: Documentation\n"
 # :end-before: "###\n"
 # ```
 #
 # Set a name for the workflow.
-name: Test, Build, Deploy to GitHub Pages
+name: Documentation
 on:
   push:
     branches:
@@ -65,11 +65,13 @@ jobs:
       - name: Install the checker
         run: npm i -g markdownlint-cli2 markdownlint-cli2-formatter-junit --save-dev
       - name: Lint the Markdown
-        run: markdownlint-cli2 **/*.md
+        run: markdownlint-cli2 **/*.md *.md
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
+          check_name: markdown-lint
+          comment_title: Markdown Lint Results
           files: markdownlint-cli2-junit.xml
   ###
   # ```{rubric} Build GitHub Pages Site
