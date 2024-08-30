@@ -10,7 +10,7 @@ title: Dot Files Changelog
 ## 0.0.3
 
 ```{git_changelog}
-:rev-list: 0.0.2..a8913244e8f7fc356652c876eff85a0e8252b19b
+:rev-list: 0.0.2..900975
 ```
 
 ## 0.0.2
