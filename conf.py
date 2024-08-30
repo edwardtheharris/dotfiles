@@ -48,7 +48,7 @@ graphviz_output_format = "png"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_context = {"full_path": str(Path(".").resolve())}
 html_static_path = ["_static"]
-html_theme = "press"
+html_theme = "sphinx_book_theme"
 myst_enable_extensions = [
     "amsmath",
     "attrs_block",

@@ -13,7 +13,7 @@ title: >
 ## Documentation
 
 ```{toctree}
-:glob:
+:caption: contents
 
 ansible/index
 ubuntu/index
@@ -22,7 +22,10 @@ ubuntu/index
 ## Minutiae
 
 ```{toctree}
-cicd
+:caption: meta
+
+.github/index
+changelog
 license
 readme
 security
