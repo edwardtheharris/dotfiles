@@ -15,7 +15,7 @@
 # licensed, by abirismyname
 # [bandit](https://pypi.org/project/bandit/) is Apache v2.0 licensed, by PyCQA
 #
-# ```{literalinclude} .github/workflows/bandit.yml
+# ```{literalinclude} /.github/workflows/bandit.yml
 # :language: yaml
 # :start-at: "name: Bandit\n"
 # :end-before: "###\n"
@@ -27,7 +27,6 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    ###
     # The branches below must be a subset of the branches above
     branches: [ "main" ]
   schedule:
@@ -38,20 +37,17 @@ on:
 # ---
 # Define the jobs necessary for a useful bandit run.
 #
-# ```{literalinclude} .github/workflows/bandit.yml
+# ```{literalinclude} /.github/workflows/bandit.yml
 # :language: yaml
 # :start-at: "jobs:\n"
 # ```
 jobs:
   bandit:
     permissions:
-      ###
       # for actions/checkout to fetch code
       contents: read
-      ###
       # for github/codeql-action/upload-sarif to upload SARIF results
       security-events: write
-      ###
       # only required for a private repository by
       # github/codeql-action/upload-sarif to get the Action run status
       actions: read
@@ -60,13 +56,10 @@ jobs:
       - uses: actions/checkout@main
       - name: Bandit Scan
         uses: shundor/python-bandit-scan@main
-        ###
         # optional arguments
         with:
-          ###
           # exit with 0, even with results found
           exit_zero: true # optional, default is DEFAULT
-          ###
           # File or directory to run bandit on
           # path: # optional, default is .
           # Report only issues of a given severity level or higher. Can be LOW, MEDIUM or HIGH. Default is UNDEFINED (everything)
