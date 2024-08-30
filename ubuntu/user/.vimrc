@@ -19,6 +19,7 @@ Plug 'junegunn/vim-github-dashboard'
 Plug 'ledger/vim-ledger'
 Plug 'lepture/vim-jinja'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathangrigg/vim-beancount'
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

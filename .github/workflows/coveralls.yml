@@ -1,12 +1,17 @@
 on: ["push", "pull_request", "workflow_dispatch"]
 name: Test Coveralls
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     strategy:
         matrix:
-          python-version: ["3.9", "3.10", "3.11", "3.12"]
+          python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@main
       with:
@@ -26,14 +31,21 @@ jobs:
         pip3 install -U pip pipenv
         pipenv requirements --dev > reqs
         pip3 install -r reqs
-        pytest --cov --cov-report=xml --
+        pytest --cov --cov-report=xml --junit-xml=results.xml --
         sed -i -e "s/__version__/$(git rev-parse --short=8 HEAD)/" sonar-project.properties
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        check_name: python-tests
+        comment_title: Python Results
+        files: results.xml
     - name: Install tox and any other packages
       run: pip install tox
     - name: Run tox
       run: tox -e py
     - name: Coveralls
-      uses: coverallsapp/github-action@v2
+      uses: coverallsapp/github-action@main
       with:
         parallel: true
         flag-name: run-${{ matrix.python-version }}
@@ -46,4 +58,4 @@ jobs:
         uses: coverallsapp/github-action@v1
         with:
             parallel-finished: true
-            carryforward: "run-3.9,run-3.10,run-3.11,run-3.12"
+            carryforward: "run-3.8,run-3.9,run-3.10,run-3.11,run-3.12"

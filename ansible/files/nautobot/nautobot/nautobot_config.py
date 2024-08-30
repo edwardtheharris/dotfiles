@@ -1,10 +1,13 @@
 """Nautobot configuration module."""
+
 import os
+
 # import sys
 
 # from nautobot.core.settings import *  # noqa F401,F403
 # pylint: disable=import-error,no-name-in-module
 from nautobot.core.settings import METRICS_ENABLED
+
 # pylint: disable=import-error,no-name-in-module
 from nautobot.core.settings_funcs import is_truthy, parse_redis_connection
 
@@ -29,8 +32,11 @@ CACHES = {
     "default": {
         "BACKEND": os.getenv(
             "NAUTOBOT_CACHES_BACKEND",
-            "django_prometheus.cache.backends.redis.RedisCache"
-            if METRICS_ENABLED else "django_redis.cache.RedisCache",
+            (
+                "django_prometheus.cache.backends.redis.RedisCache"
+                if METRICS_ENABLED
+                else "django_redis.cache.RedisCache"
+            ),
         ),
         "LOCATION": parse_redis_connection(redis_database=1),
         "TIMEOUT": 300,
@@ -65,8 +71,11 @@ DATABASES = {
         "CONN_MAX_AGE": int(os.getenv("NAUTOBOT_DB_TIMEOUT", "300")),
         "ENGINE": os.getenv(
             "NAUTOBOT_DB_ENGINE",
-            "django_prometheus.db.backends.postgresql"
-            if METRICS_ENABLED else "django.db.backends.postgresql",
+            (
+                "django_prometheus.db.backends.postgresql"
+                if METRICS_ENABLED
+                else "django.db.backends.postgresql"
+            ),
         ),  # Database driver ("mysql" or "postgresql")
     }
 }
@@ -82,8 +91,9 @@ if DATABASES["default"]["ENGINE"].endswith("mysql"):
 # and contain a mix of letters, numbers, and
 # symbols. Nautobot will not run without this defined. For more information, see
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-SECRET_KEY
-SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY",
-                       "z)4(*sle8ouoxt!_s*q4-)nf@wy4*p!3bmg9i4r$6gyj@ym=eb")
+SECRET_KEY = os.getenv(
+    "NAUTOBOT_SECRET_KEY", "z)4(*sle8ouoxt!_s*q4-)nf@wy4*p!3bmg9i4r$6gyj@ym=eb"
+)
 
 #####################################
 #                                   #
@@ -388,7 +398,8 @@ SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY",
 # Send anonymized installation metrics when `nautobot-server post_upgrade` command is run.
 #
 INSTALLATION_METRICS_ENABLED = is_truthy(
-    os.getenv("NAUTOBOT_INSTALLATION_METRICS_ENABLED", "True"))
+    os.getenv("NAUTOBOT_INSTALLATION_METRICS_ENABLED", "True")
+)
 
 # Storage backend to use for Job input files and Job output files.
 #
