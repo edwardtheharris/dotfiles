@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "79e71dc09b8a9e9985c02b161b538418ca5c70581a42ec5bc5e7e576eabae8e4"
+            "sha256": "593828b4be7c8a6d4b6fad100276aaab1a04e2d137d0ce51b8780ef5a07ee359"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -696,6 +696,14 @@
         }
     },
     "default": {
+        "accessible-pygments": {
+            "hashes": [
+                "sha256:40918d3e6a2b619ad424cb91e556bd3bd8865443d9f22f1dcdf79e33c8046872",
+                "sha256:88ae3211e68a1d0b011504b2ffc1691feafce124b845bd072ab6f9f66f34d4b7"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==0.0.5"
+        },
         "alabaster": {
             "hashes": [
                 "sha256:c00dca57bca26fa62a6d7d0a9fcce65f3e026e9bfe33e9c538fd3fbb2144fd9e",
@@ -769,6 +777,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==4.2.0"
+        },
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051",
+                "sha256:b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed"
+            ],
+            "markers": "python_full_version >= '3.6.0'",
+            "version": "==4.12.3"
         },
         "certifi": {
             "hashes": [
@@ -1226,6 +1242,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==2.22"
         },
+        "pydata-sphinx-theme": {
+            "hashes": [
+                "sha256:2136ad0e9500d0949f96167e63f3e298620040aea8f9c74621959eda5d4cf8e6",
+                "sha256:7762ec0ac59df3acecf49fd2f889e1b4565dbce8b88b2e29ee06fdd90645a06d"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==0.15.4"
+        },
         "pygments": {
             "hashes": [
                 "sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199",
@@ -1370,6 +1394,14 @@
             ],
             "version": "==2.2.0"
         },
+        "soupsieve": {
+            "hashes": [
+                "sha256:e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb",
+                "sha256:e72c4ff06e4fb6e4b5a9f0f55fe6e81514581fca1515028625d0f299c602ccc9"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==2.6"
+        },
         "sphinx": {
             "hashes": [
                 "sha256:0cce1ddcc4fd3532cf1dd283bc7d886758362c5c1de6598696579ce96d8ffa5b",
@@ -1387,6 +1419,15 @@
             "index": "pypi",
             "markers": "python_version >= '3.9'",
             "version": "==2024.4.16"
+        },
+        "sphinx-book-theme": {
+            "hashes": [
+                "sha256:1f25483b1846cb3d353a6bc61b3b45b031f4acf845665d7da90e01ae0aef5b4d",
+                "sha256:a554a9a7ac3881979a87a2b10f633aa2a5706e72218a10f71be38b3c9e831ae9"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==1.1.3"
         },
         "sphinx-copybutton": {
             "hashes": [
@@ -1503,6 +1544,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.38.2"
+        },
+        "typing-extensions": {
+            "hashes": [
+                "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+                "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==4.12.2"
         },
         "uc-micro-py": {
             "hashes": [
@@ -1719,15 +1768,6 @@
         }
     },
     "develop": {
-        "ansible": {
-            "hashes": [
-                "sha256:6144fb4bc785f917f86b1b0b6eadc9b894e9751ff9e9a7875afcfa2f74581ffd",
-                "sha256:a8ef380d6e5eed2078059bb3a8b2470c66e748c4e8644ec7b77f66ced94d202b"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.10'",
-            "version": "==10.3.0"
-        },
         "ansible-compat": {
             "hashes": [
                 "sha256:cb06e037380e6789f50e0d31cf16bba02cf741c661d657f56c77c246ca600edc",

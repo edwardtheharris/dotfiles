@@ -5,7 +5,7 @@
 # For most shell projects ShellCheck is sufficient for ensuring legible code of
 # decent quality.
 #
-# ```{literalinclude} ./.github/workflows/shell.yml
+# ```{literalinclude} /.github/workflows/shell.yml
 # :caption: .github/workflows/shell.yml#name
 # :language: yaml
 # :start-at: "name: ShellCheck\n"
@@ -22,6 +22,7 @@ on:
     branches:
       - main
   workflow_dispatch:
+
 ###
 # ```{rubric} ShellCheck Jobs
 # ```
@@ -29,7 +30,7 @@ on:
 # Define the jobs that run in the ShellCheck workflow. Might like to add some
 # reporting to the PR on the results from these at some point.
 #
-# ```{literalinclude} ./.github/workflows/shell.yml
+# ```{literalinclude} /.github/workflows/shell.yml
 # :caption: .github/workflows/shell.yml#jobs
 # :language: yaml
 # :start-at: "jobs:\n"
