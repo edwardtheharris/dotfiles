@@ -11,6 +11,7 @@
 	a = add
 	c = commit
 	co = checkout
+	rc = rebase --continue
 [commit]
 	gpgsign = true
 [pull]
