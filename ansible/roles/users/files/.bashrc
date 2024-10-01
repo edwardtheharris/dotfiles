@@ -59,7 +59,7 @@ if [ -f /usr/bin/xsel ]; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
-if [ -f /usr/sbin/direnv ]; then
+if [ ! -f /usr/sbin/direnv ]; then
   yay -S direnv --noconfirm
   eval "$(direnv hook bash)"
 else
