@@ -10,6 +10,7 @@
 	p = push
 	a = add
 	c = commit
+	co = checkout
 [commit]
 	gpgsign = true
 [pull]
