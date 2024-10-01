@@ -1,6 +1,6 @@
 ---
 - name: Copy root configs
-  hosts: hap01.breeze-blocks.net 
+  hosts: local
   remote_user: duchess
   roles:
     - role: root
@@ -8,12 +8,17 @@
         - root
   become: true
 - name: Init One
-  hosts: hap01.breeze-blocks.net # local,k8s,kcp
+  hosts: localhost # hap01.breeze-blocks.net # local,k8s,kcp
   remote_user: duchess
   roles:
     - role: users
       tags:
         - users
+    - role: tf
+      tags:
+        - users
+        - tf
+      become: true
     - role: containerd
       tags:
         - containerd
