@@ -59,9 +59,19 @@ if [ -f /usr/bin/xsel ]; then
   alias pbpaste='xsel --clipboard --output'
 fi
 
+if [ ! -f /usr/sbin/direnv ]; then
+  yay -S direnv --noconfirm
+  eval "$(direnv hook bash)"
+else
+  eval "$(direnv hook bash)"
+fi
+
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias h='helm'
 alias ip='ip -color=auto'
 alias k='kubectl'
 alias ls='ls --color'
+alias tf='terraform'
+alias tfd='terraform-docs'
+alias tg='terragrunt'

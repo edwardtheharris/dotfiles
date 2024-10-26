@@ -1,0 +1,29 @@
+- name: Install terraform utilties
+  community.general.pacman:
+    name: "{{ item }}"
+    executable: yay
+    state: present
+  loop:
+    - terraform
+    - terraform-docs
+    - terragrunt
+- name: Add terraform group
+  ansible.builtin.group:
+    name: terraform
+    state: present
+- name: Add user to group
+  ansible.builtin.user:
+    append: true
+    groups: terraform
+    user: "{{ local_user }}"
+- name: Copy completion files for aliased commands
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/usr/share/bash-completion/completions/{{ item }}"
+    owner: root
+    group: terraform
+    mode: ug+rw
+  loop:
+    - tf
+    - tfd
+    - tg
