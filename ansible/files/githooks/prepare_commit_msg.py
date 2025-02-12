@@ -65,7 +65,7 @@ def get_issue_number(branch: str) -> str:
 def get_issue_message(branch: str) -> str:
     issue_message = str()
     try:
-        msg_match = re.search(r"^\d+(.*)", branch)
+        msg_match = re.search(r"^\d+-(.*)", branch)
         issue_message = msg_match[1].replace("-", " ")
     except TypeError as type_err:
         issue_message = type_err.name
