@@ -8,8 +8,8 @@ users_list:
     homedir: /home/skipper
   - user: snafu
     homedir: /home/snafu
-  - user: xander.harris 
-    homedir: /home/xander.harris
+  - user: xander
+    homedir: /home/xander
 users_files:
   - .bash_profile
   - .bashrc
