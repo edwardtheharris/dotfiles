@@ -53,6 +53,10 @@ def get_git_username():
 
 
 def get_issue_number(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
     issue_number = str()
     try:
         in_match = re.search(r"^(\d+)", branch)
@@ -63,6 +67,10 @@ def get_issue_number(branch: str) -> str:
 
 
 def get_issue_message(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
     issue_message = str()
     try:
         msg_match = re.search(r"^\d+-(.*)", branch)
@@ -73,6 +81,10 @@ def get_issue_message(branch: str) -> str:
 
 
 def get_jira_ticket(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
     jira_ticket = str()
     try:
         jira_match = re.search(r"^.*\-([a-z]+-\d+)-.*", branch)
