@@ -10,6 +10,7 @@ title: GitHub Actions configuration
 Stay away from zero days with Dependabot.
 
 ```{autoyaml} .github/dependabot.yml
+
 ```
 
 ## Workflows
@@ -22,6 +23,7 @@ run a lot of pipelines for free.
 The CodeQL workflow provided by GitHub is actually pretty good also.
 
 ```{autoyaml} .github/workflows/bandit.yml
+
 ```
 
 ### codeql
@@ -29,13 +31,15 @@ The CodeQL workflow provided by GitHub is actually pretty good also.
 The CodeQL workflow provided by GitHub is actually pretty good also.
 
 ```{autoyaml} .github/workflows/codeql.yml
+
 ```
 
 ### pylint
 
-I still like to run things through PyLint anyway.
+I still like to run things through black anyway.
 
-```{autoyaml} .github/workflows/pylint.yml
+```{autoyaml} .github/workflows/black.yml
+
 ```
 
 ### shell
@@ -43,4 +47,5 @@ I still like to run things through PyLint anyway.
 And ShellCheck never hurt anybody either.
 
 ```{autoyaml} .github/workflows/shell.yml
+
 ```
