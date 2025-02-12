@@ -10,7 +10,9 @@ from loguru import logger
 from .prepare_commit_msg import (
     get_git_branch,
     get_git_username,
-    parse_branch_name,
+    get_issue_message,
+    get_issue_number,
+    get_jira_ticket,
     prepare_message,
     write_message,
 )
@@ -38,26 +40,34 @@ def test_get_git_username():
     assert get_git_username() == test_user
 
 
-def test_parse_branch_name():
+def test_get_issue_message():
     """Test feature branch parse."""
     logger.debug(__name__)
     branch_name = Repo(Path(".")).active_branch.name
-    regex_match = re.match(r"^(\d*)(.*)", branch_name)
-    logger.info(regex_match)
-    result = parse_branch_name(branch_name)
-    test_issue_number = regex_match.groups()[0]
-    test_issue_message = regex_match.groups()[1].replace("-", " ").lstrip()
-    test_ret_value = {
-        "issue_number": test_issue_number,
-        "issue_message": test_issue_message,
-    }
-    assert result == test_ret_value
+    msg_match = re.search(r"^\d+-(.*)", branch_name)
+    issue_message = msg_match[1].replace("-", " ")
+    assert issue_message == get_issue_message(branch_name)
+
+
+def test_get_issue_number():
+    logger.debug(__name__)
+    branch_name = Repo(Path(".")).active_branch.name
+    iss_match = re.match(r"^(\d*)(.*)", branch_name)
+    assert iss_match[1] == get_issue_number(branch_name)
+
+
+def test_get_jira_ticket():
+    logger.debug(__name__)
+    branch_name = "123-bbs-111-some-branch-name"
+    jira_match = re.search(r"^.*\-([a-z]+-\d+)-.*", branch_name)
+    jira_ticket = jira_match[1].upper()
+    assert jira_ticket == get_jira_ticket(branch_name)
 
 
 def test_prepare_message_main_branch():
     """Handle a main branch."""
     logger.debug(__name__)
-    test_username = get_git_username()
+    test_username = "edwardtheharris"
     test_res = prepare_message(
         "main", {"issue_number": "1", "issue_message": "none"}, test_username
     )
@@ -68,14 +78,14 @@ def test_prepare_message_main_branch():
 def test_prepare_message_feature_branch():
     """Create message for a feature branch."""
     logger.debug(__name__)
-    test_username = get_git_username()
+    test_username = "edwardtheharris"
     test_branch = "123-feature-branch-test"
     result = prepare_message(
         test_branch,
         {"issue_message": "feature branch test", "issue_number": "123"},
         test_username,
     )
-    assert "See #123" in result
+    assert "Closes #123" in result
     assert f"@{test_username}" in result
     assert "Changelog: changed" in result
 
