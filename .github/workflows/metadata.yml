@@ -47,7 +47,6 @@ jobs:
           github_token: ${{ secrets.PROJECT_PAT }}
           labels: |
             ${{ github.event.pull_request.base.ref }}
-            helm
   assign-author:
     runs-on: ubuntu-latest
     steps:
@@ -61,7 +60,7 @@ jobs:
         with:
           # You can target a project in a different organization
           # to the issue
-          project-url: https://github.com/orgs/platonic-io/projects/21
+          project-url: https://github.com/users/edwardtheharris/projects/6
           github-token: ${{ secrets.PROJECT_PAT }}
   add-to-milestone:
     runs-on: ubuntu-latest
