@@ -52,19 +52,59 @@ def get_git_username():
     return git_config.get_value("user", "username")
 
 
-def parse_branch_name(branch: str) -> dict:
-    """Use regex to pull the issue number from the branch name."""
-    ret_value = {}
-    regex_match = re.match(r"^(\d*)(.*)", branch)
+def get_issue_number(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
+    issue_number = str()
     try:
-        issue_number = regex_match.groups()[0]
-        issue_message = regex_match.groups()[1].replace("-", " ").lstrip()
-        ret_value.update({"issue_number": issue_number, "issue_message": issue_message})
-    except IndexError as index_error:
-        ret_value = {
-            issue_number: "0",
-            issue_message: index_error,
-        }
+        in_match = re.search(r"^(\d+)", branch)
+        issue_number = in_match[1]
+    except AttributeError as att_err:
+        issue_number = att_err.name
+    return issue_number
+
+
+def get_issue_message(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
+    issue_message = str()
+    try:
+        msg_match = re.search(r"^\d+-(.*)", branch)
+        issue_message = msg_match[1].replace("-", " ")
+    except TypeError as type_err:
+        issue_message = type_err.name
+    return issue_message
+
+
+def get_jira_ticket(branch: str) -> str:
+    """Return the issue number based on the branch name.
+
+    :param str branch: Branch we can extract an issue from
+    """
+    jira_ticket = str()
+    try:
+        jira_match = re.search(r"^.*\-([a-z]+-\d+)-.*", branch)
+        jira_ticket = jira_match[1].upper()
+    except TypeError as type_err:
+        jira_ticket = type_err.add_note("no jira ticket")
+    return jira_ticket
+
+
+def parse_branch_name(branch: str) -> dict:
+    """Use regex to pull the issue number from the branch name.
+
+    :param str branch: A git branch containing an issue or jira_ticket
+        example: `46-inf-197-add-docs-for-updated-files`
+    """
+    ret_value = {
+        "issue_number": get_issue_number(branch),
+        "issue_message": get_issue_message(branch),
+        "jira_ticket": get_jira_ticket(branch),
+    }
     return ret_value
 
 
@@ -73,13 +113,17 @@ def prepare_message(branch_name: str, parsed_branch: dict, git_username: str):
     if branch_name != "main":
         issue_msg = parsed_branch.get("issue_message")
         issue_num = parsed_branch.get("issue_number")
+        jira_ticket = parsed_branch.get("jira_ticket")
         config_read = Repo(Path(".")).config_reader()
         user_email = config_read.get_value("user", "email")
         user_name = config_read.get_value("user", "name")
         ret_value = (
-            f"{issue_msg}\n\nSee #{issue_num}\n\n"
+            f"{issue_msg}\n\n"
+            f"Closes #{issue_num}\n\n"
+            f"{jira_ticket}\n\n"
+            f"Jira: {jira_ticket}\n"
             f"User: @{git_username}\n"
-            f"Author: {user_name} <{user_email}> \n"
+            f"Author: '{user_name} <{user_email}>'\n"
             "Changelog: changed"
         )
     else:
@@ -108,4 +152,7 @@ def write_message():
 
 
 if __name__ == "__main__":
-    write_message()
+    try:
+        write_message()
+    except TypeError:
+        pass
