@@ -1,7 +1,5 @@
 """Test module for the prepare commit msg file."""
 
-import re
-
 from pathlib import Path
 
 from git import Repo
@@ -43,25 +41,34 @@ def test_get_git_username():
 def test_get_issue_message():
     """Test feature branch parse."""
     logger.debug(__name__)
-    branch_name = Repo(Path(".")).active_branch.name
-    msg_match = re.search(r"^\d+-(.*)", branch_name)
-    issue_message = msg_match[1].replace("-", " ")
+    branch_name = "345-an-issue-message"
+    issue_message = "an issue message"
     assert issue_message == get_issue_message(branch_name)
+
+    branch = "wat"
+    result = get_issue_message(branch)
+    assert isinstance(result, TypeError)
 
 
 def test_get_issue_number():
     logger.debug(__name__)
-    branch_name = Repo(Path(".")).active_branch.name
-    iss_match = re.match(r"^(\d*)(.*)", branch_name)
-    assert iss_match[1] == get_issue_number(branch_name)
+    branch_name = "123-a-branch-name"
+    assert "123" == get_issue_number(branch_name)
+
+    branch = "no-number"
+    result = get_issue_number(branch)
+    assert isinstance(result, TypeError)
 
 
 def test_get_jira_ticket():
     logger.debug(__name__)
     branch_name = "123-bbs-111-some-branch-name"
-    jira_match = re.search(r"^.*\-([a-z]+-\d+)-.*", branch_name)
-    jira_ticket = jira_match[1].upper()
+    jira_ticket = "BBS-111"
     assert jira_ticket == get_jira_ticket(branch_name)
+
+    branch = "no-ticket"
+    result = get_jira_ticket(branch)
+    assert isinstance(result, TypeError)
 
 
 def test_prepare_message_main_branch():
@@ -71,8 +78,8 @@ def test_prepare_message_main_branch():
     test_res = prepare_message(
         "main", {"issue_number": "1", "issue_message": "none"}, test_username
     )
-    assert f"Hey @{test_username}!" in test_res
-    assert "Changelog: kitten killer" in test_res
+    assert "Initial commit" in test_res
+    assert "Changelog: created" in test_res
 
 
 def test_prepare_message_feature_branch():
