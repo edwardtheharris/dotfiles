@@ -30,11 +30,12 @@ import re
 
 from pathlib import Path
 
+import git
 from git import Repo
 from loguru import logger
 
 
-def get_git_branch():
+def get_git_branch() -> str:
     """Return the currently checked out branch.
 
     :var str ret_value: Value to be returned, or the branch of the current
@@ -42,17 +43,18 @@ def get_git_branch():
     :return ret_value: The branch of the current commit.
     """
     logger.info(__name__)
-    git_r = Repo(Path("."))
-    return git_r.active_branch.name
+    git_r = git.Repo(Path("."))
+    return str(git_r.active_branch.name)
 
 
-def get_git_username():
+def get_git_username() -> int | float | str:
     """Return the value of the git username from the configuration."""
-    git_config = Repo(Path(".")).config_reader()
-    return git_config.get_value("user", "username")
+    git_config = git.Repo(Path(".")).config_reader()
+    username = git_config.get_value("user", "username")
+    return username
 
 
-def get_issue_number(branch: str) -> str:
+def get_issue_number(branch: str) -> str | TypeError:
     """Return the issue number based on the branch name.
 
     :param str branch: Branch we can extract an issue from
@@ -61,26 +63,26 @@ def get_issue_number(branch: str) -> str:
     try:
         in_match = re.search(r"^(\d+)", branch)
         issue_number = in_match[1]
-    except AttributeError as att_err:
-        issue_number = att_err.name
+    except TypeError as type_err:
+        issue_number = type_err
     return issue_number
 
 
-def get_issue_message(branch: str) -> str:
+def get_issue_message(branch: str) -> str | TypeError:
     """Return the issue number based on the branch name.
 
     :param str branch: Branch we can extract an issue from
     """
     issue_message = str()
+    msg_match = re.search(r"^\d+-(.*)", branch)
     try:
-        msg_match = re.search(r"^\d+-(.*)", branch)
         issue_message = msg_match[1].replace("-", " ")
     except TypeError as type_err:
-        issue_message = type_err.name
+        issue_message = type_err
     return issue_message
 
 
-def get_jira_ticket(branch: str) -> str:
+def get_jira_ticket(branch: str) -> str | TypeError:
     """Return the issue number based on the branch name.
 
     :param str branch: Branch we can extract an issue from
@@ -90,7 +92,7 @@ def get_jira_ticket(branch: str) -> str:
         jira_match = re.search(r"^.*\-([a-z]+-\d+)-.*", branch)
         jira_ticket = jira_match[1].upper()
     except TypeError as type_err:
-        jira_ticket = type_err.add_note("no jira ticket")
+        jira_ticket = type_err
     return jira_ticket
 
 
@@ -128,11 +130,9 @@ def prepare_message(branch_name: str, parsed_branch: dict, git_username: str):
         )
     else:
         ret_value = (
-            f"Hey @{git_username}! - What do you think you're doing?"
-            "\n\nYou know better than to commit directly to main."
-            "\n\nFix it or GitHub will murder 1 kitten for every commit"
-            "you attempt to make to main."
-            "Changelog: kitten killer"
+            "Initial commit\n\n"
+            "Changelog: created\n\n"
+            "Author: '{user_name} <{user_email}>'"
         )
     return ret_value
 
@@ -152,7 +152,4 @@ def write_message():
 
 
 if __name__ == "__main__":
-    try:
-        write_message()
-    except TypeError:
-        pass
+    write_message()
