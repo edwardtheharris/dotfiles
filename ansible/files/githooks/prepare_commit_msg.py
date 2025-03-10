@@ -44,7 +44,11 @@ def get_git_branch() -> str:
     """
     logger.info(__name__)
     git_r = git.Repo(Path("."))
-    return str(git_r.active_branch.name)
+    try:
+        return_value = str(git_r.active_branch.name)
+    except TypeError:
+        return_value = "rebase"
+    return return_value
 
 
 def get_git_username() -> int | float | str:
