@@ -48,7 +48,6 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   vim +PlugInstall +qall
 fi
 
-
 if [ -f /usr/bin/xsel ]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
@@ -56,4 +55,5 @@ fi
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+alias h='h --debug'
 alias ip='ip -color=auto'
