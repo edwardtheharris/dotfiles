@@ -41,8 +41,8 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   vim +PlugInstall +qall
 fi
 
-
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+alias h='h --debug'
 alias ip='ip -color=auto'
 alias ls='ls --color'

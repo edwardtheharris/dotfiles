@@ -18,7 +18,6 @@ export LSCOLORS
 export PS1
 export PATH
 
-
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   if [ -f /usr/bin/pacman ]; then
     if [ ! -f /usr/bin/node ]; then
@@ -43,10 +42,9 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
   vim +PlugInstall +qall
 fi
 
-
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias h='helm'
+alias h='h --debug'
 alias ip='ip -color=auto'
 alias k='kubectl'
 alias ls='ls --color'

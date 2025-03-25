@@ -54,7 +54,6 @@ export PYTHONPATH
 
 alias gp='git push'
 alias k='kubectl'
-alias h='helm'
+alias h='h --debug'
 alias ip='ip -color=auto'
 alias ls='ls --color'
-
