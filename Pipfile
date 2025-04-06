@@ -8,7 +8,6 @@ ansible = "*"
 loguru = "*"
 myst-parser = {extras = ["linkify"], version = "*"}
 paramiko = "*"
-pipenv = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-book-theme = "*"
@@ -17,6 +16,7 @@ sphinx-design = "*"
 sphinx-git = "*"
 sphinx-last-updated-by-git = "*"
 sphinxcontrib-autoyaml = "*"
+pipenv = "*"
 
 [dev-packages]
 black = "*"

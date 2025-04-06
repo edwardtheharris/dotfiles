@@ -1,0 +1,8 @@
+---
+user: string
+useremail: string
+usergroup: string
+userhome: string
+username: string
+userrole: string
+systemos: string
