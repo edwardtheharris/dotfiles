@@ -4,6 +4,7 @@ CLICOLOR=1
 # shellcheck disable=SC2016
 LESS='-R --use-color -Dd+r$Du+b$'
 LSCOLORS="Ea"
+# shellcheck disable=SC1091
 . "${HOME}/.ps1"
 PATH="${PATH}:${HOME}/.local/bin"
 
@@ -21,6 +22,7 @@ export PATH
 on_arch="$(uname -r | grep arch)"
 
 if [ "$on_arch" != "" ]; then
+  # shellcheck disable=SC1091
   . "${HOME}/.arch"
 fi
 
