@@ -1,0 +1,29 @@
+---
+- name: Copy rc files # tasks file for user
+  ansible.builtin.copy:
+    dest: "{{ item.dest }}"
+    group: "{{ usergroup }}"
+    mode: ug+rw
+    owner: "{{ user }}"
+    src: "{{ item.src }}"
+  loop:
+    - dest: "{{ userhome }}/.bash_profile"
+      src: bash_profile
+    - dest: "{{ userhome }}/.ps1"
+      src: "ps1-{{ userrole }}"
+    - dest: "{{ userhome }}/.{{ systemos }}"
+      src: "{{ systemos }}"
+- name: Template rc files
+  ansible.builtin.template:
+    dest: "{{ item.dest }}"
+    group: "{{ usergroup }}"
+    mode: ug+rw
+    owner: "{{ user }}"
+    src: "{{ item.src }}"
+  loop:
+    - dest: "{{ userhome }}/.bashrc"
+      src: bashrc
+    - dest: "{{ userhome }}/.gitconfig"
+      src: "gitconfig"
+    - dest: "{{ userhome }}/.wakatime.cfg"
+      src: wakatime.cfg

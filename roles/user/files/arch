@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [ ! -f /usr/bin/yay ] && [ -f /usr/bin/makepkg ]; then
+  cd || true
+  git clone https://aur.archlinux.org/yay-bin.git "$HOME/Documents/src/aur.archlinux.org/yay-bin"
+  cd "$HOME/Documents/src/aur.archlinux.org/yay-bin" || true
+  makepkg -si --noconfirm
+fi
+
+if [ ! -f /usr/bin/node ] && [ -f /usr/bin/yay ]; then
+  yay -S --noconfirm npm
+fi
+
+if [ ! -f /usr/bin/xsel ] && [ -f /usr/bin/yay ]; then
+  yay -Sy --noconfirm xsel
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
+
+if [ ! -d "${HOME}/.config/nvim" ]; then
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  rm -rf ~/.config/nvim/.git
+fi
+
+if [ ! -f /usr/sbin/direnv ] && [ -f /usr/bin/yay ]; then
+  yay -S direnv --noconfirm
+  eval "$(direnv hook bash)"
+fi

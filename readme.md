@@ -15,14 +15,17 @@ title: dotfiles readme
 
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
+- [BASH Prompt Generator](https://bash-prompt-generator.org/)
+
 Best Amazing SHell is the best.
 
 ### Supported Distributions
 
-* Alpine
-* ArchLinux
-* Linux Mint
-* MacOS
+- [Alpine](https://www.alpinelinux.org/)
+- [ArchLinux](https://archlinux.org)
+- [Linux Mint](https://www.linuxmint.com/)
+- [MacOS](https://support.apple.com/en-us/102662)
+- [Ubuntu](https://ubuntu.com/)
 
 ## GitHub Actions
 
