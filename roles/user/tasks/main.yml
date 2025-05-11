@@ -33,3 +33,8 @@
       src: "gitconfig"
     - dest: "{{ userhome }}/.wakatime.cfg"
       src: wakatime.cfg
+- name: Update cache and install direnv
+  community.general.pacman:
+    name: direnv
+    state: present
+  become: true

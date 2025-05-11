@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT-0
+---
+- name: Update package cache
+  community.general.pacman:
+    executable: yay
+    update_cache: true
+- name: Add missing firmware for Arch
+  community.general.pacman:
+    executable: yay
+    name: "{{ item }}"
+    state: present
+  loop:
+    - aic94xx-firmware
+    - ast-firmware
+    - linux-firmware-qlogic
+    - wd719x-firmware
+# tasks file for arch

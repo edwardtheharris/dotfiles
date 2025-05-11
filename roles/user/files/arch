@@ -22,7 +22,4 @@ if [ ! -d "${HOME}/.config/nvim" ]; then
   rm -rf ~/.config/nvim/.git
 fi
 
-if [ ! -f /usr/sbin/direnv ] && [ -f /usr/bin/yay ]; then
-  yay -S direnv --noconfirm
-  eval "$(direnv hook bash)"
-fi
+eval "$(direnv hook bash)"
