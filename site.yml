@@ -1,10 +1,4 @@
 ---
-- name: Init named users
-  hosts: ns
-  roles:
-    - role: user
-      tags:
-        - sa
 - name: Init arch user
   hosts: localhost
   roles:
@@ -12,13 +6,16 @@
       tags:
         - user
       vars:
+        git_email: auser@yourdomain 
+        git_name: auser 
+        git_username: auser
+        git_usersigningkey: 0000000000000000 
+        systemos: arch
         user: duchess
         usergroup: users
         userhome: /home/duchess
         username: duchess
         userrole: user
-        usersigningkey: A023AEA106CFDDCE
-        systemos: arch
         wakatime_key: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           64303236366239303338343631303331613565326135636239643036373164633336613364663234
@@ -27,22 +24,50 @@
           6531613239316632330a353137303665306230366233376337353235383463343938313364636261
           63613439613665643766653934356434643830326366643434623839646139613233343338373531
           3062623664633965306332656361653130366435623964346631
-
 - name: Init root user
   hosts: localhost
-  become: yes
+  become: true
   roles:
     - role: user
       tags:
         - root
       vars:
+        git_email: root@yourdomain.local
+        git_name: bofh 
+        git_username: bofh 
+        git_usersigningkey: 32EC6D40E15C3CA3
+        systemos: arch
         user: root
         usergroup: root
         userhome: /root/
         username: root
         userrole: root
-        usersigningkey: 32EC6D40E15C3CA3
+        wakatime_key: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64303236366239303338343631303331613565326135636239643036373164633336613364663234
+          6430313562363461663333393963356435353737656532370a626534303764626338366537623431
+          32353634376665323365623737343135326133303339383733616238313032303362666238363534
+          6531613239316632330a353137303665306230366233376337353235383463343938313364636261
+          63613439613665643766653934356434643830326366643434623839646139613233343338373531
+          3062623664633965306332656361653130366435623964346631
+- name: Init service account users
+  hosts: ns
+  roles:
+    - role: user
+      tags:
+        - sa
+      vars:
+        git_email: named@yourdomain.local
+        git_name: named 
+        git_username: named 
+        git_usersigningkey: 32EC6D40E15C3CA3
         systemos: arch
+        user: named
+        usergroup: named
+        userhome: /var/named
+        username: named
+        userrole: sa
+        usersigningkey: A023AEA106CFDDCE
         wakatime_key: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           64303236366239303338343631303331613565326135636239643036373164633336613364663234
