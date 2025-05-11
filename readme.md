@@ -50,7 +50,7 @@ This repository has three main plays, explained below.
 
    The default configuration will run this on `localhost`.
 
-2. A service account, as in the account you would use to run 
+2. A service account, as in the account you would use to run
    [bind](https://bind9.readthedocs.io/en/latest/).
 
    ```sh
@@ -73,9 +73,9 @@ This repository has three main plays, explained below.
 [Samba Active Directory](ansible/files/ad/index.md), because AD should be
 run on Linux because MS has enough money.
 
-## Tools
+## tools
 
-Vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
+vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
 
 Sphinx extensions used by the documentation include the following.
 
