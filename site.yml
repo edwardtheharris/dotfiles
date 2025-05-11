@@ -6,10 +6,10 @@
       tags:
         - user
       vars:
-        git_email: auser@yourdomain 
-        git_name: auser 
+        git_email: auser@yourdomain
+        git_name: auser
         git_username: auser
-        git_usersigningkey: 0000000000000000 
+        git_usersigningkey: 0000000000000000
         systemos: arch
         user: duchess
         usergroup: users
@@ -33,8 +33,8 @@
         - root
       vars:
         git_email: root@yourdomain.local
-        git_name: bofh 
-        git_username: bofh 
+        git_name: bofh
+        git_username: bofh
         git_usersigningkey: 32EC6D40E15C3CA3
         systemos: arch
         user: root
@@ -58,8 +58,8 @@
         - sa
       vars:
         git_email: named@yourdomain.local
-        git_name: named 
-        git_username: named 
+        git_name: named
+        git_username: named
         git_usersigningkey: 32EC6D40E15C3CA3
         systemos: arch
         user: named
@@ -76,3 +76,9 @@
           6531613239316632330a353137303665306230366233376337353235383463343938313364636261
           63613439613665643766653934356434643830326366643434623839646139613233343338373531
           3062623664633965306332656361653130366435623964346631
+- name: Install missing firmware for Arch
+  hosts: localhost
+  roles:
+    - role: arch
+      tags:
+        - arch
