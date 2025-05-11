@@ -39,16 +39,43 @@ done
 
 ## Usage
 
-This is too complicated to explain at the moment.
+This repository has three main plays, explained below.
+
+1. Local user, as in your Linux username. The values in `site.yml`
+   represent my personal settings, all variables are required.
+
+   ```sh
+   ansible-playbook -t user site.yml
+   ```
+
+   The default configuration will run this on `localhost`.
+
+2. A service account, as in the account you would use to run
+   [bind](https://bind9.readthedocs.io/en/latest/).
+
+   ```sh
+   ansible-playbook -t sa site.yml
+   ```
+
+   The default configuration assumes a group named `ns` in your
+   Ansible inventory.
+
+3. The root account, you shouldn't be using this account but
+   if you're always tinkering with stuff like the author does,
+   then you'll want to have reasonable settings for the shell at least.
+
+   ```sh
+   ansible-playbook -t root site.yml
+   ```
 
 ## Additional services
 
 [Samba Active Directory](ansible/files/ad/index.md), because AD should be
-run on Linux.
+run on Linux because MS has enough money.
 
-## Tools
+## tools
 
-Vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
+vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
 
 Sphinx extensions used by the documentation include the following.
 
