@@ -13,6 +13,12 @@
       src: "ps1-{{ userrole }}"
     - dest: "{{ userhome }}/.{{ systemos }}"
       src: "{{ systemos }}"
+    - dest: "{{ userhome }}/.config/nvim/lua/config/lazy.lua"
+      src: "nvim/lazy.lua"
+    - dest: "{{ userhome }}/.config/nvim/lua/plugins/transparent.lua"
+      src: "nvim/transparent.lua"
+    - dest: "{{ userhome }}/.config/nvim/lua/plugins/whitespace.lua"
+      src: "nvim/whitespace.lua"
 - name: Template rc files
   ansible.builtin.template:
     dest: "{{ item.dest }}"

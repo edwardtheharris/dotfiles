@@ -20,6 +20,14 @@ roles/ansible/README
 roles/user/README
 ```
 
+### NeoVIM plugins
+
+This role assumes the presence of NeoVIM and it's related configuration
+directories. It installs the following plugins.
+
+- [transparent.nvim](https://github.com/xiyaowong/transparent.nvim)
+- [whitespace.nvim](https://github.com/nvim-zh/whitespace.nvim)
+
 ## Minutiae
 
 ```{toctree}
@@ -34,9 +42,9 @@ security
 
 ## Indices and tables
 
-* {ref}`genindex`
-* {ref}`modindex`
-* {ref}`search`
+- {ref}`genindex`
+- {ref}`modindex`
+- {ref}`search`
 
 ## Readme
 
