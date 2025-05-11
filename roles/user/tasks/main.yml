@@ -17,6 +17,8 @@
       src: "nvim/lazy.lua"
     - dest: "{{ userhome }}/.config/nvim/lua/plugins/transparent.lua"
       src: "nvim/transparent.lua"
+    - dest: "{{ userhome }}/.config/nvim/lua/plugins/trim.lua"
+      src: "nvim/trim.lua"
 - name: Template rc files
   ansible.builtin.template:
     dest: "{{ item.dest }}"
