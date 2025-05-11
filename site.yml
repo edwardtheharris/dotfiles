@@ -6,13 +6,16 @@
       tags:
         - user
       vars:
+        git_email: auser@yourdomain 
+        git_name: auser 
+        git_username: auser
+        git_usersigningkey: 0000000000000000 
+        systemos: arch
         user: duchess
         usergroup: users
         userhome: /home/duchess
         username: duchess
         userrole: user
-        usersigningkey: A023AEA106CFDDCE
-        systemos: arch
         wakatime_key: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           64303236366239303338343631303331613565326135636239643036373164633336613364663234
@@ -29,13 +32,16 @@
       tags:
         - root
       vars:
+        git_email: root@yourdomain.local
+        git_name: bofh 
+        git_username: bofh 
+        git_usersigningkey: 32EC6D40E15C3CA3
+        systemos: arch
         user: root
         usergroup: root
         userhome: /root/
         username: root
         userrole: root
-        usersigningkey: 32EC6D40E15C3CA3
-        systemos: arch
         wakatime_key: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           64303236366239303338343631303331613565326135636239643036373164633336613364663234
@@ -51,13 +57,17 @@
       tags:
         - sa
       vars:
+        git_email: named@yourdomain.local
+        git_name: named 
+        git_username: named 
+        git_usersigningkey: 32EC6D40E15C3CA3
+        systemos: arch
         user: named
         usergroup: named
         userhome: /var/named
         username: named
         userrole: sa
         usersigningkey: A023AEA106CFDDCE
-        systemos: arch
         wakatime_key: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           64303236366239303338343631303331613565326135636239643036373164633336613364663234
