@@ -1,4 +1,19 @@
 ---
+- name: Check for lazy.vim install
+  ansible.builtin.stat:
+    dest: "{{ userhome }}/.config/nvim"
+  register: nvim
+  # git clone https://github.com/LazyVim/starter ~/.config/nvim
+- name: Install lazy.nvim
+  ansible.builtin.git:
+    dest: "{{ userhome }}/.config/nvim"
+    force: true
+    repo: https://github.com/LazyVim/starter.git
+  when: nvim.stat.exists == false
+- name: Clean up lazy.nvim install
+  ansible.builtin.file:
+    dest: "{{ userhome }}/.config/nvim/.git"
+    state: absent
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
     dest: "{{ item.dest }}"
