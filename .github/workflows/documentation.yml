@@ -34,8 +34,6 @@ on:
 permissions:
   contents: read
   issues: read
-  checks: write
-  pull-requests: write
 
 ###
 # ```{rubric} Workflow Jobs
@@ -57,6 +55,9 @@ jobs:
   # :end-before: "###\n"
   # ```
   markdownlint:
+    permissions:
+      checks: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -109,7 +110,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@main
         with:
-          path: './deploy'
+          path: "./deploy"
   ###
   # ```{rubric} Deploy the Pages site
   # ```
