@@ -29,6 +29,9 @@ on:
 # :start-at: "jobs:\n"
 # :end-before: "####\n"
 # ```
+permissions:
+  contents: read
+
 jobs:
   add_labels:
     permissions:
