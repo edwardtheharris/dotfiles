@@ -16,10 +16,6 @@ on:
     branches:
       - main
   workflow_dispatch: {}
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
 ####
 
 ###
@@ -35,6 +31,8 @@ permissions:
 # ```
 jobs:
   add_labels:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -48,11 +46,15 @@ jobs:
           labels: |
             ${{ github.event.pull_request.base.ref }}
   assign-author:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: assign
         uses: toshimaru/auto-author-assign@main
   add-to-project:
+    permissions:
+      issues: write
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
@@ -63,6 +65,9 @@ jobs:
           project-url: https://github.com/users/edwardtheharris/projects/5
           github-token: ${{ secrets.PROJECT_PAT }}
   add-to-milestone:
+    permissions:
+      pull-requests: write
+      images: write
     runs-on: ubuntu-latest
     steps:
       - uses: benelan/milestone-action@v3

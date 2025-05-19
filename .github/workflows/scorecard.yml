@@ -18,7 +18,6 @@ on:
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
   pull_request:
     branches: ["main"]
-  push: {}
 permissions: read-all
 ####
 
