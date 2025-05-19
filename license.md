@@ -1,7 +1,7 @@
 ---
 abstract: >-
   SPDX-License-Identifier:MIT
-source: https://opensource.org/license/w3c
+source: https://opensource.org/license/mit
 title: MIT License
 ---
 
