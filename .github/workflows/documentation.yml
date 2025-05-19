@@ -91,7 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
-      id-token: write
     steps:
       - uses: actions/checkout@main
         with:
@@ -125,6 +124,7 @@ jobs:
   pages:
     permissions:
       pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
