@@ -78,8 +78,8 @@ def test_prepare_message_main_branch():
     test_res = prepare_message(
         "main", {"issue_number": "1", "issue_message": "none"}, test_username
     )
-    assert "Initial commit" in test_res
-    assert "Changelog: created" in test_res
+    assert "Initial commit" in test_res  # nosec assert_used
+    assert "Changelog: created" in test_res  # nosec assert_used
 
 
 def test_prepare_message_feature_branch():
