@@ -9,22 +9,18 @@
 # ```{literalinclude} .github/workflows/scorecard.yml
 # :language: yaml
 # :start-at: "name: Scorecard supply-chain security\n"
-# :end-before: "###\n"
+# :end-before: "####\n"
 # ```
 name: Scorecard supply-chain security
 on:
   ###
-  # For Branch-Protection check. Only the default branch is supported. See
-  # https://github.com/ossf/scorecard/blob/main/docs/checks.md#branch-protection
-  branch_protection_rule:
-  ###
   # To guarantee Maintained check is occasionally updated. See
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
-  schedule:
-    - cron: '44 7 * * 2'
-  push:
-    branches: [ "main" ]
+  pull_request:
+    branches: ["main"]
 permissions: read-all
+####
+
 ###
 # ```{rubric} Jobs for SSS
 # ```
@@ -50,12 +46,12 @@ jobs:
 
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@main # v3.1.0
+        uses: actions/checkout@v3.1.0
         with:
           persist-credentials: false
 
       - name: "Run analysis"
-        uses: ossf/scorecard-action@main # v2.1.2
+        uses: ossf/scorecard-action@v2.1.2
         with:
           results_file: results.sarif
           results_format: sarif
@@ -77,7 +73,7 @@ jobs:
       # Upload the results as artifacts (optional). Commenting out will disable uploads of run results in SARIF
       # format to the repository Actions tab.
       - name: "Upload artifact"
-        uses: actions/upload-artifact@main # v3.1.0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: SARIF file
           path: results.sarif
@@ -85,6 +81,6 @@ jobs:
 
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
-        uses: github/codeql-action/upload-sarif@main # v2.2.4
+        uses: github/codeql-action/upload-sarif@v2.2.4 # v2.2.4
         with:
           sarif_file: results.sarif
