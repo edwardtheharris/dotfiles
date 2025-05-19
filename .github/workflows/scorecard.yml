@@ -9,22 +9,19 @@
 # ```{literalinclude} .github/workflows/scorecard.yml
 # :language: yaml
 # :start-at: "name: Scorecard supply-chain security\n"
-# :end-before: "###\n"
+# :end-before: "####\n"
 # ```
 name: Scorecard supply-chain security
 on:
   ###
-  # For Branch-Protection check. Only the default branch is supported. See
-  # https://github.com/ossf/scorecard/blob/main/docs/checks.md#branch-protection
-  branch_protection_rule:
-  ###
   # To guarantee Maintained check is occasionally updated. See
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
-  schedule:
-    - cron: '44 7 * * 2'
-  push:
-    branches: [ "main" ]
+  pull_request:
+    branches: ["main"]
+  push: {}
 permissions: read-all
+####
+
 ###
 # ```{rubric} Jobs for SSS
 # ```
