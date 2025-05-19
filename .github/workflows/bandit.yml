@@ -53,9 +53,14 @@ jobs:
       actions: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
       - name: Bandit Scan
-        uses: shundor/python-bandit-scan@main
+        uses: shundor/python-bandit-scan@ab1d87dfccc5a0ffab88be3aaac6ffe35c10d6cd # main
         # optional arguments
         with:
           # exit with 0, even with results found
