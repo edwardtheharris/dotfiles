@@ -91,7 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
-      id-token: write
     steps:
       - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
         with:

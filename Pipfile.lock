@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d34e3120364e24c71f80a1598670ecdf54a072c3a138dbaa34db8cd420c335ac"
+            "sha256": "f77bf9cdb3a82b10ace89bd1537bc4017b9bac8f2f0066623039ffc18b339eca"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -1253,6 +1253,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==1.17.1"
         },
+        "cfgv": {
+            "hashes": [
+                "sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9",
+                "sha256:e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==3.4.0"
+        },
         "chardet": {
             "hashes": [
                 "sha256:1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7",
@@ -1460,6 +1468,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==3.1.44"
         },
+        "identify": {
+            "hashes": [
+                "sha256:45e92fd704f3da71cc3880036633f48b4b7265fd4de2b57627cb157216eb7eb8",
+                "sha256:5f34248f54136beed1a7ba6a6b5c4b6cf21ff495aac7c359e1ef831ae3b8ab25"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==2.6.10"
+        },
         "iniconfig": {
             "hashes": [
                 "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7",
@@ -1650,6 +1666,14 @@
             "markers": "python_version >= '3.5'",
             "version": "==1.0.0"
         },
+        "nodeenv": {
+            "hashes": [
+                "sha256:6ec12890a2dab7946721edbfbcd91f3319c6ccc9aec47be7c7e6b7011ee6645f",
+                "sha256:ba11c9782d29c27c70ffbdda2d7415098754709be8a7056d79a737cd901155c9"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6'",
+            "version": "==1.9.1"
+        },
         "packaging": {
             "hashes": [
                 "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
@@ -1705,6 +1729,15 @@
             ],
             "markers": "python_version >= '3.9'",
             "version": "==1.6.0"
+        },
+        "pre-commit": {
+            "hashes": [
+                "sha256:601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146",
+                "sha256:a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==4.2.0"
         },
         "prompt-toolkit": {
             "hashes": [
