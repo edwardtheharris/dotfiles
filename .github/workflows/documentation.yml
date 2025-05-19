@@ -34,7 +34,7 @@ on:
 permissions:
   contents: read
   issues: read
-  id-token: write
+  pages: write
 
 ###
 # ```{rubric} Workflow Jobs
@@ -125,7 +125,6 @@ jobs:
   pages:
     permissions:
       pages: write
-      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
