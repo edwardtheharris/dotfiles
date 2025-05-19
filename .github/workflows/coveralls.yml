@@ -14,11 +14,16 @@ jobs:
       matrix:
         python-version: ["3.11", "3.12", "3.13"]
     steps:
-      - uses: actions/checkout@main
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
         with:
           fetch-depth: 0
       - name: Setup Python
-        uses: actions/setup-python@main
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # main
         with:
           python-version: ${{ matrix.python-version }}
       - name: git config
@@ -35,7 +40,7 @@ jobs:
           pytest --cov --cov-report=xml --junit-xml=results.xml --
           sed -i -e "s/__version__/$(git rev-parse --short=8 HEAD)/" sonar-project.properties
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@afb2984f4d89672b2f9d9c13ae23d53779671984 # v2.19.0
         if: always()
         with:
           check_name: python-tests
@@ -46,7 +51,7 @@ jobs:
       - name: Run tox
         run: tox -e py
       - name: Coveralls
-        uses: coverallsapp/github-action@main
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # main
         with:
           parallel: true
           flag-name: run-${{ matrix.python-version }}
@@ -55,8 +60,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
       - name: Close parallel build
-        uses: coverallsapp/github-action@v1
+        uses: coverallsapp/github-action@09b709cf6a16e30b0808ba050c7a6e8a5ef13f8d # v1.2.5
         with:
           parallel-finished: true
           carryforward: "run-3.11,run-3.12,run-3.13"
