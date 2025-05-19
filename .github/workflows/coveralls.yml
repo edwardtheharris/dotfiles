@@ -5,7 +5,7 @@ permissions:
   issues: read
 jobs:
   build:
-    permission:
+    permissions:
       checks: write
       pull-requests: write
     name: Build
