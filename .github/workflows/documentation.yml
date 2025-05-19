@@ -34,6 +34,7 @@ on:
 permissions:
   contents: read
   issues: read
+  id-token: write
 
 ###
 # ```{rubric} Workflow Jobs
