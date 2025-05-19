@@ -18,18 +18,17 @@
 # :caption: .github/workflows/codeql.yml#name
 # :language: yaml
 # :start-at: "name: CodeQL\n"
-# :end-before: "###\n"
+# :end-before: "####\n"
 # ```
 name: CodeQL
 permissions:
   contents: read
 on:
-  push:
-    branches: ["main"]
+  push: {}
   pull_request:
     branches: ["main"]
-  schedule:
-    - cron: "18 22 * * 6"
+####
+
 ###
 # ```{rubric} CodeQL Jobs
 # ```

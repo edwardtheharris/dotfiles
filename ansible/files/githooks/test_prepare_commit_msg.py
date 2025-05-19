@@ -24,7 +24,7 @@ def test_get_git_branch():
     logger.debug(__name__)
     test_branch = Repo(Path(".")).active_branch.name
 
-    assert get_git_branch() == test_branch
+    assert get_git_branch() == test_branch  # nosec assert_used
 
 
 def test_get_git_username():
