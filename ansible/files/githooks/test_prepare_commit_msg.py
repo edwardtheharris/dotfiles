@@ -35,7 +35,7 @@ def test_get_git_username():
     logger.debug(__name__)
     test_conf = Repo(Path(".")).config_reader()
     test_user = test_conf.get_value("user", "username")
-    assert get_git_username() == test_user
+    assert get_git_username() == test_user  # nosec assert_used
 
 
 def test_get_issue_message():
@@ -43,32 +43,32 @@ def test_get_issue_message():
     logger.debug(__name__)
     branch_name = "345-an-issue-message"
     issue_message = "an issue message"
-    assert issue_message == get_issue_message(branch_name)
+    assert issue_message == get_issue_message(branch_name)  # nosec assert_used
 
     branch = "wat"
     result = get_issue_message(branch)
-    assert isinstance(result, TypeError)
+    assert isinstance(result, TypeError)  # nosec assert_used
 
 
 def test_get_issue_number():
     logger.debug(__name__)
     branch_name = "123-a-branch-name"
-    assert "123" == get_issue_number(branch_name)
+    assert "123" == get_issue_number(branch_name)  # nosec assert_used
 
     branch = "no-number"
     result = get_issue_number(branch)
-    assert isinstance(result, TypeError)
+    assert isinstance(result, TypeError)  # nosec assert_used
 
 
 def test_get_jira_ticket():
     logger.debug(__name__)
     branch_name = "123-bbs-111-some-branch-name"
     jira_ticket = "BBS-111"
-    assert jira_ticket == get_jira_ticket(branch_name)
+    assert jira_ticket == get_jira_ticket(branch_name)  # nosec assert_used
 
     branch = "no-ticket"
     result = get_jira_ticket(branch)
-    assert isinstance(result, TypeError)
+    assert isinstance(result, TypeError)  # nosec assert_used
 
 
 def test_prepare_message_main_branch():
@@ -78,8 +78,8 @@ def test_prepare_message_main_branch():
     test_res = prepare_message(
         "main", {"issue_number": "1", "issue_message": "none"}, test_username
     )
-    assert "Initial commit" in test_res
-    assert "Changelog: created" in test_res
+    assert "Initial commit" in test_res  # nosec assert_used
+    assert "Changelog: created" in test_res  # nosec assert_used
 
 
 def test_prepare_message_feature_branch():
@@ -92,9 +92,9 @@ def test_prepare_message_feature_branch():
         {"issue_message": "feature branch test", "issue_number": "123"},
         test_username,
     )
-    assert "Closes #123" in result
-    assert f"@{test_username}" in result
-    assert "Changelog: changed" in result
+    assert "Closes #123" in result  # nosec assert_used
+    assert f"@{test_username}" in result  # nosec assert_used
+    assert "Changelog: changed" in result  # nosec assert_used
 
 
 def test_write_message():
@@ -104,4 +104,4 @@ def test_write_message():
         c_fh.write("")
         commit_msg = write_message()
         git_username = get_git_username()
-    assert git_username in commit_msg
+    assert git_username in commit_msg  # nosec assert_used
