@@ -58,4 +58,4 @@ jobs:
           pip3 install -r reqs
       - name: Detecting errors with black
         run: |
-          black $(git ls-files '*.py')
+          black .

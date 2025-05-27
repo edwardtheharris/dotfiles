@@ -1,8 +1,8 @@
 ---
 abstract: >
-    The dotfiles of excellent graphic designer and noted sesquipedalian,
-    @edwardtheharris. Contains system-appropriate configs for bash, vim,
-    and wakatime.
+  The dotfiles of excellent graphic designer and noted sesquipedalian,
+  @edwardtheharris. Contains system-appropriate configs for bash, vim,
+  and wakatime.
 authors: Xander Harris
 date: 2024-01-27
 title: dotfiles readme
@@ -12,6 +12,7 @@ title: dotfiles readme
 &nbsp; [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/shell.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=ShellCheck)](https://github.com/edwardtheharris/dotfiles/actions/workflows/shell.yml)
 [![wakatime](https://wakatime.com/badge/github/edwardtheharris/dotfiles.svg)](https://wakatime.com/badge/github/edwardtheharris/dotfiles)
 [![Coverage Status](https://coveralls.io/repos/github/edwardtheharris/dotfiles/badge.svg)](https://coveralls.io/github/edwardtheharris/dotfiles)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
@@ -83,3 +84,8 @@ Sphinx extensions used by the documentation include the following.
 2. [sphinxcontrib-autoyaml](https://pypi.org/project/sphinxcontrib-autoyaml/)
 3. [sphinx-copybutton](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)
 4. [sphinx-last-updated-by-git](https://pypi.org/project/sphinx-last-updated-by-git/)
+
+### pre-commit hooks
+
+1. [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+2. [black](https://black.readthedocs.io/en/stable/integrations/source_version_control.html)
