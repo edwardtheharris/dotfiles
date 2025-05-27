@@ -87,5 +87,5 @@ Sphinx extensions used by the documentation include the following.
 
 ### pre-commit hooks
 
-1. [gitlint](https://jorisroovers.com/gitlint/latest/commit_hooks/)
+1. [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 2. [black](https://black.readthedocs.io/en/stable/integrations/source_version_control.html)
