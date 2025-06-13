@@ -32,6 +32,8 @@
       src: "nvim/lazy.lua"
     - dest: "{{ userhome }}/.config/nvim/lua/plugins/transparent.lua"
       src: "nvim/transparent.lua"
+    - dest: "{{ userhome }}/.config/nvim/lua/plugins/wakatime.lua"
+      src: "nvim/wakatime.lua"
     - dest: "{{ userhome }}/.config/nvim/lua/plugins/whitespace.lua"
       src: "nvim/whitespace.lua"
 - name: Template rc files
