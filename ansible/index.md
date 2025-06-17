@@ -9,7 +9,6 @@ title: Ansible
 ```{toctree}
 :caption: roles
 
-files/index
 roles/k8s/files/controller-manager/index
 roles/k8s/files/apiserver/index
 roles/root/index
@@ -69,12 +68,15 @@ following.
 #### {file}`hosts.yml`
 
 ```{autoyaml} ansible/hosts.yml
+
 ```
 
 ```{sectionauthor} Xander Harris <xander.harris@gmail.com>
+
 ```
 
-[^ansible-lint]: More information on configuring
+[^ansible-lint]:
+    More information on configuring
     [ansible-lint](https://ansible.readthedocs.io/projects/lint/) can be found
     in the related
     [docs](https://ansible.readthedocs.io/projects/lint/configuring/#ansible-lint-configuration).
