@@ -7,9 +7,10 @@
 - name: Install lazy.nvim
   ansible.builtin.git:
     dest: "{{ userhome }}/.config/nvim"
-    force: true
+    clone: false
     repo: https://github.com/LazyVim/starter.git
-  when: nvim.stat.exists == false
+    update: false
+    version: main
 - name: Clean up lazy.nvim install
   ansible.builtin.file:
     dest: "{{ userhome }}/.config/nvim/.git"
