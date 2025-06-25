@@ -16,8 +16,8 @@ title: >
 :caption: contents
 
 ansible/index
-roles/ansible/README
-roles/user/README
+roles/ansible/readme
+roles/user/readme
 ```
 
 ### NeoVIM plugins
