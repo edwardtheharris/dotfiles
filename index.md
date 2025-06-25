@@ -102,3 +102,14 @@ security
 [ufw](https://help.ubuntu.com/community/UFW)
 : Un-Complicated Firewall, which is an Ubuntu project designed to make managing
   Linux firewalls less of a disaster area.
+
+## Extensions
+
+Some of the extensions used to generate this repository's documentation
+were sourced from [sphinx-extensions](https://sphinx-extensions.readthedocs.io/en/latest/).
+
+The most important are listed here.
+
+- [myst-parser](https://github.com/ExecutableBookProject/MyST-Parser)
+- [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild)
+- [sphinx-copybutton](https://sphinx-extensions.readthedocs.io/en/latest/sphinx-copybutton.html)

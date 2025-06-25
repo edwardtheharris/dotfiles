@@ -17,6 +17,7 @@ sphinx-design = "*"
 sphinx-git = "*"
 sphinx-last-updated-by-git = "*"
 sphinxcontrib-autoyaml = "*"
+ansible-lint = "*"
 
 [dev-packages]
 bandit = "*"

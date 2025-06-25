@@ -6,3 +6,11 @@ authors:
 date: 2026-06-25
 title: dotfiles role index
 ---
+
+This is the index for dotfiles related roles.
+
+```{toctree}
+ansible/readme
+packages/readme
+user/readme
+```
