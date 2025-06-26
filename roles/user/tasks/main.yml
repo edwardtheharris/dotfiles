@@ -1,56 +1,76 @@
 ---
+- name: Check for existing user
+  ansible.builtin.stat:
+    dest: >-
+      {{ user_home }}
+  register: user_stat
+- name: Create user if required
+  ansible.builtin.user:
+    name: >-
+      {{ user_user }}
+    create_home: true
+    group: >-
+      {{ user_group }}
+    home: >-
+      {{ user_home }}
+    shell: /bin/bash
+    state: present
+  become: true
+  when: not user_stat.stat.exists
 - name: Check for lazy.vim install
   ansible.builtin.stat:
-    dest: "{{ userhome }}/.config/nvim"
+    dest: "{{ user_home }}/.config/nvim"
   register: nvim
   # git clone https://github.com/LazyVim/starter ~/.config/nvim
 - name: Install lazy.nvim
   ansible.builtin.git:
-    dest: "{{ userhome }}/.config/nvim"
+    dest: "{{ user_home }}/.config/nvim"
     clone: false
     repo: https://github.com/LazyVim/starter.git
     update: false
     version: main
 - name: Clean up lazy.nvim install
   ansible.builtin.file:
-    dest: "{{ userhome }}/.config/nvim/.git"
+    dest: "{{ user_home }}/.config/nvim/.git"
     state: absent
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
-    dest: "{{ item.dest }}"
-    group: "{{ usergroup }}"
+    dest: "{{ user_home }}/{{ user_item.dest }}"
+    group: "{{ user_group }}"
     mode: ug+rw
-    owner: "{{ user }}"
-    src: "{{ item.src }}"
-  loop:
-    - dest: "{{ userhome }}/.bash_profile"
-      src: bash_profile
-    - dest: "{{ userhome }}/.ps1"
-      src: "ps1-{{ userrole }}"
-    - dest: "{{ userhome }}/.{{ systemos }}"
-      src: "{{ systemos }}"
-    - dest: "{{ userhome }}/.config/nvim/lua/config/lazy.lua"
-      src: "nvim/lazy.lua"
-    - dest: "{{ userhome }}/.config/nvim/lua/plugins/transparent.lua"
-      src: "nvim/transparent.lua"
-    - dest: "{{ userhome }}/.config/nvim/lua/plugins/wakatime.lua"
-      src: "nvim/wakatime.lua"
-    - dest: "{{ userhome }}/.config/nvim/lua/plugins/whitespace.lua"
-      src: "nvim/whitespace.lua"
+    owner: "{{ user_user }}"
+    src: "{{ user_item.src }}"
+  loop: >-
+    {{ user_copy_rc_files }}
+  loop_control:
+    loop_var: user_item
 - name: Template rc files
   ansible.builtin.template:
-    dest: "{{ item.dest }}"
-    group: "{{ usergroup }}"
+    dest: >-
+      {{ user_home }}/{{ user_item.dest }}
+    group: "{{ user_group }}"
     mode: ug+rw
-    owner: "{{ user }}"
-    src: "{{ item.src }}"
-  loop:
-    - dest: "{{ userhome }}/.bashrc"
-      src: bashrc
-    - dest: "{{ userhome }}/.gitconfig"
-      src: "gitconfig"
-    - dest: "{{ userhome }}/.wakatime.cfg"
-      src: wakatime.cfg
+    owner: "{{ user_user }}"
+    src: "{{ user_item.src }}"
+  loop: >-
+    {{ user_template_rc_files }}
+  loop_control:
+    loop_var: user_item
+- name: Install nvim plugins
+  ansible.builtin.copy:
+    dest: >-
+      {{ user_home }}/.config/nvim/lua/{{ user_item.dest }}
+    src: >-
+      {{ user_item.src }}
+    mode: ug+rw
+    owner: >-
+      {{ user_user }}
+    group: >-
+      {{ user_group }}
+  loop: >-
+    {{ user_nvim_plugins }}
+  loop_control:
+    loop_var: user_item
 - name: Update cache and install direnv
   community.general.pacman:
     name: direnv

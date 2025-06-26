@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: MIT-0
+---
+# vars file for ansible
+packages_list:
+  - fd
+  - fzf
+  - irssi
+  - navi
+  - tldr

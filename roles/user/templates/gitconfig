@@ -1,8 +1,8 @@
 [user]
-	email = {{ git_email }}
-	name = {{ git_name }}
-	username = {{ git_username }}
-	signingkey = {{ git_usersigningkey }}
+	email = {{ user_git_email }}
+	name = {{ user_git_name }}
+	username = {{ user_git_username }}
+	signingkey = {{ user_git_usersigningkey }}
 [init]
 	defaultBranch = main
 [alias]

@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: MIT-0
+---
+# tasks file for packages
+- name: Install man helpers
+  community.general.pacman:
+    name: >-
+      {{ packages_item }}
+    state: present
+    executable: yay
+  loop: >-
+    {{ packages_list }}
+  loop_control:
+    loop_var: packages_item
