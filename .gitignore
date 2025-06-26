@@ -1,4 +1,5 @@
 *.gpg
+.ansible/
 *.site.yml
 *cache*
 *secret*

@@ -9,3 +9,5 @@
     executable: yay
   loop: >-
     {{ packages_list }}
+  loop_control:
+    loop_var: packages_item

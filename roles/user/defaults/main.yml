@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: Unlicense
 ---
-user: root
-useremail: root@breeze-blocks.net
-usergroup: root
-userhome: /root/
-username: root
-userrole: root
-systemos: arch
-wakatime_key: wakatime_key
+user_user: root
+user_email: root@breeze-blocks.net
+user_group: root
+user_home: /root/
+user_name: root
+user_role: root
+user_systemos: arch
+user_wakatime_key: wakatime_key

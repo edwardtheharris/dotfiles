@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT-0
 ---
-packages:
+arch_packages:
   - direnv
 # defaults file for arch
