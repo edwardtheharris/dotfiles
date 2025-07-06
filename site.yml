@@ -12,13 +12,16 @@
         user_git_usersigningkey: >-
           0000000000000000
         user_systemos: arch
-        user_: duchess
+        user_: auser
         user_group: users
-        user_home: /home/duchess
-        user_name: duchess
+        user_home: /home/auser
+        user_name: auser
         user_role: user
         user_wakatime_key: >-
           3062623664633965306332656361653130366435623964346631
+    - role: packages
+      tags:
+        - user
 - name: Init root user
   hosts: localhost
   become: true

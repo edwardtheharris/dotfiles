@@ -1,5 +1,34 @@
 # SPDX-License-Identifier: MIT-0
 ---
+- name: Install gmotd
+  community.general.pacman:
+    name: gmotd
+    executable: yay
+    state: present
+- name: Copy pam.d sshd config
+  ansible.builtin.copy:
+    src: sshd
+    dest: /etc/pam.d/sshd
+    owner: root
+    group: root
+    mode: u+rw,go+r
+  become: true
+- name: Make gmotd configuration directory
+  ansible.builtin.file:
+    dest: /etc/gmotd
+    owner: root
+    group: root
+    mode: u+rw,go+r
+    state: directory
+  become: true
+- name: Template gmotd configuration
+  ansible.builtin.template:
+    src: gmotd.yaml.j2
+    dest: /etc/gmotd/gmotd.yaml
+    owner: root
+    group: root
+    mode: u+rw,go+r
+  become: true
 - name: Update package cache
   community.general.pacman:
     executable: yay
