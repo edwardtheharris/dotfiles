@@ -21,7 +21,6 @@ exclude_paths:
 
 # Mock modules or roles in order to pass ansible-playbook --syntax-check
 mock_modules:
-  - community.general.pacman
   # note the foo.bar is invalid as being neither a module or a collection
   - fake_namespace.fake_collection.fake_module
   - fake_namespace.fake_collection.fake_module.fake_submodule
