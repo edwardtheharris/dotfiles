@@ -4,6 +4,17 @@
 packages_list:
   - fd
   - fzf
+  - ghostscript
+  - imagemagick
   - irssi
+  - lua51
+  - mermaid-cli
   - navi
+  - nodejs
+  - python-pynvim
+  - ripgrep
+  - rubygems
+  - tectonic
+  - texlive-bin
   - tldr
+  - tree-sitter

@@ -1,4 +1,9 @@
 ---
+- name: Update cache and install direnv
+  community.general.pacman:
+    name: direnv
+    state: present
+  become: true
 - name: Check for existing user
   ansible.builtin.stat:
     dest: >-
@@ -44,6 +49,7 @@
     {{ user_copy_rc_files }}
   loop_control:
     loop_var: user_item
+  become: true
 - name: Template rc files
   ansible.builtin.template:
     dest: >-
@@ -56,6 +62,7 @@
     {{ user_template_rc_files }}
   loop_control:
     loop_var: user_item
+  become: true
 - name: Install nvim plugins
   ansible.builtin.copy:
     dest: >-
@@ -71,8 +78,4 @@
     {{ user_nvim_plugins }}
   loop_control:
     loop_var: user_item
-- name: Update cache and install direnv
-  community.general.pacman:
-    name: direnv
-    state: present
   become: true
