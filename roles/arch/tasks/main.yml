@@ -28,6 +28,15 @@
     group: root
     mode: u+rw,go+r
   become: true
+- name: Stat gmotd config
+  ansible.builtin.stat:
+    path: /etc/gmotd/gmotd.yaml
+  register: arch_gmotd_stat
+- name: Validate gmotd config
+  ansible.builtin.assert:
+    that:
+      - arch_gmotd_stat.stat.exists
+      - arch_gmotd_stat.stat.isreg
 # - name: Update package cache
 #   community.general.pacman:
 #     executable: yay
