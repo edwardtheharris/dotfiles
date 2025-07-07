@@ -1,10 +1,9 @@
 # SPDX-License-Identifier: MIT-0
 ---
 - name: Install gmotd
-  community.general.pacman:
-    name: gmotd
-    executable: yay
-    state: present
+  ansible.builtin.command:
+    cmd: yay -Sy --noconfirm gmotd
+    creates: /usr/bin/gmotd
 - name: Copy pam.d sshd config
   ansible.builtin.copy:
     src: sshd
@@ -29,19 +28,19 @@
     group: root
     mode: u+rw,go+r
   become: true
-- name: Update package cache
-  community.general.pacman:
-    executable: yay
-    update_cache: true
-- name: Add missing firmware for Arch
-  community.general.pacman:
-    executable: yay
-    name: "{{ item }}"
-    state: present
-  loop:
-    - aic94xx-firmware
-    - ast-firmware
-    - linux-firmware-qlogic
-    - wd719x-firmware
-    - upd72020x-fw
+# - name: Update package cache
+#   community.general.pacman:
+#     executable: yay
+#     update_cache: true
+# - name: Add missing firmware for Arch
+#   community.general.pacman:
+#     executable: yay
+#     name: "{{ item }}"
+#     state: present
+#   loop:
+#     - aic94xx-firmware
+#     - ast-firmware
+#     - linux-firmware-qlogic
+#     - wd719x-firmware
+#     - upd72020x-fw
 # tasks file for arch

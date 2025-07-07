@@ -2,4 +2,9 @@
 ---
 arch_packages:
   - direnv
+arch_gmotd_systemd_units:
+  - avahi-daemon
+  - glances
+  - NetworkManager
+  - sshd
 # defaults file for arch
