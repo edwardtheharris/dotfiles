@@ -1,9 +1,4 @@
 ---
-- name: Update cache and install direnv
-  community.general.pacman:
-    name: direnv
-    state: present
-  become: true
 - name: Check for existing user
   ansible.builtin.stat:
     dest: >-

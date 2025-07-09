@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for packages
-- name: Install man helpers
-  community.general.pacman:
-    name: >-
-      {{ packages_item }}
-    state: present
-    executable: yay
+- name: Install extra packages
+  ansible.builtin.command:
+    cmd: >-
+      yay -Syyu --noconfirm {{ packages_item }}
+    creates: >-
+      ~/.cache/yay/{{ packages_item }}
   loop: >-
     {{ packages_list }}
   loop_control:

@@ -28,6 +28,9 @@ Best Amazing SHell is the best.
 - [MacOS](https://support.apple.com/en-us/102662)
 - [Ubuntu](https://ubuntu.com/)
 
+Though mainly work is done on [ArchLinux](https://archlinux.org) because
+apt is a bummer.
+
 ## GitHub Actions
 
 You can delete unwanted workflow runs with this script.
@@ -69,14 +72,11 @@ This repository has three main plays, explained below.
    ansible-playbook -t root site.yml
    ```
 
-## Additional services
-
-[Samba Active Directory](ansible/files/ad/index.md), because AD should be
-run on Linux because MS has enough money.
-
 ## tools
 
-vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
+Apparently, [neovim](https://github.com/neovim/neovim) has completely
+eliminated the need for anything as silly as VSCode or some other
+abominable thing like emacs.
 
 Sphinx extensions used by the documentation include the following.
 
