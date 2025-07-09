@@ -72,7 +72,6 @@ This repository has three main plays, explained below.
    ansible-playbook -t root site.yml
    ```
 
-
 ## tools
 
 Apparently, [neovim](https://github.com/neovim/neovim) has completely
