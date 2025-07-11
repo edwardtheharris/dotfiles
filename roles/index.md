@@ -7,10 +7,17 @@ date: 2026-06-25
 title: dotfiles role index
 ---
 
-This is the index for dotfiles related roles.
+This is the index for {term}`dotfiles` related roles.
 
 ```{toctree}
-ansible/readme
+
+arch/readme
+dev/readme
+dev/files/githooks/index
 packages/readme
 user/readme
+user/readme
+```
+
+```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
 ```
