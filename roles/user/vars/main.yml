@@ -19,6 +19,8 @@ user_nvim_plugins:
     src: nvim/lazy.lua
   - dest: plugins/ansible.lua
     src: nvim/ansible.lua
+  - dest: plugins/jinja.lua
+    src: nvim/jinja.lua
   - dest: plugins/trim.lua
     src: nvim/trim.lua
   - dest: plugins/transparent.lua
