@@ -58,6 +58,12 @@ AD
   is short for Active Directory, which is a collection of network services
   that are intended to provide an enhanced LDAP service.
 
+Ansible
+  [Ansible](https://docs.ansible.com/) offers open-source automation that is simple, flexible, and powerful.
+
+ArchLinux
+  [ArchLinux](https://archlinux.org) a lightweight and flexible Linux® distribution that tries to Keep It Simple.
+
 [crowdsec](https://www.crowdsec.net/)
   A free, OSS firewall that takes advantage of the wisdom of crowds.
 
@@ -70,41 +76,41 @@ dotfiles
   A colloquial reference to the files one uses to configure one's shell program,
   named for their tendenancy to begin with a dot.
 
-[etcd](https://etcd.io/docs/v3.5/)
-: This is a key value store that is used by Kubernetes Control Planes
+etcd
+  [etcd](https://etcd.io/docs/v3.5/) is a key value store that is used by Kubernetes Control Planes
 
-[netctl](https://wiki.archlinux.org/title/Netctl)
-: This is a program that allows the configuration of multiple
+netctl
+  [netctl](https://wiki.archlinux.org/title/Netctl) is a program that allows the configuration of multiple
   network interfaces on a single system.
 
-: For more information on setting up profiles, see
+  For more information on setting up profiles, see
   [netctl.profile(5)](https://man.archlinux.org/man/netctl.profile.5)
 
-[Router](https://wiki.archlinux.org/title/Router)
-: A piece of network infrastructure that sends network packets to the
+router
+  [Router](https://wiki.archlinux.org/title/Router) is piece of network infrastructure that sends network packets to the
     appropriate destination.
 
-[Sphinx](https://sphinx-doc.org)
-: Sphinx is a static site generator that is used to generate the documentation
+Sphinx
+  [Sphinx](https://sphinx-doc.org is a static site generator that is used to generate the documentation
     for this repository.
 
-[sysctl](https://wiki.archlinux.org/title/Sysctl#Configuration)
-: This is a utility that can be used to configure Linux system
+sysctl
+  [sysctl](https://wiki.archlinux.org/title/Sysctl#Configuration) is a utility that can be used to configure Linux system
   options.
 
-: See this [documentation](http://0pointer.de/blog/projects/the-new-configuration-files)
+  See this [documentation](http://0pointer.de/blog/projects/the-new-configuration-files)
   for more information about how to configure `sysctl`.
 
-: You can also read the related man page,
+  You can also read the related man page,
   [sysctl.d.5](https://man.archlinux.org/man/sysctl.d.5).
 
-[systemd](https://www.mankier.com/1/systemd)
-: This is a set of programs that manage the boot process and system
+systemd
+  [systemd](https://www.mankier.com/1/systemd) is a set of programs that manage the boot process and system
   services for Linux after the kernel has been loaded. It is usually
   run as PID 1.
 
-[ufw](https://help.ubuntu.com/community/UFW)
-: Un-Complicated Firewall, which is an Ubuntu project designed to make managing
+ufw
+  [ufw](https://help.ubuntu.com/community/UFW) is Un-Complicated Firewall, which is an Ubuntu project designed to make managing
   Linux firewalls less of a disaster area.
 ```
 
