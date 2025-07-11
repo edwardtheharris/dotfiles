@@ -15,9 +15,7 @@ title: >
 ```{toctree}
 :caption: contents
 
-ansible/index
-roles/ansible/readme
-roles/user/readme
+roles/index
 ```
 
 ### NeoVIM plugins
@@ -54,17 +52,23 @@ security
 
 ## Glossary
 
-{.glossary}
-[AD](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)
-: Short for Active Directory, which is a collection of network services
+```{glossary}
+AD
+  [AD](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)
+  is short for Active Directory, which is a collection of network services
   that are intended to provide an enhanced LDAP service.
 
 [crowdsec](https://www.crowdsec.net/)
-: A free, OSS firewall that takes advantage of the wisdom of crowds.
+  A free, OSS firewall that takes advantage of the wisdom of crowds.
 
-[DC](https://en.wikipedia.org/wiki/Domain_controller)
-: Short for Domain Controller, this is a system that manages domain
+DC
+  [DC](https://en.wikipedia.org/wiki/Domain_controller)
+  is short for Domain Controller, this is a system that manages domain
   services for a computer network.
+
+dotfiles
+  A colloquial reference to the files one uses to configure one's shell program,
+  named for their tendenancy to begin with a dot.
 
 [etcd](https://etcd.io/docs/v3.5/)
 : This is a key value store that is used by Kubernetes Control Planes
@@ -102,6 +106,7 @@ security
 [ufw](https://help.ubuntu.com/community/UFW)
 : Un-Complicated Firewall, which is an Ubuntu project designed to make managing
   Linux firewalls less of a disaster area.
+```
 
 ## Extensions
 

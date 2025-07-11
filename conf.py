@@ -14,8 +14,8 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configurat
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path("ansible/files").resolve()))
-sys.path.append(str(Path("ansible/files/githooks").resolve()))
+sys.path.append(str(Path("roles/dev/files").resolve()))
+sys.path.append(str(Path("roles/dev/files/githooks").resolve()))
 
 author = "Xander Harris"
 autoyaml_root = "."
