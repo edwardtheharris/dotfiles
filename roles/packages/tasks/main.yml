@@ -24,7 +24,7 @@
 - name: Install extra packages
   ansible.builtin.command:
     cmd: >-
-      yay -Syyu --noconfirm {{ packages_item }}
+      yay -S --noconfirm {{ packages_item }}
     creates: >-
       ~/.cache/yay/{{ packages_item }}
   loop: >-
