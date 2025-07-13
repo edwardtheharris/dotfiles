@@ -1,6 +1,26 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for packages
+- name: Clean user package cache
+  ansible.builtin.file:
+    dest: >-
+      ~/.cache/yay
+    state: absent
+  become: true
+- name: Stat cache directory
+  ansible.builtin.stat:
+    dest: >-
+      ~/.cacche/yay
+  register: user_cache
+- name: Test directory is gone
+  ansible.builtin.assert:
+    that:
+      - not user_cache.stat.exists
+- name: Update user package cache
+  ansible.builtin.command:
+    cmd: yay -Y --gendb
+    creates: >-
+      ~/.cache/yay
 - name: Install extra packages
   ansible.builtin.command:
     cmd: >-
