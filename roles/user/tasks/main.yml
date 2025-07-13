@@ -31,8 +31,16 @@
     version: main
 - name: Clean up lazy.nvim install
   ansible.builtin.file:
-    dest: "{{ user_home }}/.config/nvim/.git"
+    dest: >-
+      {{ user_item }}
     state: absent
+  loop:
+    - >-
+      "{{ user_home }}/.config/nvim/.git"
+    - >-
+      "{{ user_home }}/.config/nvim/lua/plugins/example.lua"
+  loop_control:
+    loop_var: user_item
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
     dest: "{{ user_home }}/{{ user_item.dest }}"
