@@ -23,6 +23,8 @@ user_nvim_plugins:
     src: nvim/coc.lua
   - dest: plugins/jinja.lua
     src: nvim/jinja.lua
+  - dest: plugins/markdownlint.lua
+    src: nvim/markdownlint.lua
   - dest: plugins/trim.lua
     src: nvim/trim.lua
   - dest: plugins/transparent.lua
