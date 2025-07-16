@@ -191,11 +191,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:2e0c7ce7cb5d8f8634ca55d2ba7e6ec2689a2fd6537d8dec1296a477a4910057",
-                "sha256:d747aa5a8b9bbbb1bb8c22bb13e22bd1f18e9796defa16bab421f7f7a317323b"
+                "sha256:6b31f564a415d79ee77df69d757bb49a5bb53bd9f756cbbe24394ffd6fc1f4b2",
+                "sha256:8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2025.6.15"
+            "version": "==2025.7.14"
         },
         "cffi": {
             "hashes": [
@@ -676,12 +676,12 @@
         },
         "pipenv": {
             "hashes": [
-                "sha256:87370bedcf0ff66d226af07ca341ae94afcc08fed90d57ad9fea9ffd44ced4d3",
-                "sha256:f0a67aa928824e61003d52acea72a94b180800019f03d38a311966f6330bc8d1"
+                "sha256:36fc2a7841ccdb2f58a9f787b296c2e15dea3b5b79b84d4071812f28b7e8d7a2",
+                "sha256:e1fbe4cfd25ab179f123d1fbb1fa1cdc0b3ffcdb1f21c775dcaa12ccc356f2bb"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==2025.0.3"
+            "version": "==2025.0.4"
         },
         "platformdirs": {
             "hashes": [
