@@ -6,19 +6,19 @@
       tags:
         - user
       vars:
-        user_git_email: auser@yourdomain
-        user_git_name: auser
-        user_git_username: auser
+        user_git_email: sumguy@domain.local
+        user_git_name: sumguy
+        user_git_username: sumguy
         user_git_usersigningkey: >-
-          0000000000000000
+          Y1ERFC7PTT3JL8CO
         user_systemos: arch
-        user_: auser
+        user_: sumguy
         user_group: users
-        user_home: /home/auser
-        user_name: auser
+        user_home: /home/sumguy
+        user_name: sumguy
         user_role: user
         user_wakatime_key: >-
-          3062623664633965306332656361653130366435623964346631
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
     - role: packages
       tags:
         - user
@@ -30,10 +30,10 @@
       tags:
         - root
       vars:
-        user_git_email: root@yourdomain.local
-        user_git_name: bofh
-        user_git_username: bofh
-        user_git_usersigningkey: 32EC6D40E15C3CA3
+        user_git_email: root@domain.local
+        user_git_name: root
+        user_git_username: root
+        user_git_usersigningkey: JXMQX2EAM3HDDN1H
         user_systemos: arch
         user_: root
         user_group: root
@@ -41,7 +41,7 @@
         user_name: root
         user_role: root
         user_wakatime_key: >-
-          3062623664633965306332656361653130366435623964346631
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
 - name: Init service account user
   hosts: ns
   roles:
@@ -52,22 +52,15 @@
         user_git_email: named@yourdomain.local
         user_git_name: named
         user_git_username: named
-        user_git_usersigningkey: 32EC6D40E15C3CA3
+        user_git_usersigningkey: AK6LOWG75OXMT7HQ
         user_systemos: arch
         user_: named
         user_group: named
         user_home: /var/named
         user_name: named
         user_role: sa
-        user_signingkey: A023AEA106CFDDCE
         user_wakatime_key: >-
-          $ANSIBLE_VAULT;1.1;AES256
-          64303236366239303338343631303331613565326135636239643036373164633336613364663234
-          6430313562363461663333393963356435353737656532370a626534303764626338366537623431
-          32353634376665323365623737343135326133303339383733616238313032303362666238363534
-          6531613239316632330a353137303665306230366233376337353235383463343938313364636261
-          63613439613665643766653934356434643830326366643434623839646139613233343338373531
-          3062623664633965306332656361653130366435623964346631
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
 - name: Install missing firmware for Arch
   hosts: localhost
   roles:
