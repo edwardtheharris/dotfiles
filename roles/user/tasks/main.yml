@@ -7,7 +7,7 @@
 - name: Create user if required
   ansible.builtin.user:
     name: >-
-      {{ user_user }}
+      {{ user }}
     create_home: true
     group: >-
       {{ user_group }}
@@ -46,7 +46,7 @@
     dest: "{{ user_home }}/{{ user_item.dest }}"
     group: "{{ user_group }}"
     mode: ug+rw
-    owner: "{{ user_user }}"
+    owner: "{{ user_name }}"
     src: "{{ user_item.src }}"
   loop: >-
     {{ user_copy_rc_files }}
@@ -59,7 +59,7 @@
       {{ user_home }}/{{ user_item.dest }}
     group: "{{ user_group }}"
     mode: ug+rw
-    owner: "{{ user_user }}"
+    owner: "{{ user_name }}"
     src: "{{ user_item.src }}"
   loop: >-
     {{ user_template_rc_files }}
@@ -74,7 +74,7 @@
       {{ user_item.src }}
     mode: ug+rw
     owner: >-
-      {{ user_user }}
+      {{ user_name }}
     group: >-
       {{ user_group }}
   loop: >-
