@@ -1,5 +1,4 @@
 ---
-user: string
 user_copy_rc_files:
   - dest: .bash_profile
     src: bash_profile
