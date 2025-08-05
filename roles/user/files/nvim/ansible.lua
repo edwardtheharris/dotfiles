@@ -1,3 +1,3 @@
 return {
-  {"mfussenegger/nvim-ansible"}
+	{ "mfussenegger/nvim-ansible" },
 }
