@@ -19,7 +19,7 @@ sys.path.append(str(Path("roles/dev/files/githooks").resolve()))
 
 author = "Xander Harris"
 autoyaml_root = "."
-copyright = "2024, Xander Harris"
+copyright = "(c) 2024, Xander Harris. All rights reserved."
 exclude_patterns = [
     "_build",
     "Thumbs.db",
