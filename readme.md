@@ -10,6 +10,8 @@ title: dotfiles readme
 
 [![Black](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml)
 [![Dependabot Updates](https://github.com/edwardtheharris/dotfiles/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/dependabot/dependabot-updates)
+[![Documentation](https://github.com/edwardtheharris/dotfiles/actions/workflows/documentation.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/documentation.yml)
+[![Test Coveralls](https://github.com/edwardtheharris/dotfiles/actions/workflows/coveralls.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/coveralls.yml)
 
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
