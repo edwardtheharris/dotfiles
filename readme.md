@@ -8,6 +8,8 @@ date: 2024-01-27
 title: dotfiles readme
 ---
 
+[![Black](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml)
+
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
 - [BASH Prompt Generator](https://bash-prompt-generator.org/)
