@@ -16,7 +16,6 @@ dev/readme
 dev/files/githooks/index
 packages/readme
 user/readme
-user/readme
 ```
 
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>

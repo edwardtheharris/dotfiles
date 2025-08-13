@@ -7,7 +7,7 @@
 - name: Create user if required
   ansible.builtin.user:
     name: >-
-      {{ user }}
+      {{ user_name }}
     create_home: true
     group: >-
       {{ user_group }}
