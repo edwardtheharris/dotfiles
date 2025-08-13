@@ -26,6 +26,19 @@ directories. It installs the following plugins.
 - [transparent.nvim](https://github.com/xiyaowong/transparent.nvim)
 - [whitespace.nvim](https://github.com/nvim-zh/whitespace.nvim)
 
+### VIM Plugins
+
+It also installs the following ViM plugins.
+
+- [vim-pandoc-syntax](https://vimawesome.com/plugin/vim-pandoc-syntax-shouldve-said-no)
+- [vim-pandoc](https://vimawesome.com/plugin/vim-pandoc)
+- [vim-instant-markdown](https://vimawesome.com/plugin/instant-markdown-vim)
+- [vim-markdown](https://vimawesome.com/plugin/vim-markdown-enchanted)
+- [markdown-syntax](https://vimawesome.com/plugin/markdown-syntax)
+- [vim-go](https://vimawesome.com/plugin/vim-go-sparks-fly)
+- [vim-airline](https://vimawesome.com/plugin/vim-airline)
+- [black](https://vimawesome.com/plugin/black)
+
 ## Minutiae
 
 ```{toctree}
@@ -66,6 +79,7 @@ ArchLinux
 
 [crowdsec](https://www.crowdsec.net/)
   A free, OSS firewall that takes advantage of the wisdom of crowds.
+
 
 DC
   [DC](https://en.wikipedia.org/wiki/Domain_controller)

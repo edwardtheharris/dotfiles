@@ -36,6 +36,7 @@ extensions = [
     "sphinx_git",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
     "sphinx.ext.duration",
     "sphinx.ext.githubpages",
     "sphinx.ext.graphviz",
