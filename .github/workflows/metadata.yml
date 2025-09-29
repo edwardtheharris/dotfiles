@@ -79,7 +79,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/add-to-project@4515659e2b458b27365e167605ac44f219494b66 # main
+      - uses: actions/add-to-project@8a84a858ead1a8775386f50be595a438772c2879 # main
         with:
           # You can target a project in a different organization
           # to the issue
