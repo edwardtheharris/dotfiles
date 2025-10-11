@@ -1,26 +1,2466 @@
 ---
-abstract: Basic information about the CI/CD processes in this repo.
-authors:
-  - name: Xander Harris
-    email: xandertheharris@gmail.com
-date: 2024-02-19
-title: Dot Files Changelog
+abstract: Changelog for the dotfiles repository.
+title: Changelog
 ---
+<!--markdownlint-disable-->
+## [unreleased]
 
-## 0.0.3
+### 💼 Other
 
-```{git_changelog}
-:rev-list: 0.0.2..900975
-```
+- Bump coverallsapp/github-action from 1.2.5 to 2.3.6
+- Bumps [coverallsapp/github-action](https://github.com/coverallsapp/github-action) from 1.2.5 to 2.3.6.
+- - [Release notes](https://github.com/coverallsapp/github-action/releases)
+- - [Upgrade guide](https://github.com/coverallsapp/github-action/blob/main/UPGRADE.md)
+- - [Commits](https://github.com/coverallsapp/github-action/compare/v1.2.5...648a8eb78e6d50909eff900e4ec85cab4524a45b)
+- ---
+- Updated-dependencies:
+- - dependency-name: coverallsapp/github-action
+-   dependency-version: 2.3.6
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump EnricoMi/publish-unit-test-result-action from 2.19.0 to 2.20.0
+- Bumps [EnricoMi/publish-unit-test-result-action](https://github.com/enricomi/publish-unit-test-result-action) from 2.19.0 to 2.20.0.
+- - [Release notes](https://github.com/enricomi/publish-unit-test-result-action/releases)
+- - [Commits](https://github.com/enricomi/publish-unit-test-result-action/compare/afb2984f4d89672b2f9d9c13ae23d53779671984...3a74b2957438d0b6e2e61d67b05318aa25c9e6c6)
+- ---
+- Updated-dependencies:
+- - dependency-name: EnricoMi/publish-unit-test-result-action
+-   dependency-version: 2.20.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #168 from edwardtheharris/dependabot/github_actions/EnricoMi/publish-unit-test-result-action-2.20.0
+- Bump EnricoMi/publish-unit-test-result-action from 2.19.0 to 2.20.0
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into dependabot/github_actions/coverallsapp/github-action-2.3.6
+- Xander Harris <xandertheharris@gmail.com>
+- Bump ossf/scorecard-action from 2.1.2 to 2.4.1
+- Bumps [ossf/scorecard-action](https://github.com/ossf/scorecard-action) from 2.1.2 to 2.4.1.
+- - [Release notes](https://github.com/ossf/scorecard-action/releases)
+- - [Changelog](https://github.com/ossf/scorecard-action/blob/main/RELEASE.md)
+- - [Commits](https://github.com/ossf/scorecard-action/compare/e38b1902ae4f44df626f11ba0734b14fb91f8f86...f49aabe0b5af0936a0987cfb85d86b75731b0186)
+- ---
+- Updated-dependencies:
+- - dependency-name: ossf/scorecard-action
+-   dependency-version: 2.4.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into dependabot/github_actions/ossf/scorecard-action-2.4.1
+- Update ignore
+- Merge pull request #167 from edwardtheharris/dependabot/github_actions/ossf/scorecard-action-2.4.1
+- Bump ossf/scorecard-action from 2.1.2 to 2.4.1
+- Merge branch 'main' into dependabot/github_actions/coverallsapp/github-action-2.3.6
+- Merge pull request #166 from edwardtheharris/dependabot/github_actions/coverallsapp/github-action-2.3.6
+- Bump coverallsapp/github-action from 1.2.5 to 2.3.6
+- Add gitlint pre-commit
+- Closes #169
+- Add markdownlint hook
+- Checks for md issues with pre-commit
+- Closes #169
+- Update black test
+- Closes #169. Adds all files to black
+- Adjust pre-commit hooks
+- Closes #169
+- Clean the Pipfile.lock
+- Closes #169
+- Merge pull request #170 from edwardtheharris/169-add-commit-hooks
+- Add black pre-commit
+- Closes #169
+- Bump pytest from 8.3.5 to 8.4.0
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.5 to 8.4.0.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.3.5...8.4.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-version: 8.4.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Bump ossf/scorecard-action from 2.4.1 to 2.4.2
+- Bumps [ossf/scorecard-action](https://github.com/ossf/scorecard-action) from 2.4.1 to 2.4.2.
+- - [Release notes](https://github.com/ossf/scorecard-action/releases)
+- - [Changelog](https://github.com/ossf/scorecard-action/blob/main/RELEASE.md)
+- - [Commits](https://github.com/ossf/scorecard-action/compare/f49aabe0b5af0936a0987cfb85d86b75731b0186...05b42c624433fc40578a4040d5cf5e36ddca8cde)
+- ---
+- Updated-dependencies:
+- - dependency-name: ossf/scorecard-action
+-   dependency-version: 2.4.2
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #171 from edwardtheharris/dependabot/github_actions/ossf/scorecard-action-2.4.2
+- Bump ossf/scorecard-action from 2.4.1 to 2.4.2
+- Merge branch 'main' into dependabot/pip/pytest-8.4.0
+- Bump pipenv from 2025.0.2 to 2025.0.3
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2025.0.2 to 2025.0.3.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2025.0.2...v2025.0.3)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2025.0.3
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge branch 'main' into dependabot/pip/pipenv-2025.0.3
+- Merge pull request #173 from edwardtheharris/dependabot/pip/pipenv-2025.0.3
+- Bump pipenv from 2025.0.2 to 2025.0.3
+- Merge branch 'main' into dependabot/pip/pytest-8.4.0
+- Merge pull request #172 from edwardtheharris/dependabot/pip/pytest-8.4.0
+- Bump pytest from 8.3.5 to 8.4.0
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 5b1a254a3546aef88e0a7724a77a623fa2e47c36 to 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/5b1a254a3546aef88e0a7724a77a623fa2e47c36...0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Add wakatime config
+- Bump requests from 2.32.3 to 2.32.4 in the pip group
+- Bumps the pip group with 1 update: [requests](https://github.com/psf/requests).
+- Updates `requests` from 2.32.3 to 2.32.4
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: requests
+-   dependency-version: 2.32.4
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Duchess <duchess@breeze-blocks.net>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #174 from edwardtheharris/dependabot/pip/pip-512858e340
+- Bump requests from 2.32.3 to 2.32.4 in the pip group
+- See  #3
+- Merge branch 'main' into dependabot/github_actions/actions/add-to-project-0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300
+- Bump step-security/harden-runner from 2.12.0 to 2.12.1
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.0 to 2.12.1.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/0634a2670c59f64b4a01f0f96f84700a4088b9f0...002fdce3c6a235733a90a27c80493a3241e56863)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.12.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into dependabot/github_actions/step-security/harden-runner-2.12.1
+- Merge pull request #175 from edwardtheharris/dependabot/github_actions/step-security/harden-runner-2.12.1
+- Bump step-security/harden-runner from 2.12.0 to 2.12.1
+- Merge branch 'main' into dependabot/github_actions/actions/add-to-project-0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300
+- Merge pull request #176 from edwardtheharris/dependabot/github_actions/actions/add-to-project-0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300
+- Bump actions/add-to-project from 5b1a254a3546aef88e0a7724a77a623fa2e47c36 to 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300
+- Drop nautobot files
+- Closes #178
+- Drop toc
+- Closes #178
+- Merge pull request #179 from edwardtheharris/178-drop-ansible-folder
+- Drop nautobot files
+- Closes #178
+- Bump urllib3 from 2.4.0 to 2.5.0 in the pip group
+- Bumps the pip group with 1 update: [urllib3](https://github.com/urllib3/urllib3).
+- Updates `urllib3` from 2.4.0 to 2.5.0
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/2.4.0...2.5.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: urllib3
+-   dependency-version: 2.5.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #180 from edwardtheharris/dependabot/pip/pip-2c7469b053
+- Bump urllib3 from 2.4.0 to 2.5.0 in the pip group
+- Update lockfile
+- Closes #181
+- Merge pull request #182 from edwardtheharris/dependabot/pip/pytest-cov-6.2.1
+- Update lockfile
+- Closes #181
+- Add missing steps
+- Closes #183
+- Merge pull request #184 from edwardtheharris/183-install-wakatime-nvim-extension
+- Add missing steps
+- Closes #183
+- Bump bandit from 1.8.3 to 1.8.5
+- Bumps [bandit](https://github.com/PyCQA/bandit) from 1.8.3 to 1.8.5.
+- - [Release notes](https://github.com/PyCQA/bandit/releases)
+- - [Commits](https://github.com/PyCQA/bandit/compare/1.8.3...1.8.5)
+- ---
+- Updated-dependencies:
+- - dependency-name: bandit
+-   dependency-version: 1.8.5
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Add some docs and workflow
+- Closes #187
+- Add packages role
+- Closes #187
+- Add existing files
+- Closes #187
+- Merge pull request #188 from edwardtheharris/187-add-navi-and-tldr
+- Add some docs and workflow
+- Closes #187
+- Merge branch 'main' into dependabot/pip/bandit-1.8.5
+- Merge pull request #186 from edwardtheharris/dependabot/pip/bandit-1.8.5
+- Bump bandit from 1.8.3 to 1.8.5
+- Bump pytest from 8.4.0 to 8.4.1
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.4.0 to 8.4.1.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.0...8.4.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-version: 8.4.1
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #185 from edwardtheharris/dependabot/pip/pytest-8.4.1
+- Bump pytest from 8.4.0 to 8.4.1
+- Bump step-security/harden-runner from 2.12.1 to 2.12.2
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.1 to 2.12.2.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/002fdce3c6a235733a90a27c80493a3241e56863...6c439dc8bdf85cadbbce9ed30d1c7b959517bc49)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.12.2
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump bandit from 1.8.5 to 1.8.6
+- Bumps [bandit](https://github.com/PyCQA/bandit) from 1.8.5 to 1.8.6.
+- - [Release notes](https://github.com/PyCQA/bandit/releases)
+- - [Commits](https://github.com/PyCQA/bandit/compare/1.8.5...1.8.6)
+- ---
+- Updated-dependencies:
+- - dependency-name: bandit
+-   dependency-version: 1.8.6
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Enable gmotd
+- Closes #193
+- Add gmotd install
+- Closes #193
+- Add missing permission
+- Closes #193
+- Drop tests directory, add tests
+- Closes #193
+- Merge pull request #194 from edwardtheharris/193-add-gmotd-install
+- 193 add gmotd install
+- Closes #193
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles
+- Into dependabot/pip/bandit-1.8.6
+- Closes #197
+- Merge pull request #196 from edwardtheharris/dependabot/pip/bandit-1.8.6
+- Bump bandit from 1.8.5 to 1.8.6
+- Closes #197
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- Dependabot/github_actions/step-security/harden-runner-2.12.2
+- Closes #198
+- Merge pull request #189 from edwardtheharris/dependabot/github_actions/step-security/harden-runner-2.12.2
+- Bump step-security/harden-runner from 2.12.1 to 2.12.2
+- Closes #198
+- Add ansible nvim, update packages install
+- Closes #195
+- Update role usage
+- Closes #195
+- Merge pull request #199 from edwardtheharris/195-add-nvim-ansible
+- Add ansible nvim, update packages install
+- Closes #195
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300 to c0c5949b017d0d4a39f7ba888255881bdac2a823.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300...c0c5949b017d0d4a39f7ba888255881bdac2a823)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: c0c5949b017d0d4a39f7ba888255881bdac2a823
+-   dependency-type: direct:production
+- ...
+- Closes #201
+- Dependabot[bot] <support@github.com>
+- Xander Harris <xandertheharris@gmail.com>
+- Merge pull request #200 from edwardtheharris/dependabot/github_actions/actions/add-to-project-c0c5949b017d0d4a39f7ba888255881bdac2a823
+- Bump actions/add-to-project from 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300 to c0c5949b017d0d4a39f7ba888255881bdac2a823
+- Closes #201
+- Long overdue cleanup and add dev role
+- Closes #202
+- Fix docs
+- Closes #202
+- Fix tox
+- Closes #202
+- Merge pull request #203 from edwardtheharris/202-add-dev-role
+- Long overdue cleanup and add dev role
+- Closes #202
+- Add jinja2 plugin install
+- Closes #192
+- Merge pull request #204 from edwardtheharris/192-add-jinja2-plugin
+- Add jinja2 plugin install
+- Closes #204
+- Add coc nvim install
+- Closes #190
+- Merge pull request #205 from edwardtheharris/190-add-cocnvim
+- Add coc nvim install
+- Closes #205
+- Add treesitter plugin
+- Closes #191
+- Drop example lua
+- Closes #191
+- Add validation, skip system upgrade
+- Closes #191
+- Adjust package installation
+- Closes #191
+- Add markdownlint config file
+- Closes #191
+- Merge pull request #207 from edwardtheharris/191-add-markdownlintnvim
+- 191 add markdownlintnvim
+- Closes #191
+- Bump pipenv from 2025.0.3 to 2025.0.4
+- Closes #209
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2025.0.3 to 2025.0.4.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2025.0.3...v2025.0.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2025.0.4
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander <xandertheharris@gmail.com>
+- Bump pipenv from 2025.0.3 to 2025.0.4
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2025.0.3 to 2025.0.4.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2025.0.3...v2025.0.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2025.0.4
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch
+- 'dependabot/pip/pipenv-2025.0.4' of
+- Edwardtheharris/dotfiles
+- Into dependabot/pip/pipenv-2025.0.4
+- Closes #209
+- Merge pull request #208 from edwardtheharris/dependabot/pip/pipenv-2025.0.4
+- Bump pipenv from 2025.0.3 to 2025.0.4
+- Closes #209
+- Bump step-security/harden-runner from 2.12.2 to 2.13.0
+- Closes #211
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.2 to 2.13.0.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/6c439dc8bdf85cadbbce9ed30d1c7b959517bc49...ec9f2d5744a09debf3a187a3f4f675c53b671911)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.13.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Xander <xandertheharris@gmail.com>
+- Bump step-security/harden-runner from 2.12.2 to 2.13.0
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.12.2 to 2.13.0.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/6c439dc8bdf85cadbbce9ed30d1c7b959517bc49...ec9f2d5744a09debf3a187a3f4f675c53b671911)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.13.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch
+- 'dependabot/github_actions/step-security/harden-runner-2.13.0'
+- Of github.com:edwardtheharris/dotfiles into
+- Dependabot/github_actions/step-security/harden-runner-2.13.0
+- Closes #211
+- Merge pull request #210 from edwardtheharris/dependabot/github_actions/step-security/harden-runner-2.13.0
+- Bump step-security/harden-runner from 2.12.2 to 2.13.0
+- Closes #211
+- Adjust user variable names
+- Closes #212
+- Update root ps1
+- Closes #212
+- Xander Harris <xandertheharris@gmail.com>
+- Update root ps1
+- Closes #212
+- Merge branch '212-fix-user-var-references'
+- Of github.com:edwardtheharris/dotfiles into 212-fix-user-var-references
+- Closes #212
+- Update readme, vars
+- Closes #212
+- Adjust user variable names
+- Closes #212
+- Update root ps1
+- Closes #212
+- Xander Harris <xandertheharris@gmail.com>
+- Update root ps1
+- Closes #212
+- Merge pull request #213 from edwardtheharris/212-fix-user-var-references
+- Adjust user variable names
+- Closes #212
+- Merge branch 'main' into 212-fix-user-var-references-a
+- Merge pull request #214 from edwardtheharris/212-fix-user-var-references-a
+- 212 fix user var references a
+- Closes #212
+- Adjust lint errors
+- Closes #206
+- Add new nvim plugins
+- Closes #215
+- Add ansible lint skip
+- Closes #215
+- Merge pull request #216 from edwardtheharris/215-update-nvim-plugin-install
+- 215 update nvim plugin install
+- Closes #215
+- Bump pre-commit from 4.2.0 to 4.3.0
+- Bumps [pre-commit](https://github.com/pre-commit/pre-commit) from 4.2.0 to 4.3.0.
+- - [Release notes](https://github.com/pre-commit/pre-commit/releases)
+- - [Changelog](https://github.com/pre-commit/pre-commit/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pre-commit/pre-commit/compare/v4.2.0...v4.3.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pre-commit
+-   dependency-version: 4.3.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #221 from edwardtheharris/dependabot/pip/pre-commit-4.3.0
+- Bump pre-commit from 4.2.0 to 4.3.0
+- See #221
+- Merge pull request #223 from edwardtheharris/222-bump-pre-commit-from-420-to-430
+- 222 bump pre commit from 420 to 430
+- Closes #222
+- Bump starlette from 0.47.0 to 0.47.2 in the pip group
+- Bumps the pip group with 1 update: [starlette](https://github.com/encode/starlette).
+- Updates `starlette` from 0.47.0 to 0.47.2
+- - [Release notes](https://github.com/encode/starlette/releases)
+- - [Changelog](https://github.com/encode/starlette/blob/master/docs/release-notes.md)
+- - [Commits](https://github.com/encode/starlette/compare/0.47.0...0.47.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: starlette
+-   dependency-version: 0.47.2
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #224 from edwardtheharris/dependabot/pip/pip-500a546eb9
+- Bump starlette from 0.47.0 to 0.47.2 in the pip group
+- Closes #225
+- Merge pull request #226 from edwardtheharris/225-bump-starlette-from-0470-to-0472-in-the-pip-group
+- 225 bump starlette from 0470 to 0472 in the pip group
+- Closes #225
+- Bump pylint from 3.3.7 to 3.3.8
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.3.7 to 3.3.8.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.3.7...v3.3.8)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-version: 3.3.8
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #219 from edwardtheharris/dependabot/pip/pylint-3.3.8
+- Bump pylint from 3.3.7 to 3.3.8
+- Closes #229
+- Bump gitpython from 3.1.44 to 3.1.45
+- Bumps [gitpython](https://github.com/gitpython-developers/GitPython) from 3.1.44 to 3.1.45.
+- - [Release notes](https://github.com/gitpython-developers/GitPython/releases)
+- - [Changelog](https://github.com/gitpython-developers/GitPython/blob/main/CHANGES)
+- - [Commits](https://github.com/gitpython-developers/GitPython/compare/3.1.44...3.1.45)
+- ---
+- Updated-dependencies:
+- - dependency-name: gitpython
+-   dependency-version: 3.1.45
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/gitpython-3.1.45
+- Merge branch 'main' into dependabot/pip/gitpython-3.1.45
+- Merge pull request #220 from edwardtheharris/dependabot/pip/gitpython-3.1.45
+- Bump gitpython from 3.1.44 to 3.1.45
+- Closes #227
+- Merge pull request #228 from edwardtheharris/227-bump-gitpython-from-3144-to-3145
+- 227 bump gitpython from 3144 to 3145
+- Closes #227
+- Merge branch 'main' into 229-bump-pylint-from-337-to-338
+- Merge pull request #230 from edwardtheharris/229-bump-pylint-from-337-to-338
+- 229 bump pylint from 337 to 338
+- Closes #229
+- Bump paramiko from 3.5.1 to 4.0.0
+- Bumps [paramiko](https://github.com/paramiko/paramiko) from 3.5.1 to 4.0.0.
+- - [Commits](https://github.com/paramiko/paramiko/compare/3.5.1...4.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: paramiko
+-   dependency-version: 4.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #218 from edwardtheharris/dependabot/pip/paramiko-4.0.0
+- Bump paramiko from 3.5.1 to 4.0.0
+- Closes #231
+- Merge pull request #232 from edwardtheharris/231-bump-paramiko-from-351-to-400
+- 231 bump paramiko from 351 to 400
+- Closes #231
+- Merge branch 'main' into 206-add-badges-to-the-readme
+- Add black badge
+- Closes #206
+- Add dependabot badge
+- Closes #206
+- Add documentation badge
+- Closes #206
+- Merge pull request #217 from edwardtheharris/206-add-badges-to-the-readme
+- Adjust lint errors
+- Closes #206
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from c0c5949b017d0d4a39f7ba888255881bdac2a823 to b7156dd039b8778f72d86a38483164c39c4ad8f7.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/c0c5949b017d0d4a39f7ba888255881bdac2a823...b7156dd039b8778f72d86a38483164c39c4ad8f7)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: b7156dd039b8778f72d86a38483164c39c4ad8f7
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #234 from edwardtheharris/dependabot/github_actions/actions/add-to-project-b7156dd039b8778f72d86a38483164c39c4ad8f7
+- Bump actions/add-to-project from c0c5949b017d0d4a39f7ba888255881bdac2a823 to b7156dd039b8778f72d86a38483164c39c4ad8f7
+- Closes #238
+- Bump actions/dependency-review-action from 4.7.1 to 4.7.2
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.1 to 4.7.2.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/da24556b548a50705dd671f47852072ea4c105d9...bc41886e18ea39df68b1b1245f4184881938e050)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.7.2
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #235 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.7.2
+- Bump actions/dependency-review-action from 4.7.1 to 4.7.2
+- Closes #236
+- Merge pull request #237 from edwardtheharris/236-bump-actionsdependency-review-action-from-471-to-472
+- 236 bump actionsdependency review action from 471 to 472
+- Closes #236
+- Merge branch 'main' into 238-bump-actionsadd-to-project-from-c0c5949b017d0d4a39f7ba888255881bdac2a823-to-b7156dd039b8778f72d86a38483164c39c4ad8f7
+- Merge pull request #239 from edwardtheharris/238-bump-actionsadd-to-project-from-c0c5949b017d0d4a39f7ba888255881bdac2a823-to-b7156dd039b8778f72d86a38483164c39c4ad8f7
+- 238 bump actionsadd to project from c0c5949b017d0d4a39f7ba888255881bdac2a823 to b7156dd039b8778f72d86a38483164c39c4ad8f7
+- Closes #238
+- Bump actions/dependency-review-action from 4.7.2 to 4.7.3
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.2 to 4.7.3.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/bc41886e18ea39df68b1b1245f4184881938e050...595b5aeba73380359d98a5e087f648dbb0edce1b)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.7.3
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from b7156dd039b8778f72d86a38483164c39c4ad8f7 to 4515659e2b458b27365e167605ac44f219494b66.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/b7156dd039b8778f72d86a38483164c39c4ad8f7...4515659e2b458b27365e167605ac44f219494b66)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 4515659e2b458b27365e167605ac44f219494b66
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #240 from edwardtheharris/dependabot/github_actions/actions/add-to-project-4515659e2b458b27365e167605ac44f219494b66
+- Bump actions/add-to-project from b7156dd039b8778f72d86a38483164c39c4ad8f7 to 4515659e2b458b27365e167605ac44f219494b66
+- Closes #241
+- Merge pull request #242 from edwardtheharris/241-bump-actionsadd-to-project-from-b7156dd039b8778f72d86a38483164c39c4ad8f7-to-4515659e2b458b27365e167605ac44f219494b66
+- 241 bump actionsadd to project from b7156dd039b8778f72d86a38483164c39c4ad8f7 to 4515659e2b458b27365e167605ac44f219494b66
+- Closes #241
+- Merge branch '244-bump-actionsdependency-review-action-from-472-to-473' into dependabot/github_actions/actions/dependency-review-action-4.7.3
+- Merge pull request #243 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.7.3
+- Bump actions/dependency-review-action from 4.7.2 to 4.7.3
+- Closes #244
+- Merge pull request #245 from edwardtheharris/244-bump-actionsdependency-review-action-from-472-to-473
+- 244 bump actionsdependency review action from 472 to 473
+- Closes #244
+- Bump pytest-cov from 6.1.1 to 6.3.0
+- Bumps [pytest-cov](https://github.com/pytest-dev/pytest-cov) from 6.1.1 to 6.3.0.
+- - [Changelog](https://github.com/pytest-dev/pytest-cov/blob/master/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest-cov/compare/v6.1.1...v6.3.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest-cov
+-   dependency-version: 6.3.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump step-security/harden-runner from 2.13.0 to 2.13.1
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.13.0 to 2.13.1.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/ec9f2d5744a09debf3a187a3f4f675c53b671911...f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.13.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #249 from edwardtheharris/dependabot/github_actions/step-security/harden-runner-2.13.1
+- Bump step-security/harden-runner from 2.13.0 to 2.13.1
+- Closes #250
+- Merge pull request #251 from edwardtheharris/250-bump-step-securityharden-runner-from-2130-to-2131-249
+- 250 bump step securityharden runner from 2130 to 2131 249
+- Closes #250
+- Merge branch '254-bump-pytest-cov-from-611-to-630-247' into dependabot/pip/pytest-cov-6.3.0
+- Merge pull request #247 from edwardtheharris/dependabot/pip/pytest-cov-6.3.0
+- Bump pytest-cov from 6.1.1 to 6.3.0
+- Closes #254
+- Bump pytest from 8.4.1 to 8.4.2
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.4.1 to 8.4.2.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.1...8.4.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-version: 8.4.2
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #248 from edwardtheharris/dependabot/pip/pytest-8.4.2
+- Bump pytest from 8.4.1 to 8.4.2
+- Closes #252
+- Merge branch 'main' into 252-bump-pytest-from-841-to-842-248
+- Merge pull request #253 from edwardtheharris/252-bump-pytest-from-841-to-842-248
+- 252 bump pytest from 841 to 842 248
+- Closes #252
+- Merge branch 'main' into 254-bump-pytest-cov-from-611-to-630-247
+- Bump actions/setup-python from 5.6.0 to 6.0.0
+- Bumps [actions/setup-python](https://github.com/actions/setup-python) from 5.6.0 to 6.0.0.
+- - [Release notes](https://github.com/actions/setup-python/releases)
+- - [Commits](https://github.com/actions/setup-python/compare/a26af69be951a213d495a4c3e4e4022e16d87065...e797f83bcb11b83ae66e0230d6156d7c80228e7c)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/setup-python
+-   dependency-version: 6.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump actions/setup-python from 5.6.0 to 6.0.0
+- Bumps [actions/setup-python](https://github.com/actions/setup-python) from 5.6.0 to 6.0.0.
+- - [Release notes](https://github.com/actions/setup-python/releases)
+- - [Commits](https://github.com/actions/setup-python/compare/a26af69be951a213d495a4c3e4e4022e16d87065...e797f83bcb11b83ae66e0230d6156d7c80228e7c)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/setup-python
+-   dependency-version: 6.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #246 from edwardtheharris/dependabot/github_actions/actions/setup-python-6.0.0
+- Bump actions/setup-python from 5.6.0 to 6.0.0
+- Closes #256
+- Merge branch '256-bump-actionssetup-python-from-560-to-600-246' into dependabot/github_actions/actions/setup-python-6.0.0
+- Merge pull request #258 from edwardtheharris/dependabot/github_actions/actions/setup-python-6.0.0
+- Bump actions/setup-python from 5.6.0 to 6.0.0
+- Closes #256
+- Merge pull request #257 from edwardtheharris/256-bump-actionssetup-python-from-560-to-600-246
+- 256 bump actionssetup python from 560 to 600 246
+- Closes #256
+- Merge branch 'main' into 254-bump-pytest-cov-from-611-to-630-247
+- Merge pull request #255 from edwardtheharris/254-bump-pytest-cov-from-611-to-630-247
+- 254 bump pytest cov from 611 to 630 247
+- Closes #254
+- Bump pytest-cov from 6.3.0 to 7.0.0
+- Bumps [pytest-cov](https://github.com/pytest-dev/pytest-cov) from 6.3.0 to 7.0.0.
+- - [Changelog](https://github.com/pytest-dev/pytest-cov/blob/master/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest-cov/compare/v6.3.0...v7.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest-cov
+-   dependency-version: 7.0.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #259 from edwardtheharris/dependabot/pip/pytest-cov-7.0.0
+- Bump pytest-cov from 6.3.0 to 7.0.0
+- Closes #260
+- Merge pull request #261 from edwardtheharris/260-bump-pytest-cov-from-630-to-700-259
+- 260 bump pytest cov from 630 to 700 259
+- Closes #260
+- Bump black from 25.1.0 to 25.9.0
+- Bumps [black](https://github.com/psf/black) from 25.1.0 to 25.9.0.
+- - [Release notes](https://github.com/psf/black/releases)
+- - [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- - [Commits](https://github.com/psf/black/compare/25.1.0...25.9.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: black
+-   dependency-version: 25.9.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #262 from edwardtheharris/dependabot/pip/black-25.9.0
+- Bump black from 25.1.0 to 25.9.0
+- Closes #263
+- Merge pull request #264 from edwardtheharris/263-bump-black-from-2510-to-2590-262
+- 263 bump black from 2510 to 2590 262
+- Closes #262
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.3 to 4.8.0.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/595b5aeba73380359d98a5e087f648dbb0edce1b...56339e523c0409420f6c2c9a2f4292bbb3c07dd3)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.8.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #265 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.8.0
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Closes #269
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 4515659e2b458b27365e167605ac44f219494b66 to 8a84a858ead1a8775386f50be595a438772c2879.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/4515659e2b458b27365e167605ac44f219494b66...8a84a858ead1a8775386f50be595a438772c2879)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 8a84a858ead1a8775386f50be595a438772c2879
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #266 from edwardtheharris/dependabot/github_actions/actions/add-to-project-8a84a858ead1a8775386f50be595a438772c2879
+- Bump actions/add-to-project from 4515659e2b458b27365e167605ac44f219494b66 to 8a84a858ead1a8775386f50be595a438772c2879
+- Closes #267
+- Merge pull request #268 from edwardtheharris/267-bump-actionsadd-to-project-from-4515659e2b458b27365e167605ac44f219494b66-to-8a84a858ead1a8775386f50be595a438772c2879-266
+- 267 bump actionsadd to project from 4515659e2b458b27365e167605ac44f219494b66 to 8a84a858ead1a8775386f50be595a438772c2879 266
+- Closes #267
+- Merge branch 'main' into 269-bump-actionsdependency-review-action-from-473-to-480-265
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.3 to 4.8.0.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/595b5aeba73380359d98a5e087f648dbb0edce1b...56339e523c0409420f6c2c9a2f4292bbb3c07dd3)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.8.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #271 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.8.0
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Closes #275
+- Bump ossf/scorecard-action from 2.4.2 to 2.4.3
+- Bumps [ossf/scorecard-action](https://github.com/ossf/scorecard-action) from 2.4.2 to 2.4.3.
+- - [Release notes](https://github.com/ossf/scorecard-action/releases)
+- - [Changelog](https://github.com/ossf/scorecard-action/blob/main/RELEASE.md)
+- - [Commits](https://github.com/ossf/scorecard-action/compare/05b42c624433fc40578a4040d5cf5e36ddca8cde...4eaacf0543bb3f2c246792bd56e8cdeffafb205a)
+- ---
+- Updated-dependencies:
+- - dependency-name: ossf/scorecard-action
+-   dependency-version: 2.4.3
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #272 from edwardtheharris/dependabot/github_actions/ossf/scorecard-action-2.4.3
+- Bump ossf/scorecard-action from 2.4.2 to 2.4.3
+- Closes #273
+- Merge pull request #274 from edwardtheharris/273-bump-ossfscorecard-action-from-242-to-243-272
+- 273 bump ossfscorecard action from 242 to 243 272
+- Closes #273
+- Merge branch 'main' into 275-bump-actionsdependency-review-action-from-473-to-480-271
+- Merge pull request #276 from edwardtheharris/275-bump-actionsdependency-review-action-from-473-to-480-271
+- 275 bump actionsdependency review action from 473 to 480 271
+- Closes #275
+- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
+- Bumps [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) from 2024.10.3 to 2025.8.25.
+- - [Release notes](https://github.com/sphinx-doc/sphinx-autobuild/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx-autobuild/blob/main/NEWS.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx-autobuild/compare/2024.10.03...2025.08.25)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-autobuild
+-   dependency-version: 2025.8.25
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #281 from edwardtheharris/dependabot/pip/sphinx-autobuild-2025.8.25
+- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
+- Closes #285
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 8a84a858ead1a8775386f50be595a438772c2879 to 4fda2e598c349fd1d6770dc6df8b0b61158c3e90.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/8a84a858ead1a8775386f50be595a438772c2879...4fda2e598c349fd1d6770dc6df8b0b61158c3e90)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 4fda2e598c349fd1d6770dc6df8b0b61158c3e90
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #282 from edwardtheharris/dependabot/github_actions/actions/add-to-project-4fda2e598c349fd1d6770dc6df8b0b61158c3e90
+- Bump actions/add-to-project from 8a84a858ead1a8775386f50be595a438772c2879 to 4fda2e598c349fd1d6770dc6df8b0b61158c3e90
+- Closes #283
+- Merge pull request #284 from edwardtheharris/283-bump-actionsadd-to-project-from-8a84a858ead1a8775386f50be595a438772c2879-to-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-282
+- 283 bump actionsadd to project from 8a84a858ead1a8775386f50be595a438772c2879 to 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 282
+- Closes #283
+- Merge branch 'main' into 285-bump-sphinx-autobuild-from-2024103-to-2025825-281
+- Merge pull request #286 from edwardtheharris/285-bump-sphinx-autobuild-from-2024103-to-2025825-281
+- 285 bump sphinx autobuild from 2024103 to 2025825 281
+- Closes #285
+- Bump ipython from 9.2.0 to 9.6.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.2.0 to 9.6.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.2.0...9.6.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.6.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #279 from edwardtheharris/dependabot/pip/ipython-9.6.0
+- Bump ipython from 9.2.0 to 9.6.0
+- Closes #279
+- Merge pull request #290 from edwardtheharris/289-bump-ipython-from-920-to-960-279
+- 289 bump ipython from 920 to 960 279
+- Closes #289
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 269-bump-actionsdependency-review-action-from-473-to-480-265
+- Closes #269
+## [0.0.3] - 2025-05-19
 
-## 0.0.2
+### 🐛 Bug Fixes
 
-```{git_changelog}
-:rev-list: 0.0.1..0.0.2
-```
+- Fix commit message
+- Fix commit message
+- Fix commit message
+- Fix commit message
+- Fix commit message
+- Fix commit message
 
-## 0.0.1
+### 💼 Other
 
-```{git_changelog}
-:rev-list: eaa6ee7..0.0.1
-```
+- Bump paramiko from 3.4.0 to 3.4.1
+- Bumps [paramiko](https://github.com/paramiko/paramiko) from 3.4.0 to 3.4.1.
+- - [Commits](https://github.com/paramiko/paramiko/compare/3.4.0...3.4.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: paramiko
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump sphinx-last-updated-by-git from 0.3.7 to 0.3.8
+- Bumps [sphinx-last-updated-by-git](https://github.com/mgeier/sphinx-last-updated-by-git) from 0.3.7 to 0.3.8.
+- - [Release notes](https://github.com/mgeier/sphinx-last-updated-by-git/releases)
+- - [Changelog](https://github.com/mgeier/sphinx-last-updated-by-git/blob/master/NEWS.rst)
+- - [Commits](https://github.com/mgeier/sphinx-last-updated-by-git/compare/0.3.7...0.3.8)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-last-updated-by-git
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #83 from edwardtheharris/dependabot/pip/sphinx-last-updated-by-git-0.3.8
+- Bump sphinx-last-updated-by-git from 0.3.7 to 0.3.8
+- Merge branch 'main' into dependabot/pip/paramiko-3.4.1
+- Bump ansible from 10.2.0 to 10.3.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 10.2.0 to 10.3.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/10.2.0...10.3.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #85 from edwardtheharris/dependabot/pip/ansible-10.3.0
+- Bump ansible from 10.2.0 to 10.3.0
+- Bump tox from 4.17.1 to 4.18.0
+- Bumps [tox](https://github.com/tox-dev/tox) from 4.17.1 to 4.18.0.
+- - [Release notes](https://github.com/tox-dev/tox/releases)
+- - [Changelog](https://github.com/tox-dev/tox/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/tox/compare/4.17.1...4.18.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: tox
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #84 from edwardtheharris/dependabot/pip/tox-4.18.0
+- Bump tox from 4.17.1 to 4.18.0
+- Merge branch 'main' into dependabot/pip/paramiko-3.4.1
+- Merge pull request #82 from edwardtheharris/dependabot/pip/paramiko-3.4.1
+- Bump paramiko from 3.4.0 to 3.4.1
+- Update vim config
+- Closes #86
+- Merge pull request #87 from edwardtheharris/86-add-moustach-to-vim-config
+- Update vim config
+- Closes #87
+- Enable changelog
+- Closes #88
+- Add ref
+- Closes #88
+- Merge pull request #89 from edwardtheharris/88-add-changelog
+- Enable changelog
+- Closes #88
+- Bump pylint from 3.2.6 to 3.2.7
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.2.6 to 3.2.7.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.2.6...v3.2.7)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #90 from edwardtheharris/dependabot/pip/pylint-3.2.7
+- Bump pylint from 3.2.6 to 3.2.7
+- Bump sphinx-autobuild from 2024.4.16 to 2024.9.3
+- Bumps [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) from 2024.4.16 to 2024.9.3.
+- - [Release notes](https://github.com/sphinx-doc/sphinx-autobuild/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx-autobuild/blob/main/NEWS.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx-autobuild/compare/2024.04.16...2024.09.03)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-autobuild
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #92 from edwardtheharris/dependabot/pip/sphinx-autobuild-2024.9.3
+- Bump sphinx-autobuild from 2024.4.16 to 2024.9.3
+- Bump cryptography from 43.0.0 to 43.0.1 in the pip group
+- Bumps the pip group with 1 update: [cryptography](https://github.com/pyca/cryptography).
+- Updates `cryptography` from 43.0.0 to 43.0.1
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/43.0.0...43.0.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #93 from edwardtheharris/dependabot/pip/pip-18e15a66a3
+- Bump cryptography from 43.0.0 to 43.0.1 in the pip group
+- Bump tox from 4.18.0 to 4.18.1
+- Bumps [tox](https://github.com/tox-dev/tox) from 4.18.0 to 4.18.1.
+- - [Release notes](https://github.com/tox-dev/tox/releases)
+- - [Changelog](https://github.com/tox-dev/tox/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/tox/compare/4.18.0...4.18.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: tox
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #91 from edwardtheharris/dependabot/pip/tox-4.18.1
+- Bump tox from 4.18.0 to 4.18.1
+- Bump pipenv from 2024.0.1 to 2024.0.3
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2024.0.1 to 2024.0.3.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2024.0.1...v2024.0.3)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #99 from edwardtheharris/dependabot/pip/pipenv-2024.0.3
+- Bump pipenv from 2024.0.1 to 2024.0.3
+- Bump ansible from 10.3.0 to 10.4.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 10.3.0 to 10.4.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/10.3.0...10.4.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #94 from edwardtheharris/dependabot/pip/ansible-10.4.0
+- Bump ansible from 10.3.0 to 10.4.0
+- Bump molecule from 24.8.0 to 24.9.0
+- Bumps [molecule](https://github.com/ansible-community/molecule) from 24.8.0 to 24.9.0.
+- - [Release notes](https://github.com/ansible-community/molecule/releases)
+- - [Commits](https://github.com/ansible-community/molecule/compare/v24.8.0...v24.9.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: molecule
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump pytest from 8.3.2 to 8.3.3
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.2 to 8.3.3.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.3.2...8.3.3)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #97 from edwardtheharris/dependabot/pip/pytest-8.3.3
+- Bump pytest from 8.3.2 to 8.3.3
+- Merge branch 'main' into dependabot/pip/molecule-24.9.0
+- Merge pull request #98 from edwardtheharris/dependabot/pip/molecule-24.9.0
+- Bump molecule from 24.8.0 to 24.9.0
+- Alias terraform utilities
+- Closes #104
+- Merge pull request #105 from edwardtheharris/104-alias-terraform-programs
+- Alias terraform utilities
+- Closes #104
+- Add missing alias
+- Closes #104
+- Merge pull request #106 from edwardtheharris/104-alias-terraform-programs
+- 104 alias terraform programs
+- Closes #104
+- Fix direnv condition
+- Closes #107
+- Merge pull request #108 from edwardtheharris/107-fix-direnv-rc
+- Fix direnv condition
+- Closes #107
+- Bump sphinx-autobuild from 2024.9.3 to 2024.10.3
+- Bumps [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) from 2024.9.3 to 2024.10.3.
+- - [Release notes](https://github.com/sphinx-doc/sphinx-autobuild/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx-autobuild/blob/main/NEWS.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx-autobuild/compare/2024.09.03...2024.10.03)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-autobuild
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #109 from edwardtheharris/dependabot/pip/sphinx-autobuild-2024.10.3
+- Bump sphinx-autobuild from 2024.9.3 to 2024.10.3
+- Bump the pip group with 2 updates
+- Bumps the pip group with 2 updates: [ansible-core](https://github.com/ansible/ansible) and [starlette](https://github.com/encode/starlette).
+- Updates `ansible-core` from 2.17.4 to 2.17.5
+- - [Release notes](https://github.com/ansible/ansible/releases)
+- - [Commits](https://github.com/ansible/ansible/compare/v2.17.4...v2.17.5)
+- Updates `starlette` from 0.38.5 to 0.40.0
+- - [Release notes](https://github.com/encode/starlette/releases)
+- - [Changelog](https://github.com/encode/starlette/blob/master/docs/release-notes.md)
+- - [Commits](https://github.com/encode/starlette/compare/0.38.5...0.40.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible-core
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: starlette
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump pipenv from 2024.0.3 to 2024.2.0
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2024.0.3 to 2024.2.0.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2024.0.3...v2024.2.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Update codeql.yml
+- Closes #13
+- Update scorecard.yml
+- Clkoses #113
+- Merge pull request #116 from edwardtheharris/113-fix-checkout-actions
+- 113 fix checkout actions
+- Closes #113
+- Merge branch 'main' into dependabot/pip/pipenv-2024.2.0
+- Merge pull request #115 from edwardtheharris/dependabot/pip/pipenv-2024.2.0
+- Bump pipenv from 2024.0.3 to 2024.2.0
+- Merge branch 'main' into dependabot/pip/pip-cd4c21d6be
+- Bump paramiko from 3.4.1 to 3.5.0
+- Bumps [paramiko](https://github.com/paramiko/paramiko) from 3.4.1 to 3.5.0.
+- - [Commits](https://github.com/paramiko/paramiko/compare/3.4.1...3.5.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: paramiko
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/paramiko-3.5.0
+- Merge branch 'main' into dependabot/pip/paramiko-3.5.0
+- Merge pull request #96 from edwardtheharris/dependabot/pip/paramiko-3.5.0
+- Bump paramiko from 3.4.1 to 3.5.0
+- Merge branch 'main' into dependabot/pip/pip-cd4c21d6be
+- Bump pylint from 3.2.7 to 3.3.1
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.2.7 to 3.3.1.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.2.7...v3.3.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pylint-3.3.1
+- Merge branch 'main' into dependabot/pip/pylint-3.3.1
+- Merge pull request #100 from edwardtheharris/dependabot/pip/pylint-3.3.1
+- Bump pylint from 3.2.7 to 3.3.1
+- Bump sphinx from 8.0.2 to 8.1.3
+- Bumps [sphinx](https://github.com/sphinx-doc/sphinx) from 8.0.2 to 8.1.3.
+- - [Release notes](https://github.com/sphinx-doc/sphinx/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx/blob/v8.1.3/CHANGES.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx/compare/v8.0.2...v8.1.3)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump black from 24.8.0 to 24.10.0
+- Bumps [black](https://github.com/psf/black) from 24.8.0 to 24.10.0.
+- - [Release notes](https://github.com/psf/black/releases)
+- - [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- - [Commits](https://github.com/psf/black/compare/24.8.0...24.10.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: black
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump ansible from 10.4.0 to 11.1.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 10.4.0 to 11.1.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/10.4.0...11.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Closes #123
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Closes #123
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Closes #123
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Fix docs
+- Closes #123
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Fix coverage
+- Closes #123
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Merge pull request #125 from edwardtheharris/123-fix-commit-message
+- Closes #123
+- Merge branch 'main' into 123-fix-commit-message
+- Merge pull request #126 from edwardtheharris/123-fix-commit-message
+- Fix coverage
+- Closes #123
+- Update bashrcs to assume h is symlink
+- Closes #127
+- 'NoneType' object is not subscriptable
+- 'NoneType' object is not subscriptable
+- @edwardtheharris
+- 'Xander Harris <xander@platonic.io>'
+- Changed
+- Merge pull request #128 from edwardtheharris/127-update-bashrcs-to-assume-h-is-symlink
+- Update bashrcs to assume h is symlink
+- Closes #127
+- Fix bashrc
+- Closes #129
+- Merge pull request #130 from edwardtheharris/129-fix-bashrc-for-users
+- Fix bashrc
+- Closes #129
+- Merge branch 'main' into dependabot/pip/ansible-11.1.0
+- Merge pull request #122 from edwardtheharris/dependabot/pip/ansible-11.1.0
+- Bump ansible from 10.4.0 to 11.1.0
+- Merge branch 'main' into dependabot/pip/black-24.10.0
+- Merge pull request #119 from edwardtheharris/dependabot/pip/black-24.10.0
+- Bump black from 24.8.0 to 24.10.0
+- Merge branch 'main' into dependabot/pip/sphinx-8.1.3
+- Merge pull request #118 from edwardtheharris/dependabot/pip/sphinx-8.1.3
+- Bump sphinx from 8.0.2 to 8.1.3
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into dependabot/pip/pip-cd4c21d6be
+- Merge pull request #111 from edwardtheharris/dependabot/pip/pip-cd4c21d6be
+- Bump the pip group with 2 updates
+- Drop unused package
+- Bump tox from 4.18.1 to 4.23.2
+- Bumps [tox](https://github.com/tox-dev/tox) from 4.18.1 to 4.23.2.
+- - [Release notes](https://github.com/tox-dev/tox/releases)
+- - [Changelog](https://github.com/tox-dev/tox/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/tox/compare/4.18.1...4.23.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: tox
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/tox-4.23.2
+- Merge branch 'dependabot/pip/tox-4.23.2' of github.com:edwardtheharris/dotfiles into dependabot/pip/tox-4.23.2
+- Merge pull request #114 from edwardtheharris/dependabot/pip/tox-4.23.2
+- Bump tox from 4.18.1 to 4.23.2
+- Adjust rc files
+- Closes #134
+- Adjust rc files
+- Closes #134
+- Update files and templates
+- Closes #134
+- Add ps1s
+- Update ns
+- Closes #134
+- Add ps1s
+- Closes #134
+- Update filename
+- Closes #134
+- Update tasks
+- Closes #134
+- Add link to prompt generator
+- Closes #134
+- Update pre-commit hook
+- Closes #134
+- Update file locations
+- Closes #134
+- Update gitconfig template
+- Closes #134
+- Update ps1 copy
+- Closes #134
+- Update readme
+- Closes #134
+- Add check for nvim
+- Closes #134
+- Replace old-style os config
+- Closes #134
+- Add wakatime config
+- Closes #134
+- Update ps1 files
+- Closes #134
+- Update docs
+- Closes #134
+- Update readme
+- Closes #134
+- Update bashrc
+- Closes #134
+- Merge pull request #135 from edwardtheharris/134-update-bashrcs-based-on-user
+- Adjust rc files
+- Closes #134
+- Add arch role
+- Closes #137
+- Update role vars et cetera
+- Closes #137
+- Add transparent nvim configuration
+- Closes #143
+- Add nvim configuration tasks
+- Closes #143
+- Add notes to readme
+- Closes #143
+- Add trim as well
+- Closes #143
+- Fix trailing whitespace
+- Closes #143
+- Fix whitespace plugin
+- Closes #143
+- Fix unordered list
+- Closes #143
+- Fix descriptive link text
+- Closes #143
+- Fix documentation workflow
+- Closes #143
+- Merge pull request #144 from edwardtheharris/143-add-transparent-nvim-config
+- 143 add transparent nvim config
+- Closes #143
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 137-add-missing-firmware-install
+- Closes #137
+- Add missing play for firmware
+- Closes #137
+- Bump pipenv from 2024.4.1 to 2025.0.2
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2024.4.1 to 2025.0.2.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2024.4.1...v2025.0.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2025.0.2
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pipenv-2025.0.2
+- Bump pylint from 3.3.6 to 3.3.7
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.3.6 to 3.3.7.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.3.6...v3.3.7)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-version: 3.3.7
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pylint-3.3.7
+- Merge pull request #142 from edwardtheharris/dependabot/pip/pylint-3.3.7
+- Bump pylint from 3.3.6 to 3.3.7
+- Merge branch 'main' into dependabot/pip/pipenv-2025.0.2
+- Merge pull request #141 from edwardtheharris/dependabot/pip/pipenv-2025.0.2
+- Bump pipenv from 2024.4.1 to 2025.0.2
+- Merge branch 'main' into 137-add-missing-firmware-install
+- Merge branch '137-add-missing-firmware-install' of
+- Edwardtheharris/dotfiles
+- Into 137-add-missing-firmware-install
+- Closes #137
+- Bump h11 from 0.14.0 to 0.16.0 in the pip group
+- Bumps the pip group with 1 update: [h11](https://github.com/python-hyper/h11).
+- Updates `h11` from 0.14.0 to 0.16.0
+- - [Commits](https://github.com/python-hyper/h11/compare/v0.14.0...v0.16.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: h11
+-   dependency-version: 0.16.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pip-75f0befae6
+- Merge branch 'main' into dependabot/pip/pip-75f0befae6
+- Merge pull request #139 from edwardtheharris/dependabot/pip/pip-75f0befae6
+- Bump h11 from 0.14.0 to 0.16.0 in the pip group
+- Merge branch 'main' into 137-add-missing-firmware-install
+- Merge pull request #138 from edwardtheharris/137-add-missing-firmware-install
+- 137 add missing firmware install
+- Closes #137
+- Add automated lazy.vim install
+- Closes #145
+- Merge pull request #146 from edwardtheharris/145-add-nvim-lazy-config
+- Add automated lazy.vim install
+- Closes #146
+- Bump tox from 4.25.0 to 4.26.0
+- Bumps [tox](https://github.com/tox-dev/tox) from 4.25.0 to 4.26.0.
+- - [Release notes](https://github.com/tox-dev/tox/releases)
+- - [Changelog](https://github.com/tox-dev/tox/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/tox/compare/4.25.0...4.26.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: tox
+-   dependency-version: 4.26.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #147 from edwardtheharris/dependabot/pip/tox-4.26.0
+- Bump tox from 4.25.0 to 4.26.0
+- Fix write permissions
+- Closes #115
+- Update project setting
+- Closes #115
+- Merge pull request #148 from edwardtheharris/alert-fix-115
+- Fix write permissions
+- Closes #115
+- Enable scorecard
+- Closes #150
+- Enable codeQL
+- Closes #150
+- Merge pull request #151 from edwardtheharris/150-enable-codeql-and-source-scanning
+- 150 enable codeql and source scanning
+- Closes #150
+- Update check permissions
+- Closes #141
+- Fix branches
+- Closes #141
+- Update metadata
+- Closes #141
+- Merge pull request #152 from edwardtheharris/alert-fix-141
+- Update check permissions
+- Fix bandit alert
+- Closes #67
+- Fix exception
+- Closes #67
+- Update deps
+- Closes #67
+- Update codeql
+- Fix pinned versions
+- Closes #104
+- Merge pull request #153 from edwardtheharris/alert-fix-67
+- Fix bandit alert
+- Closes #67
+- Merge branch 'main' into alert-fix-104
+- Merge pull request #154 from edwardtheharris/alert-fix-104
+- Fix pinned versions
+- Closes #104
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into dependabot/pip/tox-4.26.0
+- Fix assert alerts
+- Closes #67
+- Closes #67
+- Fix hash pin
+- Closes #67
+- Update hash
+- Closes #67
+- Merge pull request #155 from edwardtheharris/dependabot/pip/tox-4.26.0
+- Dependabot/pip/tox 4.26.0
+- Closes #67
+- Fix assert
+- Closes #138
+- Merge pull request #156 from edwardtheharris/alert-fix-138
+- Fix assert
+- Closes #138
+- Update license
+- Closes #148
+- Update source link
+- Closes #148
+- Merge pull request #158 from edwardtheharris/alert-fix-148
+- Alert fix 148
+- Closes #148
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into alert-fix-67
+- See alert #67
+- Update check permissions
+- Closes #114
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into alert-fix-114
+- Closes #114
+- Merge branch 'main' into alert-fix-114
+- Merge branch 'main' into alert-fix-114
+- Merge branch 'main' into alert-fix-114
+- Merge branch 'main' into alert-fix-114
+- Merge branch 'alert-fix-114' of
+- Edwardtheharris/dotfiles into alert-fix-114
+- Closes #114
+- Update workflows
+- Closes #114
+- Fix typo
+- Closes #114
+- Merge pull request #149 from edwardtheharris/alert-fix-114
+- Update check permissions
+- Closes #114
+- Merge branch 'main' into alert-fix-67
+- Merge pull request #159 from edwardtheharris/alert-fix-67
+- Alert fix 67
+- Closes #67
+- [StepSecurity] Apply security best practices
+- StepSecurity Bot <bot@stepsecurity.io>
+- Update documentation.yml
+- Set perms harder
+- Closes #114
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into alert-fix-114
+- Update perms
+- Closes #114
+- Update perms
+- Closes #114
+- Update pre commit
+- Closes #114
+- Merge branch 'alert-fix-114' into chore/GHA-192202-stepsecurity-remediation
+- Merge pull request #161 from step-security-bot/chore/GHA-192202-stepsecurity-remediation
+- [StepSecurity] Apply security best practices
+- Merge pull request #162 from edwardtheharris/alert-fix-114
+- Alert fix 114
+- Closes #114
+- Fix pylint
+- Closes #163
+- [StepSecurity] Apply security best practices
+- StepSecurity Bot <bot@stepsecurity.io>
+- Merge pull request #165 from step-security-bot/chore/GHA-192228-stepsecurity-remediation
+- [StepSecurity] Apply security best practices
+- Merge pull request #164 from edwardtheharris/163-merge-security-fixes
+- Fix pylint
+- Closes #163
+## [0.0.2] - 2024-08-10
+
+### 💼 Other
+
+- Update arch rc file
+- Closes #59
+- Adjust file locations
+- Closes #59
+- Update modes
+- Closes #59
+- Update modes again
+- Closes #59
+- Add tasks and vars
+- Closes #59
+- Need to add bind
+- Closes #59
+- Add join configs
+- Closes #59
+- And the second one
+- Closes #59
+- Merge pull request #60 from edwardtheharris/59-add-containerd-and-kubeadm
+- 59 add containerd and kubeadm
+- Closes #59
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into 36-update-ubuntu-rcs
+- Closes #36
+- Merge pull request #61 from edwardtheharris/36-update-ubuntu-rcs
+- 36 update ubuntu rcs
+- Closes #36
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 19-add-nautobot-install-and-configure
+- Closes #19
+- Fix envrc
+- Closes #19
+- Drop bandit
+- Closes #19
+- Add automated iwd deployment
+- Closes #63
+- Drop handler
+- Closes #63
+- Fix spacing
+- Closes #63
+- Update lock file
+- Closes #63
+- Fix lint issues
+- Closes #63
+- Update doc
+- Closes #63
+- Merge pull request #64 from edwardtheharris/63-add-uniform-wifi-configuration
+- 63 add uniform wifi configuration
+- Closes #63
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 19-add-nautobot-install-and-configure
+- Closes #19
+- Drop duplicate file
+- Closes #19
+- Add basic info
+- Closes #19
+- Add some notes
+- Closes #19
+- Update tasks
+- Closes #19
+- Add local provisioner discover dir
+- Closes #19
+- Add glances
+- Closes #65
+- Enable glances
+- Closes #65
+- Merge pull request #66 from edwardtheharris/65-install-glances
+- 65 install glances
+- Closes #65
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 19-add-nautobot-install-and-configure
+- Closes #19
+- Add LVM and NFS
+- Closes #19
+- Fix lint
+- Closes #19
+- More lint
+- Closes #19
+- More lint
+- Closes #19
+- Merge pull request #20 from edwardtheharris/19-add-nautobot-install-and-configure
+- Add LVM and NFS
+- Closes #19
+- Merge branch 'main' into 19-add-nautobot-install-and-configure
+- Merge pull request #67 from edwardtheharris/19-add-nautobot-install-and-configure
+- 19 add nautobot install and configure
+- Closes #19
+- Add log rotation
+- Closes #68
+- Add logrotate, cache handling
+- Closes #68
+- Create lvm FS
+- Closes #68
+- Smaller roles for volume jobs
+- Closes #68
+- Adjust LVM prep
+- Closes #68
+- Merge pull request #69 from edwardtheharris/68-rotate-logs
+- 68 rotate logs
+- Closes #68
+- Update init yaml template
+- Closes #70
+- Adjust variable
+- Closes #70
+- Not quite all the way
+- Closes #70
+- Update hosts
+- Closes #70
+- Don't do hard reset
+- Closes #70
+- Update docs
+- Closes #70
+- Update kube-vip settings
+- Closes #70
+- Update docs
+- Closes #70
+- Merge pull request #71 from edwardtheharris/70-add-kube-vip-static-pods-config
+- 70 add kube vip static pods config
+- Closes #70
+- Adjust inventory
+- Closes #72
+- Update site
+- Closes #72
+- Merge pull request #76 from edwardtheharris/72-move-reset-code-to-appropriate-repository
+- 72 move reset code to appropriate repository
+- Closes #72
+- Bump sphinx from 7.4.5 to 7.4.7
+- Bumps [sphinx](https://github.com/sphinx-doc/sphinx) from 7.4.5 to 7.4.7.
+- - [Release notes](https://github.com/sphinx-doc/sphinx/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx/blob/master/CHANGES.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx/compare/v7.4.5...v7.4.7)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #75 from edwardtheharris/dependabot/pip/sphinx-7.4.7
+- Bump pytest from 8.2.2 to 8.3.1
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.2.2 to 8.3.1.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.2.2...8.3.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #73 from edwardtheharris/dependabot/pip/pytest-8.3.1
+- Bump pylint from 3.2.5 to 3.2.6
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.2.5 to 3.2.6.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.2.5...v3.2.6)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #74 from edwardtheharris/dependabot/pip/pylint-3.2.6
+- Bump pytest from 8.3.1 to 8.3.2
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.3.1 to 8.3.2.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.3.1...8.3.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #77 from edwardtheharris/dependabot/pip/pytest-8.3.2
+- Bump black from 24.4.2 to 24.8.0
+- Bumps [black](https://github.com/psf/black) from 24.4.2 to 24.8.0.
+- - [Release notes](https://github.com/psf/black/releases)
+- - [Changelog](https://github.com/psf/black/blob/main/CHANGES.md)
+- - [Commits](https://github.com/psf/black/compare/24.4.2...24.8.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: black
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #80 from edwardtheharris/dependabot/pip/black-24.8.0
+- Bump black from 24.4.2 to 24.8.0
+- Bump myst-parser from 3.0.1 to 4.0.0
+- Bumps [myst-parser](https://github.com/executablebooks/MyST-Parser) from 3.0.1 to 4.0.0.
+- - [Release notes](https://github.com/executablebooks/MyST-Parser/releases)
+- - [Changelog](https://github.com/executablebooks/MyST-Parser/blob/master/CHANGELOG.md)
+- - [Commits](https://github.com/executablebooks/MyST-Parser/compare/v3.0.1...v4.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: myst-parser
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Fix build errors
+- Merge pull request #79 from edwardtheharris/dependabot/pip/myst-parser-4.0.0
+- Bump myst-parser from 3.0.1 to 4.0.0
+## [0.0.1] - 2024-07-13
+
+### 🐛 Bug Fixes
+
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+- Fix the git commit hook
+
+### 💼 Other
+
+- Initial
+- See #65
+- Main
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add existing code back
+- See #1
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #2 from edwardtheharris/1-add-existing-code-back
+-  add existing code back
+- Closes #1
+-  add file
+- See #4
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #5 from edwardtheharris/4-add-file
+-  add file
+- Closes #4
+-  add other files
+- See #6
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add other files
+- See #6
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add other files
+- See #6
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  double check the first add
+- See #7
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #8 from edwardtheharris/7-double-check-the-first-add
+-  double check the first add
+- Closes #7
+- Merge branch 'main' into 6-add-other-files
+- Merge branch '6-add-other-files' of github.com:edwardtheharris/dotfiles into 6-add-other-files
+- See #6
+- Merge pull request #9 from edwardtheharris/6-add-other-files
+- 6 add other files
+- Closes #6
+-  rename file
+- See #10
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  rename file
+- See #10
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #11 from edwardtheharris/10-rename-file
+-  rename file
+- Closes #10
+- Use `shell=False` in `subprocess` Function Calls
+- Pixeebot/drip 2024 02 19 pixee python/subprocess shell false
+- Closes #13
+- @edwardtheharris - 23113631+pixeebot@users.noreply.github.com
+- Pixeebot[bot]
+- Changed
+- Pixeebot/drip 2024 02 19 pixee python/subprocess shell false
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add security policy
+- See #14
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #15 from edwardtheharris/14-add-security-policy
+- 14 add security policy
+- Closes #14
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into pixeebot/drip-2024-02-19-pixee-python/subprocess-shell-false
+- Closes #13
+- Pixeebot/drip 2024 02 19 pixee python/subprocess shell false
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Pixeebot/drip 2024 02 19 pixee python/subprocess shell false
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #12 from edwardtheharris/pixeebot/drip-2024-02-19-pixee-python/subprocess-shell-false
+- Use `shell=False` in `subprocess` Function Calls
+- Closes #13
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into pixeebot/drip-2024-02-19-pixee-python/subprocess-shell-false
+- Merge branch 'main' into 10-rename-file
+- See #10
+-  rename file
+- See #10
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  rename file
+- See #10
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  rename file
+- See #10
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #16 from edwardtheharris/10-rename-file
+- 10 rename file
+- Closer #10
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add arch user rc file copy
+- See #17
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #18 from edwardtheharris/17-add-arch-user-rc-file-copy
+- 17 add arch user rc file copy
+- Closes #17
+- Add nautobot install and configure
+- Closes #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Main
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Main
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 19-add-nautobot-install-and-configure
+- See #19
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+-  add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Bump ipython from 8.21.0 to 8.22.1
+- Bumps [ipython](https://github.com/ipython/ipython) from 8.21.0 to 8.22.1.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/8.21.0...8.22.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #23 from edwardtheharris/dependabot/pip/ipython-8.22.1
+- Bump pytest from 8.0.1 to 8.0.2
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.0.1...8.0.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump the pip group across 1 directories with 1 update
+- Bumps the pip group with 1 update in the /. directory: [cryptography](https://github.com/pyca/cryptography).
+- Updates `cryptography` from 42.0.3 to 42.0.4
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/42.0.3...42.0.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-type: indirect
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #21 from edwardtheharris/dependabot/pip/cryptography-42.0.4
+- Merge branch 'main' into dependabot/pip/pytest-8.0.2
+- Merge pull request #22 from edwardtheharris/dependabot/pip/pytest-8.0.2
+- Bump pytest from 8.0.1 to 8.0.2
+- Bump ipython from 8.22.1 to 8.22.2
+- Bumps [ipython](https://github.com/ipython/ipython) from 8.22.1 to 8.22.2.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/8.22.1...8.22.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump ansible from 9.2.0 to 9.3.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 9.2.0 to 9.3.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/9.2.0...9.3.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #30 from edwardtheharris/dependabot/pip/ansible-9.3.0
+- Merge branch 'main' into dependabot/pip/ipython-8.22.2
+- Merge pull request #29 from edwardtheharris/dependabot/pip/ipython-8.22.2
+- Fix the git commit hook
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #
+- @ - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- See #28
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #31 from edwardtheharris/28-fix-the-git-commit-hook
+- 28 fix the git commit hook
+- Closes #28
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Into 19-add-nautobot-install-and-configure
+- See #19
+- Add nautobot install and configure
+- See #19
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Sandbox Process Creation
+- Merge branch 'main' into pixeebot/drip-2024-02-27-pixee-python/sandbox-process-creation
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- Pixeebot/drip-2024-02-27-pixee-python/sandbox-process-creation
+- Pixeebot/drip 2024 02 27 pixee python/sandbox process creation
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #24 from edwardtheharris/pixeebot/drip-2024-02-27-pixee-python/sandbox-process-creation
+- Sandbox Process Creation
+- Closes #24
+- Pixeebot/drip 2024 02 27 pixee python/sandbox process creation
+- See #
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #33 from edwardtheharris/pixeebot/drip-2024-02-27-pixee-python/sandbox-process-creation
+- Pixeebot/drip 2024 02 27 pixee python/sandbox process creation
+- Closes #25
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Bump pytest from 8.0.2 to 8.1.1
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.2 to 8.1.1.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/8.0.2...8.1.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pytest-8.1.1
+- Merge pull request #32 from edwardtheharris/dependabot/pip/pytest-8.1.1
+- Merge branch 'main' into 34-add-coverage-analysis
+- Merge branch '34-add-coverage-analysis' of
+- Edwardtheharris/dotfiles into 34-add-coverage-analysis
+- See #34
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Add coverage analysis
+- See #34
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Merge pull request #35 from edwardtheharris/34-add-coverage-analysis
+- 34 add coverage analysis
+- Closes #34
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Update ubuntu rcs
+- See #36
+- @edwardtheharris - xandertheharris@gmail.com
+- Xander Harris
+- Changed
+- Fix tox ini
+- Closes #51
+- Fix coveralls
+- Closes #51
+- Drop 3.8
+- Closes #51
+- Update ignore
+- See #51
+- Use black for formatting
+- Closes #51
+- Update coverage generation
+- Closes #51
+- Update file path
+- Closes #51
+- Adjust coverage settings
+- Closes #51
+- Add properties
+- Closes #51
+- Update coveralls.yml
+- See #51
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into 51-fix-python-version-list
+- See #51
+- Use concise version
+- Closes #51
+- Fix raw string
+- Closes #51
+- Fix other backslash
+- Closes #51
+- Fix version
+- See #51
+- Update git fetch
+- See #51
+- Fix missing filename
+- See #51
+- Fix fetch depth
+- See #51
+- Drop checkout
+- See #51
+- Update args
+- Closes #51
+- Fix checkout
+- See #51
+- Fix sonar
+- See #51
+- Fix tox
+- See #51
+- Update source
+- See #51
+- Update args
+- See #51
+- Update coveralls.yml
+- Drop sonar
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into 51-fix-python-version-list
+- Drop sonar
+- Closes #51
+- Merge pull request #52 from edwardtheharris/51-fix-python-version-list
+- Fix tox ini
+- Closes #51
+- Enable repeatable kubeadm
+- Closes #26
+- @edwardtheharris
+- Xander Harris xandertheharris@gmail.com
+- Changed
+- Merge pull request #27 from edwardtheharris/26-make-kubeadm-repeatable
+- 26 make kubeadm repeatable
+- Closes #26
+- Bump tox from 4.15.1 to 4.16.0
+- Bumps [tox](https://github.com/tox-dev/tox) from 4.15.1 to 4.16.0.
+- - [Release notes](https://github.com/tox-dev/tox/releases)
+- - [Changelog](https://github.com/tox-dev/tox/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/tox/compare/4.15.1...4.16.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: tox
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #56 from edwardtheharris/dependabot/pip/tox-4.16.0
+- Bump ipython from 8.25.0 to 8.26.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 8.25.0 to 8.26.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/8.25.0...8.26.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #53 from edwardtheharris/dependabot/pip/ipython-8.26.0
+- Bump pylint from 3.2.3 to 3.2.5
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.2.3 to 3.2.5.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.2.3...v3.2.5)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #54 from edwardtheharris/dependabot/pip/pylint-3.2.5
+- Add missing aliases
+- Closes #57
+- Bump certifi from 2024.6.2 to 2024.7.4 in the pip group
+- Bumps the pip group with 1 update: [certifi](https://github.com/certifi/python-certifi).
+- Updates `certifi` from 2024.6.2 to 2024.7.4
+- - [Commits](https://github.com/certifi/python-certifi/compare/2024.06.02...2024.07.04)
+- ---
+- Updated-dependencies:
+- - dependency-name: certifi
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pip-a8b23622d7
+- Merge pull request #55 from edwardtheharris/dependabot/pip/pip-a8b23622d7
+- Merge branch 'main' into 57-add-missing-k8s-aliases
+- Merge pull request #58 from edwardtheharris/57-add-missing-k8s-aliases
+- Add missing aliases
+- Closes #57
