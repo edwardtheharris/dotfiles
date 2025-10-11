@@ -1,8 +1,54 @@
 ---
-user: string
-useremail: string
-usergroup: string
-userhome: string
-username: string
-userrole: string
-systemos: string
+user_copy_rc_files:
+  - dest: .bash_profile
+    src: bash_profile
+  - dest: .ps1
+    src: ps1-user
+  - dest: .arch
+    src: arch
+user_git_email: string
+user_git_name: string
+user_git_username: string
+user_git_usersigningkey: string
+user_email: string
+user_group: string
+user_home: string
+user_name: string
+user_nvim_plugins:
+  - dest: config/lazy.lua
+    src: nvim/lazy.lua
+  - dest: plugins/airline.lua
+    src: nvim/airline.lua
+  - dest: plugins/ansible.lua
+    src: nvim/ansible.lua
+  - dest: plugins/coc.lua
+    src: nvim/coc.lua
+  - dest: plugins/go.lua
+    src: nvim/go.lua
+  - dest: plugins/jinja.lua
+    src: nvim/jinja.lua
+  - dest: plugins/markdown.lua
+    src: nvim/markdown.lua
+  - dest: plugins/markdownlint.lua
+    src: nvim/markdownlint.lua
+  - dest: plugins/transparent.lua
+    src: nvim/transparent.lua
+  - dest: plugins/treesitter.lua
+    src: nvim/treesitter.lua
+  - dest: plugins/trim.lua
+    src: nvim/trim.lua
+  - dest: plugins/wakatime.lua
+    src: nvim/wakatime.lua
+  - dest: plugins/whitespace.lua
+    src: nvim/whitespace.lua
+user_role: string
+user_systemos: string
+user_template_rc_files:
+  - dest: .bashrc
+    src: bashrc
+  - dest: .gitconfig
+    src: "gitconfig"
+  - dest: .wakatime.cfg
+    src: wakatime.cfg
+user_user: string
+user_wakatime_key: string

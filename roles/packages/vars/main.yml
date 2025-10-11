@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT-0
+---
+# vars file for ansible
+packages_list:
+  - direnv
+  - fd
+  - fzf
+  - ghostscript
+  - imagemagick
+  - irssi
+  - lua51
+  - mermaid-cli
+  - navi
+  - nodejs
+  - python-pynvim
+  - ripgrep
+  - rubygems
+  - tectonic
+  - texlive-bin
+  - tldr
+  - tree-sitter
