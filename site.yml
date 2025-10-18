@@ -1,0 +1,69 @@
+---
+- name: Init arch user
+  hosts: localhost
+  roles:
+    - role: user
+      tags:
+        - user
+      vars:
+        user_git_email: sumguy@domain.local
+        user_git_name: sumguy
+        user_git_username: sumguy
+        user_git_usersigningkey: >-
+          Y1ERFC7PTT3JL8CO
+        user_systemos: arch
+        user_: sumguy
+        user_group: users
+        user_home: /home/sumguy
+        user_name: sumguy
+        user_role: user
+        user_wakatime_key: >-
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
+    - role: packages
+      tags:
+        - user
+- name: Init root user
+  hosts: localhost
+  become: true
+  roles:
+    - role: user
+      tags:
+        - root
+      vars:
+        user_git_email: root@domain.local
+        user_git_name: root
+        user_git_username: root
+        user_git_usersigningkey: JXMQX2EAM3HDDN1H
+        user_systemos: arch
+        user_: root
+        user_group: root
+        user_home: /root/
+        user_name: root
+        user_role: root
+        user_wakatime_key: >-
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
+- name: Init service account user
+  hosts: ns
+  roles:
+    - role: user
+      tags:
+        - sa
+      vars:
+        user_git_email: named@yourdomain.local
+        user_git_name: named
+        user_git_username: named
+        user_git_usersigningkey: AK6LOWG75OXMT7HQ
+        user_systemos: arch
+        user_: named
+        user_group: named
+        user_home: /var/named
+        user_name: named
+        user_role: sa
+        user_wakatime_key: >-
+          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
+- name: Install missing firmware for Arch
+  hosts: localhost
+  roles:
+    - role: arch
+      tags:
+        - arch

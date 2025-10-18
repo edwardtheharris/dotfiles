@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.18.1
+    hooks:
+    - id: markdownlint-cli2
+      args:
+        - --fix
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v25.5.0 # put latest release tag from https://github.com/ansible/ansible-lint/releases/
+    hooks:
+      - id: ansible-lint
+        # Uncomment if you need the full Ansible community bundle instead of ansible-core:
+        additional_dependencies:
+          - ansible

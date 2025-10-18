@@ -1,0 +1,109 @@
+digraph k8s {
+    color="#fff"
+    fillcolor="#000"
+    fontcolor="#fff"
+    fontsize="48pt"
+    imagepath="../img/diagrams/network/"
+    label=<<table border="0px" bgcolor="#969696">
+            <tr><td>kubernetes cluster</td></tr>
+            </table>>
+    style=filled
+    edge [
+        color="#fff"
+        fontsize="36pt"
+        penwidth="3pt"
+    ];
+    node [
+        fontsize="24pt"
+        labelloc="b"
+        margin="2pt"
+        shape=none
+        style=filled
+    ];
+
+    subgraph cluster_k8s {
+        kcp1_bh_int_loc [
+            image="host.png"
+            label=<<table border="0px" bgcolor="#969696">
+            <tr><td>hostname</td><td>cidr</td></tr>
+            <tr><td>kcp01.bh.int.loc</td><td>172.16.0.24/29</td></tr>
+            </table>>
+        ];
+        kcp2_bh_int_loc [
+            image="../img/diagrams/network/host.png"
+            label=<<table border="0px" bgcolor="#969696">
+            <tr><td>hostname</td><td>cidr</td></tr>
+            <tr><td>kcp02.bh.int.loc</td><td>172.16.0.40/29</td></tr>
+            </table>>
+        ];
+        kcp1_bh_int_loc -> etcd1 [ltail="kcp01.bh.int.loc" minlen="3pt"];
+        kcp2_bh_int_loc -> etcd2 [ltail="kcb02.bh.int.loc" minlen="3pt"];
+
+        subgraph cluster_kubernetes {
+            label=<<table border="0px" bgcolor="#969696">
+            <tr><td>services</td></tr>
+            </table>>
+
+            subgraph cluster_etcd {
+                label=<<table border="0px" bgcolor="#969696">
+                <tr><td>etcd</td></tr>
+                </table>>
+                etcd1 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>hostname</td><td>ip</td></tr>
+                    <tr><td>etcd01.bh.int.loc</td><td>172.16.0.42</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/etcd.icon.png"
+                ]
+                etcd2 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>hostname</td><td>ip</td></tr>
+                    <tr><td>etcd02.bh.int.loc</td><td>172.16.0.33</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/etcd.icon.png"
+                ]
+            }
+            subgraph cluster_kcp {
+                label=<<table border="0px" bgcolor="#969696">
+                <tr><td></td></tr>
+                </table>>
+                kcp1 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>hostname</td><td>ip</td></tr>
+                    <tr><td>hostname</td><td>172.16.0.44</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/kcp.png"
+                ];
+                kcp2 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>services</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/kcp.png"
+                ];
+            }
+            subgraph cluster_knodes {
+                label=<<table border="0px" bgcolor="#969696">
+                <tr><td></td></tr>
+                </table>>
+                kw1 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>services</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/knode.png"
+                ];
+                kw2 [
+                    label=<<table border="0px" bgcolor="#969696">
+                    <tr><td>services</td></tr>
+                    </table>>
+                    image="../img/diagrams/network/knode.png"
+                ];
+            }
+    }
+    etcd2 -> kcp1 [ltail="cluster_etcd" lhead="cluster_kcp"];
+    etcd2 -> kcp2 [ltail="cluster_etcd" lhead="cluster_kcp"];
+    kcp1 -> kw1 [ltail="cluster_kcp" lhead="cluster_knodes" minlen="3pt"];
+    kcp1 -> kw2 [ltail="cluster_kcp" lhead="cluster_knodes"];
+    kcp2 -> kw1 [ltail="cluster_kcp" lhead="cluster_knodes"];
+    kcp2 -> kw2 [ltail="cluster_kcp" lhead="cluster_knodes"];
+}
+}
