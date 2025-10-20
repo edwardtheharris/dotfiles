@@ -46,6 +46,7 @@
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
     dest: "{{ user_home }}/{{ user_item.dest }}"
+    force: true
     group: "{{ user_group }}"
     mode: ug+rw
     owner: "{{ user_name }}"

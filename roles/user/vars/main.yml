@@ -22,8 +22,6 @@ user_nvim_plugins:
     src: nvim/airline.lua
   - dest: plugins/ansible.lua
     src: nvim/ansible.lua
-  - dest: plugins/coc.lua
-    src: nvim/coc.lua
   - dest: plugins/go.lua
     src: nvim/go.lua
   - dest: plugins/jinja.lua

@@ -3,7 +3,7 @@ abstract: Changelog for the dotfiles repository.
 title: Changelog
 ---
 <!--markdownlint-disable-->
-## [unreleased]
+## [0.0.4] - 2025-10-20
 
 ### 💼 Other
 
@@ -764,21 +764,6 @@ title: Changelog
 - Merge pull request #264 from edwardtheharris/263-bump-black-from-2510-to-2590-262
 - 263 bump black from 2510 to 2590 262
 - Closes #262
-- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
-- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.3 to 4.8.0.
-- - [Release notes](https://github.com/actions/dependency-review-action/releases)
-- - [Commits](https://github.com/actions/dependency-review-action/compare/595b5aeba73380359d98a5e087f648dbb0edce1b...56339e523c0409420f6c2c9a2f4292bbb3c07dd3)
-- ---
-- Updated-dependencies:
-- - dependency-name: actions/dependency-review-action
--   dependency-version: 4.8.0
--   dependency-type: direct:production
--   update-type: version-update:semver-minor
-- ...
-- Dependabot[bot] <support@github.com>
-- Merge pull request #265 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.8.0
-- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
-- Closes #269
 - Bump actions/add-to-project
 - Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 4515659e2b458b27365e167605ac44f219494b66 to 8a84a858ead1a8775386f50be595a438772c2879.
 - - [Release notes](https://github.com/actions/add-to-project/releases)
@@ -796,7 +781,6 @@ title: Changelog
 - Merge pull request #268 from edwardtheharris/267-bump-actionsadd-to-project-from-4515659e2b458b27365e167605ac44f219494b66-to-8a84a858ead1a8775386f50be595a438772c2879-266
 - 267 bump actionsadd to project from 4515659e2b458b27365e167605ac44f219494b66 to 8a84a858ead1a8775386f50be595a438772c2879 266
 - Closes #267
-- Merge branch 'main' into 269-bump-actionsdependency-review-action-from-473-to-480-265
 - Bump actions/dependency-review-action from 4.7.3 to 4.8.0
 - Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.3 to 4.8.0.
 - - [Release notes](https://github.com/actions/dependency-review-action/releases)
@@ -835,22 +819,6 @@ title: Changelog
 - Merge pull request #276 from edwardtheharris/275-bump-actionsdependency-review-action-from-473-to-480-271
 - 275 bump actionsdependency review action from 473 to 480 271
 - Closes #275
-- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
-- Bumps [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) from 2024.10.3 to 2025.8.25.
-- - [Release notes](https://github.com/sphinx-doc/sphinx-autobuild/releases)
-- - [Changelog](https://github.com/sphinx-doc/sphinx-autobuild/blob/main/NEWS.rst)
-- - [Commits](https://github.com/sphinx-doc/sphinx-autobuild/compare/2024.10.03...2025.08.25)
-- ---
-- Updated-dependencies:
-- - dependency-name: sphinx-autobuild
--   dependency-version: 2025.8.25
--   dependency-type: direct:production
--   update-type: version-update:semver-major
-- ...
-- Dependabot[bot] <support@github.com>
-- Merge pull request #281 from edwardtheharris/dependabot/pip/sphinx-autobuild-2025.8.25
-- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
-- Closes #285
 - Bump actions/add-to-project
 - Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 8a84a858ead1a8775386f50be595a438772c2879 to 4fda2e598c349fd1d6770dc6df8b0b61158c3e90.
 - - [Release notes](https://github.com/actions/add-to-project/releases)
@@ -868,10 +836,58 @@ title: Changelog
 - Merge pull request #284 from edwardtheharris/283-bump-actionsadd-to-project-from-8a84a858ead1a8775386f50be595a438772c2879-to-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-282
 - 283 bump actionsadd to project from 8a84a858ead1a8775386f50be595a438772c2879 to 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 282
 - Closes #283
+- Bump ansible from 11.7.0 to 12.0.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 11.7.0 to 12.0.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/11.7.0...12.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 12.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #280 from edwardtheharris/dependabot/pip/ansible-12.0.0
+- Bump ansible from 11.7.0 to 12.0.0
+- Closes #287
+- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
+- Bumps [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) from 2024.10.3 to 2025.8.25.
+- - [Release notes](https://github.com/sphinx-doc/sphinx-autobuild/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx-autobuild/blob/main/NEWS.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx-autobuild/compare/2024.10.03...2025.08.25)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-autobuild
+-   dependency-version: 2025.8.25
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #281 from edwardtheharris/dependabot/pip/sphinx-autobuild-2025.8.25
+- Bump sphinx-autobuild from 2024.10.3 to 2025.8.25
+- Closes #285
 - Merge branch 'main' into 285-bump-sphinx-autobuild-from-2024103-to-2025825-281
 - Merge pull request #286 from edwardtheharris/285-bump-sphinx-autobuild-from-2024103-to-2025825-281
 - 285 bump sphinx autobuild from 2024103 to 2025825 281
 - Closes #285
+- Merge branch 'main' into 287-bump-ansible-from-1170-to-1200-280
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.7.3 to 4.8.0.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/595b5aeba73380359d98a5e087f648dbb0edce1b...56339e523c0409420f6c2c9a2f4292bbb3c07dd3)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.8.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #265 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.8.0
+- Bump actions/dependency-review-action from 4.7.3 to 4.8.0
+- Closes #269
+- Merge branch 'main' into 269-bump-actionsdependency-review-action-from-473-to-480-265
 - Bump ipython from 9.2.0 to 9.6.0
 - Bumps [ipython](https://github.com/ipython/ipython) from 9.2.0 to 9.6.0.
 - - [Release notes](https://github.com/ipython/ipython/releases)
@@ -894,6 +910,194 @@ title: Changelog
 - Edwardtheharris/dotfiles into
 - 269-bump-actionsdependency-review-action-from-473-to-480-265
 - Closes #269
+- Merge pull request #270 from edwardtheharris/269-bump-actionsdependency-review-action-from-473-to-480-265
+- 269 bump actionsdependency review action from 473 to 480 265
+- Closes #269
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 287-bump-ansible-from-1170-to-1200-280
+- Closes #287
+- Merge branch 'main' into 287-bump-ansible-from-1170-to-1200-280
+- Merge branch '287-bump-ansible-from-1170-to-1200-280'
+- Of github.com:edwardtheharris/dotfiles
+- Into 287-bump-ansible-from-1170-to-1200-280
+- Closes #287
+- Bump pylint from 3.3.8 to 3.3.9
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.3.8 to 3.3.9.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.3.8...v3.3.9)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-version: 3.3.9
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump molecule from 25.5.0 to 25.9.0
+- Bumps [molecule](https://github.com/ansible-community/molecule) from 25.5.0 to 25.9.0.
+- - [Release notes](https://github.com/ansible-community/molecule/releases)
+- - [Commits](https://github.com/ansible-community/molecule/compare/v25.5.0...v25.9.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: molecule
+-   dependency-version: 25.9.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #278 from edwardtheharris/dependabot/pip/molecule-25.9.0
+- Bump molecule from 25.5.0 to 25.9.0
+- Closes #278
+- Merge branch '291-bump-molecule-from-2550-to-2590-278' into dependabot/pip/pylint-3.3.9
+- Merge pull request #277 from edwardtheharris/dependabot/pip/pylint-3.3.9
+- Bump pylint from 3.3.8 to 3.3.9
+- Closes #277
+- Add changelog
+- Closes #269
+- Merge branch
+- '269-bump-actionsdependency-review-action-from-473-to-480-265'
+- Into 291-bump-molecule-from-2550-to-2590-278
+- Closes #291
+- Merge branch 'main' into 291-bump-molecule-from-2550-to-2590-278
+- Merge branch '291-bump-molecule-from-2550-to-2590-278'
+- Of github.com:edwardtheharris/dotfiles into 291-bump-molecule-from-2550-to-2590-278
+- Closes #291
+- Merge pull request #292 from edwardtheharris/291-bump-molecule-from-2550-to-2590-278
+- 291 bump molecule from 2550 to 2590 278
+- Closes #291
+- Merge branch 'main' into 287-bump-ansible-from-1170-to-1200-280
+- Merge pull request #288 from edwardtheharris/287-bump-ansible-from-1170-to-1200-280
+- 287 bump ansible from 1170 to 1200 280
+- Closes #287
+- Bump pylint from 3.3.9 to 4.0.0
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.3.9 to 4.0.0.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v3.3.9...v4.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-version: 4.0.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump actions/dependency-review-action from 4.8.0 to 4.8.1
+- Bumps [actions/dependency-review-action](https://github.com/actions/dependency-review-action) from 4.8.0 to 4.8.1.
+- - [Release notes](https://github.com/actions/dependency-review-action/releases)
+- - [Commits](https://github.com/actions/dependency-review-action/compare/56339e523c0409420f6c2c9a2f4292bbb3c07dd3...40c09b7dc99638e5ddb0bfd91c1673effc064d8a)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/dependency-review-action
+-   dependency-version: 4.8.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #297 from edwardtheharris/dependabot/github_actions/actions/dependency-review-action-4.8.1
+- Bump actions/dependency-review-action from 4.8.0 to 4.8.1
+- Closes #298
+- Merge pull request #299 from edwardtheharris/298-bump-actionsdependency-review-action-from-480-to-481-297
+- 298 bump actionsdependency review action from 480 to 481 297
+- Closes #298
+- Merge branch '300-bump-pylint-from-339-to-400-296' into dependabot/pip/pylint-4.0.0
+- Merge pull request #296 from edwardtheharris/dependabot/pip/pylint-4.0.0
+- Bump pylint from 3.3.9 to 4.0.0
+- Closes #300
+- Merge pull request #301 from edwardtheharris/300-bump-pylint-from-339-to-400-296
+- 300 bump pylint from 339 to 400 296
+- Closes #300
+- Bump ansible from 12.0.0 to 12.1.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 12.0.0 to 12.1.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/12.0.0...12.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 12.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Initial commit
+- Fix 3.10 errors
+- Closes #302
+- Drop unwanted readme
+- Closes #305
+- Merge pull request #306 from edwardtheharris/305-bump-ansible-from-1200-to-1210-294
+- 305 bump ansible from 1200 to 1210 294
+- Closes #305
+- Bump requests from 2.32.3 to 2.32.4 in the pip group
+- Bumps the pip group with 1 update: [requests](https://github.com/psf/requests).
+- Updates `requests` from 2.32.3 to 2.32.4
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: requests
+-   dependency-version: 2.32.4
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Duchess <duchess@breeze-blocks.net>
+- Update envrc
+- Drop 3.10
+- Fix 3.10 errors
+- Closes #302
+- Bump ansible from 12.0.0 to 12.1.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 12.0.0 to 12.1.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/12.0.0...12.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 12.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Initial commit
+- Drop unwanted readme
+- Closes #305
+- Closes #302
+- Merge pull request #308 from edwardtheharris/307-bump-requests-from-2323-to-2324-in-the-pip-group-293
+- 307 bump requests from 2323 to 2324 in the pip group 293
+- Closes #307
+- Closes #302
+- Update ps1 for root user, tasks
+- Closes #311
+- Fix bashrc template
+- Closes #311
+- Merge pull request #312 from edwardtheharris/311-fix-helm-alias
+- Update ps1 for root user, tasks
+- Closes #311
+- Update user roles
+- Closes #40
+- Some maintenance
+- Closes #40
+- Fix user role
+- Closes #40
+- Update site
+- Closes #40
+- Initial commit
+- Fix 3.10 errors
+- Closes #302
+- Adjust variable assignment
+- Closes #40
+- Drop coc plugin
+- Closes #40
+- Update site yaml
+- Closes #40
+- Skip coc.lua in file list
+- Closes #40
+- Update site.yml
+- Closes #40
+- Fix copy task
+- Closes #40
+- Fix rc
+- Closes #40
 ## [0.0.3] - 2025-05-19
 
 ### 🐛 Bug Fixes
