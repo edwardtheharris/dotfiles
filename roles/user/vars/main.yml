@@ -10,6 +10,7 @@ user_git_email: string
 user_git_name: string
 user_git_username: string
 user_git_usersigningkey: string
+user_git_rootsigningkey: string
 user_email: string
 user_group: string
 user_home: string
@@ -29,8 +30,6 @@ user_nvim_plugins:
     src: nvim/jinja.lua
   - dest: plugins/markdown.lua
     src: nvim/markdown.lua
-  - dest: plugins/markdownlint.lua
-    src: nvim/markdownlint.lua
   - dest: plugins/transparent.lua
     src: nvim/transparent.lua
   - dest: plugins/treesitter.lua
@@ -44,11 +43,7 @@ user_nvim_plugins:
 user_role: string
 user_systemos: string
 user_template_rc_files:
-  - dest: .bashrc
-    src: bashrc
-  - dest: .gitconfig
-    src: "gitconfig"
-  - dest: .wakatime.cfg
-    src: wakatime.cfg
+  - dest: string
+    src: string
 user_user: string
 user_wakatime_key: string

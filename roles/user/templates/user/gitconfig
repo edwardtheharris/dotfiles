@@ -1,0 +1,20 @@
+[user]
+	email = {{ user_git_email }}
+	name = {{ user_git_name }}
+	username = {{ user_git_username }}
+	signingkey = {{ user_git_usersigningkey }}
+[init]
+	defaultBranch = main
+[alias]
+	s = status
+	p = push
+	a = add
+	c = commit
+	co = checkout
+	rc = rebase --continue
+[commit]
+	gpgsign = true
+[pull]
+	ff = yes
+[push]
+	autoSetupRemote = yes
