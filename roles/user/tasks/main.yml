@@ -46,6 +46,7 @@
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
     dest: "{{ user_home }}/{{ user_item.dest }}"
+    force: true
     group: "{{ user_group }}"
     mode: ug+rw
     owner: "{{ user_name }}"
@@ -57,8 +58,7 @@
   become: true
 - name: Template rc files
   ansible.builtin.template:
-    dest: >-
-      {{ user_home }}/{{ user_item.dest }}
+    dest: "{{ user_home }}/{{ user_item.dest }}"
     group: "{{ user_group }}"
     mode: ug+rw
     owner: "{{ user_name }}"
@@ -68,6 +68,8 @@
   loop_control:
     loop_var: user_item
   become: true
+  vars:
+    wakatime_key: user_wakatime_key
 - name: Install nvim plugins
   ansible.builtin.copy:
     dest: >-
