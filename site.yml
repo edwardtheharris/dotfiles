@@ -1,47 +1,75 @@
 ---
 - name: Init arch user
-  hosts: localhost
+  hosts: thw04
   roles:
+    - role: arch
+      tags:
+        - arch
     - role: user
       tags:
         - user
       vars:
-        user_git_email: sumguy@domain.local
-        user_git_name: sumguy
-        user_git_username: sumguy
-        user_git_usersigningkey: >-
-          Y1ERFC7PTT3JL8CO
+        user_copy_rc_files:
+          - dest: .bash_profile
+            src: user/bash_profile
+          - dest: .ps1
+            src: user/ps1
+          - dest: .arch
+            src: user/arch
+        user_git_email: "{{ git_email }}"
+        user_git_name: "{{ git_name }}"
+        user_git_username: "{{ git_username }}"
+        user_git_usersigningkey: "{{ user_git_signingkey }}"
         user_systemos: arch
-        user_: sumguy
+        user_: "{{ system_username }}"
         user_group: users
-        user_home: /home/sumguy
-        user_name: sumguy
+        user_home: "/home/{{ system_username }}"
+        user_name: "{{ system_username }}"
         user_role: user
-        user_wakatime_key: >-
-          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
+        user_template_rc_files:
+          - dest: .bashrc
+            src: user/bashrc
+          - dest: .gitconfig
+            src: user/gitconfig
+          - dest: .wakatime.cfg
+            src: user/wakatime.cfg
+        user_wakatime_key: "{{ wakatime_key }}"
     - role: packages
       tags:
         - user
 - name: Init root user
-  hosts: localhost
+  hosts: thw
   become: true
   roles:
     - role: user
       tags:
         - root
       vars:
-        user_git_email: root@domain.local
+        user_copy_rc_files:
+          - dest: .bash_profile
+            src: root/bash_profile
+          - dest: .ps1
+            src: root/ps1
+          - dest: .arch
+            src: root/arch
+        user_git_email: root@breeze-blocks.net
         user_git_name: root
         user_git_username: root
-        user_git_usersigningkey: JXMQX2EAM3HDDN1H
+        user_git_usersigningkey: "{{ user_git_rootsigningkey }}"
         user_systemos: arch
         user_: root
         user_group: root
         user_home: /root/
         user_name: root
         user_role: root
-        user_wakatime_key: >-
-          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
+        user_template_rc_files:
+          - dest: .bashrc
+            src: root/bashrc
+          - dest: .gitconfig
+            src: root/gitconfig
+          - dest: .wakatime.cfg
+            src: root/wakatime.cfg
+        user_wakatime_key: "{{ wakatime_key }}"
 - name: Init service account user
   hosts: ns
   roles:
@@ -49,7 +77,7 @@
       tags:
         - sa
       vars:
-        user_git_email: named@yourdomain.local
+        user_git_email: named@yourbreeze-blocks.net
         user_git_name: named
         user_git_username: named
         user_git_usersigningkey: AK6LOWG75OXMT7HQ
@@ -60,10 +88,10 @@
         user_name: named
         user_role: sa
         user_wakatime_key: >-
-          waka_a3b6410f-e14e-4e15-8e30-e364d3b67f49
-- name: Install missing firmware for Arch
-  hosts: localhost
-  roles:
-    - role: arch
-      tags:
-        - arch
+          {{ user_wakatime_key }}
+  # - name: Install missing firmware for Arch
+  #   hosts: localhost
+  #   roles:
+  #     - role: arch
+  #       tags:
+  #         - arch

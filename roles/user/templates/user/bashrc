@@ -10,7 +10,7 @@ PATH="${PATH}:${HOME}/.local/bin"
 
 # shellcheck disable=SC1091
 if [ -f /usr/share/bash-completion/bash_completion ]; then
-  source /usr/share/bash-completion/bash_completion
+	source /usr/share/bash-completion/bash_completion
 fi
 
 export CLICOLOR
@@ -22,13 +22,13 @@ export PATH
 on_arch="$(uname -r | grep arch)"
 
 if [ "$on_arch" != "" ]; then
-  # shellcheck disable=SC1091
-  . "${HOME}/.arch"
+	# shellcheck disable=SC1091
+	. "${HOME}/.arch"
 fi
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias h='h --debug'
+alias h='helm --debug'
 alias ip='ip -color=auto'
 alias k='kubectl'
 alias ls='ls --color'
