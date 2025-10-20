@@ -1,5 +1,9 @@
 # SPDX-License-Identifier: MIT-0
 ---
+- name: Install direnv
+  ansible.builtin.command:
+    cmd: yay -Sy --noconfirm direnv
+    creates: /usr/bin/direnv
 - name: Install gmotd
   ansible.builtin.command:
     cmd: yay -Sy --noconfirm gmotd
