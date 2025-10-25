@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: thw04
+  hosts: all
   roles:
     - role: arch
       tags:
@@ -36,9 +36,9 @@
         user_wakatime_key: "{{ wakatime_key }}"
     - role: packages
       tags:
-        - user
+        - packages
 - name: Init root user
-  hosts: thw
+  hosts: all
   become: true
   roles:
     - role: user
