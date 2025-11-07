@@ -1,0 +1,21 @@
+[user]
+	email = duchess@breeze-blocks.net
+	name = duchess
+	username = duchess
+	signingkey = 9033B047CC3A128F
+	usernam = duchess
+[init]
+	defaultBranch = main
+[alias]
+	s = status
+	p = push
+	a = add
+	c = commit
+	co = checkout
+	rc = rebase --continue
+[commit]
+	gpgsign = true
+[pull]
+	ff = yes
+[push]
+	autoSetupRemote = yes

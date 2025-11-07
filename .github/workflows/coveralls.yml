@@ -3,27 +3,21 @@ name: Test Coveralls
 permissions:
   contents: read
   issues: read
+  checks: write
+  pull-requests: write
 jobs:
   build:
-    permissions:
-      checks: write
-      pull-requests: write
     name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.11", "3.12", "3.13"]
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
+      - uses: actions/checkout@main
         with:
           fetch-depth: 0
       - name: Setup Python
-        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # main
+        uses: actions/setup-python@main
         with:
           python-version: ${{ matrix.python-version }}
       - name: git config
@@ -40,7 +34,7 @@ jobs:
           pytest --cov --cov-report=xml --junit-xml=results.xml --
           sed -i -e "s/__version__/$(git rev-parse --short=8 HEAD)/" sonar-project.properties
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@3a74b2957438d0b6e2e61d67b05318aa25c9e6c6 # v2.20.0
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           check_name: python-tests
@@ -51,7 +45,7 @@ jobs:
       - name: Run tox
         run: tox -e py
       - name: Coveralls
-        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # main
+        uses: coverallsapp/github-action@main
         with:
           parallel: true
           flag-name: run-${{ matrix.python-version }}
@@ -60,13 +54,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
       - name: Close parallel build
-        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # v2.3.6
+        uses: coverallsapp/github-action@v1
         with:
           parallel-finished: true
           carryforward: "run-3.11,run-3.12,run-3.13"

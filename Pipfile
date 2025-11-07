@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 ansible = "*"
-ansible-lint = "*"
 loguru = "*"
 myst-parser = {extras = ["linkify"], version = "*"}
 paramiko = "*"
@@ -20,14 +19,14 @@ sphinx-last-updated-by-git = "*"
 sphinxcontrib-autoyaml = "*"
 
 [dev-packages]
-bandit = "*"
 black = "*"
 gitpython = "*"
 ipython = "*"
 loguru = "*"
-pre-commit = "*"
+molecule = "*"
 pylint = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-pylint = "*"
 pytest-sphinx = "*"
+tox = "*"

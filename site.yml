@@ -1,97 +1,19 @@
 ---
-- name: Init arch user
-  hosts: all
-  roles:
-    - role: arch
-      tags:
-        - arch
-    - role: user
-      tags:
-        - user
-      vars:
-        user_copy_rc_files:
-          - dest: .bash_profile
-            src: user/bash_profile
-          - dest: .ps1
-            src: user/ps1
-          - dest: .arch
-            src: user/arch
-        user_git_email: "{{ git_email }}"
-        user_git_name: "{{ git_name }}"
-        user_git_username: "{{ git_username }}"
-        user_git_usersigningkey: "{{ user_git_signingkey }}"
-        user_systemos: arch
-        user_: "{{ system_username }}"
-        user_group: users
-        user_home: "/home/{{ system_username }}"
-        user_name: "{{ system_username }}"
-        user_role: user
-        user_template_rc_files:
-          - dest: .bashrc
-            src: user/bashrc
-          - dest: .gitconfig
-            src: user/gitconfig
-          - dest: .wakatime.cfg
-            src: user/wakatime.cfg
-        user_wakatime_key: "{{ wakatime_key }}"
-    - role: packages
-      tags:
-        - packages
-- name: Init root user
-  hosts: all
-  become: true
-  roles:
-    - role: user
-      tags:
-        - root
-      vars:
-        user_copy_rc_files:
-          - dest: .bash_profile
-            src: root/bash_profile
-          - dest: .ps1
-            src: root/ps1
-          - dest: .arch
-            src: root/arch
-        user_git_email: root@breeze-blocks.net
-        user_git_name: root
-        user_git_username: root
-        user_git_usersigningkey: "{{ user_git_rootsigningkey }}"
-        user_systemos: arch
-        user_: root
-        user_group: root
-        user_home: /root/
-        user_name: root
-        user_role: root
-        user_template_rc_files:
-          - dest: .bashrc
-            src: root/bashrc
-          - dest: .gitconfig
-            src: root/gitconfig
-          - dest: .wakatime.cfg
-            src: root/wakatime.cfg
-        user_wakatime_key: "{{ wakatime_key }}"
-- name: Init service account user
-  hosts: ns
+- name: Init SA user
+  hosts: whac
   roles:
     - role: user
       tags:
         - sa
-      vars:
-        user_git_email: named@yourbreeze-blocks.net
-        user_git_name: named
-        user_git_username: named
-        user_git_usersigningkey: AK6LOWG75OXMT7HQ
-        user_systemos: arch
-        user_: named
-        user_group: named
-        user_home: /var/named
-        user_name: named
-        user_role: sa
-        user_wakatime_key: >-
-          {{ user_wakatime_key }}
-  # - name: Install missing firmware for Arch
-  #   hosts: localhost
-  #   roles:
-  #     - role: arch
-  #       tags:
-  #         - arch
+- name: Init user
+  hosts: whac
+  roles:
+    - role: user
+      tags:
+        - user
+- name: Init root user
+  hosts: whac
+  roles:
+    - role: user
+      tags:
+        - root

@@ -1,0 +1,57 @@
+---
+- name: Create kube group
+  ansible.builtin.group:
+    name: kube
+    state: present
+- name: Create kube user
+  ansible.builtin.user:
+    name: kube
+    group: kube
+    state: present
+- name: Create kubeadm directory
+  ansible.builtin.file:
+    state: directory
+    recurse: true
+    dest: /etc/kubeadm
+    owner: kube
+    group: kube
+    mode: ug+rwx,o+r
+- name: Copy reset config
+  ansible.builtin.copy:
+    src: reset.yaml
+    dest: /etc/kubeadm/reset.yaml
+    owner: kube
+    group: kube
+    mode: ugo+rw
+- name: Drop init token
+  ansible.builtin.file:
+    dest: /etc/kubeadm/init.token
+    state: absent
+# - name: Reset existing cluster
+#   ansible.builtin.command:
+#     chdir: /etc/kubeadm
+#     cmd: kubeadm reset --config reset.yaml
+#     removes: /etc/kubernetes/admin.conf
+- name: Reset existing cluster
+  ansible.builtin.shell:
+    chdir: /etc/kubeadm
+    cmd: >-
+      kubeadm token generate > init.token && cat init.token
+    creates: /etc/kubeadm/init.token
+  register: token_out
+- name: Template token init config
+  ansible.builtin.template:
+    src: init.yaml
+    dest: /etc/kubeadm/init.yaml
+    owner: kube
+    group: kube
+    mode: ugo+rw
+# - name: Init new cluster
+#   ansible.builtin.command:
+#     chdir: /etc/kubeadm
+#     cmd: kubeadm init --config init.yaml
+#     creates: /etc/kubernetes/admin.conf
+#   register: init_result
+# - name: Debug
+#   ansible.builtin.debug:
+#     var: init_result

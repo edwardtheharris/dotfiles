@@ -1,0 +1,55 @@
+issuer: https://dex.int.bh.loc:32000
+storage:
+  type: sqlite3
+  config:
+    file: /var/lib/dex/dex.db
+web:
+  http: 0.0.0.0:32000
+logger:
+  level: "debug"
+  format: "text"
+oauth2:
+  skipApprovalScreen: true
+
+staticClients:
+- id: kubernetes
+  redirectURIs:
+  - 'https://kapi01.int.bh.loc/callback'
+  name: 'Kubernetes'
+  secret: <your-client-secret>
+
+connectors:
+- type: ldap
+  id: ldap
+  name: LDAP
+  config:
+    host: 192.168.1.40:389
+
+    # No TLS for this example. In production, you should enable TLS.
+    insecureNoSSL: true
+
+    # The DN to bind as for search operations.
+    bindDN: cn=read-only-admin,dc=int,dc=bh,dc=loc
+    bindPW: bind-password-here
+
+    userSearch:
+      # BaseDN to start the search from. It will search for users recursively.
+      baseDN: ou=Users,dc=example,dc=com
+      # Optional filter to apply when searching the directory.
+      filter: "(objectClass=person)"
+      # Username attribute in LDAP. This is usually "uid", "cn" or "sAMAccountName" for AD.
+      username: sAMAccountName
+      idAttr: DN
+      emailAttr: mail
+      nameAttr: cn
+
+    groupSearch:
+      baseDN: ou=Groups,dc=example,dc=com
+      filter: "(objectClass=group)"
+      userAttr: DN
+      groupAttr: member
+      nameAttr: cn
+
+frontend:
+  theme: coreos
+  dir: /var/lib/dex/static
