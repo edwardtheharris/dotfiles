@@ -1,18 +1,18 @@
 ---
 - name: Init SA user
-  hosts: whac
+  hosts: backup
   roles:
     - role: user
       tags:
         - sa
 - name: Init user
-  hosts: whac
+  hosts: backup
   roles:
     - role: user
       tags:
         - user
 - name: Init root user
-  hosts: whac
+  hosts: backup
   roles:
     - role: user
       tags:
