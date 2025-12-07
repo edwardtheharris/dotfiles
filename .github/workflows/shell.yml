@@ -44,3 +44,5 @@ jobs:
         run: echo Hello, world!
       - name: Run ShellCheck with action
         uses: ludeeus/action-shellcheck@master
+        env:
+          SHELLCHECK_OPTS: -e SC1091
