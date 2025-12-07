@@ -67,6 +67,10 @@ readme
 [etcd](https://etcd.io/docs/v3.5/)
 : This is a key value store that is used by Kubernetes Control Planes
 
+[GPG](https://gnupg.org)
+: GnuPG is a complete and free implementation of the OpenPGP standard as
+  defined by RFC4880 (also known as PGP).
+
 [netctl](https://wiki.archlinux.org/title/Netctl)
 : This is a program that allows the configuration of multiple
   network interfaces on a single system.
