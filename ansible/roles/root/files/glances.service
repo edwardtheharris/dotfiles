@@ -1,8 +1,0 @@
-[Unit]
-Description=Glances Server
-
-[Service]
-ExecStart=/root/.local/bin/glances -w
-
-[Install]
-WantedBy=multi-user.target
