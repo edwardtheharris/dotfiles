@@ -1,11 +1,12 @@
 # SPDX-License-Identifier: MIT-0
 ---
 arch_packages:
+  - mosh
   - ast-firmware
   - aic94xx-firmware
   - wd719x-firmware
   - linux-firmware-qlogic
-arch_gmotd_systemd_units:
+arch_systemd_units:
   - glances
   - sshd
 # vars file for arch
