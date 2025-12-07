@@ -1,17 +1,17 @@
 ---
 abstract: >
-  The dotfiles of excellent graphic designer and noted sesquipedalian,
-  @edwardtheharris. Contains system-appropriate configs for bash, vim,
-  and wakatime.
+    The dotfiles of excellent graphic designer and noted sesquipedalian,
+    @edwardtheharris. Contains system-appropriate configs for bash, vim,
+    and wakatime.
 authors: Xander Harris
 date: 2024-01-27
 title: dotfiles readme
 ---
 
-[![Black](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/black.yml)
-[![Dependabot Updates](https://github.com/edwardtheharris/dotfiles/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/dependabot/dependabot-updates)
-[![Documentation](https://github.com/edwardtheharris/dotfiles/actions/workflows/documentation.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/documentation.yml)
-[![Test Coveralls](https://github.com/edwardtheharris/dotfiles/actions/workflows/coveralls.yml/badge.svg)](https://github.com/edwardtheharris/dotfiles/actions/workflows/coveralls.yml)
+[![GitHub Pages Deployment](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/pages.yml?branch=main&style=flat&logo=github&label=GitHub%20Pages)](https://edwardtheharris.github.io/dotfiles/)
+&nbsp; [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/edwardtheharris/dotfiles/shell.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=ShellCheck)](https://github.com/edwardtheharris/dotfiles/actions/workflows/shell.yml)
+[![wakatime](https://wakatime.com/badge/github/edwardtheharris/dotfiles.svg)](https://wakatime.com/badge/github/edwardtheharris/dotfiles)
+[![Coverage Status](https://coveralls.io/repos/github/edwardtheharris/dotfiles/badge.svg)](https://coveralls.io/github/edwardtheharris/dotfiles)
 
 ## [<3 bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 
@@ -21,14 +21,10 @@ Best Amazing SHell is the best.
 
 ### Supported Distributions
 
-- [Alpine](https://www.alpinelinux.org/)
-- [ArchLinux](https://archlinux.org)
-- [Linux Mint](https://www.linuxmint.com/)
-- [MacOS](https://support.apple.com/en-us/102662)
-- [Ubuntu](https://ubuntu.com/)
-
-Though mainly work is done on [ArchLinux](https://archlinux.org) because
-apt is a bummer.
+- Alpine
+- ArchLinux
+- Linux Mint
+- MacOS
 
 ## GitHub Actions
 
@@ -42,40 +38,16 @@ done
 
 ## Usage
 
-This repository has three main plays, explained below.
+This is too complicated to explain at the moment.
 
-1. Local user, as in your Linux username. The values in `site.yml`
-   represent my personal settings, all variables are required.
+## Additional services
 
-   ```sh
-   ansible-playbook -t user site.yml
-   ```
+[Samba Active Directory](ansible/files/ad/index.md), because AD should be
+run on Linux.
 
-   The default configuration will run this on `localhost`.
+## Tools
 
-2. A service account, as in the account you would use to run
-   [bind](https://bind9.readthedocs.io/en/latest/).
-
-   ```sh
-   ansible-playbook -t sa site.yml
-   ```
-
-   The default configuration assumes a group named `ns` in your
-   Ansible inventory.
-
-3. The root account, you shouldn't be using this account but
-   if you're always tinkering with stuff like the author does,
-   then you'll want to have reasonable settings for the shell at least.
-
-   ```sh
-   ansible-playbook -t root site.yml
-   ```
-
-## tools
-
-Apparently, [neovim](https://github.com/neovim/neovim) has completely
-eliminated the need for anything as silly as VSCode or some other
-abominable thing like emacs.
+Vim Plugins use [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
 
 Sphinx extensions used by the documentation include the following.
 
@@ -83,8 +55,3 @@ Sphinx extensions used by the documentation include the following.
 2. [sphinxcontrib-autoyaml](https://pypi.org/project/sphinxcontrib-autoyaml/)
 3. [sphinx-copybutton](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)
 4. [sphinx-last-updated-by-git](https://pypi.org/project/sphinx-last-updated-by-git/)
-
-### pre-commit hooks
-
-1. [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
-2. [black](https://black.readthedocs.io/en/stable/integrations/source_version_control.html)

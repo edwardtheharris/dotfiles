@@ -1,0 +1,4 @@
+gitpython
+loguru
+pytest
+pytest-cov

@@ -1,0 +1,31 @@
+---
+- name: Install packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - logrotate
+    - pacman-contrib
+- name: Copy logrotate.conf
+  ansible.builtin.copy:
+    src: logrotate.conf
+    dest: /etc/logrotate.conf
+    owner: root
+    group: root
+    mode: u+rw,go+r,g-w
+- name: Force rotate logs
+  ansible.builtin.shell:
+    cmd: logrotate -f /etc/logrotate.conf
+- name: Enable paccache timer
+  ansible.builtin.service:
+    name: paccache.timer
+    state: started
+    enabled: true
+- name: Run paccache
+  ansible.builtin.shell:
+    cmd: paccache -rk1
+- name: Clear yay cache
+  ansible.builtin.shell:
+    cmd: yay -Scc --noconfirm
+  become: true
+  become_user: duchess

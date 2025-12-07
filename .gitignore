@@ -1,21 +1,21 @@
-*.gpg
+_build
 .ansible/
+*.gpg
 *.site.yml
-*cache*
-*secret*
+_build/
 .coverage
 .gnupg
 .tmp/
 .venv/
 .vscode
-Google Drive File Stream
-_build
-_build/
+*cache*
+*secret*
 ansible-navigator.log
 ansible/roles/k8s/files/admin.conf
 ansible/roles/k8s/files/cni/net.d/calico-kubeconfig
 coverage.xml
+Google Drive File Stream
 jenkins-cli.jar
 markdownlint-cli2-junit.xml
-reflog
 venv/
+reflog
