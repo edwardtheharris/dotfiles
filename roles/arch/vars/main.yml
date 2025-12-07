@@ -8,5 +8,5 @@ arch_packages:
   - linux-firmware-qlogic
 arch_systemd_units:
   - glances
-  - sshd
+  #- sshd
 # vars file for arch

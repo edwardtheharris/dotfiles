@@ -1,60 +1,50 @@
 # SPDX-License-Identifier: MIT-0
 ---
-- name: Install direnv
+- name: Install packages
   community.general.pacman:
     name: >-
       {{ item }}
     state: present
   loop:
     - direnv
-    - gmotd
     - mosh
-# - name: Copy pam.d sshd config
-#   ansible.builtin.copy:
-#     src: sshd
-#     dest: /etc/pam.d/sshd
-#     owner: root
-#     group: root
-#     mode: u+rw,go+r
-#   become: true
-- name: Make gmotd configuration directory
-  ansible.builtin.file:
-    dest: /etc/gmotd
+    - python-pip
+    - python-virtualenv
+  become: true
+- name: Update package cache
+  community.general.pacman:
+    executable: yay
+    update_cache: true
+- name: Install glances
+  ansible.builtin.pip:
+    virtualenv: /etc/glances/
+    name: >-
+      {{ item }}
+    state: latest
+  loop:
+    - pip
+    - glances[all]
+  become: true
+- name: Install glances services
+  ansible.builtin.copy:
+    src: >-
+      {{ item }}
+    dest: >-
+      /usr/lib/systemd/system/{{ item }}
     owner: root
     group: root
-    mode: u+rw,go+r
-    state: directory
+    mode: ug+rw
+  loop:
+    - glances.service
+    - glances-exporter.service
   become: true
-- name: Template gmotd configuration
-  ansible.builtin.template:
-    src: gmotd.yaml.j2
-    dest: /etc/gmotd/gmotd.yaml
-    owner: root
-    group: root
-    mode: u+rw,go+r
+- name: Start glances services
+  ansible.builtin.service:
+    name: >-
+      {{ item }}
+    state: started
+    enabled: true
+  loop:
+    - glances
+    - glances-exporter
   become: true
-- name: Stat gmotd config
-  ansible.builtin.stat:
-    path: /etc/gmotd/gmotd.yaml
-  register: arch_gmotd_stat
-- name: Validate gmotd config
-  ansible.builtin.assert:
-    that:
-      - arch_gmotd_stat.stat.exists
-      - arch_gmotd_stat.stat.isreg
-# - name: Update package cache
-#   community.general.pacman:
-#     executable: yay
-#     update_cache: true
-# - name: Add missing firmware for Arch
-#   community.general.pacman:
-#     executable: yay
-#     name: "{{ item }}"
-#     state: present
-#   loop:
-#     - aic94xx-firmware
-#     - ast-firmware
-#     - linux-firmware-qlogic
-#     - wd719x-firmware
-#     - upd72020x-fw
-# tasks file for arch
