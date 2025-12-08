@@ -8,8 +8,10 @@
   loop:
     - direnv
     - mosh
+    - hddtemp
     - python-pip
     - python-virtualenv
+    - glances
   become: true
 - name: Update package cache
   community.general.pacman:
@@ -20,10 +22,100 @@
     virtualenv: /etc/glances/
     name: >-
       {{ item }}
-    state: latest
+    state: present
   loop:
     - pip
-    - glances[all]
+    - glances
+    - annotated-types
+    - anyio
+    - batinfo
+    - bernhard
+    - cassandra-driver
+    - certifi
+    - cffi
+    - charset-normalizer
+    - chevron
+    - click
+    - coverage
+    - cryptography
+    - defusedxml
+    - distlib
+    - dnspython
+    - docker
+    - elastic-transport
+    - elasticsearch
+    - fastapi
+    - filelock
+    - geometpost1
+    - Glances
+    - graphitesender
+    - h11
+    - ibm-cloud-sdk-core
+    - ibmcloudant
+    - idna
+    - ifaddr
+    - importlib_metadata
+    - influxdb
+    - influxdb-client
+    - influxdb3-python
+    - iniconfig
+    - Jinja2
+    - kafka-python
+    - MarkupSafe
+    - msgpack
+    - netifaces2
+    - nvidia-ml-py
+    - packaging
+    - paho-mqtt
+    - pbkdf2
+    - pika
+    - platformdirs
+    - pluggy
+    - ply
+    - podman
+    - potsdb
+    - prometheus_client
+    - protobuf
+    - psutil
+    - psycopg
+    - psycopg-binary
+    - pyarrow
+    - pyasn1
+    - pycparser
+    - pydantic
+    - pydantic_core
+    - pygal
+    - Pygments
+    - PyJWT
+    - pymdstat
+    - pymongo
+    - pySMART.smartx
+    - pysmi-lextudio
+    - pysnmp-lextudio
+    - pysnmpcrypto
+    - pytest
+    - pytest-cov
+    - python-dateutilpost0
+    - pytz
+    - pyzmq
+    - reactivex
+    - requests
+    - setuptools
+    - shtab
+    - six
+    - sniffio
+    - sparklines
+    - starlette
+    - statsd
+    - termcolor
+    - typing-inspection
+    - typing_extensions
+    - urllib3
+    - uvicorn
+    - virtualenv
+    - wifi
+    - zeroconf
+    - zipp
   become: true
 - name: Install glances services
   ansible.builtin.copy:
