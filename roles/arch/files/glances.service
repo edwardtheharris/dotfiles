@@ -1,0 +1,9 @@
+[Unit]
+Description=Glances Server
+After=glances-exporter
+
+[Service]
+ExecStart=/etc/glances/bin/glances --config /etc/glances/glances.conf -s
+
+[Install]
+WantedBy=multi-user.target

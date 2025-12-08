@@ -5,19 +5,19 @@ CLICOLOR=1
 LESS='-R --use-color -Dd+r$Du+b$'
 LSCOLORS="Ea"
 if [ "${HOME}" != "/home" ]; then
-  . ".ps1-sa"
+	. ".ps1-sa"
 elif [ "${HOME}" == "/root" ]; then
-  . ".ps1-root"
+	. ".ps1-root"
 elif [ "${HOME}" == "/var|/srv" ]; then
-  . ".ps1-ns"
+	. ".ps1-ns"
 else
-  . ".ps1-user"
+	. ".ps1-user"
 fi
 PATH="${PATH}:${HOME}/.local/bin"
 
 # shellcheck disable=SC1091
 if [ -f /usr/share/bash-completion/bash_completion ]; then
-  source /usr/share/bash-completion/bash_completion
+	source /usr/share/bash-completion/bash_completion
 fi
 
 export CLICOLOR
@@ -29,14 +29,14 @@ export PATH
 on_arch="$(uname -r | grep arch)"
 
 if [ "$on_arch" != "" ]; then
-  . ".arch"
+	. ".arch"
 fi
 
 if [ ! -f "${HOME}/.local/bin/direnv" ]; then
-  bin_path="${HOME}/.local/bin"
-  mkdir -pv "${bin_path}"
-  curl -sfL https://direnv.net/install.sh | bash
-  eval "$(direnv hook bash)"
+	bin_path="${HOME}/.local/bin"
+	mkdir -pv "${bin_path}"
+	curl -sfL https://direnv.net/install.sh | bash
+	eval "$(direnv hook bash)"
 fi
 
 alias diff='diff --color=auto'
