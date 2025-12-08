@@ -26,14 +26,6 @@ The CodeQL workflow provided by GitHub is actually pretty good also.
 
 ```
 
-### codeql
-
-The CodeQL workflow provided by GitHub is actually pretty good also.
-
-```{autoyaml} .github/workflows/codeql.yml
-
-```
-
 ### black
 
 I still like to run things through black anyway.
