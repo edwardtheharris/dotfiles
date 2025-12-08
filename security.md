@@ -33,5 +33,4 @@ FOSS is great when you're broke.
 
 No one should be using the code in this repository for anything, but if you
 are for some reason doing so and you notice a problem, please create an
-issue
-[in the repository's issue tracker](https://github.com/edwardtheharris/dotfiles/issues).
+issue [here](https://github.com/edwardtheharris/dotfiles/issues).

@@ -5,7 +5,6 @@ date: 2024-02-19
 title: GitHub Actions configuration
 ---
 
-
 ## Dependabot
 
 Stay away from zero days with Dependabot.

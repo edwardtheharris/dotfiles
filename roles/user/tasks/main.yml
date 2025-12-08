@@ -1,88 +1,26 @@
 ---
-- name: Check for existing user
-  ansible.builtin.stat:
-    dest: >-
-      {{ user_home }}
-  register: user_stat
-- name: Create user if required
-  ansible.builtin.user:
-    name: >-
-      {{ user_name }}
-    create_home: true
-    group: >-
-      {{ user_group }}
-    home: >-
-      {{ user_home }}
-    shell: /bin/bash
-    state: present
-  become: true
-  when: not user_stat.stat.exists
-- name: Check for lazy.vim install
-  ansible.builtin.stat:
-    dest: "{{ user_home }}/.config/nvim"
-  register: nvim
-  # git clone https://github.com/LazyVim/starter ~/.config/nvim
-- name: Install LazyVim
-  ansible.builtin.command:
-    cmd: git clone https://github.com/LazyVim/starter ~/.config/nvim
-    creates: ~/.config
-  become: true
-  become_user: >-
-    {{ user_name }}
-  tags:
-    - skip_ansible_lint
-- name: Clean up lazy.nvim install
-  ansible.builtin.file:
-    dest: >-
-      {{ user_item }}
-    state: absent
-  loop:
-    - >-
-      "{{ user_home }}/.config/nvim/.git"
-    - >-
-      "{{ user_home }}/.config/nvim/lua/plugins/example.lua"
-  loop_control:
-    loop_var: user_item
 - name: Copy rc files # tasks file for user
   ansible.builtin.copy:
-    dest: "{{ user_home }}/{{ user_item.dest }}"
-    force: true
-    group: "{{ user_group }}"
+    dest: "{{ item.dest }}"
+    group: "{{ user }}"
     mode: ug+rw
-    owner: "{{ user_name }}"
-    src: "{{ user_item.src }}"
-  loop: >-
-    {{ user_copy_rc_files }}
-  loop_control:
-    loop_var: user_item
-  become: true
+    owner: "{{ user }}"
+    src: "{{ item.src }}"
+  loop:
+    - dest: "{{ lookup(env, HOME) }}/.bash_profile"
+      src: .bash_profile
+    - dest: "{{ lookup(env, HOME) }}/.gitconfig"
+      src: .gitconfig
 - name: Template rc files
   ansible.builtin.template:
-    dest: "{{ user_home }}/{{ user_item.dest }}"
-    group: "{{ user_group }}"
+    dest: "{{ item.dest }}"
+    group: "{{ user }}"
     mode: ug+rw
-    owner: "{{ user_name }}"
-    src: "{{ user_item.src }}"
-  loop: >-
-    {{ user_template_rc_files }}
-  loop_control:
-    loop_var: user_item
-  become: true
+    owner: "{{ user }}"
+    src: "{{ item.src }}"
+  loop:
+    - dest: "{{ lookup(env, HOME) }}/.bashrc"
+      src: .bashrc
   vars:
-    wakatime_key: user_wakatime_key
-- name: Install nvim plugins
-  ansible.builtin.copy:
-    dest: >-
-      {{ user_home }}/.config/nvim/lua/{{ user_item.dest }}
-    src: >-
-      {{ user_item.src }}
-    mode: ug+rw
-    owner: >-
-      {{ user_name }}
-    group: >-
-      {{ user_group }}
-  loop: >-
-    {{ user_nvim_plugins }}
-  loop_control:
-    loop_var: user_item
-  become: true
+    user: named
+    urole: ns

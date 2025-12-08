@@ -53,14 +53,9 @@ jobs:
       actions: read
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
+      - uses: actions/checkout@main
       - name: Bandit Scan
-        uses: shundor/python-bandit-scan@ab1d87dfccc5a0ffab88be3aaac6ffe35c10d6cd # main
+        uses: shundor/python-bandit-scan@main
         # optional arguments
         with:
           # exit with 0, even with results found
@@ -79,4 +74,3 @@ jobs:
           # ini_path: # optional, default is DEFAULT
           # Github token of the repository (automatically created by Github)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
-

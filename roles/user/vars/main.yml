@@ -6,8 +6,6 @@ user_copy_rc_files:
     src: ps1-user
   - dest: .arch
     src: arch
-  - dest: .ssh/config
-    src: user.ssh.config
 user_git_email: string
 user_git_name: string
 user_git_username: string
