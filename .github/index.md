@@ -18,14 +18,6 @@ Stay away from zero days with Dependabot.
 GitHub Actions provides a pretty complete CI/CD system and they'll let you
 run a lot of pipelines for free.
 
-### bandit
-
-The CodeQL workflow provided by GitHub is actually pretty good also.
-
-```{autoyaml} .github/workflows/bandit.yml
-
-```
-
 ### black
 
 I still like to run things through black anyway.

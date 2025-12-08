@@ -7,10 +7,9 @@ title: Unbuntu RC files.
 
 ## Ubuntu
 
-```{autoyaml} ubuntu/site.yml
-```
-
 We need an update here.
+
+Or we can just never use Ubunto ever again.
 
 ```{sectionauthor} Xander Harris <xander.harris@gmail.com>
 ```

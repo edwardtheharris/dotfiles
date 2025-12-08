@@ -10,16 +10,11 @@ title: >
     Xander's Dot Files and Sundry Store
 ---
 
-## Documentation
+## Dot files for the masses
 
-```{toctree}
-:caption: contents
+Or just the one guy, you know, whatever.
 
-ansible/index
-ubuntu/index
-```
-
-## Minutiae
+### Minutiae
 
 ```{toctree}
 :caption: meta
@@ -27,8 +22,8 @@ ubuntu/index
 .github/index
 changelog
 license
+roles/index
 readme
-security
 ```
 
 ## Indices and tables
@@ -52,6 +47,9 @@ security
 
 [crowdsec](https://www.crowdsec.net/)
 : A free, OSS firewall that takes advantage of the wisdom of crowds.
+
+dotfiles
+: A collection of configuration files for a luser's shell environment.
 
 [DC](https://en.wikipedia.org/wiki/Domain_controller)
 : Short for Domain Controller, this is a system that manages domain
