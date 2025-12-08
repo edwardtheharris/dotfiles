@@ -16,6 +16,10 @@ on:
     branches:
       - main
   workflow_dispatch: {}
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 ####
 
 ###
@@ -29,74 +33,39 @@ on:
 # :start-at: "jobs:\n"
 # :end-before: "####\n"
 # ```
-permissions:
-  contents: read
-
 jobs:
   add_labels:
-    permissions:
-      pull-requests: write
-      issues: write
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
       - name: checkout
-        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
       - name: add labels
-        uses: actions-ecosystem/action-add-labels@1a9c3715c0037e96b97bb38cb4c4b56a1f1d4871 # main
+        uses: actions-ecosystem/action-add-labels@main
         with:
           github_token: ${{ secrets.PROJECT_PAT }}
           labels: |
             ${{ github.event.pull_request.base.ref }}
   assign-author:
-    permissions:
-      pull-requests: write
-      issues: write
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
       - name: assign
-        uses: toshimaru/auto-author-assign@7e15cd70c245ad136377c3fab3479815df10d844 # main
+        uses: toshimaru/auto-author-assign@main
   add-to-project:
-    permissions:
-      pull-requests: write
-      issues: write
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
-      - uses: actions/add-to-project@4fda2e598c349fd1d6770dc6df8b0b61158c3e90 # main
+      - uses: actions/add-to-project@main
         with:
           # You can target a project in a different organization
           # to the issue
-          project-url: https://github.com/users/edwardtheharris/projects/5
+          project-url: https://github.com/users/edwardtheharris/projects/6
           github-token: ${{ secrets.PROJECT_PAT }}
   add-to-milestone:
-    permissions:
-      pull-requests: write
-      issues: write
     runs-on: ubuntu-latest
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
-        with:
-          egress-policy: audit
-
-      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
+      - uses: benelan/milestone-action@v3
         with:
           # If true, add the milestone with the farthest due date. By default,
           # the action adds the current milestone (closest due date).

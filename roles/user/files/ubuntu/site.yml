@@ -1,0 +1,58 @@
+---
+- name: Copy RC Files to AWS Remote
+  remote_user: ubuntu
+  hosts: gl
+  become: true
+  tasks:
+    - name: Install Python
+      ansible.builtin.apt:
+        update_cache: true
+    - name: Copy root rc Files
+      ansible.builtin.copy:
+        src: "./ubuntu/root/{{ item }}"
+        dest: "/root/{{ item }}"
+        owner: root
+        group: root
+        mode: 'u+rw,g+rw,o+r'
+      loop:
+        - .bash_profile
+        - .bashrc
+        - .gitconfig
+        - .vimrc
+        - .wakatime.cfg
+    - name: Copy user rc files
+      ansible.builtin.copy:
+        src: >-
+          ./ubuntu/root/{{ item.file }}
+        dest: >-
+          /home/{{ item.user }}/{{ item.file }}
+        owner: >-
+          {{ item.user }}
+        group: >-
+          network
+        mode: 'u+rw,g+rw,o+r'
+      loop:
+        - user: ubuntu
+          file: .bash_profile
+        - user: duchess
+          file: .bash_profile
+        - user: ubuntu
+          file: .bashrc
+        - user: duchess
+          file: .bashrc
+        - user: ubuntu
+          file: .gitconfig
+        - user: duchess
+          file: .gitconfig
+        - user: ubuntu
+          file: .profile
+        - user: duchess
+          file: .profile
+        - user: ubuntu
+          file: .vimrc
+        - user: duchess
+          file: .vimrc
+        - user: ubuntu
+          file: .wakatime.cfg
+        - user: duchess
+          file: .wakatime.cfg
