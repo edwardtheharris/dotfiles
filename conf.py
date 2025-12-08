@@ -19,7 +19,7 @@ sys.path.append(str(Path("roles/dev/files/githooks").resolve()))
 
 author = "Xander Harris"
 autoyaml_root = "."
-copyright = "(c) 2024, Xander Harris. All rights reserved."
+copyright = "2024, Xander Harris"
 exclude_patterns = [
     "_build",
     "Thumbs.db",
@@ -36,7 +36,6 @@ extensions = [
     "sphinx_git",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
-    "sphinx.ext.doctest",
     "sphinx.ext.duration",
     "sphinx.ext.githubpages",
     "sphinx.ext.graphviz",

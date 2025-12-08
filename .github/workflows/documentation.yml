@@ -4,7 +4,7 @@
 # ---
 # This is a basic workflow to help you get started with Actions.
 #
-# ```{literalinclude} /.github/workflows/documentation.yml
+# ```{literalinclude} /.github/workflows/pages.yml
 # :language: yaml
 # :start-at: "name: Documentation\n"
 # :end-before: "###\n"
@@ -26,7 +26,7 @@ on:
 # ```
 # Enable read for contents and issues, and write for checks and PRs.
 #
-# ```{literalinclude} /.github/workflows/documentation.yml
+# ```{literalinclude} /.github/workflows/pages.yml
 # :language: yaml
 # :start-at: "permissions:\n"
 # :end-before: "###\n"
@@ -51,7 +51,7 @@ jobs:
   # ---
   # Check that the markdown in this repo is up to our (arbitrary) standards.
   #
-  # ```{literalinclude} /.github/workflows/documentation.yml
+  # ```{literalinclude} /.github/workflows/pages.yml
   # :language: yaml
   # :start-at: "markdownlint:\n"
   # :end-before: "###\n"
@@ -65,22 +65,21 @@ jobs:
       - name: Install the checker
         run: npm i -g markdownlint-cli2 markdownlint-cli2-formatter-junit --save-dev
       - name: Lint the Markdown
-        run: markdownlint-cli2 **/*.md *.md '!.venv' '!_build'
+        run: markdownlint-cli2 **/*.md *.md
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          check_name: markdownlint
-          comment_title: MarkdownLint Results
+          check_name: markdown-lint
+          comment_title: Markdown Lint Results
           files: markdownlint-cli2-junit.xml
-
   ###
-  # ```{rubric} Build GitHub documentation Site
+  # ```{rubric} Build GitHub Pages Site
   # ```
   # ---
-  # Build the documentation site using Sphinx and upload the resulting artifact.
+  # Build the pages site using Sphinx and upload the resulting artifact.
   #
-  # ```{literalinclude} /.github/workflows/documentation.yml
+  # ```{literalinclude} /.github/workflows/pages.yml
   # :language: yaml
   # :start-at: "  build:\n"
   # :end-before: "###\n"
@@ -104,22 +103,20 @@ jobs:
       - name: Install pipenv
         run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - name: Install Python dependencies
-        run: |
-          pipenv install --dev
+        run: pipenv install
       - name: Build the static site
         run: pipenv run sphinx-build -a -E . deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@main
         with:
           path: "./deploy"
-
   ###
   # ```{rubric} Deploy the Pages site
   # ```
   # ---
   # Download the artifact and deploy to pages.
   #
-  # ```{literalinclude} /.github/workflows/documentation.yml
+  # ```{literalinclude} /.github/workflows/pages.yml
   # :language: yaml
   # :start-at: "  pages:\n"
   # ```

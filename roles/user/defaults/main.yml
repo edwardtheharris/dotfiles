@@ -1,24 +1,3 @@
-# SPDX-License-Identifier: Unlicense
+#SPDX-License-Identifier: MIT-0
 ---
-user_copy_rc_files:
-  - dest: .bash_profile
-    src: bash_profile
-  - dest: .ps1
-    src: ps1-user
-  - dest: .arch
-    src: arch
-user_email: root@breeze-blocks.net
-user_group: root
-user_home: /root/
-user_name: root
-user_role: root
-user_systemos: arch
-user_user: root
-user_template_rc_files:
-  - dest: .bashrc
-    src: bashrc
-  - dest: .gitconfig
-    src: gitconfig
-  - dest: .wakatime.cfg
-    src: wakatime.cfg
-user_wakatime_key: wakatime_key
+# defaults file for user
