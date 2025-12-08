@@ -1,8 +1,0 @@
----
-k8s_api_endpoint: >-
-  kcp01.breeze-blocks.net:6443
-k8s_users:
-  - name: duchess
-    dir: /home/duchess
-  - name: root
-    dir: /root
