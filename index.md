@@ -28,7 +28,6 @@ ubuntu/index
 changelog
 license
 readme
-security
 ```
 
 ## Indices and tables
