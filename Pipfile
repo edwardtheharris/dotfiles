@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ansible = "*"
+loguru = "*"
+myst-parser = {extras = ["linkify"], version = "*"}
+paramiko = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-book-theme = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
+sphinx-git = "*"
+sphinx-last-updated-by-git = "*"
+sphinxcontrib-autoyaml = "*"
+pipenv = "*"
+
+[dev-packages]
+black = "*"
+gitpython = "*"
+ipython = "*"
+loguru = "*"
+molecule = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-pylint = "*"
+pytest-sphinx = "*"
+tox = "*"
