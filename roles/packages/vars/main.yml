@@ -3,9 +3,11 @@
 # vars file for ansible
 packages_list:
   - direnv
+  - expac
   - fd
   - fzf
   - ghostscript
+  - glances
   - imagemagick
   - irssi
   - lua51

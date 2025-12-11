@@ -1,0 +1,35 @@
+#!/bin/bash
+
+CLICOLOR=1
+LSCOLORS="Ea"
+# shellcheck disable=SC1091
+. "${HOME}/.ps1"
+PATH="${PATH}:${HOME}/.local/bin"
+
+# shellcheck disable=SC1091
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  source /usr/share/bash-completion/bash_completion
+fi
+
+export CLICOLOR
+export LESS
+export LSCOLORS
+export PS1
+export PATH
+
+on_arch="$(uname -r | grep arch)"
+
+if [ "$on_arch" != "" ]; then
+  # shellcheck disable=SC1091
+  . "${HOME}/.arch"
+fi
+
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias h='helm --debug'
+alias ip='ip -color=auto'
+alias k='kubectl'
+alias ls='ls --color'
+alias tf='terraform'
+alias tfd='terraform-docs'
+alias tg='terragrunt'

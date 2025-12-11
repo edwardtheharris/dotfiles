@@ -1,0 +1,8 @@
+[Unit]
+Description=Glances Export
+
+[Service]
+ExecStart=/etc/glances/bin/glances --config /etc/glances/glances.conf --export prometheus
+
+[Install]
+WantedBy=multi-user.target

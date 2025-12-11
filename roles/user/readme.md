@@ -23,7 +23,10 @@ Scripts for customizing user shells.
 
 ## Dependencies
 
-- None
+```{toctree}
+files/ubuntu/index
+
+```
 
 ## Example Playbook
 
