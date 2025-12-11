@@ -96,16 +96,17 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@main
         with:
-          python-version: 3.11
-          cache: pipenv
+          python-version: 3.12
       - name: Setup pages
         uses: actions/configure-pages@main
-      - name: Install pipenv
-        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
-      - name: Install Python dependencies
-        run: pipenv install
+      - name: Install and configure direnv
+        run: sudo apt-get update; sudo apt-get install -y direnv; eval "$(direnv hook bash)"; direnv allow
+      - name: Prepare Python environment
+        run: python3.12 -m venv ../.3.12
+      - name: Install poetry
+        run: ../.3.12/bin/pip install -U pip poetry; eval "$(../.3.12/bin/poetry env activate)"; ../.3.12/bin/poetry install
       - name: Build the static site
-        run: pipenv run sphinx-build -a -E . deploy
+        run: ../.3.12/bin/poetry run sphinx-build -a -E . deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@main
         with:

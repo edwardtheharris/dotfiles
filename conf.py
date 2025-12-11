@@ -47,8 +47,45 @@ graphviz_output_format = "png"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_context = {"full_path": str(Path(".").resolve())}
+html_favicon = "_static/img/logo/xander-harris.png"
+html_logo = "_static/img/logo/xander-harris.png"
 html_static_path = ["_static"]
 html_theme = "sphinx_book_theme"
+html_theme_options = {
+    "home_page_in_toc": True,
+    "icon_links": [
+        {
+            # Label for this link
+            "name": "GitHub",
+            # URL where the link will redirect
+            "url": "https://github.com/edwardtheharris/dotfiles",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fa-brands fa-square-github",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        },
+        {
+            # Label for this link
+            "name": "HackerRank",
+            # URL where the link will redirect
+            "url": "https://www.hackerrank.com/profile/xandertheharris",
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fa-brands fa-hackerrank",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        },
+        {
+            # Label for this link
+            "name": "LinkedIn",
+            # URL where the link will redirect
+            "url": "https://linkedin.com/xandertheharris",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fa-brands fa-linkedin",
+            # The type of image to be used (see below for details)
+            "type": "fontawesome",
+        },
+    ],
+}
 myst_enable_extensions = [
     "amsmath",
     "attrs_block",
