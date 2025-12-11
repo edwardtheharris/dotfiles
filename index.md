@@ -48,7 +48,7 @@ readme
 [crowdsec](https://www.crowdsec.net/)
 : A free, OSS firewall that takes advantage of the wisdom of crowds.
 
-dotfiles
+[dotfiles](https://wiki.archlinux.org/title/Dotfiles)
 : A collection of configuration files for a luser's shell environment.
 
 [DC](https://en.wikipedia.org/wiki/Domain_controller)
