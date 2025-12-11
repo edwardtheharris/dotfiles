@@ -6,12 +6,13 @@
       {{ item }}
     state: present
   loop:
+    - ansible
     - direnv
-    - mosh
+    - glances
     - hddtemp
+    - mosh
     - python-pip
     - python-virtualenv
-    - glances
   become: true
 - name: Update package cache
   community.general.pacman:
