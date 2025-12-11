@@ -104,9 +104,9 @@ jobs:
       - name: Prepare Python environment
         run: python3.12 -m venv ../.3.12
       - name: Install poetry
-        run: ../.3.12/bin/pip install -U pip poetry; eval "$(../.3.12/bin/poetry env activate)"; poetry install
+        run: ../.3.12/bin/pip install -U pip poetry; eval "$(../.3.12/bin/poetry env activate)"; ../.3.12/bin/poetry install
       - name: Build the static site
-        run: poetry run sphinx-build -a -E . deploy
+        run: ../.3.12/bin/poetry run sphinx-build -a -E . deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@main
         with:
