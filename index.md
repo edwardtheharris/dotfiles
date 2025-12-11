@@ -45,10 +45,19 @@ readme
 : Short for Active Directory, which is a collection of network services
   that are intended to provide an enhanced LDAP service.
 
+[Ansible](https://ansible.com)
+: Ansible is an open source IT automation engine that automates provisioning,
+  configuration management, application deployment, orchestration, and many
+  other IT processes.
+
+[ArchLinux](https://archlinux.org)
+: Arch Linux is a lightweight and flexible Linux® distribution that tries to
+  Keep It Simple.
+
 [crowdsec](https://www.crowdsec.net/)
 : A free, OSS firewall that takes advantage of the wisdom of crowds.
 
-dotfiles
+[dotfiles](https://wiki.archlinux.org/title/Dotfiles)
 : A collection of configuration files for a luser's shell environment.
 
 [DC](https://en.wikipedia.org/wiki/Domain_controller)
@@ -57,6 +66,10 @@ dotfiles
 
 [etcd](https://etcd.io/docs/v3.5/)
 : This is a key value store that is used by Kubernetes Control Planes
+
+[GPG](https://gnupg.org)
+: GnuPG is a complete and free implementation of the OpenPGP standard as
+  defined by RFC4880 (also known as PGP).
 
 [netctl](https://wiki.archlinux.org/title/Netctl)
 : This is a program that allows the configuration of multiple
