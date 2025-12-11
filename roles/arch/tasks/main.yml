@@ -7,11 +7,12 @@
     state: present
   loop:
     - direnv
-    - mosh
+    - glances
     - hddtemp
+    - mosh
+    - pkgstats
     - python-pip
     - python-virtualenv
-    - glances
   become: true
 - name: Update package cache
   community.general.pacman:
@@ -41,13 +42,5 @@
     - glances.service
     - glances-exporter.service
   become: true
-- name: Start glances services
-  ansible.builtin.service:
-    name: >-
-      {{ item }}
-    state: started
-    enabled: true
-  loop:
-    - glances
-    - glances-exporter
-  become: true
+  notify:
+    - Start glances services

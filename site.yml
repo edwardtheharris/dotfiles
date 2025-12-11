@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: thw04
+  hosts: all
   roles:
     - role: arch
       tags:
