@@ -1,59 +1,55 @@
 # SPDX-License-Identifier: MIT-0
 ---
-- name: Install direnv
-  ansible.builtin.command:
-    cmd: yay -Sy --noconfirm direnv
-    creates: /usr/bin/direnv
-- name: Install gmotd
-  ansible.builtin.command:
-    cmd: yay -Sy --noconfirm gmotd
-    creates: /usr/bin/gmotd
-- name: Copy pam.d sshd config
+- name: Install packages
+  community.general.pacman:
+    name: >-
+      {{ item }}
+    state: present
+  loop:
+    - ansible
+    - direnv
+    - glances
+    - hddtemp
+    - mosh
+    - pre-commit
+    - python-pip
+    - python-virtualenv
+  become: true
+- name: Update package cache
+  community.general.pacman:
+    executable: yay
+    update_cache: true
+- name: Install glances
+  ansible.builtin.pip:
+    virtualenv: /etc/glances/
+    name: >-
+      {{ item }}
+    state: present
+  loop:
+    - pip
+    - glances
+    - zeroconf
+  become: true
+- name: Install glances services
   ansible.builtin.copy:
-    src: sshd
-    dest: /etc/pam.d/sshd
+    src: >-
+      {{ item }}
+    dest: >-
+      /usr/lib/systemd/system/{{ item }}
     owner: root
     group: root
-    mode: u+rw,go+r
+    mode: ug+rw
+  loop:
+    - glances.service
+    - glances-exporter.service
   become: true
-- name: Make gmotd configuration directory
-  ansible.builtin.file:
-    dest: /etc/gmotd
-    owner: root
-    group: root
-    mode: u+rw,go+r
-    state: directory
+- name: Start glances services
+  ansible.builtin.service:
+    name: >-
+      {{ item }}
+    state: started
+    enabled: true
+  loop:
+    - glances
+    - glances-exporter
   become: true
-- name: Template gmotd configuration
-  ansible.builtin.template:
-    src: gmotd.yaml.j2
-    dest: /etc/gmotd/gmotd.yaml
-    owner: root
-    group: root
-    mode: u+rw,go+r
-  become: true
-- name: Stat gmotd config
-  ansible.builtin.stat:
-    path: /etc/gmotd/gmotd.yaml
-  register: arch_gmotd_stat
-- name: Validate gmotd config
-  ansible.builtin.assert:
-    that:
-      - arch_gmotd_stat.stat.exists
-      - arch_gmotd_stat.stat.isreg
-# - name: Update package cache
-#   community.general.pacman:
-#     executable: yay
-#     update_cache: true
-# - name: Add missing firmware for Arch
-#   community.general.pacman:
-#     executable: yay
-#     name: "{{ item }}"
-#     state: present
-#   loop:
-#     - aic94xx-firmware
-#     - ast-firmware
-#     - linux-firmware-qlogic
-#     - wd719x-firmware
-#     - upd72020x-fw
-# tasks file for arch

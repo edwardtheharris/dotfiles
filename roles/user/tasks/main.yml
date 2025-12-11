@@ -20,7 +20,7 @@
 - name: Check for lazy.vim install
   ansible.builtin.stat:
     dest: "{{ user_home }}/.config/nvim"
-  register: nvim
+  register: user_nvim
   # git clone https://github.com/LazyVim/starter ~/.config/nvim
 - name: Install LazyVim
   ansible.builtin.command:

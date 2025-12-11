@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: all
+  hosts: thw04
   roles:
     - role: arch
       tags:
@@ -38,7 +38,7 @@
       tags:
         - packages
 - name: Init root user
-  hosts: all
+  hosts: thw04
   become: true
   roles:
     - role: user
