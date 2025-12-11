@@ -104,7 +104,7 @@ jobs:
       - name: Prepare Python environment
         run: python3.12 -m venv ../.3.12
       - name: Install poetry
-        run: ../.3.12/bin/pip install -U pip poetry
+        run: ../.3.12/bin/pip install -U pip poetry; eval "$(../.3.12/bin/poetry env activate)"; poetry install
       - name: Build the static site
         run: poetry run sphinx-build -a -E . deploy
       - name: Upload artifact
