@@ -3,7 +3,7 @@ name = "dotfiles"
 version = "0.1.0"
 description = "Dotfiles and automation of dubious quality"
 authors = [{ name = "Xander Harris", email = "xandertheharris@gmail.com" }]
-license = { text = "Copyright 2025" }
+license = "AAL"
 readme = "readme.md"
 requires-python = ">=3.12"
 dependencies = [
