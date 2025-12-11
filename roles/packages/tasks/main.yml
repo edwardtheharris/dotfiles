@@ -11,11 +11,11 @@
   ansible.builtin.stat:
     dest: >-
       ~/.cacche/yay
-  register: user_cache
+  register: packages_cache
 - name: Test directory is gone
   ansible.builtin.assert:
     that:
-      - not user_cache.stat.exists
+      - not packages_cache.stat.exists
 - name: Update user package cache
   ansible.builtin.command:
     cmd: yay -Y --gendb
