@@ -47,6 +47,7 @@ graphviz_output_format = "png"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_context = {"full_path": str(Path(".").resolve())}
+html_favicon = "_static/img/logo/xander-harris.png"
 html_logo = "_static/img/logo/xander-harris.png"
 html_static_path = ["_static"]
 html_theme = "sphinx_book_theme"
