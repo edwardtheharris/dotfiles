@@ -4,9 +4,7 @@ date: 2025-12-11
 title: Attribution Assurance License
 ---
 
-```{code-block} text
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
+```{literalinclude} _static/gpg/license.signature.part-zero.gpg
 ```
 
 Copyright © 2025 by Xander Harris. All rights reserved.
@@ -65,14 +63,7 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
-```{code-block} text
------BEGIN PGP SIGNATURE-----
-
-iHUEARYKAB0WIQR3L4rtwkT9olmUMlcUj2ObVm8XWwUCaTrmwQAKCRAUj2ObVm8X
-W2Z0AQDCZihR7l2Wdc2IhhPpU9zem50fNrF/CHKeT5T7gYbwBgD/SuBuK+/8iU7N
-CsIZnG8iwQvZgdvm3xzwwNkJFRP10gI=
-=7dVD
------END PGP SIGNATURE-----
+```{literalinclude} _static/gpg/license.signature.part-one.gpg
 ```
 
 ### Author's Public Key
