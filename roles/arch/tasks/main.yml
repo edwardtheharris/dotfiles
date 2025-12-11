@@ -11,6 +11,7 @@
     - glances
     - hddtemp
     - mosh
+    - pre-commit
     - python-pip
     - python-virtualenv
   become: true
