@@ -1,3 +1,13 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # handlers file for arch
+- name: Start glances services
+  ansible.builtin.service:
+    name: >-
+      {{ item }}
+    state: restarted
+    enabled: true
+  loop:
+    - glances
+    - glances-exporter
+  become: true
