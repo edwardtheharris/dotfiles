@@ -433,6 +433,7 @@
                 "sha256:f145bba11b878005c496e93e257c1e88f154d278d2638e6450d17e0f31e558d2",
                 "sha256:fe346b143ff9685e40192a4960938545c699054ba11d4f9029f94751e3f71d87"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.8' and python_full_version not in '3.9.0, 3.9.1'",
             "version": "==46.0.5"
         },
@@ -453,11 +454,11 @@
         },
         "filelock": {
             "hashes": [
-                "sha256:18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1",
-                "sha256:4b0dda527ee31078689fc205ec4f1c1bf7d56cf88b6dc9426c4f230e46c2dce1"
+                "sha256:5ccf8069f7948f494968fc0713c10e5c182a9c9d9eef3a636307a20c2490f047",
+                "sha256:8f00faf3abf9dc730a1ffe9c354ae5c04e079ab7d3a683b7c32da5dd05f26af3"
             ],
             "markers": "python_version >= '3.10'",
-            "version": "==3.20.3"
+            "version": "==3.25.0"
         },
         "h11": {
             "hashes": [
@@ -690,11 +691,11 @@
         },
         "platformdirs": {
             "hashes": [
-                "sha256:61d5cdcc6065745cdd94f0f878977f8de9437be93de97c1c12f853c9c0cdcbda",
-                "sha256:d03afa3963c806a9bed9d5125c8f4cb2fdaf74a55ab60e5d59b3fde758104d31"
+                "sha256:1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934",
+                "sha256:68a9a4619a666ea6439f2ff250c12a853cd1cbd5158d258bd824a7df6be2f868"
             ],
             "markers": "python_version >= '3.10'",
-            "version": "==4.5.1"
+            "version": "==4.9.4"
         },
         "pre-commit": {
             "hashes": [
