@@ -32,20 +32,20 @@
         },
         "ansible": {
             "hashes": [
-                "sha256:8a7f536542d4b18118200b8eaba40aa62ed990bd0e7b7622368b656b67db056f",
-                "sha256:fac46e202d1020027341659918b39e588dd7c43cef26537d7ca7fe51c324fe31"
+                "sha256:6d741511abc1f724443aa16992fb615cc822a22da427ade925ff937ccd691eb1",
+                "sha256:8c869fcc07954b53c5b125f1e914957cc7b541a92a7d512496207d80385a78eb"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.12'",
-            "version": "==13.2.0"
+            "version": "==13.4.0"
         },
         "ansible-core": {
             "hashes": [
-                "sha256:2a66825b4a53f130b62515e7e2a3d811d544b19b6e8a22d9ef88c55896384cb3",
-                "sha256:a891e5f90cd46626778f0f3d545ec1115840c9b50e8adf25944c5e1748452106"
+                "sha256:38670ab2d2ffd67ee7e9e562f7c94e0927c8b7b4b0eb69233bc008c29e32d591",
+                "sha256:7fe2da953192cac5d5eb37bfc984bf9339daa252e0e3d1deb5526eb1f8be9f7f"
             ],
             "markers": "python_version >= '3.12'",
-            "version": "==2.20.1"
+            "version": "==2.20.3"
         },
         "anyio": {
             "hashes": [
@@ -665,11 +665,11 @@
         },
         "packaging": {
             "hashes": [
-                "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
-                "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+                "sha256:00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4",
+                "sha256:b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==25.0"
+            "version": "==26.0"
         },
         "paramiko": {
             "hashes": [
