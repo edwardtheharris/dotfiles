@@ -38,7 +38,7 @@
       tags:
         - packages
 - name: Init root user
-  hosts: thw04
+  hosts: all
   become: true
   roles:
     - role: user
