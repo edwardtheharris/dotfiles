@@ -45,17 +45,20 @@ jobs:
         uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
         with:
           egress-policy: audit
-
       - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2 # main
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # main
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip pipenv
-          pipenv requirements --dev > reqs
-          pip3 install -r reqs
+        run: python${{ matrix.python-version }} -m venv .pipenv${{ matrix.python-version }}
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install pipenv
+        run: .pipenv${{ matrix.python-version }}/bin/pip${{ matrix.python-version }} install -U pip pipenv
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install requirements from pipenv
+        run: .pipenv${{ matrix.python-version }}/bin/pipenv install --dev
       - name: Detecting errors with black
-        run: |
-          black .
+        run: .pipenv${{ matrix.python-version }}/bin/pipenv run black .
