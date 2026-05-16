@@ -2305,14 +2305,14 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 
 [[package]]
 name = "version-query"
-version = "1.7.0"
+version = "1.7.1"
 description = "Zero-overhead package versioning for Python."
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "version_query-1.7.0-py3-none-any.whl", hash = "sha256:96f9068a0c05e46f02fba9cfc0302622c96fdaa564e6a5f9d8d754399089b327"},
-    {file = "version_query-1.7.0.tar.gz", hash = "sha256:df112e9545248b446ff7645964bb7bd519b1daf39149024e01b63358db423e74"},
+    {file = "version_query-1.7.1-py3-none-any.whl", hash = "sha256:5d9a0ed6a9b6c9b016c0eff84cc0a4cc603ba1c8909297c502115273920b6727"},
+    {file = "version_query-1.7.1.tar.gz", hash = "sha256:6b998dd85037fe96c2c8b9656a133eff5e2bfc6b2145a0f3978dd830a693aedc"},
 ]
 
 [package.dependencies]
@@ -2562,4 +2562,4 @@ dev = ["black (>=19.3b0) ; python_version >= \"3.6\"", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "e716d35ec6073f4c44ed2252da76ebf3b743888fdf90a351213ab17ffe090e9c"
+content-hash = "c4bd89d076627abbd5c1671d28b4e5a409724e6ea235dacb3556a1dbfefc465a"
