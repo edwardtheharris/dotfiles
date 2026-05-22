@@ -10,14 +10,18 @@ packages_list:
   - glances
   - imagemagick
   - irssi
+  - lazygit
   - lua51
+  - luarocks
   - mermaid-cli
   - navi
   - nodejs
   - python-pynvim
   - ripgrep
+  - rsyslog
   - rubygems
   - tectonic
   - texlive-bin
   - tldr
   - tree-sitter
+  - tree-sitter-cli

@@ -31,3 +31,9 @@
     {{ packages_list }}
   loop_control:
     loop_var: packages_item
+- name: Install rsyslog conf
+  ansible.builtin.copy:
+    source: rsyslog.conf
+    dest: /etc/rsyslog.conf
+  become: true
+  notify: Restart rsyslog
