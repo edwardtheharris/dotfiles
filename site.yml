@@ -37,6 +37,9 @@
     - role: packages
       tags:
         - packages
+    - role: ping
+      tags:
+        - ping
 - name: Init root user
   hosts: cms05
   become: true
