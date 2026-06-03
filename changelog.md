@@ -3,7 +3,7 @@ abstract: Changelog for the dotfiles repository.
 title: Changelog
 ---
 <!--markdownlint-disable-->
-## [unreleased]
+## [0.0.5] - 2026-06-03
 
 ### 💼 Other
 
@@ -1576,6 +1576,8 @@ title: Changelog
 - Merge pull request #495 from edwardtheharris/494-add-rsync-functions-to-rc
 - 494 add rsync functions to rc
 - Closes #494
+- Add changelog
+- Closes #496
 ## [0.0.4] - 2025-12-08
 
 ### 💼 Other
