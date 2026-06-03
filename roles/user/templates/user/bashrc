@@ -30,6 +30,15 @@ alias h='helm --debug'
 alias ip='ip -color=auto'
 alias k='kubectl'
 alias ls='ls --color'
-alias tf='terraform'
+alias sd='systemctl -v'
+alias tfm='terraform'
 alias tfd='terraform-docs'
 alias tg='terragrunt'
+
+cpr() {
+  rsync -ihhrvvP "$@"
+}
+
+mvr() {
+  rsync -ihhrvvPm --remove-source-files "$@"
+}

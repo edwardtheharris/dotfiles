@@ -42,7 +42,6 @@
     mode: ug+rw
   loop:
     - glances.service
-    - glances-exporter.service
   become: true
 - name: Start glances services
   ansible.builtin.service:
@@ -52,5 +51,4 @@
     enabled: true
   loop:
     - glances
-    - glances-exporter
   become: true
