@@ -3,6 +3,1579 @@ abstract: Changelog for the dotfiles repository.
 title: Changelog
 ---
 <!--markdownlint-disable-->
+## [unreleased]
+
+### 💼 Other
+
+- Merge pull request #354 from edwardtheharris/351-release-004
+- Add changelog
+- Closes #354
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Update roles and vars
+- Closes #342
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into 342-fix-broken-ssh
+- Closes #342
+- Merge branch 'main' into 342-fix-broken-ssh
+- Merge branch '342-fix-broken-ssh' of
+- Edwardtheharris/dotfiles into 342-fix-broken-ssh
+- Closes #342
+- Update arch role
+- Closes #342
+- Merge branch
+- '320-drop-instant-markdown-plugin' into 342-fix-broken-ssh
+- Closes #342
+- Update missing tasks and files
+- Closes #342
+- Update site
+- Closes #342
+- Update package installation
+- Closes #342
+- Drop extraneous role, fix lint
+- Closes #342
+- Drop security md
+- Closes #342
+- Fix index
+- Closes #342
+- Fewer pip installs
+- Closes #342
+- Drop 3.10
+- Closes #342
+- Update deps
+- Closes #34$hostname {{gpu_id}} temp careful2
+- Drop duplicate code
+- Closes #342
+- Drop codeql
+- Closes #342
+- Update rc
+- Closes #342
+- Merge branch '342-fix-broken-ssh'
+- Closes #342
+- Drop extra file
+- Closes #342
+- Merge pull request #345 from edwardtheharris/342-fix-broken-ssh
+- Update roles and vars
+- Closes #342
+- Merge branch 'main' into 356-bump-pytest-from-901-to-902-355
+- Merge pull request #357 from edwardtheharris/356-bump-pytest-from-901-to-902-355
+- 356 bump pytest from 901 to 902 355
+- Closes #356
+- Merge branch 'main' into 350-bump-step-securityharden-runner-from-2131-to-2133-349
+- Merge pull request #358 from edwardtheharris/350-bump-step-securityharden-runner-from-2131-to-2133-349
+- 350 bump step securityharden runner from 2131 to 2133 349
+- Closes #350
+- Bump starlette from 0.48.0 to 0.49.1 in the pip group across 1 directory
+- Bumps the pip group with 1 update in the / directory: [starlette](https://github.com/Kludex/starlette).
+- Updates `starlette` from 0.48.0 to 0.49.1
+- - [Release notes](https://github.com/Kludex/starlette/releases)
+- - [Changelog](https://github.com/Kludex/starlette/blob/main/docs/release-notes.md)
+- - [Commits](https://github.com/Kludex/starlette/compare/0.48.0...0.49.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: starlette
+-   dependency-version: 0.49.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'dependabot/pip/pip-91ab757ed1' of
+- Edwardtheharris/dotfiles into 359-bump-starlette-from-0480-to-0491-in-the-pip-group-across-1-directory-323
+- Closes #359
+- Fix lock
+- Closes #359
+- Add poetry cofig
+- Closes #359
+- Update docs process
+- Closes #359
+- Update index
+- Closes #359
+- Add logo for docs
+- Closes #359
+- Update logo
+- Closes #359
+- Adjust configuration
+- Closes #359
+- Add links
+- Closes #359
+- Adjust poetry install
+- Closes #359
+- Explicit paths
+- Closes #359
+- Merge pull request #360 from edwardtheharris/359-bump-starlette-from-0480-to-0491-in-the-pip-group-across-1-directory-323
+- 359 bump starlette from 0480 to 0491 in the pip group across 1 directory 323
+- Closes #359
+- Bump coverallsapp/github-action from 2.3.6 to 2.3.7
+- Bumps [coverallsapp/github-action](https://github.com/coverallsapp/github-action) from 2.3.6 to 2.3.7.
+- - [Release notes](https://github.com/coverallsapp/github-action/releases)
+- - [Commits](https://github.com/coverallsapp/github-action/compare/648a8eb78e6d50909eff900e4ec85cab4524a45b...5cbfd81b66ca5d10c19b062c04de0199c215fb6e)
+- ---
+- Updated-dependencies:
+- - dependency-name: coverallsapp/github-action
+-   dependency-version: 2.3.7
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'dependabot/github_actions/coverallsapp/github-action-2.3.7' of
+- Edwardtheharris/dotfiles into
+- 362-bump-coverallsappgithub-action-from-236-to-237-336
+- Closes #362
+- Merge pull request #365 from edwardtheharris/362-bump-coverallsappgithub-action-from-236-to-237-336
+- 362 bump coverallsappgithub action from 236 to 237 336
+- Closes #362
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 to 32da07cbb30091816ce54192caf97979d0812456.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/4fda2e598c349fd1d6770dc6df8b0b61158c3e90...32da07cbb30091816ce54192caf97979d0812456)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 32da07cbb30091816ce54192caf97979d0812456
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Update license
+- Closes #359
+- Fix signatures
+- Closes #359
+- Replace pipfiles
+- Closes #359
+- Merge branch '363-bump-actionsadd-to-project-from-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-to-32da07cbb30091816ce54192caf97979d0812456-338' into dependabot/github_actions/actions/add-to-project-32da07cbb30091816ce54192caf97979d0812456
+- Merge pull request #338 from edwardtheharris/dependabot/github_actions/actions/add-to-project-32da07cbb30091816ce54192caf97979d0812456
+- Bump actions/add-to-project from 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 to 32da07cbb30091816ce54192caf97979d0812456
+- Closes #363
+- Bump actions/setup-python from 6.0.0 to 6.1.0
+- Bumps [actions/setup-python](https://github.com/actions/setup-python) from 6.0.0 to 6.1.0.
+- - [Release notes](https://github.com/actions/setup-python/releases)
+- - [Commits](https://github.com/actions/setup-python/compare/e797f83bcb11b83ae66e0230d6156d7c80228e7c...83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/setup-python
+-   dependency-version: 6.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'dependabot/github_actions/actions/setup-python-6.1.0'
+- Of github.com:edwardtheharris/dotfiles
+- Into 364-bump-actionssetup-python-from-600-to-610-341
+- Closes #364
+- Merge pull request #368 from edwardtheharris/364-bump-actionssetup-python-from-600-to-610-341
+- 364 bump actionssetup python from 600 to 610 341
+- Closes #364
+- Merge branch 'main' into 363-bump-actionsadd-to-project-from-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-to-32da07cbb30091816ce54192caf97979d0812456-338
+- Bump urllib3 from 1.26.20 to 2.6.0 in the pip group across 1 directory
+- Bumps the pip group with 1 update in the / directory: [urllib3](https://github.com/urllib3/urllib3).
+- Updates `urllib3` from 1.26.20 to 2.6.0
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: urllib3
+-   dependency-version: 2.6.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch '369-bump-urllib3-from-12620-to-260-in-the-pip-group-across-1-directory-366' into dependabot/pip/pip-a6aa50acab
+- Merge pull request #366 from edwardtheharris/dependabot/pip/pip-a6aa50acab
+- Bump urllib3 from 1.26.20 to 2.6.0 in the pip group across 1 directory
+- Closes #369
+- Merge pull request #370 from edwardtheharris/369-bump-urllib3-from-12620-to-260-in-the-pip-group-across-1-directory-366
+- 369 bump urllib3 from 12620 to 260 in the pip group across 1 directory 366
+- Closes #369
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles into
+- 363-bump-actionsadd-to-project-from-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-to-32da07cbb30091816ce54192caf97979d0812456-338
+- Closes #363
+- Bump ansible-lint from 25.6.1 to 25.9.2
+- Bumps [ansible-lint](https://github.com/ansible/ansible-lint) from 25.6.1 to 25.9.2.
+- - [Release notes](https://github.com/ansible/ansible-lint/releases)
+- - [Commits](https://github.com/ansible/ansible-lint/compare/v25.6.1...v25.9.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible-lint
+-   dependency-version: 25.9.2
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'tmp' into dependabot/pip/ansible-lint-25.9.2
+- Merge pull request #295 from edwardtheharris/dependabot/pip/ansible-lint-25.9.2
+- Bump ansible-lint from 25.6.1 to 25.9.2
+- Closes #295
+- Merge pull request #304 from edwardtheharris/tmp
+- Tmp
+- Closes #304
+- Bump ansible from 12.0.0 to 12.1.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 12.0.0 to 12.1.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/12.0.0...12.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 12.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Drop unwanted readme
+- Closes #305
+- Merge branch '305-bump-ansible-from-1200-to-1210-294' into dependabot/pip/ansible-12.1.0
+- Merge pull request #294 from edwardtheharris/dependabot/pip/ansible-12.1.0
+- Bump ansible from 12.0.0 to 12.1.0
+- Closes #305
+- Merge branch '305-bump-ansible-from-1200-to-1210-294'
+- Of github.com:edwardtheharris/dotfiles
+- Into 302-bump-ansible-lint-from-2561-to-2592-295
+- Closes #302
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Into 302-bump-ansible-lint-from-2561-to-2592-295
+- Closes #302
+- Merge pull request #371 from edwardtheharris/302-bump-ansible-lint-from-2561-to-2592-295
+- 302 bump ansible lint from 2561 to 2592 295
+- Closes #302
+- Merge branch 'main' into 363-bump-actionsadd-to-project-from-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-to-32da07cbb30091816ce54192caf97979d0812456-338
+- Merge pull request #367 from edwardtheharris/363-bump-actionsadd-to-project-from-4fda2e598c349fd1d6770dc6df8b0b61158c3e90-to-32da07cbb30091816ce54192caf97979d0812456-338
+- 363 bump actionsadd to project from 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 to 32da07cbb30091816ce54192caf97979d0812456 338
+- Closes #363
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into dependabot/pip/pip-512858e340
+- See #361
+- Merge pull request #372 from edwardtheharris/dependabot/pip/pip-512858e340
+- Dependabot/pip/pip 512858e340
+- Closes #371
+- Bump filelock from 3.20.0 to 3.20.1 in the pip group across 1 directory
+- Bumps the pip group with 1 update in the / directory: [filelock](https://github.com/tox-dev/py-filelock).
+- Updates `filelock` from 3.20.0 to 3.20.1
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: filelock
+-   dependency-version: 3.20.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #375 from edwardtheharris/dependabot/pip/pip-c4ff2e68b4
+- Bump filelock from 3.20.0 to 3.20.1 in the pip group across 1 directory
+- Closes #378
+- Merge pull request #379 from edwardtheharris/378-bump-filelock-from-3200-to-3201-in-the-pip-group-across-1-directory-375
+- 378 bump filelock from 3200 to 3201 in the pip group across 1 directory 375
+- Closes #378
+- Bump pipenv from 2025.1.3 to 2026.0.3
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2025.1.3 to 2026.0.3.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2025.1.3...v2026.0.3)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2026.0.3
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #377 from edwardtheharris/dependabot/pip/pipenv-2026.0.3
+- Bump pipenv from 2025.1.3 to 2026.0.3
+- Closes #382
+- Bump pre-commit from 4.5.0 to 4.5.1
+- Bumps [pre-commit](https://github.com/pre-commit/pre-commit) from 4.5.0 to 4.5.1.
+- - [Release notes](https://github.com/pre-commit/pre-commit/releases)
+- - [Changelog](https://github.com/pre-commit/pre-commit/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pre-commit/pre-commit/compare/v4.5.0...v4.5.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pre-commit
+-   dependency-version: 4.5.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pre-commit-4.5.1
+- Merge pull request #376 from edwardtheharris/dependabot/pip/pre-commit-4.5.1
+- Bump pre-commit from 4.5.0 to 4.5.1f
+- Closes #380
+- Merge pull request #381 from edwardtheharris/380-bump-pre-commit-from-450-to-451-376
+- 380 bump pre commit from 450 to 451 376
+- Closes #380
+- Merge branch 'main' into 382-bump-pipenv-from-202513-to-202603-377
+- Merge pull request #383 from edwardtheharris/382-bump-pipenv-from-202513-to-202603-377
+- 382 bump pipenv from 202513 to 202603 377
+- Closes #382
+- Bump gitpython from 3.1.45 to 3.1.46
+- Bumps [gitpython](https://github.com/gitpython-developers/GitPython) from 3.1.45 to 3.1.46.
+- - [Release notes](https://github.com/gitpython-developers/GitPython/releases)
+- - [Changelog](https://github.com/gitpython-developers/GitPython/blob/main/CHANGES)
+- - [Commits](https://github.com/gitpython-developers/GitPython/compare/3.1.45...3.1.46)
+- ---
+- Updated-dependencies:
+- - dependency-name: gitpython
+-   dependency-version: 3.1.46
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #384 from edwardtheharris/dependabot/pip/gitpython-3.1.46
+- Bump gitpython from 3.1.45 to 3.1.46
+- Closes #388
+- Merge pull request #389 from edwardtheharris/388-bump-gitpython-from-3145-to-3146-384
+- 388 bump gitpython from 3145 to 3146 384
+- Closes #388
+- Bump ipython from 9.8.0 to 9.9.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.8.0 to 9.9.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.8.0...9.9.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.9.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #386 from edwardtheharris/dependabot/pip/ipython-9.9.0
+- Bump ipython from 9.8.0 to 9.9.0
+- Closes #390
+- Merge pull request #391 from edwardtheharris/390-bump-ipython-from-980-to-990-386
+- 390 bump ipython from 980 to 990 386
+- Closes #390
+- Bump ansible from 13.1.0 to 13.2.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 13.1.0 to 13.2.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/13.1.0...13.2.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 13.2.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #385 from edwardtheharris/dependabot/pip/ansible-13.2.0
+- Bump ansible from 13.1.0 to 13.2.0
+- Closes #394
+- Bump filelock from 3.20.0 to 3.20.1 in the pip group across 1 directory
+- Bumps the pip group with 1 update in the / directory: [filelock](https://github.com/tox-dev/py-filelock).
+- Updates `filelock` from 3.20.0 to 3.20.1
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: filelock
+-   dependency-version: 3.20.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #387 from edwardtheharris/dependabot/pip/pip-c4ff2e68b4
+- Bump filelock from 3.20.0 to 3.20.1 in the pip group across 1 directory
+- Closes #392
+- Merge branch 'main' into 392-bump-filelock-from-3200-to-3201-in-the-pip-group-across-1-directory-387
+- Merge pull request #393 from edwardtheharris/392-bump-filelock-from-3200-to-3201-in-the-pip-group-across-1-directory-387
+- 392 bump filelock from 3200 to 3201 in the pip group across 1 directory 387
+- Closes #392
+- Merge branch 'main' into 394-bump-ansible-from-1310-to-1320-385
+- Merge pull request #395 from edwardtheharris/394-bump-ansible-from-1310-to-1320-385
+- 394 bump ansible from 1310 to 1320 385
+- Closes #394
+- Bump myst-parser from 4.0.1 to 5.0.0
+- Bumps [myst-parser](https://github.com/executablebooks/MyST-Parser) from 4.0.1 to 5.0.0.
+- - [Release notes](https://github.com/executablebooks/MyST-Parser/releases)
+- - [Changelog](https://github.com/executablebooks/MyST-Parser/blob/master/CHANGELOG.md)
+- - [Commits](https://github.com/executablebooks/MyST-Parser/compare/v4.0.1...v5.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: myst-parser
+-   dependency-version: 5.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #396 from edwardtheharris/dependabot/pip/myst-parser-5.0.0
+- Bump myst-parser from 4.0.1 to 5.0.0
+- Merge pull request #399 from edwardtheharris/398-bump-myst-parser-from-401-to-500-396
+- 398 bump myst parser from 401 to 500 396
+- Closes #398
+- Bump the pip group across 1 directory with 2 updates
+- Bumps the pip group with 2 updates in the / directory: [urllib3](https://github.com/urllib3/urllib3) and [virtualenv](https://github.com/pypa/virtualenv).
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump sphinx from 8.2.3 to 9.1.0
+- Bumps [sphinx](https://github.com/sphinx-doc/sphinx) from 8.2.3 to 9.1.0.
+- - [Release notes](https://github.com/sphinx-doc/sphinx/releases)
+- - [Changelog](https://github.com/sphinx-doc/sphinx/blob/master/CHANGES.rst)
+- - [Commits](https://github.com/sphinx-doc/sphinx/compare/v8.2.3...v9.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx
+-   dependency-version: 9.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #397 from edwardtheharris/dependabot/pip/sphinx-9.1.0
+- Bump sphinx from 8.2.3 to 9.1.0
+- Closes #400
+- Merge branch 'main' into 400-bump-sphinx-from-823-to-910-397
+- Merge pull request #401 from edwardtheharris/400-bump-sphinx-from-823-to-910-397
+- 400 bump sphinx from 823 to 910 397\
+- Closes #400
+- Merge branch '407-bump-the-pip-group-across-1-directory-with-2-updates402' into dependabot/pip/pip-beae658890
+- Merge pull request #402 from edwardtheharris/dependabot/pip/pip-beae658890
+- Bump the pip group across 1 directory with 2 updates
+- Closes #407
+- Bump ipython from 9.9.0 to 9.10.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.9.0 to 9.10.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.9.0...9.10.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.10.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Move glances service updates to handler
+- Closes #361
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 361-install-pkgstats-by-default
+- Closes #361
+- Merge branch 'main' into 361-install-pkgstats-by-default
+- Merge branch 'main' into 361-install-pkgstats-by-default
+- Merge pull request #373 from edwardtheharris/361-install-pkgstats-by-default
+- 361 install pkgstats by default
+- Closes #361
+- Merge branch '409-bump-ipython-from-990-to-9100403' into dependabot/pip/ipython-9.10.0
+- Merge pull request #403 from edwardtheharris/dependabot/pip/ipython-9.10.0
+- Bump ipython from 9.9.0 to 9.10.0
+- Closes #403
+- Merge pull request #410 from edwardtheharris/409-bump-ipython-from-990-to-9100403
+- 409 bump ipython from 990 to 9100403
+- Closes #409
+- Merge branch 'main' into 407-bump-the-pip-group-across-1-directory-with-2-updates402
+- Merge pull request #408 from edwardtheharris/407-bump-the-pip-group-across-1-directory-with-2-updates402
+- 407 bump the pip group across 1 directory with 2 updates402
+- Closes #407
+- Bump ansible from 13.2.0 to 13.4.0
+- Bumps [ansible](https://github.com/ansible-community/ansible-build-data) from 13.2.0 to 13.4.0.
+- - [Changelog](https://github.com/ansible-community/ansible-build-data/blob/main/docs/release-process.md)
+- - [Commits](https://github.com/ansible-community/ansible-build-data/compare/13.2.0...13.4.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ansible
+-   dependency-version: 13.4.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump pylint from 4.0.4 to 4.0.5
+- Bumps [pylint](https://github.com/pylint-dev/pylint) from 4.0.4 to 4.0.5.
+- - [Release notes](https://github.com/pylint-dev/pylint/releases)
+- - [Commits](https://github.com/pylint-dev/pylint/compare/v4.0.4...v4.0.5)
+- ---
+- Updated-dependencies:
+- - dependency-name: pylint
+-   dependency-version: 4.0.5
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #405 from edwardtheharris/dependabot/pip/pylint-4.0.5
+- Bump pylint from 4.0.4 to 4.0.5
+- Closes #412
+- Merge pull request #413 from edwardtheharris/412-bump-pylint-from-404-to-405405
+- 412 bump pylint from 404 to 405405
+- Closes #412
+- Merge branch 'main' into dependabot/pip/ansible-13.4.0
+- Merge pull request #406 from edwardtheharris/dependabot/pip/ansible-13.4.0
+- Bump ansible from 13.2.0 to 13.4.0
+- Closes #414
+- Bump the pip group across 1 directory with 3 updates
+- Bumps the pip group with 3 updates in the / directory: [cryptography](https://github.com/pyca/cryptography), [urllib3](https://github.com/urllib3/urllib3) and [virtualenv](https://github.com/pypa/virtualenv).
+- Updates `cryptography` from 46.0.3 to 46.0.5
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.5)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.5
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch '415-bump-the-pip-group-across-1-directory-with-3-updates411' into dependabot/pip/pip-23d2eb5e1d
+- Merge pull request #411 from edwardtheharris/dependabot/pip/pip-23d2eb5e1d
+- Bump the pip group across 1 directory with 3 updates
+- Closes #415
+- Merge pull request #416 from edwardtheharris/415-bump-the-pip-group-across-1-directory-with-3-updates411
+- 415 bump the pip group across 1 directory with 3 updates411
+- Closes #415
+- Merge branch 'main' into 414-bump-ansible-from-1320-to-1340406
+- Merge pull request #418 from edwardtheharris/414-bump-ansible-from-1320-to-1340406
+- 414 bump ansible from 1320 to 1340406
+- Closes #414
+- Bump ipython from 9.10.0 to 9.11.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.10.0 to 9.11.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.10.0...9.11.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.11.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #419 from edwardtheharris/dependabot/pip/ipython-9.11.0
+- Bump ipython from 9.10.0 to 9.11.0
+- Closes #402
+- Merge pull request #421 from edwardtheharris/420-bump-ipython-from-9100-to-9110419
+- 420 bump ipython from 9100 to 9110419
+- Closes #420
+- Bump the pip group across 1 directory with 2 updates
+- Bumps the pip group with 2 updates in the / directory: [filelock](https://github.com/tox-dev/py-filelock) and [virtualenv](https://github.com/pypa/virtualenv).
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #422 from edwardtheharris/dependabot/pip/pip-421c734e19
+- Bump the pip group across 1 directory with 2 updates
+- Closes #429
+- Merge pull request #430 from edwardtheharris/429-bump-the-pip-group-across-1-directory-with-2-updates422
+- 429 bump the pip group across 1 directory with 2 updates422
+- Closes #429
+- Bump sphinx-book-theme from 1.1.4 to 1.2.0
+- Bumps [sphinx-book-theme](https://github.com/executablebooks/sphinx-book-theme) from 1.1.4 to 1.2.0.
+- - [Release notes](https://github.com/executablebooks/sphinx-book-theme/releases)
+- - [Changelog](https://github.com/executablebooks/sphinx-book-theme/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/executablebooks/sphinx-book-theme/compare/v1.1.4...v1.2.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: sphinx-book-theme
+-   dependency-version: 1.2.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #424 from edwardtheharris/dependabot/pip/sphinx-book-theme-1.2.0
+- Bump sphinx-book-theme from 1.1.4 to 1.2.0
+- Closes #432
+- Merge pull request #433 from edwardtheharris/432-bump-sphinx-book-theme-from-114-to-120424
+- 432 bump sphinx book theme from 114 to 120424
+- Closes #432
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.6` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.6
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.6)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.6
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #431 from edwardtheharris/dependabot/pip/pip-7fb54ea101
+- Bump the pip group across 1 directory with 5 updates
+- Closes #440
+- Bump pipenv from 2026.0.3 to 2026.5.0
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2026.0.3 to 2026.5.0.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2026.0.3...v2026.5.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2026.5.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #428 from edwardtheharris/dependabot/pip/pipenv-2026.5.0
+- Bump pipenv from 2026.0.3 to 2026.5.0
+- Closes #438
+- Merge pull request #439 from edwardtheharris/438-bump-pipenv-from-202603-to-202650428
+- 438 bump pipenv from 202603 to 202650428
+- Closes #438
+- Merge branch 'main' into 440-bump-the-pip-group-across-1-directory-with-5-updates431
+- Bump pytest-cov from 7.0.0 to 7.1.0
+- Bumps [pytest-cov](https://github.com/pytest-dev/pytest-cov) from 7.0.0 to 7.1.0.
+- - [Changelog](https://github.com/pytest-dev/pytest-cov/blob/master/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest-cov/compare/v7.0.0...v7.1.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest-cov
+-   dependency-version: 7.1.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #425 from edwardtheharris/dependabot/pip/pytest-cov-7.1.0
+- Bump pytest-cov from 7.0.0 to 7.1.0
+- Closes #434
+- Merge branch 'main' into 434-bump-pytest-cov-from-700-to-710425
+- Merge branch 'main' into 434-bump-pytest-cov-from-700-to-710425
+- Bump ipython from 9.11.0 to 9.12.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.11.0 to 9.12.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.11.0...9.12.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.12.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch '436-bump-ipython-from-9110-to-9120427' into dependabot/pip/ipython-9.12.0
+- Merge pull request #427 from edwardtheharris/dependabot/pip/ipython-9.12.0
+- Bump ipython from 9.11.0 to 9.12.0
+- Closes #436
+- Merge branch 'main' into 436-bump-ipython-from-9110-to-9120427
+- Merge pull request #437 from edwardtheharris/436-bump-ipython-from-9110-to-9120427
+- 436 bump ipython from 9110 to 9120427
+- Closes #436
+- Merge branch 'main' into 434-bump-pytest-cov-from-700-to-710425
+- Merge pull request #435 from edwardtheharris/434-bump-pytest-cov-from-700-to-710425
+- 434 bump pytest cov from 700 to 710425
+- Merge branch 'main' into 440-bump-the-pip-group-across-1-directory-with-5-updates431
+- Merge pull request #441 from edwardtheharris/440-bump-the-pip-group-across-1-directory-with-5-updates431
+- 440 bump the pip group across 1 directory with 5 updates431
+- Closes #440
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [pytest](https://github.com/pytest-dev/pytest) | `9.0.2` | `9.0.3` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `pytest` from 9.0.2 to 9.0.3
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/9.0.2...9.0.3)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-version: 9.0.3
+-   dependency-type: direct:development
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #443 from edwardtheharris/dependabot/pip/pip-e88b959a87
+- Bump the pip group across 1 directory with 5 updates
+- Closes #444
+- Merge pull request #445 from edwardtheharris/444-bump-the-pip-group-across-1-directory-with-5-updates443
+- 444 bump the pip group across 1 directory with 5 updates443
+- Closes #444
+- Bump the pip group across 1 directory with 4 updates
+- Bumps the pip group with 4 updates in the / directory: [filelock](https://github.com/tox-dev/py-filelock), [requests](https://github.com/psf/requests), [urllib3](https://github.com/urllib3/urllib3) and [virtualenv](https://github.com/pypa/virtualenv).
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #446 from edwardtheharris/dependabot/pip/pip-c496563df2
+- Bump the pip group across 1 directory with 4 updates
+- Closes #447
+- Update lock file
+- Closes #361
+- Update license
+- Closes #359
+- Fix signatures
+- Closes #359
+- Replace pipfiles
+- Closes #359
+- Update lock file
+- Closes #359
+- Merge branch '359-bump-starlette-from-0480-to-0491-in-the-pip-group-across-1-directory-323' into 361-install-pkgstats-by-default
+- Merge pull request #449 from edwardtheharris/361-install-pkgstats-by-default
+- 361 install pkgstats by default
+- Closes #361
+- Merge pull request #450 from edwardtheharris/359-bump-starlette-from-0480-to-0491-in-the-pip-group-across-1-directory-323
+- 359 bump starlette from 0480 to 0491 in the pip group across 1 directory 323
+- Closes #359
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #451 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #454
+- Update tox ini
+- Closes #454
+- Update workflows
+- Closes #454
+- Update black workflow
+- Closes #454
+- Update run statements
+- Closes #454
+- Bump pre-commit from 4.5.0 to 4.5.1
+- Bumps [pre-commit](https://github.com/pre-commit/pre-commit) from 4.5.0 to 4.5.1.
+- - [Release notes](https://github.com/pre-commit/pre-commit/releases)
+- - [Changelog](https://github.com/pre-commit/pre-commit/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pre-commit/pre-commit/compare/v4.5.0...v4.5.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pre-commit
+-   dependency-version: 4.5.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #452 from edwardtheharris/dependabot/pip/pre-commit-4.5.1
+- Bump pre-commit from 4.5.0 to 4.5.1
+- Closes #453
+- Merge pull request #456 from edwardtheharris/453-bump-pre-commit-from-450-to-451452
+- 453 bump pre commit from 450 to 451452
+- Closes 453
+- Bump ipython from 9.12.0 to 9.13.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.12.0 to 9.13.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.12.0...9.13.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.13.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #458 from edwardtheharris/dependabot/pip/ipython-9.13.0
+- Bump ipython from 9.12.0 to 9.13.0
+- Closes #460
+- Merge pull request #461 from edwardtheharris/460-bump-ipython-from-9120-to-9130458
+- 460 bump ipython from 9120 to 9130458
+- Closes #460
+- Bump pre-commit from 4.5.1 to 4.6.0
+- Bumps [pre-commit](https://github.com/pre-commit/pre-commit) from 4.5.1 to 4.6.0.
+- - [Release notes](https://github.com/pre-commit/pre-commit/releases)
+- - [Changelog](https://github.com/pre-commit/pre-commit/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pre-commit/pre-commit/compare/v4.5.1...v4.6.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: pre-commit
+-   dependency-version: 4.6.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #459 from edwardtheharris/dependabot/pip/pre-commit-4.6.0
+- Bump pre-commit from 4.5.1 to 4.6.0
+- Closes #462
+- Merge pull request #463 from edwardtheharris/462-bump-ipython-from-9120-to-9130458
+- 462 bump ipython from 9120 to 9130458
+- Closes #462
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into
+- 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Closes #454
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Merge branch '454-bump-the-pip-group-across-1-directory-with-5-updates451' into dependabot/pip/pip-26f88edfbd
+- Merge pull request #457 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #454
+- Merge branch 'main' into 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Merge branch '454-bump-the-pip-group-across-1-directory-with-5-updates451'
+- Of github.com:edwardtheharris/dotfiles into
+- 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Closes #454
+- Bump pipenv from 2026.5.2 to 2026.6.1
+- Bumps [pipenv](https://github.com/pypa/pipenv) from 2026.5.2 to 2026.6.1.
+- - [Release notes](https://github.com/pypa/pipenv/releases)
+- - [Changelog](https://github.com/pypa/pipenv/blob/main/CHANGELOG.md)
+- - [Commits](https://github.com/pypa/pipenv/compare/v2026.5.2...v2026.6.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: pipenv
+-   dependency-version: 2026.6.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #465 from edwardtheharris/dependabot/pip/pipenv-2026.6.1
+- Bump pipenv from 2026.5.2 to 2026.6.1
+- Closes #466
+- Merge pull request #467 from edwardtheharris/466-bump-pipenv-from-202652-to-202661465
+- 466 bump pipenv from 202652 to 202661465
+- Closes #466
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Into 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Closes #454
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch '454-bump-the-pip-group-across-1-directory-with-5-updates451' into dependabot/pip/pip-26f88edfbd
+- Merge pull request #464 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #454
+- Merge branch '454-bump-the-pip-group-across-1-directory-with-5-updates451'
+- Of github.com:edwardtheharris/dotfiles into
+- 454-bump-the-pip-group-across-1-directory-with-5-updates451
+- Closes #454
+- Merge pull request #455 from edwardtheharris/454-bump-the-pip-group-across-1-directory-with-5-updates451
+- 454 bump the pip group across 1 directory with 5 updates451
+- Closes #454
+- Bump paramiko from 4.0.0 to 5.0.0
+- Bumps [paramiko](https://github.com/paramiko/paramiko) from 4.0.0 to 5.0.0.
+- - [Commits](https://github.com/paramiko/paramiko/compare/4.0.0...5.0.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: paramiko
+-   dependency-version: 5.0.0
+-   dependency-type: direct:production
+-   update-type: version-update:semver-major
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #474 from edwardtheharris/dependabot/pip/paramiko-5.0.0
+- Bump paramiko from 4.0.0 to 5.0.0
+- Closes #477
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.6.3` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.6.3
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.6.3)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.6.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #468 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #469
+- Merge branch '469-bump-the-pip-group-across-1-directory-with-5-updates468' into dependabot/pip/pip-26f88edfbd
+- Merge pull request #471 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #469
+- Merge branch '469-bump-the-pip-group-across-1-directory-with-5-updates468' into dependabot/pip/pip-26f88edfbd
+- Merge pull request #472 from edwardtheharris/dependabot/pip/pip-26f88edfbd
+- Bump the pip group across 1 directory with 5 updates
+- Closes #469
+- Bump the pip group across 1 directory with 6 updates
+- Bumps the pip group with 6 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [paramiko](https://github.com/paramiko/paramiko) | `4.0.0` | `5.0.0` |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.7.0` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `paramiko` from 4.0.0 to 5.0.0
+- - [Commits](https://github.com/paramiko/paramiko/compare/4.0.0...5.0.0)
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.7.0
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.7.0)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: paramiko
+-   dependency-version: 5.0.0
+-   dependency-type: direct:production
+-   dependency-group: pip
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.7.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'dependabot/pip/pip-ea30bc0313' of
+- Edwardtheharris/dotfiles into
+- 469-bump-the-pip-group-across-1-directory-with-5-updates468
+- Closes #469
+- Fix pre-commit
+- Closes #469
+- Merge pull request #470 from edwardtheharris/469-bump-the-pip-group-across-1-directory-with-5-updates468
+- 469 bump the pip group across 1 directory with 5 updates468
+- Closes #469
+- Merge branch 'main' into 477-bump-paramiko-from-400-to-500474
+- Merge pull request #478 from edwardtheharris/477-bump-paramiko-from-400-to-500474
+- 477 bump paramiko from 400 to 500474
+- Closes #477
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [cryptography](https://github.com/pyca/cryptography) | `46.0.3` | `46.0.7` |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.7.0` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `cryptography` from 46.0.3 to 46.0.7
+- - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pyca/cryptography/compare/46.0.3...46.0.7)
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.7.0
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.7.0)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: cryptography
+-   dependency-version: 46.0.7
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.7.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #480 from edwardtheharris/dependabot/pip/pip-ce60a95da1
+- Bump the pip group across 1 directory with 5 updates
+- Closes #481
+- Bump version-query from 1.7.0 to 1.7.1
+- Bumps [version-query](https://github.com/mbdevpl/version-query) from 1.7.0 to 1.7.1.
+- - [Release notes](https://github.com/mbdevpl/version-query/releases)
+- - [Commits](https://github.com/mbdevpl/version-query/compare/v1.7.0...v1.7.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: version-query
+-   dependency-version: 1.7.1
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #475 from edwardtheharris/dependabot/pip/version-query-1.7.1
+- Bump version-query from 1.7.0 to 1.7.1
+- Closes #476
+- Merge branch 'main' into 476-bump-version-query-from-170-to-171475
+- Merge branch 'main' into 476-bump-version-query-from-170-to-171475
+- Merge pull request #479 from edwardtheharris/476-bump-version-query-from-170-to-171475
+- 476 bump version query from 170 to 171475
+- Closes #476
+- Merge branch 'main' into 481-bump-the-pip-group-across-1-directory-with-5-updates480
+- Update handlers
+- Closes #481
+- Update tox
+- Closes #481
+- Merge pull request #482 from edwardtheharris/481-bump-the-pip-group-across-1-directory-with-5-updates480
+- 481 bump the pip group across 1 directory with 5 updates480
+- Closes #481
+- Add ping role to playbooks
+- Closes #486
+- Add to ignore
+- Closes #486
+- Merge pull request #487 from edwardtheharris/486-add-ping-role
+- Add ping role to playbooks
+- Closes #486
+- Merge branch 'main' into 486-add-ping-role
+- Merge pull request #489 from edwardtheharris/486-add-ping-role
+- Add to ignore
+- Closes #486
+- Add ping task
+- Closes #486
+- Add dependencies
+- Closes #486
+- Merge pull request #490 from edwardtheharris/486-add-ping-role
+- Add ping task
+- Closes #486
+- Merge branch 'main' into 486-add-ping-role
+- Update role dep
+- Closes #486
+- Update config
+- Closes #486
+- Update config
+- Closes #486
+- Update config
+- Closes #486
+- Merge pull request #491 from edwardtheharris/486-add-ping-role
+- Add dependencies
+- Closes #486
+- Merge branch 'main' into 486-add-ping-role
+- Merge pull request #492 from edwardtheharris/486-add-ping-role
+- Update config
+- Closes #486
+- Update rc files with rsync shortcut
+- Closes #494
+- Update rc files for other distros
+- Closes #494
+- Bump ipython from 9.13.0 to 9.14.0
+- Bumps [ipython](https://github.com/ipython/ipython) from 9.13.0 to 9.14.0.
+- - [Release notes](https://github.com/ipython/ipython/releases)
+- - [Commits](https://github.com/ipython/ipython/compare/9.13.0...9.14.0)
+- ---
+- Updated-dependencies:
+- - dependency-name: ipython
+-   dependency-version: 9.14.0
+-   dependency-type: direct:development
+-   update-type: version-update:semver-minor
+- ...
+- Dependabot[bot] <support@github.com>
+- Bump the pip group across 1 directory with 5 updates
+- Bumps the pip group with 5 updates in the / directory:
+- | Package | From | To |
+- | --- | --- | --- |
+- | [filelock](https://github.com/tox-dev/py-filelock) | `3.20.0` | `3.20.3` |
+- | [idna](https://github.com/kjd/idna) | `3.11` | `3.15` |
+- | [requests](https://github.com/psf/requests) | `2.32.5` | `2.33.0` |
+- | [urllib3](https://github.com/urllib3/urllib3) | `1.26.20` | `2.7.0` |
+- | [virtualenv](https://github.com/pypa/virtualenv) | `20.35.4` | `20.36.1` |
+- Updates `filelock` from 3.20.0 to 3.20.3
+- - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+- - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/tox-dev/py-filelock/compare/3.20.0...3.20.3)
+- Updates `idna` from 3.11 to 3.15
+- - [Release notes](https://github.com/kjd/idna/releases)
+- - [Changelog](https://github.com/kjd/idna/blob/master/HISTORY.md)
+- - [Commits](https://github.com/kjd/idna/compare/v3.11...v3.15)
+- Updates `requests` from 2.32.5 to 2.33.0
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.5...v2.33.0)
+- Updates `urllib3` from 1.26.20 to 2.7.0
+- - [Release notes](https://github.com/urllib3/urllib3/releases)
+- - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- - [Commits](https://github.com/urllib3/urllib3/compare/1.26.20...2.7.0)
+- Updates `virtualenv` from 20.35.4 to 20.36.1
+- - [Release notes](https://github.com/pypa/virtualenv/releases)
+- - [Changelog](https://github.com/pypa/virtualenv/blob/main/docs/changelog.rst)
+- - [Commits](https://github.com/pypa/virtualenv/compare/20.35.4...20.36.1)
+- ---
+- Updated-dependencies:
+- - dependency-name: filelock
+-   dependency-version: 3.20.3
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: idna
+-   dependency-version: '3.15'
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: requests
+-   dependency-version: 2.33.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: urllib3
+-   dependency-version: 2.7.0
+-   dependency-type: indirect
+-   dependency-group: pip
+- - dependency-name: virtualenv
+-   dependency-version: 20.36.1
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'main' into dependabot/pip/pip-6068444bff
+- Merge pull request #484 from edwardtheharris/dependabot/pip/pip-6068444bff
+- Bump the pip group across 1 directory with 5 updates
+- Closes #485
+- Merge branch '485-bump-the-pip-group-across-1-directory-with-5-updates484' into dependabot/pip/ipython-9.14.0
+- Merge pull request #493 from edwardtheharris/dependabot/pip/ipython-9.14.0
+- Bump ipython from 9.13.0 to 9.14.0
+- Closes #485
+- Update Pipfile and lock
+- Closes #485
+- Merge pull request #488 from edwardtheharris/485-bump-the-pip-group-across-1-directory-with-5-updates484
+- 485 bump the pip group across 1 directory with 5 updates484
+- Closes #484
+- Merge branch 'main' into 494-add-rsync-functions-to-rc
+- Merge pull request #495 from edwardtheharris/494-add-rsync-functions-to-rc
+- 494 add rsync functions to rc
+- Closes #494
 ## [0.0.4] - 2025-12-08
 
 ### 💼 Other
@@ -123,6 +1696,21 @@ title: Changelog
 - Merge branch 'main' into dependabot/pip/pytest-8.4.0
 - Merge pull request #172 from edwardtheharris/dependabot/pip/pytest-8.4.0
 - Bump pytest from 8.3.5 to 8.4.0
+- Bump requests from 2.32.3 to 2.32.4 in the pip group
+- Bumps the pip group with 1 update: [requests](https://github.com/psf/requests).
+- Updates `requests` from 2.32.3 to 2.32.4
+- - [Release notes](https://github.com/psf/requests/releases)
+- - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+- - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
+- ---
+- Updated-dependencies:
+- - dependency-name: requests
+-   dependency-version: 2.32.4
+-   dependency-type: indirect
+-   dependency-group: pip
+- ...
+- Dependabot[bot] <support@github.com>
+- Duchess <duchess@breeze-blocks.net>
 - Bump actions/add-to-project
 - Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 5b1a254a3546aef88e0a7724a77a623fa2e47c36 to 0c37450c4be3b6a7582b2fb013c9ebfd9c8e9300.
 - - [Release notes](https://github.com/actions/add-to-project/releases)
@@ -970,6 +2558,10 @@ title: Changelog
 - Merge pull request #288 from edwardtheharris/287-bump-ansible-from-1170-to-1200-280
 - 287 bump ansible from 1170 to 1200 280
 - Closes #287
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles into dependabot/pip/pip-512858e340
+- Update envrc
+- Drop 3.10
 - Bump pylint from 3.3.9 to 4.0.0
 - Bumps [pylint](https://github.com/pylint-dev/pylint) from 3.3.9 to 4.0.0.
 - - [Release notes](https://github.com/pylint-dev/pylint/releases)
@@ -1170,8 +2762,6 @@ title: Changelog
 - Closes #320
 - Drop extra readme
 - Closes #320
-- Drop instant markdown
-- Closes #320
 - Merge pull request #321 from edwardtheharris/320-drop-instant-markdown-plugin
 - 320 drop instant markdown plugin
 - Closes #320
@@ -1217,14 +2807,6 @@ title: Changelog
 - Merge pull request #335 from edwardtheharris/334-fix-root-rc-files
 - Update root arch file
 - Closes #334
-- Merge branch 'main' of
-- //github.com/edwardtheharris/dotfiles
-- Into 320-drop-instant-markdown-plugin
-- Closes #320
-- Don't export variables that don't exist
-- Closes #320
-- Drop excessive workflows
-- Closes #320
 - Bump actions/upload-artifact from 4.6.2 to 5.0.0
 - Bumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4.6.2 to 5.0.0.
 - - [Release notes](https://github.com/actions/upload-artifact/releases)
@@ -1243,6 +2825,27 @@ title: Changelog
 - Merge pull request #344 from edwardtheharris/343-bump-actionsupload-artifact-from-462-to-500-322
 - 343 bump actionsupload artifact from 462 to 500 322
 - Closes #343
+- Bump actions/add-to-project
+- Bumps [actions/add-to-project](https://github.com/actions/add-to-project) from 4fda2e598c349fd1d6770dc6df8b0b61158c3e90 to 32da07cbb30091816ce54192caf97979d0812456.
+- - [Release notes](https://github.com/actions/add-to-project/releases)
+- - [Commits](https://github.com/actions/add-to-project/compare/4fda2e598c349fd1d6770dc6df8b0b61158c3e90...32da07cbb30091816ce54192caf97979d0812456)
+- ---
+- Updated-dependencies:
+- - dependency-name: actions/add-to-project
+-   dependency-version: 32da07cbb30091816ce54192caf97979d0812456
+-   dependency-type: direct:production
+- ...
+- Dependabot[bot] <support@github.com>
+- Drop instant markdown
+- Closes #320
+- Merge branch 'main' of
+- //github.com/edwardtheharris/dotfiles
+- Into 320-drop-instant-markdown-plugin
+- Closes #320
+- Don't export variables that don't exist
+- Closes #320
+- Drop excessive workflows
+- Closes #320
 - Merge branch 'main' of github.com:edwardtheharris/dotfiles into 320-drop-instant-markdown-plugin
 - Closes #347
 - Drop security
@@ -1277,6 +2880,62 @@ title: Changelog
 - Merge pull request #348 from edwardtheharris/347-mainly-github-workflows-updates
 - 347 mainly GitHub workflows updates
 - Closes #347
+- Bump step-security/harden-runner from 2.13.1 to 2.13.3
+- Bumps [step-security/harden-runner](https://github.com/step-security/harden-runner) from 2.13.1 to 2.13.3.
+- - [Release notes](https://github.com/step-security/harden-runner/releases)
+- - [Commits](https://github.com/step-security/harden-runner/compare/f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a...df199fb7be9f65074067a9eb93f12bb4c5547cf2)
+- ---
+- Updated-dependencies:
+- - dependency-name: step-security/harden-runner
+-   dependency-version: 2.13.3
+-   dependency-type: direct:production
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge branch 'dependabot/github_actions/step-security/harden-runner-2.13.3' of github.com:edwardtheharris/dotfiles into 350-bump-step-securityharden-runner-from-2131-to-2133-349
+- Closes #350
+- Bump pytest from 9.0.1 to 9.0.2
+- Bumps [pytest](https://github.com/pytest-dev/pytest) from 9.0.1 to 9.0.2.
+- - [Release notes](https://github.com/pytest-dev/pytest/releases)
+- - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- - [Commits](https://github.com/pytest-dev/pytest/compare/9.0.1...9.0.2)
+- ---
+- Updated-dependencies:
+- - dependency-name: pytest
+-   dependency-version: 9.0.2
+-   dependency-type: direct:development
+-   update-type: version-update:semver-patch
+- ...
+- Dependabot[bot] <support@github.com>
+- Merge pull request #355 from edwardtheharris/dependabot/pip/pytest-9.0.2
+- Bump pytest from 9.0.1 to 9.0.2
+- Closes #356
+- Initial commit
+- Merge branch 'tmp' into 'main'
+- Bump starlette from 0.47.0 to 0.47.2 in the pip group
+- See merge request xandertheharris/dotfiles!1
+- Merge branch 'main' of
+- Xandertheharris/dotfiles
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles
+- Fix 3.10 errors
+- Closes #302
+- Merge branch 'tmp'
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles
+- Merge branch 'main' of
+- Edwardtheharris/dotfiles
+- Closes #40
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- See #316
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Merge branch 'main' of github.com:edwardtheharris/dotfiles
+- Add changelog
+- Closes #351
 ## [0.0.3] - 2025-05-19
 
 ### 🐛 Bug Fixes
