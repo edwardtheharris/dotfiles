@@ -68,3 +68,11 @@ alias ip='ip -color=auto'
 alias k='kubectl'
 alias ls='ls --color'
 alias vi='$(command -v vim)'
+
+cpr() {
+  rsync -ihhrvvP "$@"
+}
+
+mvr() {
+  rsync -ihhrvvPm --remove-source-files "$@"
+}

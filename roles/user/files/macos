@@ -57,3 +57,11 @@ alias k='kubectl'
 alias h='h --debug'
 alias ip='ip -color=auto'
 alias ls='ls --color'
+
+cpr() {
+  rsync -ihhrvvP "$@"
+}
+
+mvr() {
+  rsync -ihhrvvPm --remove-source-files "$@"
+}
