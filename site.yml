@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: cms05
+  hosts: all
   roles:
     - role: arch
       tags:
