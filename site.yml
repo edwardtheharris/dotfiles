@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: all
+  hosts: thw05
   roles:
     - role: arch
       tags:
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: cms05
+  hosts: thw05
   become: true
   roles:
     - role: user
