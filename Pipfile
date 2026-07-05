@@ -17,8 +17,8 @@ sphinx-git = "*"
 sphinx-last-updated-by-git = "*"
 sphinxcontrib-autoyaml = "*"
 pre-commit = "*"
-tox = "*"
 pipenv = "*"
+tox = "*"
 
 [dev-packages]
 black = "*"
