@@ -18,7 +18,6 @@ packages_list:
   - nodejs
   - python-pynvim
   - ripgrep
-  - rsyslog
   - rubygems
   - tectonic
   - texlive-bin
