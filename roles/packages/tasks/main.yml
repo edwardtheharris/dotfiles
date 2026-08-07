@@ -31,3 +31,15 @@
     {{ packages_list }}
   loop_control:
     loop_var: packages_item
+- name: Make gmotd config dir
+  ansible.builtin.file:
+    dest: /etc/gmotd
+    state: directory
+    owner: root
+  become: true
+- name: Copy gmotd yaml
+  ansible.builtin.copy:
+    src: gmotd.yaml
+    dest: /etc/gmotd/gmotd.yaml
+    owner: root
+  become: true
