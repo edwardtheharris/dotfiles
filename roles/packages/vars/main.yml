@@ -13,9 +13,14 @@ packages_list:
   - lazygit
   - lua51
   - luarocks
+  - lvm2
   - mermaid-cli
   - navi
+  - nfs-utils
   - nodejs
+  - prometheus-node-exporter
+  - prometheus-systemd-exporter
+  - promtail
   - python-pynvim
   - ripgrep
   - rubygems
