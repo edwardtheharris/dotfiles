@@ -31,15 +31,38 @@
     {{ packages_list }}
   loop_control:
     loop_var: packages_item
+  notify:
+    - enable node exporter
+    - start systemd exporter
 - name: Make gmotd config dir
   ansible.builtin.file:
     dest: /etc/gmotd
     state: directory
     owner: root
+    group: root
+    mode: ug+rwx
   become: true
-- name: Copy gmotd yaml
+- name: Copy gmotd
   ansible.builtin.copy:
     src: gmotd.yaml
     dest: /etc/gmotd/gmotd.yaml
     owner: root
+    group: root
+    mode: ug+rw
   become: true
+- name: Copy pam.d config
+  ansible.builtin.copy:
+    src: sshd
+    dest: /etc/pam.d/sshd
+    owner: root
+    group: root
+  become: true
+- name: Template promtail
+  ansible.builtin.template:
+    src: promtail.yaml
+    dest: /etc/loki/promtail.yaml
+    owner: root
+    group: root
+  become: true
+  notify:
+    - start promtail
