@@ -3,6 +3,10 @@
 # handlers file for ansible
 - name: Restart rsyslog
   ansible.builtin.service:
+<<<<<<< Updated upstream
     name: rsyslog
+=======
+    name: prometheus-node-exporter
+>>>>>>> Stashed changes
     state: restarted
     enabled: true
