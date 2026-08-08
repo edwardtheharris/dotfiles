@@ -1,10 +1,7 @@
 ---
 - name: Init arch user
-  hosts: thw05
+  hosts: cms01,cms02,cms03,cms04,cms05
   roles:
-    - role: arch
-      tags:
-        - arch
     - role: user
       tags:
         - user
@@ -34,6 +31,9 @@
           - dest: .wakatime.cfg
             src: user/wakatime.cfg
         user_wakatime_key: "{{ wakatime_key }}"
+    - role: arch
+      tags:
+        - arch
     - role: packages
       tags:
         - packages
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: thw05
+  hosts: cms01,cms02,cms03,cms04,cms05
   become: true
   roles:
     - role: user
