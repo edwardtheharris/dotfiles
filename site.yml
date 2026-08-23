@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: cms00a,cms00b,thw00a,thw00b,cato
   roles:
     - role: user
       tags:
@@ -37,11 +37,14 @@
     - role: packages
       tags:
         - packages
+    - role: k8s
+      tags:
+        - k8s
     - role: ping
       tags:
         - ping
 - name: Init root user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: cms00a
   become: true
   roles:
     - role: user
