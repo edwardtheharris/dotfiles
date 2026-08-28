@@ -36,4 +36,3 @@
     source: rsyslog.conf
     dest: /etc/rsyslog.conf
   become: true
-  notify: Restart rsyslog
