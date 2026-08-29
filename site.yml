@@ -1,7 +1,10 @@
 ---
 - name: Init arch user
-  hosts: whac,backup
+  hosts: thw00a
   roles:
+    - role: arch
+      tags:
+        - arch
     - role: user
       tags:
         - user
@@ -30,10 +33,7 @@
             src: user/gitconfig
           - dest: .wakatime.cfg
             src: user/wakatime.cfg
-        user_wk: "{{ wk_key }}"
-    - role: arch
-      tags:
-        - arch
+        user_wakatime_key: "{{ wakatime_key }}"
     - role: packages
       tags:
         - packages
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: whac,backup
+  hosts: thw00a
   become: true
   roles:
     - role: user
@@ -72,7 +72,7 @@
             src: root/gitconfig
           - dest: .wakatime.cfg
             src: root/wakatime.cfg
-        user_wk: "{{ wk_key }}"
+        user_wakatime_key: "{{ wakatime_key }}"
 - name: Init service account user
   hosts: ns
   roles:
@@ -90,8 +90,8 @@
         user_home: /var/named
         user_name: named
         user_role: sa
-        user_wk: >-
-          {{ wakatime_key }}
+        user_wakatime_key: >-
+          {{ user_wakatime_key }}
   # - name: Install missing firmware for Arch
   #   hosts: localhost
   #   roles:
