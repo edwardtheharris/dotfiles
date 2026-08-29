@@ -1,12 +1,20 @@
 # SPDX-License-Identifier: MIT-0
 ---
-# handlers file for ansible
-- name: Restart rsyslog
+- name: enable node exporter
   ansible.builtin.service:
-<<<<<<< Updated upstream
-    name: rsyslog
-=======
-    name: prometheus-node-exporter
->>>>>>> Stashed changes
+    name: prometheus-node-exporfer
     state: restarted
     enabled: true
+  become: true
+- name: start systemd exporter
+  ansible.builtin.service:
+    name: prometheus-systemd-exporter
+    state: restarted
+    enabled: true
+  become: true
+- name: start promtail
+  ansible.builtin.service:
+    name: promtail
+    state: restarted
+    enabled: true
+  become: true

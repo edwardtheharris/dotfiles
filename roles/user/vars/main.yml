@@ -24,8 +24,6 @@ user_nvim_plugins:
     src: nvim/ansible.lua
   - dest: plugins/go.lua
     src: nvim/go.lua
-  - dest: plugins/jinja.lua
-    src: nvim/jinja.lua
   - dest: plugins/markdown.lua
     src: nvim/markdown.lua
   - dest: plugins/transparent.lua
@@ -44,4 +42,4 @@ user_template_rc_files:
   - dest: string
     src: string
 user_user: string
-user_wakatime_key: string
+user_wk: string

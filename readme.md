@@ -40,5 +40,9 @@ Copyright (c) Xander Harris 2025. All rights reserved.
 ## Author Information
 
 ```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
-
 ```
+
+## Usage information
+
+The {file}`roles/packages` role makes use of
+[several handlers](https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html).

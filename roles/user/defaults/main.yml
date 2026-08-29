@@ -21,4 +21,4 @@ user_template_rc_files:
     src: gitconfig
   - dest: .wakatime.cfg
     src: wakatime.cfg
-user_wakatime_key: wakatime_key
+user_wk: wakatime_key

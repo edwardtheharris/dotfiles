@@ -2,23 +2,29 @@
 ---
 # vars file for ansible
 packages_list:
+  - arch-install-scripts
   - direnv
   - expac
   - fd
   - fzf
   - ghostscript
   - glances
+  - gmotd
   - imagemagick
   - irssi
   - lazygit
   - lua51
   - luarocks
+  - lvm2
   - mermaid-cli
   - navi
+  - nfs-utils
   - nodejs
+  - prometheus-node-exporter
+  - prometheus-systemd-exporter
+  - promtail
   - python-pynvim
   - ripgrep
-  - rsyslog
   - rubygems
   - tectonic
   - texlive-bin

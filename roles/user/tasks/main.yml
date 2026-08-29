@@ -69,7 +69,8 @@
     loop_var: user_item
   become: true
   vars:
-    wakatime_key: user_wakatime_key
+    wakatime_key: >-
+      {{ user_wk }}
 - name: Install nvim plugins
   ansible.builtin.copy:
     dest: >-
