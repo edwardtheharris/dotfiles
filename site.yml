@@ -40,9 +40,6 @@
     - role: k8s
       tags:
         - k8s
-    - role: dev
-      tags:
-        - dev
     - role: ping
       tags:
         - ping
