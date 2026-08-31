@@ -32,8 +32,8 @@
   loop_control:
     loop_var: packages_item
   notify:
-    - enable node exporter
-    - start systemd exporter
+    - Enable node exporter
+    - Start systemd exporter
 - name: Make gmotd config dir
   ansible.builtin.file:
     dest: /etc/gmotd
@@ -54,6 +54,7 @@
   ansible.builtin.copy:
     src: sshd
     dest: /etc/pam.d/sshd
+    mode: ug+rw
     owner: root
     group: root
   become: true
@@ -61,8 +62,9 @@
   ansible.builtin.template:
     src: promtail.yaml
     dest: /etc/loki/promtail.yaml
+    mode: ug+rw
     owner: root
     group: root
   become: true
   notify:
-    - start promtail
+    - Start promtail
