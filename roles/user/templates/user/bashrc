@@ -36,9 +36,13 @@ alias tfd='terraform-docs'
 alias tg='terragrunt'
 
 cpr() {
-  rsync -ihhrvvP "$@"
+  rsync --existing --human-readable --inc-recursive --inplace \
+    --log-file=/var/log/rsync/cpr.log --partial --progress \
+    --recursive --verbose "$@"
 }
 
 mvr() {
-  rsync -ihhrvvPm --remove-source-files "$@"
+  rsync --human-readable --inc-recursive --inplace \
+    --log-file=/var/log/rsync/mvr.log --mkpath --partial --progress \
+    --prune-empty-dirs --recursive --remove-source-files --verbose "$@"
 }

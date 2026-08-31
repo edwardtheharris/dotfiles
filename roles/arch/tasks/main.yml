@@ -9,13 +9,12 @@
     - ansible
     - direnv
     - glances
-    - gmotd
     - hddtemp
     - mosh
-    - pkgstats
     - pre-commit
     - python-pip
     - python-virtualenv
+    - pkgstats
   become: true
 - name: Update package cache
   community.general.pacman:
@@ -52,20 +51,4 @@
     enabled: true
   loop:
     - glances
-  become: true
-- name: Enable gmotd on ssh
-  ansible.builtin.copy:
-    src: pam.d/sshd
-    dest: /etc/pam.d/sshd
-    owner: root
-    group: root
-    mode: ug+rw
-  become: true
-- name: Configure basic gmotd
-  ansible.builtin.copy:
-    src: gmotd.yml
-    dest: /etc/gmotd/gmotd.yml
-    owner: root
-    group: root
-    mode: ug+rw
   become: true

@@ -42,4 +42,4 @@ user_template_rc_files:
   - dest: string
     src: string
 user_user: string
-user_wk: string
+user_wakatime_key: string
