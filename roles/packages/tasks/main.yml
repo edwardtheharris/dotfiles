@@ -1,30 +1,30 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for packages
-- name: Clean user package cache
-  ansible.builtin.file:
-    dest: >-
-      ~/.cache/yay
-    state: absent
-  become: true
-- name: Stat cache directory
-  ansible.builtin.stat:
-    dest: >-
-      ~/.cacche/yay
-  register: packages_cache
-- name: Test directory is gone
-  ansible.builtin.assert:
-    that:
-      - not packages_cache.stat.exists
-- name: Update user package cache
-  ansible.builtin.command:
-    cmd: yay -Y --gendb
-    creates: >-
-      ~/.cache/yay
+# - name: Clean user package cache
+#   ansible.builtin.file:
+#     dest: >-
+#       ~/.cache/yay
+#     state: absent
+#   become: true
+# - name: Stat cache directory
+#   ansible.builtin.stat:
+#     dest: >-
+#       ~/.cacche/yay
+#   register: packages_cache
+# - name: Test directory is gone
+#   ansible.builtin.assert:
+#     that:
+#       - not packages_cache.stat.exists
+# - name: Update user package cache
+#   ansible.builtin.command:
+#     cmd: yay -Y --gendb
+#     creates: >-
+#       ~/.cache/yay
 - name: Install extra packages
   ansible.builtin.command:
     cmd: >-
-      yay -S --noconfirm {{ packages_item }}
+      yay -Syyu --noconfirm {{ packages_item }}
     creates: >-
       ~/.cache/yay/{{ packages_item }}
   loop: >-
@@ -32,8 +32,8 @@
   loop_control:
     loop_var: packages_item
   notify:
-    - enable node exporter
-    - start systemd exporter
+    - Enable node exporter
+    - Start systemd exporter
 - name: Make gmotd config dir
   ansible.builtin.file:
     dest: /etc/gmotd
@@ -54,6 +54,7 @@
   ansible.builtin.copy:
     src: sshd
     dest: /etc/pam.d/sshd
+    mode: ug+rw
     owner: root
     group: root
   become: true
@@ -61,8 +62,9 @@
   ansible.builtin.template:
     src: promtail.yaml
     dest: /etc/loki/promtail.yaml
+    mode: ug+rw
     owner: root
     group: root
   become: true
   notify:
-    - start promtail
+    - Start promtail

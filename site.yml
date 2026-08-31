@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: thw00b
   roles:
     - role: user
       tags:
@@ -30,18 +30,21 @@
             src: user/gitconfig
           - dest: .wakatime.cfg
             src: user/wakatime.cfg
-        user_wakatime_key: "{{ wakatime_key }}"
+        user_wakatime_key: "{{ wk_key }}"
     - role: arch
       tags:
         - arch
     - role: packages
       tags:
         - packages
+    - role: k8s
+      tags:
+        - k8s
     - role: ping
       tags:
         - ping
 - name: Init root user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: thw00b
   become: true
   roles:
     - role: user
@@ -72,7 +75,7 @@
             src: root/gitconfig
           - dest: .wakatime.cfg
             src: root/wakatime.cfg
-        user_wakatime_key: "{{ wakatime_key }}"
+        user_wakatime_key: "{{ wk_key }}"
 - name: Init service account user
   hosts: ns
   roles:
