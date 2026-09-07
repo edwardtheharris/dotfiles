@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 ansible = "*"
 loguru = "*"
-myst-parser = {extras = ["linkify"], version = "*"}
 paramiko = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
@@ -18,6 +17,7 @@ sphinx-last-updated-by-git = "*"
 pre-commit = "*"
 pipenv = "*"
 tox = "*"
+myst-parser = {extras = ["linkify"], version = "*"}
 
 [dev-packages]
 black = "*"

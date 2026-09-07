@@ -7,35 +7,35 @@ title: Attribution Assurance License
 ```{literalinclude} _static/gpg/license.signature.part-zero.gpg
 ```
 
-Copyright © 2025 by Xander Harris. All rights reserved.
+Copyright (c) 2025 by Xander Harris. All rights reserved.
 
 [github.com/edwardtheharris/dotfiles](https://github.com/edwardtheharris/dotfiles) |
-“A straight shooter with upper management written all over him.”
+"A straight shooter with upper management written all over him."
 
 ## ATTRIBUTION ASSURANCE LICENSE
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the conditions below are met. These conditions
-require a modest attribution to Xander Harris (the “Author”), who hopes that
+require a modest attribution to Xander Harris (the "Author"), who hopes that
 its promotional value may help justify the thousands of dollars in otherwise
 billable time invested in writing this and other freely available, open-source
 software.
 
 Redistributions of source code, in whole or part and with or without
-modification (the “Code”), must prominently display this {term}`GPG`-signed
+modification (the "Code"), must prominently display this {term}`GPG`-signed
 text in verifiable form.
 
 Redistributions of the Code in binary form must be accompanied by this
 {term}`GPG`-signed text in any documentation and, each time the resulting executable
 program or a program dependent thereon is launched, a prominent display (e.g.,
-splash screen or banner text) of the Author’s attribution information, which
+splash screen or banner text) of the Author's attribution information, which
 includes:
 
-1. Name (“Xander Harris”),
+1. Name ("Xander Harris"),
 
-1. Professional identification (“Principal Site Reliability Engineer”), and
+1. Professional identification ("Principal Site Reliability Engineer"), and
 
-1. URL (“github.com/edwardtheharris/dotfiles”).
+1. URL ([github.com/edwardtheharris/dotfiles](github.com/edwardtehharris/dotfiles)).
 
 Neither the name nor any trademark of the Author may be used to endorse or
 promote products derived from this software without specific prior written
@@ -51,7 +51,7 @@ persons, for compliance with
 3. local regulations regarding use, including those regarding import, export,
    and use of encryption software.
 
-THIS FREE SOFTWARE IS PROVIDED BY THE AUTHOR “AS IS” AND ANY EXPRESS OR IMPLIED
+THIS FREE SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
 EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE FOR ANY DIRECT, INDIRECT,
