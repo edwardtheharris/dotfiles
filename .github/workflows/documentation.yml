@@ -63,7 +63,7 @@ jobs:
       - name: Set up NodeJS
         uses: actions/setup-node@main
       - name: Install the checker
-        run: npm i -g markdownlint-cli2 markdownlint-cli2-formatter-junit --save-dev
+        run: npm i -g markdownlint-cli2 markdownlint-cli2-formatter-junit markdownlint-rule-complete --save-dev
       - name: Lint the Markdown
         run: markdownlint-cli2 **/*.md *.md "#AGENTS.md" "#CLAUDE.md"
       - name: Publish Test Results

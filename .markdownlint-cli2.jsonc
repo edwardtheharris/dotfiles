@@ -1,5 +1,4 @@
 {
-  "outputFormatters": [
-    [ "markdownlint-cli2-formatter-junit" ]
-  ]
+  "customRules": ["markdownlint-rule-complete"],
+  "outputFormatters": [["markdownlint-cli2-formatter-junit"]],
 }
