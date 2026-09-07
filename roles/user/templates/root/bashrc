@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CLICOLOR=1
+HELM_MAX_HISTORY=3
 # shellcheck disable=SC2016
 LESS='-R --use-color -Dd+r$Du+b$'
 LSCOLORS="Ea"
@@ -14,6 +15,7 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 export CLICOLOR
+export HELM_MAX_HISTORY
 export LESS
 export LSCOLORS
 export PS1

@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: thw00b
+  hosts: media00
   roles:
     - role: user
       tags:
@@ -44,7 +44,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: thw00b
+  hosts: media00
   become: true
   roles:
     - role: user
