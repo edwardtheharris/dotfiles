@@ -22,6 +22,8 @@ author = "Xander Harris"
 copyright = "2024, Xander Harris"
 exclude_patterns = [
     "_build",
+    "AGENTS.md",
+    "CLAUDE.md",
     "Thumbs.db",
     ".DS_Store",
     ".pytest_cache/*",
