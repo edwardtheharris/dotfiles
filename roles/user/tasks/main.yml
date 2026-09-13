@@ -25,7 +25,7 @@
 - name: Install LazyVim
   ansible.builtin.command:
     cmd: git clone https://github.com/LazyVim/starter ~/.config/nvim
-    creates: ~/.config
+    creates: ~/.config/nvim
   become: true
   become_user: >-
     {{ user_name }}
