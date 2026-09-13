@@ -1,3 +1,20 @@
 # SPDX-License-Identifier: MIT-0
 ---
-# handlers file for ansible
+- name: Enable node exporter
+  ansible.builtin.service:
+    name: prometheus-node-exporter
+    state: restarted
+    enabled: true
+  become: true
+- name: Start systemd exporter
+  ansible.builtin.service:
+    name: prometheus-systemd-exporter
+    state: restarted
+    enabled: true
+  become: true
+- name: Start promtail
+  ansible.builtin.service:
+    name: promtail
+    state: restarted
+    enabled: true
+  become: true

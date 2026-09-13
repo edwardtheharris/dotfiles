@@ -10,7 +10,6 @@ title: dotfiles role index
 This is the index for {term}`dotfiles` related roles.
 
 ```{toctree}
-
 arch/readme
 dev/readme
 dev/files/githooks/index

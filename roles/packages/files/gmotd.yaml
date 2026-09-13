@@ -1,0 +1,16 @@
+docker:
+  disabled: true
+zpool:
+  disabled: true
+smart:
+  disabled: false
+  disks:
+    - /dev/sda
+systemd:
+  units:
+    - glances
+    - iwd
+    - prometheus-node-exporter
+    - prometheus-systemd-exporter
+    - promtail
+    - sshd

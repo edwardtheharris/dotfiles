@@ -1,38 +1,70 @@
 # SPDX-License-Identifier: MIT-0
 ---
 # tasks file for packages
-- name: Clean user package cache
-  ansible.builtin.file:
-    dest: >-
-      ~/.cache/yay
-    state: absent
-  become: true
-- name: Stat cache directory
-  ansible.builtin.stat:
-    dest: >-
-      ~/.cacche/yay
-  register: packages_cache
-- name: Test directory is gone
-  ansible.builtin.assert:
-    that:
-      - not packages_cache.stat.exists
-- name: Update user package cache
-  ansible.builtin.command:
-    cmd: yay -Y --gendb
-    creates: >-
-      ~/.cache/yay
+# - name: Clean user package cache
+#   ansible.builtin.file:
+#     dest: >-
+#       ~/.cache/yay
+#     state: absent
+#   become: true
+# - name: Stat cache directory
+#   ansible.builtin.stat:
+#     dest: >-
+#       ~/.cacche/yay
+#   register: packages_cache
+# - name: Test directory is gone
+#   ansible.builtin.assert:
+#     that:
+#       - not packages_cache.stat.exists
+# - name: Update user package cache
+#   ansible.builtin.command:
+#     cmd: yay -Y --gendb
+#     creates: >-
+#       ~/.cache/yay
 - name: Install extra packages
   ansible.builtin.command:
     cmd: >-
-      yay -S --noconfirm {{ packages_item }}
+      yay -Syyu --noconfirm {{ packages_item }}
     creates: >-
       ~/.cache/yay/{{ packages_item }}
   loop: >-
     {{ packages_list }}
   loop_control:
     loop_var: packages_item
-- name: Install rsyslog conf
-  ansible.builtin.copy:
-    source: rsyslog.conf
-    dest: /etc/rsyslog.conf
+  notify:
+    - Enable node exporter
+    - Start systemd exporter
+- name: Make gmotd config dir
+  ansible.builtin.file:
+    dest: /etc/gmotd
+    state: directory
+    owner: root
+    group: root
+    mode: ug+rwx
   become: true
+- name: Copy gmotd
+  ansible.builtin.copy:
+    src: gmotd.yaml
+    dest: /etc/gmotd/gmotd.yaml
+    owner: root
+    group: root
+    mode: ug+rw
+  become: true
+- name: Copy pam.d config
+  ansible.builtin.copy:
+    src: sshd
+    dest: /etc/pam.d/sshd
+    mode: ug+rw
+    owner: root
+    group: root
+  become: true
+- name: Template promtail
+  ansible.builtin.template:
+    src: promtail.yaml
+    dest: /etc/loki/promtail.yaml
+    mode: ug+rw
+    owner: root
+    group: root
+  become: true
+  notify:
+    - Start promtail

@@ -11,6 +11,7 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#project-informatio
 -- General configuration ---------------------------------------------------
 https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 """
+
 import sys
 from pathlib import Path
 
@@ -18,10 +19,11 @@ sys.path.append(str(Path("roles/dev/files").resolve()))
 sys.path.append(str(Path("roles/dev/files/githooks").resolve()))
 
 author = "Xander Harris"
-autoyaml_root = "."
 copyright = "2024, Xander Harris"
 exclude_patterns = [
     "_build",
+    "AGENTS.md",
+    "CLAUDE.md",
     "Thumbs.db",
     ".DS_Store",
     ".pytest_cache/*",
@@ -40,7 +42,6 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx.ext.graphviz",
     "sphinx.ext.todo",
-    "sphinxcontrib.autoyaml",
 ]
 git_untracked_check_dependencies = False
 graphviz_output_format = "png"

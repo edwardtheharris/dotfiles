@@ -4,5 +4,5 @@
 #
 
 if [ -f "$HOME/.bashrc" ]; then
-    source "$HOME/.bashrc"
+  source "$HOME/.bashrc"
 fi
