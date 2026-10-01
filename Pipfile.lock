@@ -2171,12 +2171,12 @@
         },
         "molecule": {
             "hashes": [
-                "sha256:506a0a0416683f4e404a42ce8c56a980cd93b7c802258222c1a9736b0f4ec37c",
-                "sha256:69a2a07dad27d362b9209024c9d3f0daac29da6637945fec5098deea448e3b52"
+                "sha256:1c44254eb173d0a3a48217b874d19bfa436614fb0c6faa75d9b192a843360188",
+                "sha256:ad8f468c01f35a27cd12858e24c86ad27344dc1076845f03d78fdb563fb69f82"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.10'",
-            "version": "==26.8.0"
+            "version": "==26.9.0"
         },
         "mypy-extensions": {
             "hashes": [
