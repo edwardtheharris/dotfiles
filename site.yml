@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: database
   roles:
     - role: user
       tags:
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: database
   become: true
   roles:
     - role: user
@@ -92,7 +92,7 @@
         user_role: sa
         user_wakatime_key: >-
           {{ user_wakatime_key }}
-  # - name: Install missing firmware for Arch
+  # - name: Instdatabase missing firmware for Arch
   #   hosts: localhost
   #   roles:
   #     - role: arch

@@ -5,6 +5,7 @@ packages_list:
   - arch-install-scripts
   - direnv
   - expac
+  - grafana-alloy
   - fd
   - fzf
   - ghostscript
@@ -22,7 +23,6 @@ packages_list:
   - nodejs
   - prometheus-node-exporter
   - prometheus-systemd-exporter
-  - promtail
   - python-pynvim
   - ripgrep
   - rubygems
