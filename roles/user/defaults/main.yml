@@ -7,13 +7,18 @@ user_copy_rc_files:
     src: ps1-user
   - dest: .arch
     src: arch
-user_email: root@breeze-blocks.net
+user_email: duchess@breeze-blocks.net
 user_group: root
 user_home: /root/
 user_name: root
 user_role: root
 user_systemos: arch
 user_user: root
+user_git_email: duchess@breeze-blocks.net
+user_git_name: duchess
+user_git_username: duchess
+user_git_usersigningkey: 32CA2A00468E337D
+user_git_rootsigningkey: 32CA2A00468E337D
 user_template_rc_files:
   - dest: .bashrc
     src: bashrc
