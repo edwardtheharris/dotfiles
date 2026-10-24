@@ -1,4 +1,7 @@
 # git-cliff ~ configuration file
+[remote.github]
+owner="edwardtheharris"
+repo="dotfiles"
 # https://git-cliff.org/docs/configuration
 
 

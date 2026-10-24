@@ -1,0 +1,12 @@
+--2026-10-24 11:19:11--  https://raw.githubusercontent.com/dappvibe/bash-colors/refs/heads/master/bash_colors.sh
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6688 (6.5K) [text/plain]
+Saving to: ‘bash_colors.sh’
+
+     0K ......                                                100% 80.0M=0s
+
+2026-10-24 11:19:11 (80.0 MB/s) - ‘bash_colors.sh’ saved [6688/6688]
+

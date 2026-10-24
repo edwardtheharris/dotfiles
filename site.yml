@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: all
   roles:
     - role: user
       tags:
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: cms01,cms02,cms03,cms04,cms05
+  hosts: all
   become: true
   roles:
     - role: user
