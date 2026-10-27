@@ -1,4 +1,8 @@
 ---
+abstract: A collection of Ansible roles which configure shells
+authors:
+  - name: Xander Harris
+    email: xandertheharris@gmail.com
 title: User shell config
 ---
 
@@ -46,3 +50,7 @@ Copyright (c) Xander Harris 2025. All rights reserved.
 
 The {file}`roles/packages` role makes use of
 [several handlers](https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html).
+
+## Links
+
+- [dappvibe/bash-colors](https://github.com/dappvibe/bash-colors)

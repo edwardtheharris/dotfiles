@@ -52,3 +52,11 @@
   loop:
     - glances
   become: true
+- name: Configure sshd for local
+  ansible.builtin.copy:
+    src: ssh_config
+    dest: /etc/ssh/ssh_config
+    owner: root
+    group: rout
+    mode: u+rw,g+r
+  become: true
