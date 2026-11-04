@@ -3,7 +3,7 @@ abstract: Changelog for the dotfiles repository.
 title: Changelog
 ---
 <!--markdownlint-disable-->
-## [0.2.0] - 2026-10-24
+## [0.2.0] - 2026-11-04
 
 ### 🚀 Features
 
@@ -16,6 +16,14 @@ title: Changelog
 - Update pipfile
 - Adjust lazyvim install
 - Update pipfile
+- Update changelog
+- Incorrect file names
+- Broken cpr command
+- Deps
+- Bashrc template
+- Update gmotd
+- Lock file
+- Update build
 
 ### 💼 Other
 
@@ -68,6 +76,51 @@ title: Changelog
 - 551 choredeps bump the pip group across 1 directory with 6 updates   550550
 - Closes #551
 - Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Dependabot[bot] <support@github.com>
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Dependabot[bot] <support@github.com>
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Dependabot[bot] <support@github.com>
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Update cliff toml roles
+- Lock file
+- Update build
+- Merge pull request #557 from edwardtheharris/556-update-roles
+- 556 update roles
+- Closes #556
 
 ### ⚙️ Miscellaneous Tasks
 
