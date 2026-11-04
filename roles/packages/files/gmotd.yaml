@@ -9,6 +9,7 @@ smart:
 systemd:
   units:
     - glances
+    - grafana-alloy
     - iwd
     - prometheus-node-exporter
     - prometheus-systemd-exporter

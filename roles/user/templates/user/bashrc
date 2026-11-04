@@ -36,7 +36,7 @@ alias tfd='terraform-docs'
 alias tg='terragrunt'
 
 cpr() {
-  rsync --existing --human-readable --inc-recursive --inplace \
+  rsync --human-readable --itemize-changes \
     --log-file=/var/log/rsync/cpr.log --partial --progress \
     --recursive --verbose "$@"
 }
