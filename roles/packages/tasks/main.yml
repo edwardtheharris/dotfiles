@@ -58,13 +58,3 @@
     owner: root
     group: root
   become: true
-- name: Template promtail
-  ansible.builtin.template:
-    src: promtail.yaml
-    dest: /etc/loki/promtail.yaml
-    mode: ug+rw
-    owner: root
-    group: root
-  become: true
-  notify:
-    - Start promtail
