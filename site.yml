@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: vault
+  hosts: atia
   roles:
     - role: user
       tags:
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: vault
+  hosts: atia
   become: true
   roles:
     - role: user
@@ -92,7 +92,7 @@
         user_role: sa
         user_wakatime_key: >-
           {{ user_wakatime_key }}
-  # - name: Instvault missing firmware for Arch
+  # - name: Instatia missing firmware for Arch
   #   hosts: localhost
   #   roles:
   #     - role: arch
