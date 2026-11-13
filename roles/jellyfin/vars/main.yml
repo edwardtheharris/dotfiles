@@ -1,0 +1,11 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for jellyfin
+jellyfin_packages:
+  - jellyfin-ffmpeg
+  - jellyfin-mpv-shim
+  - jellyfin-server
+  - jellyfin-web
+  - nginx
+jellyfin_yay_packages:
+  - jellyfin-mpv-shim-web
