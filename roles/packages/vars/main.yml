@@ -10,7 +10,7 @@ packages_list:
   - fzf
   - ghostscript
   - glances
-  - gmotd
+  - gmotd-bin
   - imagemagick
   - irssi
   - lazygit
@@ -34,10 +34,10 @@ packages_list:
 packages_gmotd_disks:
   - /dev/sda
 packages_systemd_units:
-    - glances
-    - grafana-alloy
-    - iwd
-    - prometheus-node-exporter
-    - prometheus-systemd-exporter
-    - promtail
-    - sshd
+  - glances
+  - grafana-alloy
+  - iwd
+  - prometheus-node-exporter
+  - prometheus-systemd-exporter
+  - promtail
+  - sshd
