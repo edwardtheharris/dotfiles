@@ -1,6 +1,6 @@
 ---
 - name: Init arch user
-  hosts: atia
+  hosts: media00,all
   roles:
     - role: user
       tags:
@@ -41,7 +41,7 @@
       tags:
         - ping
 - name: Init root user
-  hosts: atia
+  hosts: media00
   become: true
   roles:
     - role: user
@@ -73,28 +73,9 @@
           - dest: .wakatime.cfg
             src: root/wakatime.cfg
         user_wakatime_key: "{{ wakatime_key }}"
-- name: Init service account user
-  hosts: ns
+- name: Install Jellyfin server
+  hosts: media00,media01
   roles:
-    - role: user
+    - role: jellyfin
       tags:
-        - sa
-      vars:
-        user_git_email: named@yourbreeze-blocks.net
-        user_git_name: named
-        user_git_username: named
-        user_git_usersigningkey: AK6LOWG75OXMT7HQ
-        user_systemos: arch
-        user_: named
-        user_group: named
-        user_home: /var/named
-        user_name: named
-        user_role: sa
-        user_wakatime_key: >-
-          {{ user_wakatime_key }}
-  # - name: Instatia missing firmware for Arch
-  #   hosts: localhost
-  #   roles:
-  #     - role: arch
-  #       tags:
-  #         - arch
+        - jellyfin
