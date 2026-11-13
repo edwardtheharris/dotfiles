@@ -1,0 +1,11 @@
+docker:
+  disabled: true
+zpool:
+  disabled: true
+smart:
+  disabled: false
+  disks:
+    {{ packages_gmotd_smart_disks }}
+systemd:
+  units:
+    {{ packages_gmotd_systemd_units }}

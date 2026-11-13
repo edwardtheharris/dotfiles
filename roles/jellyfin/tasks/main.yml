@@ -1,0 +1,23 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Install Jellyfin packages
+  community.general.pacman:
+    name: >-
+      {{ jellyfin_item }}
+    state: present
+  loop: >-
+    {{ jellyfin_packages }}
+  loop_control:
+    loop_var: jellyfin_item
+  become: true
+# tasks file for jellyfin
+- name: Install Jellyfin packages from yay
+  community.general.pacman:
+    executable: /usr/bin/yay
+    name: >-
+      {{ jellyfin_item }}
+    state: present
+  loop_control:
+    loop_var: jellyfin_item
+  loop: >-
+    {{ jellyfin_yay_packages }}

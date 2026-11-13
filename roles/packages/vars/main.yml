@@ -31,3 +31,13 @@ packages_list:
   - tldr
   - tree-sitter
   - tree-sitter-cli
+packages_gmotd_disks:
+  - /dev/sda
+packages_systemd_units:
+    - glances
+    - grafana-alloy
+    - iwd
+    - prometheus-node-exporter
+    - prometheus-systemd-exporter
+    - promtail
+    - sshd

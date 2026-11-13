@@ -16,17 +16,16 @@
 #   ansible.builtin.assert:
 #     that:
 #       - not packages_cache.stat.exists
-# - name: Update user package cache
-#   ansible.builtin.command:
-#     cmd: yay -Y --gendb
-#     creates: >-
-#       ~/.cache/yay
+- name: Update package cache
+  community.general.pacman:
+    executable: /usr/bin/yay
+    update_cache: true
 - name: Install extra packages
-  ansible.builtin.command:
-    cmd: >-
-      yay -Syyu --noconfirm {{ packages_item }}
-    creates: >-
-      ~/.cache/yay/{{ packages_item }}
+  community.general.pacman:
+    executable: /usr/bin/yay
+    name: >-
+      {{ packages_item }}
+    state: present
   loop: >-
     {{ packages_list }}
   loop_control:
@@ -42,8 +41,8 @@
     group: root
     mode: ug+rwx
   become: true
-- name: Copy gmotd
-  ansible.builtin.copy:
+- name: Template gmotd
+  ansible.builtin.template:
     src: gmotd.yaml
     dest: /etc/gmotd/gmotd.yaml
     owner: root
